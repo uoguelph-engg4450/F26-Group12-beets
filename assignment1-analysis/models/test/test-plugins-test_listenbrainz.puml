@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_listenbrainz
+package "test.plugins.test_listenbrainz" {
+  ' test.plugins.test_listenbrainz.TestListenBrainzPlugin at test/plugins/test_listenbrainz.py:22
+  class "TestListenBrainzPlugin" as c_0808
+}
+class "beets.test.helper.ConfigMixin" as c_0156 <<reference>>
+c_0808 --|> c_0156
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

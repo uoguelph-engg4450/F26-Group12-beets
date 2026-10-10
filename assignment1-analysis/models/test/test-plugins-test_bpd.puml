@@ -1,0 +1,74 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_bpd
+package "test.plugins.test_bpd" {
+  ' test.plugins.test_bpd.CommandParseTest at test/plugins/test_bpd.py:31
+  class "CommandParseTest" as c_0724
+  ' test.plugins.test_bpd.MPCResponse at test/plugins/test_bpd.py:73
+  class "MPCResponse" as c_0725
+  ' test.plugins.test_bpd.MPCClient at test/plugins/test_bpd.py:115
+  class "MPCClient" as c_0726
+  ' test.plugins.test_bpd.MemoryStreamWriter at test/plugins/test_bpd.py:209
+  class "MemoryStreamWriter" as c_0727
+  ' test.plugins.test_bpd.AsyncServerTest at test/plugins/test_bpd.py:230
+  class "AsyncServerTest" as c_0728
+  ' test.plugins.test_bpd.BPDTestHelper at test/plugins/test_bpd.py:310
+  class "BPDTestHelper" as c_0729
+  ' test.plugins.test_bpd.BPDTest at test/plugins/test_bpd.py:442
+  class "BPDTest" as c_0730
+  ' test.plugins.test_bpd.BPDQueryTest at test/plugins/test_bpd.py:473
+  class "BPDQueryTest" as c_0731
+  ' test.plugins.test_bpd.BPDPlaybackTest at test/plugins/test_bpd.py:587
+  class "BPDPlaybackTest" as c_0732
+  ' test.plugins.test_bpd.BPDControlTest at test/plugins/test_bpd.py:775
+  class "BPDControlTest" as c_0733
+  ' test.plugins.test_bpd.BPDQueueTest at test/plugins/test_bpd.py:864
+  class "BPDQueueTest" as c_0734
+  ' test.plugins.test_bpd.BPDPlaylistsTest at test/plugins/test_bpd.py:929
+  class "BPDPlaylistsTest" as c_0735
+  ' test.plugins.test_bpd.BPDDatabaseTest at test/plugins/test_bpd.py:989
+  class "BPDDatabaseTest" as c_0736
+  ' test.plugins.test_bpd.BPDMountsTest at test/plugins/test_bpd.py:1062
+  class "BPDMountsTest" as c_0737
+  ' test.plugins.test_bpd.BPDStickerTest at test/plugins/test_bpd.py:1068
+  class "BPDStickerTest" as c_0738
+  ' test.plugins.test_bpd.BPDConnectionTest at test/plugins/test_bpd.py:1072
+  class "BPDConnectionTest" as c_0739
+  ' test.plugins.test_bpd.BPDPartitionTest at test/plugins/test_bpd.py:1139
+  class "BPDPartitionTest" as c_0740
+  ' test.plugins.test_bpd.BPDDeviceTest at test/plugins/test_bpd.py:1145
+  class "BPDDeviceTest" as c_0741
+  ' test.plugins.test_bpd.BPDReflectionTest at test/plugins/test_bpd.py:1151
+  class "BPDReflectionTest" as c_0742
+  ' test.plugins.test_bpd.BPDPeersTest at test/plugins/test_bpd.py:1169
+  class "BPDPeersTest" as c_0743
+}
+class "beets.test.helper.PluginTestCase" as c_0165 <<reference>>
+class "unittest.TestCase" as external_1 <<external>>
+c_0724 --|> external_1
+c_0728 --|> external_1
+c_0729 --|> c_0165
+c_0730 --|> c_0729
+c_0731 --|> c_0729
+c_0732 --|> c_0729
+c_0733 --|> c_0729
+c_0734 --|> c_0729
+c_0735 --|> c_0729
+c_0736 --|> c_0729
+c_0737 --|> c_0729
+c_0738 --|> c_0729
+c_0739 --|> c_0729
+c_0740 --|> c_0729
+c_0741 --|> c_0729
+c_0742 --|> c_0729
+c_0743 --|> c_0729
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

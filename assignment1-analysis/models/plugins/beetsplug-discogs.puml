@@ -1,0 +1,20 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-discogs
+package "beetsplug.discogs" {
+  ' beetsplug.discogs.DiscogsPlugin at beetsplug/discogs/__init__.py:106
+  class "DiscogsPlugin" as c_0360
+}
+class "beets.metadata_plugins.SearchApiMetadataSourcePlugin" as c_0145 <<reference>>
+c_0360 --|> c_0145
+' Parameterized source base: SearchApiMetadataSourcePlugin[IDResponse]
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

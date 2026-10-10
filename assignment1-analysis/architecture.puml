@@ -1,0 +1,45 @@
+@startuml
+title Beets architectural responsibilities and selected runtime interactions
+left to right direction
+skinparam componentStyle rectangle
+component "CLI and commands\nbeets.ui" as cli
+component "Import workflow\nbeets.importer" as importer
+component "Pipeline execution\nbeets.util.pipeline" as pipeline
+component "Autotag and matching\nbeets.autotag" as autotag
+component "Metadata provider orchestration\nbeets.metadata_plugins" as providers
+component "Plugin loading and events\nbeets.plugins" as plugins
+component "Optional extensions\nbeetsplug.*" as extensions
+component "Music domain and library\nbeets.library" as library
+component "Persistence, queries and types\nbeets.dbcore" as dbcore
+component "Configuration, templates,\npaths and artwork utilities\nbeets / beets.util" as utils
+component "mediafile" as mediafile <<external>>
+database "SQLite library" as sqlite
+cloud "Metadata services" as services
+folder "Music files and artwork" as files
+cli ..> importer : start import
+cli ..> library : commands and queries
+cli ..> plugins : load plugins / collect commands
+importer ..> pipeline : construct and run coroutine stages
+importer ..> autotag : obtain candidate matches
+importer ..> library : add / update items and albums
+importer ..> plugins : stages and lifecycle events
+autotag ..> providers : search and retrieve metadata
+providers ..> plugins : find loaded providers
+providers ..> extensions : invoke provider hooks
+plugins ..> extensions : dynamic import and instantiate
+extensions ..> plugins : register listeners and hooks
+extensions ..> library : query / modify models
+extensions ..> services : HTTP and provider APIs
+library ..> dbcore : specialize Database and Model
+dbcore ..> sqlite : transactions / queries / schema
+library ..> mediafile : read and write tags
+mediafile ..> files : audio tag I/O
+library ..> files : move / copy / artwork
+library ..> plugins : model and file events
+library ..> utils : destinations and formatting
+note bottom of utils
+Shared services are also used by CLI, importer, plugins and dbcore.
+This is a selected responsibility view, not every source import.
+The application runs in one process; external services are separate.
+end note
+@enduml

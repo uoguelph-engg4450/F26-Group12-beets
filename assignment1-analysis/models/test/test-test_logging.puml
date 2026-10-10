@@ -1,0 +1,44 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-test_logging
+package "test.test_logging" {
+  ' test.test_logging.TestStrFormatLogger at test/test_logging.py:15
+  class "TestStrFormatLogger" as c_0998
+  ' test.test_logging.TestLogSanitization at test/test_logging.py:68
+  class "TestLogSanitization" as c_0999
+  ' test.test_logging.DummyModule at test/test_logging.py:120
+  class "DummyModule" as c_1000
+  ' test.test_logging.DummyModule.DummyPlugin at test/test_logging.py:121
+  class "DummyPlugin" as c_1001 <<nested>>
+  ' test.test_logging.TestLoggingLevel at test/test_logging.py:150
+  class "TestLoggingLevel" as c_1002
+  ' test.test_logging.TestConcurrentEvents at test/test_logging.py:230
+  class "TestConcurrentEvents" as c_1003
+  ' test.test_logging.TestConcurrentEvents.DummyPlugin at test/test_logging.py:238
+  class "DummyPlugin" as c_1004 <<nested>>
+  ' test.test_logging.TestLegacyFormatter at test/test_logging.py:344
+  class "TestLegacyFormatter" as c_1005
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "beets.test.helper.AsIsImporterMixin" as c_0169 <<reference>>
+class "beets.test.helper.ImportHelper" as c_0168 <<reference>>
+class "beets.test.helper.PluginMixin" as c_0164 <<reference>>
+class "types.ModuleType" as external_4 <<external>>
+c_1000 --|> external_4
+c_1001 --|> c_0149
+c_1002 --|> c_0169
+c_1002 --|> c_0164
+c_1002 --|> c_0168
+c_1003 --|> c_0169
+c_1003 --|> c_0168
+c_1004 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

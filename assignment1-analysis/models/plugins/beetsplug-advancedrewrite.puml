@@ -1,0 +1,25 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-advancedrewrite
+package "beetsplug.advancedrewrite" {
+  ' beetsplug.advancedrewrite.AdvancedRewriteConfig at beetsplug/advancedrewrite.py:26
+  class "AdvancedRewriteConfig" as c_0303 <<schema>>
+  ' beetsplug.advancedrewrite.AdvancedRewritePlugin at beetsplug/advancedrewrite.py:60
+  class "AdvancedRewritePlugin" as c_0304
+  ' beetsplug.advancedrewrite.AdvancedRewritePlugin.loaded.RulesContainer at beetsplug/advancedrewrite.py:159
+  class "RulesContainer" as c_0305 <<nested>>
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "typing.TypedDict" as external_1 <<external>>
+c_0303 --|> external_1
+c_0304 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

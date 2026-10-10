@@ -1,0 +1,70 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Typed event payload schemas
+package "beets.events" {
+  ' beets.events.AfterWriteEventArgs at beets/events.py:78
+  class "AfterWriteEventArgs" as c_0080 <<schema>>
+  ' beets.events.ItemPathEventArgs at beets/events.py:83
+  class "ItemPathEventArgs" as c_0081 <<schema>>
+  ' beets.events.ImportTaskEventArgs at beets/events.py:89
+  class "ImportTaskEventArgs" as c_0082 <<schema>>
+  ' beets.events.ImportEventArgs at beets/events.py:94
+  class "ImportEventArgs" as c_0083 <<schema>>
+  ' beets.events.AlbumImportedEventArgs at beets/events.py:99
+  class "AlbumImportedEventArgs" as c_0084 <<schema>>
+  ' beets.events.AlbumEventArgs at beets/events.py:104
+  class "AlbumEventArgs" as c_0085 <<schema>>
+  ' beets.events.AlbumInfoReceivedEventArgs at beets/events.py:108
+  class "AlbumInfoReceivedEventArgs" as c_0086 <<schema>>
+  ' beets.events.TrackInfoReceivedEventArgs at beets/events.py:112
+  class "TrackInfoReceivedEventArgs" as c_0087 <<schema>>
+  ' beets.events.AlbumMatchedEventArgs at beets/events.py:116
+  class "AlbumMatchedEventArgs" as c_0088 <<schema>>
+  ' beets.events.LibraryEventArgs at beets/events.py:120
+  class "LibraryEventArgs" as c_0089 <<schema>>
+  ' beets.events.DatabaseChangeEventArgs at beets/events.py:124
+  class "DatabaseChangeEventArgs" as c_0090 <<schema>>
+  ' beets.events.ImportBeginEventArgs at beets/events.py:129
+  class "ImportBeginEventArgs" as c_0091 <<schema>>
+  ' beets.events.ItemImportedEventArgs at beets/events.py:133
+  class "ItemImportedEventArgs" as c_0092 <<schema>>
+  ' beets.events.ItemEventArgs at beets/events.py:138
+  class "ItemEventArgs" as c_0093 <<schema>>
+  ' beets.events.WriteEventArgs at beets/events.py:142
+  class "WriteEventArgs" as c_0094 <<schema>>
+  ' beets.events.MusicBrainzExtractEventArgs at beets/events.py:148
+  class "MusicBrainzExtractEventArgs" as c_0095 <<schema>>
+  ' beets.events.AfterConvertEventArgs at beets/events.py:152
+  class "AfterConvertEventArgs" as c_0096 <<schema>>
+  ' beets.events.AlternativesItemUpdatedEventArgs at beets/events.py:158
+  class "AlternativesItemUpdatedEventArgs" as c_0097 <<schema>>
+}
+class "typing.TypedDict" as external_0 <<external>>
+c_0080 --|> external_0
+c_0081 --|> external_0
+c_0082 --|> external_0
+c_0083 --|> external_0
+c_0084 --|> external_0
+c_0085 --|> external_0
+c_0086 --|> external_0
+c_0087 --|> external_0
+c_0088 --|> external_0
+c_0089 --|> external_0
+c_0090 --|> external_0
+c_0091 --|> external_0
+c_0092 --|> external_0
+c_0093 --|> external_0
+c_0094 --|> external_0
+c_0095 --|> external_0
+c_0096 --|> external_0
+c_0097 --|> external_0
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_importsource
+package "test.plugins.test_importsource" {
+  ' test.plugins.test_importsource.ImportSourceTest at test/plugins/test_importsource.py:10
+  class "ImportSourceTest" as c_0795
+  ' test.plugins.test_importsource.ImportSourceTest.test_prevent_suggest_removal_handles_skipped_task.MockTask at test/plugins/test_importsource.py:106
+  class "MockTask" as c_0796 <<nested>>
+}
+class "beets.test.helper.AutotagImportTestCase" as c_0175 <<reference>>
+class "beets.test.helper.IOMixin" as c_0158 <<reference>>
+class "beets.test.helper.PluginMixin" as c_0164 <<reference>>
+c_0795 --|> c_0158
+c_0795 --|> c_0164
+c_0795 --|> c_0175
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

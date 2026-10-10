@@ -1,0 +1,29 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_lastgenre
+package "test.plugins.test_lastgenre" {
+  ' test.plugins.test_lastgenre.LastGenrePluginTest at test/plugins/test_lastgenre.py:19
+  class "LastGenrePluginTest" as c_0802
+  ' test.plugins.test_lastgenre.LastGenrePluginTest.test_fetch_genre.MockPylastElem at test/plugins/test_lastgenre.py:207
+  class "MockPylastElem" as c_0803 <<nested>>
+  ' test.plugins.test_lastgenre.LastGenrePluginTest.test_fetch_genre.MockPylastObj at test/plugins/test_lastgenre.py:214
+  class "MockPylastObj" as c_0804 <<nested>>
+  ' test.plugins.test_lastgenre.TestIgnorelist at test/plugins/test_lastgenre.py:753
+  class "TestIgnorelist" as c_0805
+  ' test.plugins.test_lastgenre.TestAliases at test/plugins/test_lastgenre.py:961
+  class "TestAliases" as c_0806
+}
+class "beets.test.helper.IOMixin" as c_0158 <<reference>>
+class "beets.test.helper.PluginTestCase" as c_0165 <<reference>>
+c_0802 --|> c_0158
+c_0802 --|> c_0165
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

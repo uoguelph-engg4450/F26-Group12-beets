@@ -1,0 +1,33 @@
+{
+  "owned_classes": 1100,
+  "model_count": 233,
+  "unassigned_classes": [],
+  "duplicate_home_assignments": [],
+  "undeclared_inheritance_endpoints": [],
+  "rendered": false,
+  "models_by_scope": {
+    "core": 16,
+    "plugins": 94,
+    "test-support": 4,
+    "test": 118,
+    "support": 1
+  },
+  "core_models": {
+    "core/01-library": 9,
+    "core/02-database": 12,
+    "core/03-query-predicates": 19,
+    "core/04-query-combinations": 8,
+    "core/05-field-types": 23,
+    "core/06-sorting": 7,
+    "core/07-migrations": 11,
+    "core/08-importer": 18,
+    "core/09-autotag": 10,
+    "core/10-plugin-contracts": 8,
+    "core/11-cli": 19,
+    "core/12-events": 18,
+    "core/13-support": 21,
+    "core/14-art-resizing": 6,
+    "core/15-templates": 7,
+    "core/16-pipeline": 7
+  }
+}

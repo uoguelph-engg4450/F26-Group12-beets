@@ -1,0 +1,28 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-test_files
+package "test.test_files" {
+  ' test.test_files.MoveTest at test/test_files.py:17
+  class "MoveTest" as c_0927
+  ' test.test_files.AlbumFileTest at test/test_files.py:199
+  class "AlbumFileTest" as c_0928
+  ' test.test_files.ArtFileTest at test/test_files.py:263
+  class "ArtFileTest" as c_0929
+  ' test.test_files.RemoveTest at test/test_files.py:458
+  class "RemoveTest" as c_0930
+}
+class "beets.test.helper.BeetsTestCase" as c_0161 <<reference>>
+c_0927 --|> c_0161
+c_0928 --|> c_0161
+c_0929 --|> c_0161
+c_0930 --|> c_0161
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

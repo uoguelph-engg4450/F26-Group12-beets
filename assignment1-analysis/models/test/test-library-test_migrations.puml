@@ -1,0 +1,52 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-library-test_migrations
+package "test.library.test_migrations" {
+  ' test.library.test_migrations.MigrationTestHelper at test/library/test_migrations.py:18
+  class "MigrationTestHelper" as c_0652
+  ' test.library.test_migrations.TestMultiGenreFieldMigration at test/library/test_migrations.py:60
+  class "TestMultiGenreFieldMigration" as c_0653
+  ' test.library.test_migrations.MultiArtistFieldMigrationTestMixin at test/library/test_migrations.py:118
+  class "MultiArtistFieldMigrationTestMixin" as c_0654
+  ' test.library.test_migrations.TestMultiRemixerFieldMigration at test/library/test_migrations.py:173
+  class "TestMultiRemixerFieldMigration" as c_0655
+  ' test.library.test_migrations.TestMultiLyricistFieldMigration at test/library/test_migrations.py:179
+  class "TestMultiLyricistFieldMigration" as c_0656
+  ' test.library.test_migrations.TestMultiComposerFieldMigration at test/library/test_migrations.py:185
+  class "TestMultiComposerFieldMigration" as c_0657
+  ' test.library.test_migrations.TestMultiArrangerFieldMigration at test/library/test_migrations.py:191
+  class "TestMultiArrangerFieldMigration" as c_0658
+  ' test.library.test_migrations.TestLyricsMetadataInFlexFieldsMigration at test/library/test_migrations.py:197
+  class "TestLyricsMetadataInFlexFieldsMigration" as c_0659
+  ' test.library.test_migrations.TestRemoveInheritedArtpathMigration at test/library/test_migrations.py:252
+  class "TestRemoveInheritedArtpathMigration" as c_0660
+  ' test.library.test_migrations.TestRelativePathMigration at test/library/test_migrations.py:272
+  class "TestRelativePathMigration" as c_0661
+  ' test.library.test_migrations.TestMigrationBackup at test/library/test_migrations.py:320
+  class "TestMigrationBackup" as c_0662
+  ' test.library.test_migrations.TestInstrumentalLyricsInFlexFieldMigration at test/library/test_migrations.py:351
+  class "TestInstrumentalLyricsInFlexFieldMigration" as c_0663
+}
+class "beets.test.helper.TestHelper" as c_0160 <<reference>>
+c_0652 --|> c_0160
+c_0653 --|> c_0652
+c_0654 --|> c_0652
+c_0655 --|> c_0654
+c_0656 --|> c_0654
+c_0657 --|> c_0654
+c_0658 --|> c_0654
+c_0659 --|> c_0652
+c_0660 --|> c_0652
+c_0661 --|> c_0652
+c_0662 --|> c_0652
+c_0663 --|> c_0652
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-ui-commands-test_modify
+package "test.ui.commands.test_modify" {
+  ' test.ui.commands.test_modify.ModifyHelper at test/ui/commands/test_modify.py:14
+  class "ModifyHelper" as c_1054
+  ' test.ui.commands.test_modify.ModifyTest at test/ui/commands/test_modify.py:24
+  class "ModifyTest" as c_1055
+  ' test.ui.commands.test_modify.TestMultiValue at test/ui/commands/test_modify.py:262
+  class "TestMultiValue" as c_1056
+}
+class "beets.test.helper.BeetsTestCase" as c_0161 <<reference>>
+class "beets.test.helper.IOMixin" as c_0158 <<reference>>
+class "beets.test.helper.TestHelper" as c_0160 <<reference>>
+c_1054 --|> c_0158
+c_1055 --|> c_1054
+c_1055 --|> c_0161
+c_1056 --|> c_1054
+c_1056 --|> c_0160
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

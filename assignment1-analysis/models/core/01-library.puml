@@ -1,0 +1,50 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Music library and domain models
+package "beets.library.exceptions" {
+  ' beets.library.exceptions.FileOperationError at beets/library/exceptions.py:4
+  class "FileOperationError" as c_0117
+  ' beets.library.exceptions.ReadError at beets/library/exceptions.py:27
+  class "ReadError" as c_0118
+  ' beets.library.exceptions.WriteError at beets/library/exceptions.py:36
+  class "WriteError" as c_0119
+}
+package "beets.library.library" {
+  ' beets.library.library.Library at beets/library/library.py:36
+  class "Library" as c_0120
+}
+package "beets.library.models" {
+  ' beets.library.models.LibModel at beets/library/models.py:50
+  class "LibModel" as c_0132
+  ' beets.library.models.FormattedItemMapping at beets/library/models.py:189
+  class "FormattedItemMapping" as c_0133
+  ' beets.library.models.Album at beets/library/models.py:277
+  class "Album" as c_0134
+  ' beets.library.models.Item at beets/library/models.py:669
+  class "Item" as c_0135
+  ' beets.library.models.DefaultTemplateFunctions at beets/library/models.py:1312
+  class "DefaultTemplateFunctions" as c_0136
+}
+class "Exception" as external_0 <<external>>
+class "beets.dbcore.db.Database" as c_0021 <<reference>>
+class "beets.dbcore.db.FormattedMapping" as c_0014 <<reference>>
+class "beets.dbcore.db.Model" as c_0016 <<reference>>
+c_0117 --|> external_0
+c_0118 --|> c_0117
+c_0119 --|> c_0117
+c_0120 --|> c_0021
+c_0132 --|> c_0016
+' Parameterized source base: dbcore.Model['Library']
+c_0133 --|> c_0014
+c_0134 --|> c_0132
+c_0135 --|> c_0132
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

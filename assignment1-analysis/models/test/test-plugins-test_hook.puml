@@ -1,0 +1,28 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_hook
+package "test.plugins.test_hook" {
+  ' test.plugins.test_hook.HookTestCase at test/plugins/test_hook.py:20
+  class "HookTestCase" as c_0788
+  ' test.plugins.test_hook.TestHookLogs at test/plugins/test_hook.py:28
+  class "TestHookLogs" as c_0789
+  ' test.plugins.test_hook.TestHookCommand at test/plugins/test_hook.py:62
+  class "TestHookCommand" as c_0790
+  ' test.plugins.test_hook.TestHookCustomEvents at test/plugins/test_hook.py:120
+  class "TestHookCustomEvents" as c_0791
+}
+class "beets.test.helper.PluginTestHelper" as c_0166 <<reference>>
+c_0788 --|> c_0166
+c_0789 --|> c_0788
+c_0790 --|> c_0788
+c_0791 --|> c_0788
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-mpdupdate
+package "beetsplug.mpdupdate" {
+  ' beetsplug.mpdupdate.BufferedSocket at beetsplug/mpdupdate.py:26
+  class "BufferedSocket" as c_0486
+  ' beetsplug.mpdupdate.MPDUpdatePlugin at beetsplug/mpdupdate.py:57
+  class "MPDUpdatePlugin" as c_0487
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+c_0487 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

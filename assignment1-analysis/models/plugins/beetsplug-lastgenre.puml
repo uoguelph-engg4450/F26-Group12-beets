@@ -1,0 +1,23 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-lastgenre
+package "beetsplug.lastgenre" {
+  ' beetsplug.lastgenre.LastGenreCLIOpts at beetsplug/lastgenre/__init__.py:49
+  class "LastGenreCLIOpts" as c_0429 <<protocol>>
+  ' beetsplug.lastgenre.LastGenrePlugin at beetsplug/lastgenre/__init__.py:111
+  class "LastGenrePlugin" as c_0430
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "typing.Protocol" as external_1 <<external>>
+c_0429 --|> external_1
+c_0430 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

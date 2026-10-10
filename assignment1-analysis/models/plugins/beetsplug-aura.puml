@@ -1,0 +1,37 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-aura
+package "beetsplug.aura" {
+  ' beetsplug.aura.AuraCLIOpts at beetsplug/aura.py:40
+  class "AuraCLIOpts" as c_0307 <<protocol>>
+  ' beetsplug.aura.AURADocument at beetsplug/aura.py:120
+  class "AURADocument" as c_0308
+  ' beetsplug.aura.TrackDocument at beetsplug/aura.py:342
+  class "TrackDocument" as c_0309
+  ' beetsplug.aura.AlbumDocument at beetsplug/aura.py:413
+  class "AlbumDocument" as c_0310
+  ' beetsplug.aura.ArtistDocument at beetsplug/aura.py:501
+  class "ArtistDocument" as c_0311
+  ' beetsplug.aura.ImageDocument at beetsplug/aura.py:606
+  class "ImageDocument" as c_0312
+  ' beetsplug.aura.AURAPlugin at beetsplug/aura.py:920
+  class "AURAPlugin" as c_0313
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "typing.Protocol" as external_1 <<external>>
+c_0307 --|> external_1
+c_0309 --|> c_0308
+c_0310 --|> c_0308
+c_0311 --|> c_0308
+c_0312 --|> c_0308
+c_0313 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

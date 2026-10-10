@@ -1,0 +1,77 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-dbcore-test_db-01
+package "test.dbcore.test_db" {
+  ' test.dbcore.test_db.DatabaseFixture1 at test/dbcore/test_db.py:29
+  class "DatabaseFixture1" as c_0617
+  ' test.dbcore.test_db.ModelFixture2 at test/dbcore/test_db.py:33
+  class "ModelFixture2" as c_0618
+  ' test.dbcore.test_db.DatabaseFixture2 at test/dbcore/test_db.py:41
+  class "DatabaseFixture2" as c_0619
+  ' test.dbcore.test_db.ModelFixture3 at test/dbcore/test_db.py:45
+  class "ModelFixture3" as c_0620
+  ' test.dbcore.test_db.DatabaseFixture3 at test/dbcore/test_db.py:54
+  class "DatabaseFixture3" as c_0621
+  ' test.dbcore.test_db.ModelFixture4 at test/dbcore/test_db.py:58
+  class "ModelFixture4" as c_0622
+  ' test.dbcore.test_db.DatabaseFixture4 at test/dbcore/test_db.py:68
+  class "DatabaseFixture4" as c_0623
+  ' test.dbcore.test_db.AnotherModelFixture at test/dbcore/test_db.py:72
+  class "AnotherModelFixture" as c_0624
+  ' test.dbcore.test_db.ModelFixture5 at test/dbcore/test_db.py:82
+  class "ModelFixture5" as c_0625
+  ' test.dbcore.test_db.DatabaseFixtureTwoModels at test/dbcore/test_db.py:90
+  class "DatabaseFixtureTwoModels" as c_0626
+  ' test.dbcore.test_db.TestDatabasePath at test/dbcore/test_db.py:94
+  class "TestDatabasePath" as c_0627
+  ' test.dbcore.test_db.ModelFixtureWithGetters at test/dbcore/test_db.py:116
+  class "ModelFixtureWithGetters" as c_0628
+  ' test.dbcore.test_db.MigrationTest at test/dbcore/test_db.py:122
+  class "MigrationTest" as c_0629
+  ' test.dbcore.test_db.TransactionTest at test/dbcore/test_db.py:203
+  class "TransactionTest" as c_0630
+  ' test.dbcore.test_db.ModelTest at test/dbcore/test_db.py:226
+  class "ModelTest" as c_0631
+  ' test.dbcore.test_db.FormatTest at test/dbcore/test_db.py:419
+  class "FormatTest" as c_0632
+  ' test.dbcore.test_db.FormattedMappingTest at test/dbcore/test_db.py:468
+  class "FormattedMappingTest" as c_0633
+  ' test.dbcore.test_db.ParseTest at test/dbcore/test_db.py:491
+  class "ParseTest" as c_0634
+  ' test.dbcore.test_db.TestModelTypeFallback at test/dbcore/test_db.py:507
+  class "TestModelTypeFallback" as c_0635
+  ' test.dbcore.test_db.ResultsIteratorTest at test/dbcore/test_db.py:527
+  class "ResultsIteratorTest" as c_0636
+}
+class "beets.dbcore.db.Database" as c_0021 <<reference>>
+class "beets.dbcore.db.Model" as c_0016 <<reference>>
+class "beets.test.fixtures.ModelFixture1" as c_0154 <<reference>>
+class "unittest.TestCase" as external_3 <<external>>
+c_0617 --|> c_0021
+c_0618 --|> c_0154
+c_0619 --|> c_0021
+c_0620 --|> c_0154
+c_0621 --|> c_0021
+c_0622 --|> c_0154
+c_0623 --|> c_0021
+c_0624 --|> c_0154
+c_0625 --|> c_0154
+c_0626 --|> c_0021
+c_0628 --|> c_0016
+c_0629 --|> external_3
+c_0630 --|> external_3
+c_0631 --|> external_3
+c_0632 --|> external_3
+c_0633 --|> external_3
+c_0634 --|> external_3
+c_0636 --|> external_3
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

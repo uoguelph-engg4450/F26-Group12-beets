@@ -1,0 +1,27 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-badfiles
+package "beetsplug.badfiles" {
+  ' beetsplug.badfiles.BadCLIOpts at beetsplug/badfiles.py:29
+  class "BadCLIOpts" as c_0316 <<protocol>>
+  ' beetsplug.badfiles.CheckerCommandError at beetsplug/badfiles.py:33
+  class "CheckerCommandError" as c_0317
+  ' beetsplug.badfiles.BadFiles at beetsplug/badfiles.py:50
+  class "BadFiles" as c_0318
+}
+class "Exception" as external_0 <<external>>
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "typing.Protocol" as external_2 <<external>>
+c_0316 --|> external_2
+c_0317 --|> external_0
+c_0318 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

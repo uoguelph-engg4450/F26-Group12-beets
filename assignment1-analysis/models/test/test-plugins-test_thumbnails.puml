@@ -1,0 +1,21 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_thumbnails
+package "test.plugins.test_thumbnails" {
+  ' test.plugins.test_thumbnails.ThumbnailsTest at test/plugins/test_thumbnails.py:17
+  class "ThumbnailsTest" as c_0902
+  ' test.plugins.test_thumbnails.TestPathlibURI at test/plugins/test_thumbnails.py:244
+  class "TestPathlibURI" as c_0903
+}
+class "beets.test.helper.BeetsTestCase" as c_0161 <<reference>>
+c_0902 --|> c_0161
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

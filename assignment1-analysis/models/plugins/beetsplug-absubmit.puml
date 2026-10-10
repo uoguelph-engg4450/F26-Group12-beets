@@ -1,0 +1,27 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-absubmit
+package "beetsplug.absubmit" {
+  ' beetsplug.absubmit.ABSubmitCLIOpts at beetsplug/absubmit.py:27
+  class "ABSubmitCLIOpts" as c_0298 <<protocol>>
+  ' beetsplug.absubmit.ABSubmitError at beetsplug/absubmit.py:36
+  class "ABSubmitError" as c_0299
+  ' beetsplug.absubmit.AcousticBrainzSubmitPlugin at beetsplug/absubmit.py:51
+  class "AcousticBrainzSubmitPlugin" as c_0300
+}
+class "Exception" as external_0 <<external>>
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "typing.Protocol" as external_2 <<external>>
+c_0298 --|> external_2
+c_0299 --|> external_0
+c_0300 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,83 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test-support / beets-test-helper-01
+package "beets.test.helper" {
+  ' beets.test.helper.ConfigMixin at beets/test/helper.py:97
+  class "ConfigMixin" as c_0156
+  ' beets.test.helper.RunMixin at beets/test/helper.py:136
+  class "RunMixin" as c_0157
+  ' beets.test.helper.IOMixin at beets/test/helper.py:155
+  class "IOMixin" as c_0158
+  ' beets.test.helper.PathsMixin at beets/test/helper.py:164
+  class "PathsMixin" as c_0159
+  ' beets.test.helper.TestHelper at beets/test/helper.py:179
+  class "TestHelper" as c_0160
+  ' beets.test.helper.BeetsTestCase at beets/test/helper.py:412
+  class "BeetsTestCase" as c_0161
+  ' beets.test.helper.ItemInDBTestCase at beets/test/helper.py:423
+  class "ItemInDBTestCase" as c_0162
+  ' beets.test.helper.PytestTestHelper at beets/test/helper.py:433
+  class "PytestTestHelper" as c_0163
+  ' beets.test.helper.PluginMixin at beets/test/helper.py:445
+  class "PluginMixin" as c_0164
+  ' beets.test.helper.PluginTestCase at beets/test/helper.py:492
+  class "PluginTestCase" as c_0165
+  ' beets.test.helper.PluginTestHelper at beets/test/helper.py:498
+  class "PluginTestHelper" as c_0166
+  ' beets.test.helper.ImporterMixin at beets/test/helper.py:511
+  class "ImporterMixin" as c_0167
+  ' beets.test.helper.ImportHelper at beets/test/helper.py:611
+  class "ImportHelper" as c_0168
+  ' beets.test.helper.AsIsImporterMixin at beets/test/helper.py:622
+  class "AsIsImporterMixin" as c_0169
+  ' beets.test.helper.ImportSessionFixture at beets/test/helper.py:633
+  class "ImportSessionFixture" as c_0170
+  ' beets.test.helper.TerminalImportSessionFixture at beets/test/helper.py:682
+  class "TerminalImportSessionFixture" as c_0171
+  ' beets.test.helper.TerminalImportMixin at beets/test/helper.py:745
+  class "TerminalImportMixin" as c_0172
+  ' beets.test.helper.AutotagStub at beets/test/helper.py:759
+  class "AutotagStub" as c_0173
+  ' beets.test.helper.AutotagImportHelper at beets/test/helper.py:861
+  class "AutotagImportHelper" as c_0174
+  ' beets.test.helper.AutotagImportTestCase at beets/test/helper.py:873
+  class "AutotagImportTestCase" as c_0175
+}
+class "beets.importer.session.ImportSession" as c_0102 <<reference>>
+class "beets.ui.commands.import_.session.TerminalImportSession" as c_0188 <<reference>>
+class "unittest.TestCase" as external_2 <<external>>
+c_0158 --|> c_0157
+c_0160 --|> c_0157
+c_0160 --|> c_0159
+c_0160 --|> c_0156
+c_0161 --|> external_2
+c_0161 --|> c_0160
+c_0162 --|> c_0161
+c_0163 --|> c_0160
+c_0164 --|> c_0156
+c_0165 --|> c_0164
+c_0165 --|> c_0161
+c_0166 --|> c_0164
+c_0166 --|> c_0160
+c_0167 --|> c_0159
+c_0167 --|> c_0156
+c_0168 --|> c_0160
+c_0168 --|> c_0167
+c_0169 --|> c_0167
+c_0170 --|> c_0102
+c_0171 --|> c_0188
+c_0172 --|> c_0158
+c_0172 --|> c_0168
+c_0174 --|> c_0168
+c_0175 --|> c_0174
+c_0175 --|> c_0161
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

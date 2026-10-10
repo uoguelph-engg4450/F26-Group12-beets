@@ -1,0 +1,40 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-web
+package "beetsplug.web" {
+  ' beetsplug.web.LibraryCtx at beetsplug/web/__init__.py:28
+  class "LibraryCtx" as c_0578
+  ' beetsplug.web.WebCLIOpts at beetsplug/web/__init__.py:36
+  class "WebCLIOpts" as c_0579 <<protocol>>
+  ' beetsplug.web.IdListConverter at beetsplug/web/__init__.py:255
+  class "IdListConverter" as c_0580
+  ' beetsplug.web.QueryConverter at beetsplug/web/__init__.py:271
+  class "QueryConverter" as c_0581
+  ' beetsplug.web.EverythingConverter at beetsplug/web/__init__.py:286
+  class "EverythingConverter" as c_0582
+  ' beetsplug.web.WebPlugin at beetsplug/web/__init__.py:444
+  class "WebPlugin" as c_0583
+  ' beetsplug.web.ReverseProxied at beetsplug/web/__init__.py:516
+  class "ReverseProxied" as c_0584
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "flask.ctx._AppCtxGlobals" as external_1 <<external>>
+class "typing.Protocol" as external_2 <<external>>
+class "werkzeug.routing.BaseConverter" as external_3 <<external>>
+class "werkzeug.routing.PathConverter" as external_4 <<external>>
+c_0578 --|> external_1
+c_0579 --|> external_2
+c_0580 --|> external_3
+c_0581 --|> external_4
+c_0582 --|> external_4
+c_0583 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

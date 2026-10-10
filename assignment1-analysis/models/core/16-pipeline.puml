@@ -1,0 +1,40 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Pipeline and worker threads
+package "beets.util.pipeline" {
+  ' beets.util.pipeline.CountedQueue at beets/util/pipeline.py:102
+  class "CountedQueue" as c_0225
+  ' beets.util.pipeline.MultiMessage at beets/util/pipeline.py:152
+  class "MultiMessage" as c_0226
+  ' beets.util.pipeline.PipelineThread at beets/util/pipeline.py:242
+  class "PipelineThread" as c_0227
+  ' beets.util.pipeline.FirstPipelineThread at beets/util/pipeline.py:284
+  class "FirstPipelineThread" as c_0228
+  ' beets.util.pipeline.MiddlePipelineThread at beets/util/pipeline.py:329
+  class "MiddlePipelineThread" as c_0229
+  ' beets.util.pipeline.LastPipelineThread at beets/util/pipeline.py:385
+  class "LastPipelineThread" as c_0230
+  ' beets.util.pipeline.Pipeline at beets/util/pipeline.py:428
+  class "Pipeline" as c_0231
+}
+class "queue.Queue" as external_0 <<external>>
+class "threading.Thread" as external_1 <<external>>
+class "typing.Generic" as external_2 <<external>>
+c_0225 --|> external_0
+' Parameterized source base: queue.Queue[Tq]
+c_0227 --|> external_1
+c_0228 --|> c_0227
+c_0229 --|> c_0227
+c_0230 --|> c_0227
+c_0231 --|> external_2
+' Parameterized source base: Generic[Tpull, Tstage]
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

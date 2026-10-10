@@ -1,0 +1,52 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-bpd
+package "beetsplug.bpd" {
+  ' beetsplug.bpd.BPDError at beetsplug/bpd/__init__.py:107
+  class "BPDError" as c_0331
+  ' beetsplug.bpd.make_bpd_error.NewBPDError at beetsplug/bpd/__init__.py:140
+  class "NewBPDError" as c_0332 <<nested>>
+  ' beetsplug.bpd.BPDCloseError at beetsplug/bpd/__init__.py:183
+  class "BPDCloseError" as c_0333
+  ' beetsplug.bpd.BPDIdleError at beetsplug/bpd/__init__.py:189
+  class "BPDIdleError" as c_0334
+  ' beetsplug.bpd.BaseServer at beetsplug/bpd/__init__.py:202
+  class "BaseServer" as c_0335
+  ' beetsplug.bpd.Connection at beetsplug/bpd/__init__.py:828
+  class "Connection" as c_0336
+  ' beetsplug.bpd.MPDConnection at beetsplug/bpd/__init__.py:883
+  class "MPDConnection" as c_0337
+  ' beetsplug.bpd.ControlConnection at beetsplug/bpd/__init__.py:1001
+  class "ControlConnection" as c_0338
+  ' beetsplug.bpd.Command at beetsplug/bpd/__init__.py:1061
+  class "Command" as c_0339
+  ' beetsplug.bpd.CommandList at beetsplug/bpd/__init__.py:1169
+  class "CommandList" as c_0340
+  ' beetsplug.bpd.Server at beetsplug/bpd/__init__.py:1206
+  class "Server" as c_0341
+  ' beetsplug.bpd.BPDPlugin at beetsplug/bpd/__init__.py:1707
+  class "BPDPlugin" as c_0342
+}
+class "Exception" as external_0 <<external>>
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "list" as external_2 <<external>>
+c_0331 --|> external_0
+c_0332 --|> c_0331
+c_0333 --|> external_0
+c_0334 --|> external_0
+c_0337 --|> c_0336
+c_0338 --|> c_0336
+c_0340 --|> external_2
+' Parameterized source base: list[Command]
+c_0341 --|> c_0335
+c_0342 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

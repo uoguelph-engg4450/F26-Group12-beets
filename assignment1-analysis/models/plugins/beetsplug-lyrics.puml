@@ -1,0 +1,79 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-lyrics
+package "beetsplug.lyrics" {
+  ' beetsplug.lyrics.LyricsCLIOpts at beetsplug/lyrics.py:57
+  class "LyricsCLIOpts" as c_0446 <<protocol>>
+  ' beetsplug.lyrics.CaptchaError at beetsplug/lyrics.py:62
+  class "CaptchaError" as c_0447
+  ' beetsplug.lyrics.GeniusHTTPError at beetsplug/lyrics.py:67
+  class "GeniusHTTPError" as c_0448
+  ' beetsplug.lyrics.LyricsRequestHandler at beetsplug/lyrics.py:166
+  class "LyricsRequestHandler" as c_0449
+  ' beetsplug.lyrics.BackendClass at beetsplug/lyrics.py:241
+  class "BackendClass" as c_0450
+  ' beetsplug.lyrics.Backend at beetsplug/lyrics.py:248
+  class "Backend" as c_0451
+  ' beetsplug.lyrics.LRCLyrics at beetsplug/lyrics.py:264
+  class "LRCLyrics" as c_0452
+  ' beetsplug.lyrics.LRCLib at beetsplug/lyrics.py:394
+  class "LRCLib" as c_0453
+  ' beetsplug.lyrics.MusiXmatch at beetsplug/lyrics.py:446
+  class "MusiXmatch" as c_0454
+  ' beetsplug.lyrics.Html at beetsplug/lyrics.py:502
+  class "Html" as c_0455
+  ' beetsplug.lyrics.SoupMixin at beetsplug/lyrics.py:563
+  class "SoupMixin" as c_0456
+  ' beetsplug.lyrics.SearchResult at beetsplug/lyrics.py:582
+  class "SearchResult" as c_0457 <<namedtuple>>
+  ' beetsplug.lyrics.SearchBackend at beetsplug/lyrics.py:592
+  class "SearchBackend" as c_0458
+  ' beetsplug.lyrics.Genius at beetsplug/lyrics.py:649
+  class "Genius" as c_0459
+  ' beetsplug.lyrics.Tekstowo at beetsplug/lyrics.py:691
+  class "Tekstowo" as c_0460
+  ' beetsplug.lyrics.Google at beetsplug/lyrics.py:723
+  class "Google" as c_0461
+  ' beetsplug.lyrics.Translator at beetsplug/lyrics.py:866
+  class "Translator" as c_0462
+  ' beetsplug.lyrics.LRCMux at beetsplug/lyrics.py:951
+  class "LRCMux" as c_0463
+  ' beetsplug.lyrics.RestFiles at beetsplug/lyrics.py:988
+  class "RestFiles" as c_0464
+  ' beetsplug.lyrics.LyricsPlugin at beetsplug/lyrics.py:1080
+  class "LyricsPlugin" as c_0465
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "beetsplug._utils.requests.RequestHandler" as c_0296 <<reference>>
+class "requests.exceptions.HTTPError" as external_2 <<external>>
+class "type" as external_3 <<external>>
+class "typing.NamedTuple" as external_4 <<external>>
+class "typing.Protocol" as external_5 <<external>>
+c_0446 --|> external_5
+c_0447 --|> external_2
+c_0448 --|> external_2
+c_0449 --|> c_0296
+c_0450 --|> external_3
+c_0451 --|> c_0449
+c_0453 --|> c_0451
+c_0454 --|> c_0451
+c_0457 --|> external_4
+c_0458 --|> c_0456
+c_0458 --|> c_0451
+c_0459 --|> c_0458
+c_0460 --|> c_0458
+c_0461 --|> c_0458
+c_0462 --|> c_0449
+c_0463 --|> c_0451
+c_0465 --|> c_0449
+c_0465 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

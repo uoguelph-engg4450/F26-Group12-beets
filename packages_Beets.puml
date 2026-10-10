@@ -1,0 +1,474 @@
+@startuml packages_Beets
+set namespaceSeparator none
+package "beets" as beets {
+}
+package "beets.__main__" as beets.__main__ {
+}
+package "beets.autotag" as beets.autotag {
+}
+package "beets.autotag.distance" as beets.autotag.distance {
+}
+package "beets.autotag.hooks" as beets.autotag.hooks {
+}
+package "beets.autotag.match" as beets.autotag.match {
+}
+package "beets.autotag.source" as beets.autotag.source {
+}
+package "beets.context" as beets.context {
+}
+package "beets.dbcore" as beets.dbcore {
+}
+package "beets.dbcore.db" as beets.dbcore.db {
+}
+package "beets.dbcore.pathutils" as beets.dbcore.pathutils {
+}
+package "beets.dbcore.query" as beets.dbcore.query {
+}
+package "beets.dbcore.queryparse" as beets.dbcore.queryparse {
+}
+package "beets.dbcore.sort" as beets.dbcore.sort {
+}
+package "beets.dbcore.types" as beets.dbcore.types {
+}
+package "beets.events" as beets.events {
+}
+package "beets.exceptions" as beets.exceptions {
+}
+package "beets.importer" as beets.importer {
+}
+package "beets.importer.actions" as beets.importer.actions {
+}
+package "beets.importer.session" as beets.importer.session {
+}
+package "beets.importer.stages" as beets.importer.stages {
+}
+package "beets.importer.state" as beets.importer.state {
+}
+package "beets.importer.tasks" as beets.importer.tasks {
+}
+package "beets.library" as beets.library {
+}
+package "beets.library.exceptions" as beets.library.exceptions {
+}
+package "beets.library.fields" as beets.library.fields {
+}
+package "beets.library.library" as beets.library.library {
+}
+package "beets.library.migrations" as beets.library.migrations {
+}
+package "beets.library.models" as beets.library.models {
+}
+package "beets.library.queries" as beets.library.queries {
+}
+package "beets.logging" as beets.logging {
+}
+package "beets.mediafile" as beets.mediafile {
+}
+package "beets.metadata_plugins" as beets.metadata_plugins {
+}
+package "beets.plugins" as beets.plugins {
+}
+package "beets.test" as beets.test {
+}
+package "beets.test._common" as beets.test._common {
+}
+package "beets.test.fixtures" as beets.test.fixtures {
+}
+package "beets.test.helper" as beets.test.helper {
+}
+package "beets.ui" as beets.ui {
+}
+package "beets.ui.commands" as beets.ui.commands {
+}
+package "beets.ui.commands.completion" as beets.ui.commands.completion {
+}
+package "beets.ui.commands.config" as beets.ui.commands.config {
+}
+package "beets.ui.commands.fields" as beets.ui.commands.fields {
+}
+package "beets.ui.commands.help" as beets.ui.commands.help {
+}
+package "beets.ui.commands.import_" as beets.ui.commands.import_ {
+}
+package "beets.ui.commands.import_.display" as beets.ui.commands.import_.display {
+}
+package "beets.ui.commands.import_.session" as beets.ui.commands.import_.session {
+}
+package "beets.ui.commands.list" as beets.ui.commands.list {
+}
+package "beets.ui.commands.modify" as beets.ui.commands.modify {
+}
+package "beets.ui.commands.move" as beets.ui.commands.move {
+}
+package "beets.ui.commands.remove" as beets.ui.commands.remove {
+}
+package "beets.ui.commands.stats" as beets.ui.commands.stats {
+}
+package "beets.ui.commands.update" as beets.ui.commands.update {
+}
+package "beets.ui.commands.version" as beets.ui.commands.version {
+}
+package "beets.ui.commands.write" as beets.ui.commands.write {
+}
+package "beets.util" as beets.util {
+}
+package "beets.util.artresizer" as beets.util.artresizer {
+}
+package "beets.util.color" as beets.util.color {
+}
+package "beets.util.config" as beets.util.config {
+}
+package "beets.util.deprecation" as beets.util.deprecation {
+}
+package "beets.util.diff" as beets.util.diff {
+}
+package "beets.util.extension" as beets.util.extension {
+}
+package "beets.util.functemplate" as beets.util.functemplate {
+}
+package "beets.util.hidden" as beets.util.hidden {
+}
+package "beets.util.id_extractors" as beets.util.id_extractors {
+}
+package "beets.util.layout" as beets.util.layout {
+}
+package "beets.util.lyrics" as beets.util.lyrics {
+}
+package "beets.util.m3u" as beets.util.m3u {
+}
+package "beets.util.pathformats" as beets.util.pathformats {
+}
+package "beets.util.pipeline" as beets.util.pipeline {
+}
+package "beets.util.units" as beets.util.units {
+}
+beets --> beets.util.deprecation
+beets.__main__ --> beets.ui
+beets.autotag --> beets.autotag.distance
+beets.autotag --> beets.autotag.hooks
+beets.autotag --> beets.autotag.match
+beets.autotag --> beets.autotag.source
+beets.autotag --> beets.util.deprecation
+beets.autotag.distance --> beets
+beets.autotag.distance --> beets.metadata_plugins
+beets.autotag.distance --> beets.util
+beets.autotag.distance --> beets.util.color
+beets.autotag.hooks --> beets
+beets.autotag.hooks --> beets.logging
+beets.autotag.hooks --> beets.util
+beets.autotag.hooks --> beets.util.deprecation
+beets.autotag.match --> beets
+beets.autotag.match --> beets.autotag.distance
+beets.autotag.match --> beets.logging
+beets.autotag.match --> beets.metadata_plugins
+beets.autotag.match --> beets.plugins
+beets.autotag.source --> beets.util
+beets.dbcore --> beets.dbcore.db
+beets.dbcore --> beets.dbcore.query
+beets.dbcore --> beets.dbcore.queryparse
+beets.dbcore --> beets.dbcore.types
+beets.dbcore.db --> beets
+beets.dbcore.db --> beets.dbcore.query
+beets.dbcore.db --> beets.dbcore.sort
+beets.dbcore.db --> beets.util.functemplate
+beets.dbcore.pathutils --> beets
+beets.dbcore.pathutils --> beets.context
+beets.dbcore.pathutils --> beets.util
+beets.dbcore.query --> beets
+beets.dbcore.query --> beets.context
+beets.dbcore.query --> beets.util
+beets.dbcore.query --> beets.util.units
+beets.dbcore.types --> beets
+beets.dbcore.types --> beets.util
+beets.dbcore.types --> beets.util.units
+beets.importer --> beets.importer.actions
+beets.importer --> beets.importer.session
+beets.importer --> beets.importer.tasks
+beets.importer.session --> beets
+beets.importer.session --> beets.dbcore
+beets.importer.session --> beets.importer.actions
+beets.importer.session --> beets.importer.state
+beets.importer.session --> beets.library
+beets.importer.session --> beets.logging
+beets.importer.session --> beets.plugins
+beets.importer.session --> beets.util
+beets.importer.session --> beets.util.pipeline
+beets.importer.stages --> beets
+beets.importer.stages --> beets.importer.actions
+beets.importer.stages --> beets.importer.tasks
+beets.importer.stages --> beets.library
+beets.importer.stages --> beets.plugins
+beets.importer.stages --> beets.util
+beets.importer.stages --> beets.util.pipeline
+beets.importer.state --> beets
+beets.importer.tasks --> beets
+beets.importer.tasks --> beets.autotag
+beets.importer.tasks --> beets.dbcore.query
+beets.importer.tasks --> beets.importer.actions
+beets.importer.tasks --> beets.importer.state
+beets.importer.tasks --> beets.library
+beets.importer.tasks --> beets.plugins
+beets.importer.tasks --> beets.util
+beets.importer.tasks --> beets.util.extension
+beets.library --> beets.exceptions
+beets.library --> beets.library.library
+beets.library --> beets.library.models
+beets.library --> beets.library.queries
+beets.library --> beets.util.deprecation
+beets.library.exceptions --> beets
+beets.library.exceptions --> beets.util
+beets.library.fields --> beets.dbcore
+beets.library.fields --> beets.dbcore.types
+beets.library.library --> beets
+beets.library.library --> beets.context
+beets.library.library --> beets.dbcore
+beets.library.library --> beets.dbcore.query
+beets.library.library --> beets.dbcore.sort
+beets.library.library --> beets.exceptions
+beets.library.library --> beets.library.models
+beets.library.library --> beets.library.queries
+beets.library.library --> beets.util
+beets.library.library --> beets.util.pathformats
+beets.library.migrations --> beets
+beets.library.migrations --> beets.dbcore.db
+beets.library.migrations --> beets.dbcore.pathutils
+beets.library.migrations --> beets.dbcore.types
+beets.library.migrations --> beets.ui
+beets.library.migrations --> beets.util
+beets.library.migrations --> beets.util.lyrics
+beets.library.models --> beets
+beets.library.models --> beets.dbcore
+beets.library.models --> beets.dbcore.db
+beets.library.models --> beets.dbcore.pathutils
+beets.library.models --> beets.dbcore.sort
+beets.library.models --> beets.dbcore.types
+beets.library.models --> beets.library.exceptions
+beets.library.models --> beets.library.fields
+beets.library.models --> beets.library.queries
+beets.library.models --> beets.logging
+beets.library.models --> beets.plugins
+beets.library.models --> beets.util
+beets.library.models --> beets.util.deprecation
+beets.library.models --> beets.util.pathformats
+beets.library.queries --> beets
+beets.library.queries --> beets.dbcore
+beets.library.queries --> beets.logging
+beets.library.queries --> beets.plugins
+beets.logging --> beets
+beets.logging --> beets.logging
+beets.mediafile --> beets.util.deprecation
+beets.metadata_plugins --> beets
+beets.metadata_plugins --> beets.logging
+beets.metadata_plugins --> beets.plugins
+beets.metadata_plugins --> beets.util
+beets.metadata_plugins --> beets.util.id_extractors
+beets.plugins --> beets
+beets.plugins --> beets.library
+beets.plugins --> beets.logging
+beets.plugins --> beets.mediafile
+beets.plugins --> beets.metadata_plugins
+beets.plugins --> beets.util
+beets.plugins --> beets.util.deprecation
+beets.test._common --> beets
+beets.test._common --> beets.importer
+beets.test._common --> beets.logging
+beets.test._common --> beets.ui
+beets.test._common --> beets.ui.commands
+beets.test._common --> beets.util
+beets.test.fixtures --> beets.dbcore
+beets.test.fixtures --> beets.dbcore.db
+beets.test.fixtures --> beets.dbcore.sort
+beets.test.fixtures --> beets.dbcore.types
+beets.test.fixtures --> beets.library
+beets.test.fixtures --> beets.util
+beets.test.fixtures --> beets.util.artresizer
+beets.test.helper --> beets
+beets.test.helper --> beets.autotag
+beets.test.helper --> beets.importer
+beets.test.helper --> beets.library
+beets.test.helper --> beets.test
+beets.test.helper --> beets.test._common
+beets.test.helper --> beets.ui.commands.import_.session
+beets.test.helper --> beets.util
+beets.ui --> beets
+beets.ui --> beets.dbcore
+beets.ui --> beets.dbcore.db
+beets.ui --> beets.dbcore.query
+beets.ui --> beets.exceptions
+beets.ui --> beets.library
+beets.ui --> beets.logging
+beets.ui --> beets.plugins
+beets.ui --> beets.ui.commands
+beets.ui --> beets.ui.commands.config
+beets.ui --> beets.util
+beets.ui --> beets.util.color
+beets.ui --> beets.util.deprecation
+beets.ui --> beets.util.diff
+beets.ui.commands --> beets.ui.commands.completion
+beets.ui.commands --> beets.ui.commands.config
+beets.ui.commands --> beets.ui.commands.fields
+beets.ui.commands --> beets.ui.commands.help
+beets.ui.commands --> beets.ui.commands.import_
+beets.ui.commands --> beets.ui.commands.list
+beets.ui.commands --> beets.ui.commands.modify
+beets.ui.commands --> beets.ui.commands.move
+beets.ui.commands --> beets.ui.commands.remove
+beets.ui.commands --> beets.ui.commands.stats
+beets.ui.commands --> beets.ui.commands.update
+beets.ui.commands --> beets.ui.commands.version
+beets.ui.commands --> beets.ui.commands.write
+beets.ui.commands --> beets.util.deprecation
+beets.ui.commands.completion --> beets
+beets.ui.commands.completion --> beets.library
+beets.ui.commands.completion --> beets.logging
+beets.ui.commands.completion --> beets.plugins
+beets.ui.commands.completion --> beets.ui
+beets.ui.commands.completion --> beets.ui.commands
+beets.ui.commands.completion --> beets.util
+beets.ui.commands.config --> beets
+beets.ui.commands.config --> beets.exceptions
+beets.ui.commands.config --> beets.ui
+beets.ui.commands.config --> beets.util
+beets.ui.commands.fields --> beets
+beets.ui.commands.fields --> beets.library
+beets.ui.commands.fields --> beets.ui
+beets.ui.commands.help --> beets
+beets.ui.commands.help --> beets.exceptions
+beets.ui.commands.help --> beets.ui
+beets.ui.commands.import_ --> beets
+beets.ui.commands.import_ --> beets.exceptions
+beets.ui.commands.import_ --> beets.logging
+beets.ui.commands.import_ --> beets.plugins
+beets.ui.commands.import_ --> beets.ui
+beets.ui.commands.import_ --> beets.ui.commands.import_.session
+beets.ui.commands.import_ --> beets.util
+beets.ui.commands.import_.display --> beets
+beets.ui.commands.import_.display --> beets.autotag
+beets.ui.commands.import_.display --> beets.ui
+beets.ui.commands.import_.display --> beets.util
+beets.ui.commands.import_.display --> beets.util.color
+beets.ui.commands.import_.display --> beets.util.diff
+beets.ui.commands.import_.display --> beets.util.layout
+beets.ui.commands.import_.display --> beets.util.units
+beets.ui.commands.import_.session --> beets
+beets.ui.commands.import_.session --> beets.autotag
+beets.ui.commands.import_.session --> beets.importer
+beets.ui.commands.import_.session --> beets.library
+beets.ui.commands.import_.session --> beets.logging
+beets.ui.commands.import_.session --> beets.plugins
+beets.ui.commands.import_.session --> beets.ui
+beets.ui.commands.import_.session --> beets.ui.commands.import_.display
+beets.ui.commands.import_.session --> beets.util
+beets.ui.commands.import_.session --> beets.util.color
+beets.ui.commands.import_.session --> beets.util.units
+beets.ui.commands.list --> beets
+beets.ui.commands.list --> beets.exceptions
+beets.ui.commands.list --> beets.ui
+beets.ui.commands.modify --> beets
+beets.ui.commands.modify --> beets.dbcore
+beets.ui.commands.modify --> beets.dbcore.types
+beets.ui.commands.modify --> beets.exceptions
+beets.ui.commands.modify --> beets.library
+beets.ui.commands.modify --> beets.ui
+beets.ui.commands.modify --> beets.util.deprecation
+beets.ui.commands.move --> beets
+beets.ui.commands.move --> beets.exceptions
+beets.ui.commands.move --> beets.logging
+beets.ui.commands.move --> beets.ui
+beets.ui.commands.move --> beets.util
+beets.ui.commands.move --> beets.util.diff
+beets.ui.commands.remove --> beets
+beets.ui.commands.remove --> beets.exceptions
+beets.ui.commands.remove --> beets.ui
+beets.ui.commands.stats --> beets
+beets.ui.commands.stats --> beets.logging
+beets.ui.commands.stats --> beets.ui
+beets.ui.commands.stats --> beets.util
+beets.ui.commands.stats --> beets.util.units
+beets.ui.commands.update --> beets
+beets.ui.commands.update --> beets.exceptions
+beets.ui.commands.update --> beets.library
+beets.ui.commands.update --> beets.logging
+beets.ui.commands.update --> beets.ui
+beets.ui.commands.update --> beets.util
+beets.ui.commands.update --> beets.util.color
+beets.ui.commands.version --> beets
+beets.ui.commands.version --> beets.plugins
+beets.ui.commands.version --> beets.ui
+beets.ui.commands.write --> beets
+beets.ui.commands.write --> beets.exceptions
+beets.ui.commands.write --> beets.library
+beets.ui.commands.write --> beets.logging
+beets.ui.commands.write --> beets.ui
+beets.ui.commands.write --> beets.util
+beets.util --> beets
+beets.util --> beets.util
+beets.util --> beets.util.hidden
+beets.util.artresizer --> beets
+beets.util.artresizer --> beets.logging
+beets.util.artresizer --> beets.util
+beets.util.color --> beets
+beets.util.deprecation --> beets
+beets.util.deprecation --> beets.logging
+beets.util.diff --> beets.util.color
+beets.util.extension --> beets
+beets.util.extension --> beets.util
+beets.util.id_extractors --> beets
+beets.util.id_extractors --> beets.logging
+beets.util.layout --> beets
+beets.util.layout --> beets.util.color
+beets.util.lyrics --> beets.util
+beets.util.m3u --> beets.util
+beets ..> beets.logging
+beets.autotag.distance ..> beets.autotag.hooks
+beets.autotag.distance ..> beets.library
+beets.autotag.match ..> beets.autotag
+beets.autotag.match ..> beets.autotag.hooks
+beets.autotag.match ..> beets.library
+beets.autotag.source ..> beets.library
+beets.dbcore.db ..> beets.dbcore.types
+beets.dbcore.query ..> beets.dbcore.db
+beets.dbcore.sort ..> beets.dbcore.db
+beets.events ..> beets.autotag
+beets.events ..> beets.autotag.match
+beets.events ..> beets.importer
+beets.events ..> beets.library
+beets.importer.session ..> beets.autotag
+beets.importer.session ..> beets.importer.tasks
+beets.importer.stages ..> beets.importer.session
+beets.importer.state ..> beets.util
+beets.importer.tasks ..> beets.importer.session
+beets.library.migrations ..> beets.library
+beets.library.models ..> beets.dbcore.query
+beets.library.models ..> beets.library.library
+beets.library.models ..> beets.util.functemplate
+beets.library.queries ..> beets.dbcore.queryparse
+beets.library.queries ..> beets.library
+beets.metadata_plugins ..> beets.autotag
+beets.metadata_plugins ..> beets.library.models
+beets.plugins ..> beets.autotag
+beets.plugins ..> beets.dbcore.db
+beets.plugins ..> beets.dbcore.types
+beets.plugins ..> beets.importer
+beets.plugins ..> beets.ui
+beets.test._common ..> beets.dbcore
+beets.test._common ..> beets.library
+beets.ui.commands ..> beets.ui
+beets.ui.commands.config ..> beets.library
+beets.ui.commands.help ..> beets.library
+beets.ui.commands.import_ ..> beets.library
+beets.ui.commands.import_.display ..> beets.library
+beets.ui.commands.list ..> beets.library
+beets.ui.commands.move ..> beets.library
+beets.ui.commands.remove ..> beets.library
+beets.ui.commands.stats ..> beets.library
+beets.ui.commands.version ..> beets.library
+beets.util ..> beets.importer
+beets.util ..> beets.library
+beets.util ..> beets.logging
+beets.util.color ..> beets.util
+beets.util.diff ..> beets.dbcore.db
+beets.util.diff ..> beets.library
+beets.util.hidden ..> beets.util
+beets.util.lyrics ..> beets.library
+@enduml

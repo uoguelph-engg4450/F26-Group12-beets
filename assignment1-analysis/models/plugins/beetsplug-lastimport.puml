@@ -1,0 +1,31 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-lastimport
+package "beetsplug.lastimport" {
+  ' beetsplug.lastimport.OurTrack at beetsplug/lastimport.py:25
+  class "OurTrack" as c_0432
+  ' beetsplug.lastimport.OurTopItem at beetsplug/lastimport.py:29
+  class "OurTopItem" as c_0433 <<namedtuple>>
+  ' beetsplug.lastimport.LastImportPlugin at beetsplug/lastimport.py:34
+  class "LastImportPlugin" as c_0434
+  ' beetsplug.lastimport.CustomUser at beetsplug/lastimport.py:53
+  class "CustomUser" as c_0435
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "pylast.Track" as external_1 <<external>>
+class "pylast.User" as external_2 <<external>>
+class "typing.NamedTuple" as external_3 <<external>>
+c_0432 --|> external_1
+c_0433 --|> external_3
+c_0434 --|> c_0149
+c_0435 --|> external_2
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-plexupdate
+package "beetsplug.plexupdate" {
+  ' beetsplug.plexupdate.PlexUpdateCLIOpts at beetsplug/plexupdate.py:52
+  class "PlexUpdateCLIOpts" as c_0501 <<protocol>>
+  ' beetsplug.plexupdate.PlexSession at beetsplug/plexupdate.py:56
+  class "PlexSession" as c_0502
+  ' beetsplug.plexupdate.UnauthorizedPlexError at beetsplug/plexupdate.py:173
+  class "UnauthorizedPlexError" as c_0503
+  ' beetsplug.plexupdate.PlexAPI at beetsplug/plexupdate.py:186
+  class "PlexAPI" as c_0504
+  ' beetsplug.plexupdate.PlexUpdate at beetsplug/plexupdate.py:285
+  class "PlexUpdate" as c_0505
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "beetsplug._utils.requests.BeetsHTTPError" as c_0290 <<reference>>
+class "beetsplug._utils.requests.RequestHandler" as c_0296 <<reference>>
+class "beetsplug._utils.requests.TimeoutAndRetrySession" as c_0294 <<reference>>
+class "typing.Protocol" as external_4 <<external>>
+c_0501 --|> external_4
+c_0502 --|> c_0294
+c_0503 --|> c_0290
+c_0504 --|> c_0296
+c_0505 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-tidal
+package "beetsplug.tidal" {
+  ' beetsplug.tidal.TidalCLIOpts at beetsplug/tidal/__init__.py:39
+  class "TidalCLIOpts" as c_0549 <<protocol>>
+  ' beetsplug.tidal.TidalSyncCLIOpts at beetsplug/tidal/__init__.py:43
+  class "TidalSyncCLIOpts" as c_0550 <<protocol>>
+  ' beetsplug.tidal.TidalPlugin at beetsplug/tidal/__init__.py:65
+  class "TidalPlugin" as c_0551
+}
+class "beets.metadata_plugins.MetadataSourcePlugin" as c_0142 <<reference>>
+class "typing.Protocol" as external_1 <<external>>
+c_0549 --|> external_1
+c_0550 --|> external_1
+c_0551 --|> c_0142
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

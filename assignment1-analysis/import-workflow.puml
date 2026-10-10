@@ -1,0 +1,44 @@
+@startuml
+title Album import: conceptual execution of coroutine stages
+actor User
+participant "CLI / TerminalImportSession" as CLI
+participant "ImportSession" as Session
+participant "Pipeline + beets.importer.stages" as Stages
+participant ImportTask as Task
+participant "beets.autotag" as Autotag
+participant "beets.metadata_plugins / loaded providers" as Providers
+participant Library
+participant "Item / filesystem" as Files
+participant "beets.plugins" as Plugins
+User -> CLI : beet import
+CLI -> Session : run()
+Session -> Stages : build stages; run sequentially or in parallel
+Stages -> Task : factory.tasks(): read items / create task
+alt autotag enabled
+  Stages -> Task : lookup_candidates(search_ids)
+  Task -> Autotag : tag_album(source)
+  Autotag -> Providers : candidates / albums_for_ids
+  Providers --> Autotag : AlbumInfo / TrackInfo values
+  Autotag --> Task : Proposal(candidates, recommendation)
+  Stages -> Task : choose_match(session)
+  Task -> CLI : choose_match(task)
+  CLI --> Task : AlbumMatch or Action
+else import as-is
+  Stages -> Task : set_choice(Action.ASIS)
+end
+Stages -> Library : resolve duplicates through task operations
+Stages -> Task : _apply_choice: apply_metadata() if selected
+Stages -> Task : add(lib)
+Task -> Library : add_album(items) / add or store items
+Stages -> Task : set_fields(lib) if configured
+Stages -> Plugins : early_import_stages and import_stages callbacks
+Stages -> Task : manipulate_files(...)
+Task -> Files : configured tag writing / file operations
+Stages -> Task : finalize(session)
+Task -> Plugins : album_imported event
+note over Stages, Plugins
+Events also occur during task creation, lookup, choice and file handling.
+Skip, singleton, pretend, merge, rescan and reimport branches are omitted.
+The diagram summarizes stage execution rather than every call frame.
+end note
+@enduml

@@ -1,0 +1,53 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_tidal
+package "test.plugins.test_tidal" {
+  ' test.plugins.test_tidal.TidalPluginTest at test/plugins/test_tidal.py:169
+  class "TidalPluginTest" as c_0904
+  ' test.plugins.test_tidal.TestAPI at test/plugins/test_tidal.py:177
+  class "TestAPI" as c_0905
+  ' test.plugins.test_tidal.TestParsing at test/plugins/test_tidal.py:197
+  class "TestParsing" as c_0906
+  ' test.plugins.test_tidal.TestArtworkParsing at test/plugins/test_tidal.py:375
+  class "TestArtworkParsing" as c_0907
+  ' test.plugins.test_tidal.TestTrackParsing at test/plugins/test_tidal.py:427
+  class "TestTrackParsing" as c_0908
+  ' test.plugins.test_tidal.TestTrackForID at test/plugins/test_tidal.py:458
+  class "TestTrackForID" as c_0909
+  ' test.plugins.test_tidal.TestTracksForIDs at test/plugins/test_tidal.py:490
+  class "TestTracksForIDs" as c_0910
+  ' test.plugins.test_tidal.TestAlbumForID at test/plugins/test_tidal.py:545
+  class "TestAlbumForID" as c_0911
+  ' test.plugins.test_tidal.TestAlbumsForIDs at test/plugins/test_tidal.py:581
+  class "TestAlbumsForIDs" as c_0912
+  ' test.plugins.test_tidal.TestCandidates at test/plugins/test_tidal.py:655
+  class "TestCandidates" as c_0913
+  ' test.plugins.test_tidal.TestItemCandidates at test/plugins/test_tidal.py:722
+  class "TestItemCandidates" as c_0914
+  ' test.plugins.test_tidal.TestStaticHelpers at test/plugins/test_tidal.py:775
+  class "TestStaticHelpers" as c_0915
+  ' test.plugins.test_tidal.TestTidalsync at test/plugins/test_tidal.py:933
+  class "TestTidalsync" as c_0916
+}
+class "beets.test.helper.PluginTestHelper" as c_0166 <<reference>>
+c_0904 --|> c_0166
+c_0906 --|> c_0904
+c_0907 --|> c_0904
+c_0908 --|> c_0904
+c_0909 --|> c_0904
+c_0910 --|> c_0904
+c_0911 --|> c_0904
+c_0912 --|> c_0904
+c_0913 --|> c_0904
+c_0914 --|> c_0904
+c_0916 --|> c_0904
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

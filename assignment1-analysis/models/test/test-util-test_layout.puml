@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-util-test_layout
+package "test.util.test_layout" {
+  ' test.util.test_layout.LayoutTestCase at test/util/test_layout.py:6
+  class "LayoutTestCase" as c_1088
+}
+class "unittest.TestCase" as external_0 <<external>>
+c_1088 --|> external_0
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

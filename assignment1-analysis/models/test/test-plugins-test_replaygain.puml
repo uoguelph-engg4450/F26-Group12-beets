@@ -1,0 +1,91 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_replaygain
+package "test.plugins.test_replaygain" {
+  ' test.plugins.test_replaygain.ReplayGainPluginHelper at test/plugins/test_replaygain.py:53
+  class "ReplayGainPluginHelper" as c_0873
+  ' test.plugins.test_replaygain.ThreadedImportMixin at test/plugins/test_replaygain.py:74
+  class "ThreadedImportMixin" as c_0874
+  ' test.plugins.test_replaygain.BackendMixin at test/plugins/test_replaygain.py:80
+  abstract class "BackendMixin" as c_0875
+  ' test.plugins.test_replaygain.GstBackendMixin at test/plugins/test_replaygain.py:89
+  class "GstBackendMixin" as c_0876
+  ' test.plugins.test_replaygain.CmdBackendMixin at test/plugins/test_replaygain.py:105
+  class "CmdBackendMixin" as c_0877
+  ' test.plugins.test_replaygain.FfmpegBackendMixin at test/plugins/test_replaygain.py:113
+  class "FfmpegBackendMixin" as c_0878
+  ' test.plugins.test_replaygain.MetaflacBackendMixin at test/plugins/test_replaygain.py:118
+  class "MetaflacBackendMixin" as c_0879
+  ' test.plugins.test_replaygain.ReplayGainCliTest at test/plugins/test_replaygain.py:128
+  class "ReplayGainCliTest" as c_0880
+  ' test.plugins.test_replaygain.TestReplayGainGstCli at test/plugins/test_replaygain.py:371
+  class "TestReplayGainGstCli" as c_0881
+  ' test.plugins.test_replaygain.TestReplayGainCmdCli at test/plugins/test_replaygain.py:378
+  class "TestReplayGainCmdCli" as c_0882
+  ' test.plugins.test_replaygain.TestReplayGainFfmpegCli at test/plugins/test_replaygain.py:385
+  class "TestReplayGainFfmpegCli" as c_0883
+  ' test.plugins.test_replaygain.TestReplayGainFfmpegNoiseCli at test/plugins/test_replaygain.py:392
+  class "TestReplayGainFfmpegNoiseCli" as c_0884
+  ' test.plugins.test_replaygain.TestReplayGainMetaflacCli at test/plugins/test_replaygain.py:399
+  class "TestReplayGainMetaflacCli" as c_0885
+  ' test.plugins.test_replaygain.ImportTest at test/plugins/test_replaygain.py:421
+  class "ImportTest" as c_0886
+  ' test.plugins.test_replaygain.TestReplayGainGstImport at test/plugins/test_replaygain.py:433
+  class "TestReplayGainGstImport" as c_0887
+  ' test.plugins.test_replaygain.TestReplayGainCmdImport at test/plugins/test_replaygain.py:440
+  class "TestReplayGainCmdImport" as c_0888
+  ' test.plugins.test_replaygain.TestReplayGainFfmpegImport at test/plugins/test_replaygain.py:447
+  class "TestReplayGainFfmpegImport" as c_0889
+  ' test.plugins.test_replaygain.TestReplayGainFfmpegThreadedImport at test/plugins/test_replaygain.py:454
+  class "TestReplayGainFfmpegThreadedImport" as c_0890
+}
+class "abc.ABC" as external_0 <<external>>
+class "beets.test.helper.AsIsImporterMixin" as c_0169 <<reference>>
+class "beets.test.helper.ImportHelper" as c_0168 <<reference>>
+class "beets.test.helper.PluginMixin" as c_0164 <<reference>>
+c_0873 --|> c_0164
+c_0873 --|> c_0168
+c_0875 --|> external_0
+c_0876 --|> c_0875
+c_0877 --|> c_0875
+c_0878 --|> c_0875
+c_0879 --|> c_0875
+c_0881 --|> c_0880
+c_0881 --|> c_0873
+c_0881 --|> c_0876
+c_0882 --|> c_0880
+c_0882 --|> c_0873
+c_0882 --|> c_0877
+c_0883 --|> c_0880
+c_0883 --|> c_0873
+c_0883 --|> c_0878
+c_0884 --|> c_0880
+c_0884 --|> c_0873
+c_0884 --|> c_0878
+c_0885 --|> c_0880
+c_0885 --|> c_0873
+c_0885 --|> c_0879
+c_0886 --|> c_0169
+c_0887 --|> c_0886
+c_0887 --|> c_0873
+c_0887 --|> c_0876
+c_0888 --|> c_0886
+c_0888 --|> c_0873
+c_0888 --|> c_0877
+c_0889 --|> c_0886
+c_0889 --|> c_0873
+c_0889 --|> c_0878
+c_0890 --|> c_0874
+c_0890 --|> c_0886
+c_0890 --|> c_0873
+c_0890 --|> c_0878
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

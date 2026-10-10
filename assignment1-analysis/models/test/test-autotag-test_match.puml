@@ -1,0 +1,27 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-autotag-test_match
+package "test.autotag.test_match" {
+  ' test.autotag.test_match.TestAssignment at test/autotag/test_match.py:17
+  class "TestAssignment" as c_0606
+  ' test.autotag.test_match.TestTagMultipleDataSources at test/autotag/test_match.py:105
+  class "TestTagMultipleDataSources" as c_0607
+  ' test.autotag.test_match.TestTagMultipleDataSources._setup_plugins.StubPlugin at test/autotag/test_match.py:116
+  class "StubPlugin" as c_0608 <<nested>>
+  ' test.autotag.test_match.TestTagMultipleDataSources._setup_plugins.DeezerPlugin at test/autotag/test_match.py:151
+  class "DeezerPlugin" as c_0609 <<nested>>
+  ' test.autotag.test_match.TestTagMultipleDataSources._setup_plugins.DiscogsPlugin at test/autotag/test_match.py:154
+  class "DiscogsPlugin" as c_0610 <<nested>>
+}
+c_0609 --|> c_0608
+c_0610 --|> c_0608
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

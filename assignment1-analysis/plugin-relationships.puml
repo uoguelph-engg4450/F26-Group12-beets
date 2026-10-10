@@ -1,0 +1,53 @@
+@startuml
+allowmixing
+title Plugin contracts, provider specialization and extension points
+hide empty members
+left to right direction
+package "Core plugin API" {
+  class BeetsPluginMeta <<metaclass>>
+  class BeetsPlugin {
+    commands()
+    register_listener(event, func)
+    early_import_stages
+    import_stages
+    template_funcs
+    template_fields
+  }
+  abstract class MetadataSourcePlugin {
+    album_for_id(id)
+    track_for_id(id)
+  }
+  abstract class "SearchApiMetadataSourcePlugin<R>" as SearchApiMetadataSourcePlugin {
+    get_search_query_with_filters(...)
+    get_search_response(params)
+  }
+  class SearchParams <<namedtuple>>
+}
+class "beets.ui.Subcommand" as Subcommand <<reference>>
+class "beetsplug.musicbrainz.MusicBrainzPlugin" as MusicBrainz
+class "beetsplug.spotify.SpotifyPlugin" as Spotify
+class "beetsplug.chroma.AcoustidPlugin" as Acoustid
+class "beetsplug.tidal.TidalPlugin" as Tidal
+component "beets.plugins\nload_plugins / find_plugins / send" as Registry <<module>>
+component "Importer coroutine stages" as Stages
+component "Metadata search orchestration" as Search
+BeetsPlugin ..> BeetsPluginMeta : metaclass
+MetadataSourcePlugin --|> BeetsPlugin
+SearchApiMetadataSourcePlugin --|> MetadataSourcePlugin
+MusicBrainz --|> SearchApiMetadataSourcePlugin
+Spotify --|> SearchApiMetadataSourcePlugin
+Acoustid --|> MetadataSourcePlugin
+Tidal --|> MetadataSourcePlugin
+SearchApiMetadataSourcePlugin ..> SearchParams : creates / passes to hook
+BeetsPlugin ..> Subcommand : commands() returns
+Registry --> "0..*" BeetsPlugin : _instances / listeners
+BeetsPlugin ..> Registry : register listener
+Stages ..> Registry : send events / request stage callbacks
+Search ..> Registry : find metadata providers
+Search ..> MetadataSourcePlugin : execute provider hooks
+note bottom of Registry
+The registry and event dispatcher are module functions,
+not an additional PluginManager class.
+beets.events declares event names and payload schemas.
+end note
+@enduml

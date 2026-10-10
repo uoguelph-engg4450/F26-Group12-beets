@@ -1,0 +1,72 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-_typing
+package "beetsplug._typing" {
+  ' beetsplug._typing.LRCLibAPI at beetsplug/_typing.py:10
+  class "LRCLibAPI" as c_0232
+  ' beetsplug._typing.LRCLibAPI.Item at beetsplug/_typing.py:11
+  class "Item" as c_0233 <<schema>>
+  ' beetsplug._typing.GeniusAPI at beetsplug/_typing.py:26
+  class "GeniusAPI" as c_0234
+  ' beetsplug._typing.GeniusAPI.DateComponents at beetsplug/_typing.py:34
+  class "DateComponents" as c_0235 <<schema>>
+  ' beetsplug._typing.GeniusAPI.Artist at beetsplug/_typing.py:39
+  class "Artist" as c_0236 <<schema>>
+  ' beetsplug._typing.GeniusAPI.Stats at beetsplug/_typing.py:49
+  class "Stats" as c_0237 <<schema>>
+  ' beetsplug._typing.GeniusAPI.SearchResult at beetsplug/_typing.py:53
+  class "SearchResult" as c_0238 <<schema>>
+  ' beetsplug._typing.GeniusAPI.SearchHit at beetsplug/_typing.py:80
+  class "SearchHit" as c_0239 <<schema>>
+  ' beetsplug._typing.GeniusAPI.SearchResponse at beetsplug/_typing.py:83
+  class "SearchResponse" as c_0240 <<schema>>
+  ' beetsplug._typing.GeniusAPI.Search at beetsplug/_typing.py:86
+  class "Search" as c_0241 <<schema>>
+  ' beetsplug._typing.GeniusAPI.StatusResponse at beetsplug/_typing.py:89
+  class "StatusResponse" as c_0242 <<schema>>
+  ' beetsplug._typing.GeniusAPI.Meta at beetsplug/_typing.py:93
+  class "Meta" as c_0243 <<schema>>
+  ' beetsplug._typing.GoogleCustomSearchAPI at beetsplug/_typing.py:99
+  class "GoogleCustomSearchAPI" as c_0244
+  ' beetsplug._typing.GoogleCustomSearchAPI.Response at beetsplug/_typing.py:100
+  class "Response" as c_0245 <<schema>>
+  ' beetsplug._typing.GoogleCustomSearchAPI.Item at beetsplug/_typing.py:108
+  class "Item" as c_0246 <<schema>>
+  ' beetsplug._typing.GoogleCustomSearchAPI.Pagemap at beetsplug/_typing.py:122
+  class "Pagemap" as c_0247 <<schema>>
+  ' beetsplug._typing.TranslatorAPI at beetsplug/_typing.py:128
+  class "TranslatorAPI" as c_0248
+  ' beetsplug._typing.TranslatorAPI.Language at beetsplug/_typing.py:129
+  class "Language" as c_0249 <<schema>>
+  ' beetsplug._typing.TranslatorAPI.Translation at beetsplug/_typing.py:135
+  class "Translation" as c_0250 <<schema>>
+  ' beetsplug._typing.TranslatorAPI.Response at beetsplug/_typing.py:141
+  class "Response" as c_0251 <<schema>>
+}
+class "typing_extensions.TypedDict" as external_0 <<external>>
+c_0233 --|> external_0
+c_0235 --|> external_0
+c_0236 --|> external_0
+c_0237 --|> external_0
+c_0238 --|> external_0
+c_0239 --|> external_0
+c_0240 --|> external_0
+c_0241 --|> external_0
+c_0242 --|> external_0
+c_0243 --|> external_0
+c_0245 --|> external_0
+c_0246 --|> external_0
+c_0247 --|> external_0
+c_0249 --|> external_0
+c_0250 --|> external_0
+c_0251 --|> external_0
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

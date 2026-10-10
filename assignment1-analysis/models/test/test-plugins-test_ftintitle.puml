@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_ftintitle
+package "test.plugins.test_ftintitle" {
+  ' test.plugins.test_ftintitle.TestFtInTitlePluginFunctional at test/plugins/test_ftintitle.py:17
+  class "TestFtInTitlePluginFunctional" as c_0786
+}
+class "beets.test.helper.PluginTestHelper" as c_0166 <<reference>>
+c_0786 --|> c_0166
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

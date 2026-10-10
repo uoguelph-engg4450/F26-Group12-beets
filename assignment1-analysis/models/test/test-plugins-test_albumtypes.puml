@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_albumtypes
+package "test.plugins.test_albumtypes" {
+  ' test.plugins.test_albumtypes.AlbumTypesPluginTest at test/plugins/test_albumtypes.py:15
+  class "AlbumTypesPluginTest" as c_0699
+}
+class "beets.test.helper.PluginTestCase" as c_0165 <<reference>>
+c_0699 --|> c_0165
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

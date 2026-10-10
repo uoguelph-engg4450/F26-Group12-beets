@@ -1,0 +1,21 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-parentwork
+package "beetsplug.parentwork" {
+  ' beetsplug.parentwork.ParentWorkPlugin at beetsplug/parentwork.py:26
+  class "ParentWorkPlugin" as c_0495
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "beetsplug._utils.musicbrainz.MusicBrainzAPIMixin" as c_0288 <<reference>>
+c_0495 --|> c_0288
+c_0495 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

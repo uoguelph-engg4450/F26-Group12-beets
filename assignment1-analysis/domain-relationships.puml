@@ -1,0 +1,54 @@
+@startuml
+allowmixing
+title Music domain and persistence relationships
+hide empty members
+left to right direction
+package "beets.dbcore.db" {
+  class Database
+  class "Model<D>" as Model
+  class Results
+  class Transaction
+}
+package "beets.library" {
+  class Library {
+    add_album(items)
+    items(query)
+    albums(query)
+  }
+  class LibModel
+  class Album {
+    items()
+    remove(delete, with_items)
+  }
+  class Item {
+    album_id : int | None
+    read()
+    write()
+    store()
+  }
+}
+class "mediafile.MediaFile" as MediaFile <<external>>
+database SQLite
+Library --|> Database
+LibModel --|> Model
+Item --|> LibModel
+Album --|> LibModel
+Model --> "0..1" Database : _db
+Library ..> Item : add / fetch / declared _models
+Library ..> Album : add / fetch / declared _models
+Album "0..1" -- "0..*" Item : album_id / items()
+Transaction --> "1" Database : db
+Database ..> Transaction : transaction()
+Results --> "0..*" Model : materialized results
+Database ..> SQLite : connection / SQL
+Item ..> MediaFile : instantiate for tag I/O
+note bottom of Album
+An Item may be a singleton (album_id is None).
+Album removal can preserve items with with_items=False.
+Use an association rather than mandatory composition.
+end note
+note bottom of Model
+LibModel specializes Model with Library as D.
+The database reference can be absent before persistence.
+end note
+@enduml

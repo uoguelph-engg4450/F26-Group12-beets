@@ -1,0 +1,67 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_lyrics
+package "test.plugins.test_lyrics" {
+  ' test.plugins.test_lyrics.TestLyricsUtils at test/plugins/test_lyrics.py:43
+  class "TestLyricsUtils" as c_0809
+  ' test.plugins.test_lyrics.TestHtml at test/plugins/test_lyrics.py:142
+  class "TestHtml" as c_0810
+  ' test.plugins.test_lyrics.TestSearchBackend at test/plugins/test_lyrics.py:161
+  class "TestSearchBackend" as c_0811
+  ' test.plugins.test_lyrics.LyricsPluginMixin at test/plugins/test_lyrics.py:202
+  class "LyricsPluginMixin" as c_0812
+  ' test.plugins.test_lyrics.TestLyricsPlugin at test/plugins/test_lyrics.py:219
+  class "TestLyricsPlugin" as c_0813
+  ' test.plugins.test_lyrics.LyricsBackendTest at test/plugins/test_lyrics.py:388
+  class "LyricsBackendTest" as c_0814
+  ' test.plugins.test_lyrics.TestLyricsSources at test/plugins/test_lyrics.py:402
+  class "TestLyricsSources" as c_0815
+  ' test.plugins.test_lyrics.TestGoogleLyrics at test/plugins/test_lyrics.py:467
+  class "TestGoogleLyrics" as c_0816
+  ' test.plugins.test_lyrics.TestGeniusLyrics at test/plugins/test_lyrics.py:537
+  class "TestGeniusLyrics" as c_0817
+  ' test.plugins.test_lyrics.TestTekstowoLyrics at test/plugins/test_lyrics.py:556
+  class "TestTekstowoLyrics" as c_0818
+  ' test.plugins.test_lyrics.TestLRCLibLyrics at test/plugins/test_lyrics.py:589
+  class "TestLRCLibLyrics" as c_0819
+  ' test.plugins.test_lyrics.TestLRCMuxLyrics at test/plugins/test_lyrics.py:719
+  class "TestLRCMuxLyrics" as c_0820
+  ' test.plugins.test_lyrics.TestTranslation at test/plugins/test_lyrics.py:772
+  class "TestTranslation" as c_0821
+  ' test.plugins.test_lyrics.TestRestFiles at test/plugins/test_lyrics.py:869
+  class "TestRestFiles" as c_0822
+  ' test.plugins.test_lyrics.TestLyricsRestDirectory at test/plugins/test_lyrics.py:917
+  class "TestLyricsRestDirectory" as c_0823
+  ' test.plugins.test_lyrics.TestLyricsRestDirectory.test_rest_config.MockRestFiles at test/plugins/test_lyrics.py:936
+  class "MockRestFiles" as c_0824 <<nested>>
+  ' test.plugins.test_lyrics.TestLyricsKeepSyncedCommand at test/plugins/test_lyrics.py:953
+  class "TestLyricsKeepSyncedCommand" as c_0825
+  ' test.plugins.test_lyrics.TestLyricsSyltProperty at test/plugins/test_lyrics.py:986
+  class "TestLyricsSyltProperty" as c_0826
+  ' test.plugins.test_lyrics.TestSyncedLyricsWrite at test/plugins/test_lyrics.py:1023
+  class "TestSyncedLyricsWrite" as c_0827
+}
+class "beets.test.helper.PluginMixin" as c_0164 <<reference>>
+class "beets.test.helper.PluginTestHelper" as c_0166 <<reference>>
+c_0812 --|> c_0164
+c_0813 --|> c_0812
+c_0814 --|> c_0812
+c_0815 --|> c_0814
+c_0816 --|> c_0814
+c_0817 --|> c_0814
+c_0818 --|> c_0814
+c_0819 --|> c_0814
+c_0820 --|> c_0814
+c_0823 --|> c_0166
+c_0825 --|> c_0166
+c_0827 --|> c_0812
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

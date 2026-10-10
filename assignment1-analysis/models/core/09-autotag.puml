@@ -1,0 +1,53 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Metadata values, matching and distance
+package "beets.autotag.distance" {
+  ' beets.autotag.distance.Distance at beets/autotag/distance.py:124
+  class "Distance" as c_0001
+}
+package "beets.autotag.hooks" {
+  ' beets.autotag.hooks.Info at beets/autotag/hooks.py:86
+  class "Info" as c_0002
+  ' beets.autotag.hooks.AlbumInfo at beets/autotag/hooks.py:214
+  class "AlbumInfo" as c_0003
+  ' beets.autotag.hooks.TrackInfo at beets/autotag/hooks.py:337
+  class "TrackInfo" as c_0004
+}
+package "beets.autotag.match" {
+  ' beets.autotag.match.Recommendation at beets/autotag/match.py:39
+  class "Recommendation" as c_0005 <<enum>>
+  ' beets.autotag.match.Match at beets/autotag/match.py:86
+  class "Match" as c_0006
+  ' beets.autotag.match.AlbumMatch at beets/autotag/match.py:143
+  class "AlbumMatch" as c_0007
+  ' beets.autotag.match.TrackMatch at beets/autotag/match.py:205
+  class "TrackMatch" as c_0008
+  ' beets.autotag.match.Proposal at beets/autotag/match.py:247
+  class "Proposal" as c_0009 <<namedtuple>>
+}
+package "beets.autotag.source" {
+  ' beets.autotag.source.Source at beets/autotag/source.py:13
+  class "Source" as c_0010 <<namedtuple>>
+}
+class "beets.util.AttrDict" as c_0205 <<reference>>
+class "enum.IntEnum" as external_1 <<external>>
+class "typing.NamedTuple" as external_2 <<external>>
+c_0002 --|> c_0205
+' Parameterized source base: AttrDict[Any]
+c_0003 --|> c_0002
+c_0004 --|> c_0002
+c_0005 --|> external_1
+c_0007 --|> c_0006
+c_0008 --|> c_0006
+c_0009 --|> external_2
+c_0010 --|> external_2
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,66 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-ui-test_ui_importer
+package "test.ui.test_ui_importer" {
+  ' test.ui.test_ui_importer.TestNonAutotaggedImport at test/ui/test_ui_importer.py:14
+  class "TestNonAutotaggedImport" as c_1069
+  ' test.ui.test_ui_importer.TestImport at test/ui/test_ui_importer.py:20
+  class "TestImport" as c_1070
+  ' test.ui.test_ui_importer.ImportSingletonTest at test/ui/test_ui_importer.py:24
+  class "ImportSingletonTest" as c_1071
+  ' test.ui.test_ui_importer.ImportTracksTest at test/ui/test_ui_importer.py:37
+  class "ImportTracksTest" as c_1072
+  ' test.ui.test_ui_importer.ImportCompilationTest at test/ui/test_ui_importer.py:41
+  class "ImportCompilationTest" as c_1073
+  ' test.ui.test_ui_importer.ImportExistingTest at test/ui/test_ui_importer.py:47
+  class "ImportExistingTest" as c_1074
+  ' test.ui.test_ui_importer.ChooseCandidateTest at test/ui/test_ui_importer.py:51
+  class "ChooseCandidateTest" as c_1075
+  ' test.ui.test_ui_importer.GroupAlbumsImportTest at test/ui/test_ui_importer.py:80
+  class "GroupAlbumsImportTest" as c_1076
+  ' test.ui.test_ui_importer.GlobalGroupAlbumsImportTest at test/ui/test_ui_importer.py:86
+  class "GlobalGroupAlbumsImportTest" as c_1077
+  ' test.ui.test_ui_importer.TestImportDuplicateAlbumUpgrade at test/ui/test_ui_importer.py:92
+  class "TestImportDuplicateAlbumUpgrade" as c_1078
+}
+class "beets.test.helper.TerminalImportMixin" as c_0172 <<reference>>
+class "test.test_importer.ChooseCandidateTest" as c_0952 <<reference>>
+class "test.test_importer.GlobalGroupAlbumsImportTest" as c_0951 <<reference>>
+class "test.test_importer.GroupAlbumsImportTest" as c_0950 <<reference>>
+class "test.test_importer.ImportCompilationTest" as c_0948 <<reference>>
+class "test.test_importer.ImportExistingTest" as c_0949 <<reference>>
+class "test.test_importer.ImportSingletonTest" as c_0939 <<reference>>
+class "test.test_importer.ImportTracksTest" as c_0942 <<reference>>
+class "test.test_importer.TestImport" as c_0941 <<reference>>
+class "test.test_importer.TestImportDuplicateAlbumUpgrade" as c_0959 <<reference>>
+class "test.test_importer.TestNonAutotaggedImport" as c_0932 <<reference>>
+c_1069 --|> c_0172
+c_1069 --|> c_0932
+c_1070 --|> c_0172
+c_1070 --|> c_0941
+c_1071 --|> c_0172
+c_1071 --|> c_0939
+c_1072 --|> c_0172
+c_1072 --|> c_0942
+c_1073 --|> c_0172
+c_1073 --|> c_0948
+c_1074 --|> c_0172
+c_1074 --|> c_0949
+c_1075 --|> c_0172
+c_1075 --|> c_0952
+c_1076 --|> c_0172
+c_1076 --|> c_0950
+c_1077 --|> c_0172
+c_1077 --|> c_0951
+c_1078 --|> c_0172
+c_1078 --|> c_0959
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_missing
+package "test.plugins.test_missing" {
+  ' test.plugins.test_missing.MissingTestHelper at test/plugins/test_missing.py:14
+  class "MissingTestHelper" as c_0836
+  ' test.plugins.test_missing.TestMissingAlbums at test/plugins/test_missing.py:18
+  class "TestMissingAlbums" as c_0837
+  ' test.plugins.test_missing.TestMissingTracks at test/plugins/test_missing.py:205
+  class "TestMissingTracks" as c_0838
+}
+class "beets.test.helper.IOMixin" as c_0158 <<reference>>
+class "beets.test.helper.PluginTestHelper" as c_0166 <<reference>>
+c_0836 --|> c_0158
+c_0836 --|> c_0166
+c_0837 --|> c_0836
+c_0838 --|> c_0836
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

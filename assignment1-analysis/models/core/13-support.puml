@@ -1,0 +1,102 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Configuration, logging and shared utilities
+package "beets" {
+  ' beets.IncludeLazyConfig at beets/__init__.py:24
+  class "IncludeLazyConfig" as c_0000
+}
+package "beets.exceptions" {
+  ' beets.exceptions.UserError at beets/exceptions.py:1
+  class "UserError" as c_0098
+}
+package "beets.logging" {
+  ' beets.logging.LegacyFormatter at beets/logging.py:92
+  class "LegacyFormatter" as c_0137
+  ' beets.logging.StrFormatLogger at beets/logging.py:124
+  class "StrFormatLogger" as c_0138
+  ' beets.logging.StrFormatLogger._LogMessage at beets/logging.py:136
+  class "_LogMessage" as c_0139 <<nested>>
+  ' beets.logging.ThreadLocalLevelLogger at beets/logging.py:176
+  class "ThreadLocalLevelLogger" as c_0140
+  ' beets.logging.BeetsLogger at beets/logging.py:204
+  class "BeetsLogger" as c_0141
+}
+package "beets.util" {
+  ' beets.util.HumanReadableError at beets/util/__init__.py:67
+  class "HumanReadableError" as c_0198
+  ' beets.util.FilesystemError at beets/util/__init__.py:124
+  class "FilesystemError" as c_0199
+  ' beets.util.MoveOperation at beets/util/__init__.py:160
+  class "MoveOperation" as c_0200 <<enum>>
+  ' beets.util.PromptChoice at beets/util/__init__.py:171
+  class "PromptChoice" as c_0201 <<namedtuple>>
+  ' beets.util.CommandOutput at beets/util/__init__.py:846
+  class "CommandOutput" as c_0202 <<namedtuple>>
+  ' beets.util.cached_classproperty at beets/util/__init__.py:1059
+  class "cached_classproperty" as c_0203
+  ' beets.util.LazySharedInstance at beets/util/__init__.py:1102
+  class "LazySharedInstance" as c_0204
+  ' beets.util.AttrDict at beets/util/__init__.py:1206
+  class "AttrDict" as c_0205
+  ' beets.util.Likelies at beets/util/__init__.py:1251
+  class "Likelies" as c_0206
+}
+package "beets.util.config" {
+  ' beets.util.config.UnknownPairError at beets/util/config.py:78
+  class "UnknownPairError" as c_0213
+}
+package "beets.util.layout" {
+  ' beets.util.layout.Side at beets/util/layout.py:19
+  class "Side" as c_0221 <<namedtuple>>
+}
+package "beets.util.lyrics" {
+  ' beets.util.lyrics.Lyrics at beets/util/lyrics.py:20
+  class "Lyrics" as c_0222
+}
+package "beets.util.m3u" {
+  ' beets.util.m3u.EmptyPlaylistError at beets/util/m3u.py:14
+  class "EmptyPlaylistError" as c_0223
+  ' beets.util.m3u.M3UFile at beets/util/m3u.py:18
+  class "M3UFile" as c_0224
+}
+class "Exception" as external_0 <<external>>
+class "confuse.LazyConfig" as external_1 <<external>>
+class "dict" as external_2 <<external>>
+class "enum.Enum" as external_3 <<external>>
+class "logging.Formatter" as external_4 <<external>>
+class "logging.Logger" as external_5 <<external>>
+class "typing.Generic" as external_6 <<external>>
+class "typing.NamedTuple" as external_7 <<external>>
+c_0000 --|> external_1
+c_0098 --|> external_0
+c_0137 --|> external_4
+c_0138 --|> external_5
+c_0140 --|> external_5
+c_0141 --|> c_0140
+c_0141 --|> c_0138
+c_0198 --|> external_0
+c_0199 --|> c_0198
+c_0200 --|> external_3
+c_0201 --|> external_7
+c_0202 --|> external_7
+c_0203 --|> external_6
+' Parameterized source base: Generic[T]
+c_0204 --|> external_6
+' Parameterized source base: Generic[T]
+c_0205 --|> external_2
+' Parameterized source base: dict[str, T]
+c_0206 --|> c_0205
+' Parameterized source base: AttrDict[Any]
+c_0213 --|> external_0
+c_0221 --|> external_7
+c_0223 --|> external_0
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

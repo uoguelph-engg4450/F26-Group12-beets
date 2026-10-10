@@ -1,0 +1,21 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-ui-commands-test_fields
+package "test.ui.commands.test_fields" {
+  ' test.ui.commands.test_fields.FieldsTest at test/ui/commands/test_fields.py:5
+  class "FieldsTest" as c_1049
+}
+class "beets.test.helper.IOMixin" as c_0158 <<reference>>
+class "beets.test.helper.ItemInDBTestCase" as c_0162 <<reference>>
+c_1049 --|> c_0158
+c_1049 --|> c_0162
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

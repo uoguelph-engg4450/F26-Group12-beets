@@ -1,0 +1,33 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-beatport
+package "beetsplug.beatport" {
+  ' beetsplug.beatport.BeatportAPIError at beetsplug/beatport.py:38
+  class "BeatportAPIError" as c_0322
+  ' beetsplug.beatport.BeatportClient at beetsplug/beatport.py:42
+  class "BeatportClient" as c_0323
+  ' beetsplug.beatport.BeatportObject at beetsplug/beatport.py:207
+  class "BeatportObject" as c_0324
+  ' beetsplug.beatport.BeatportRelease at beetsplug/beatport.py:243
+  class "BeatportRelease" as c_0325
+  ' beetsplug.beatport.BeatportTrack at beetsplug/beatport.py:270
+  class "BeatportTrack" as c_0326
+  ' beetsplug.beatport.BeatportPlugin at beetsplug/beatport.py:299
+  class "BeatportPlugin" as c_0327
+}
+class "Exception" as external_0 <<external>>
+class "beets.metadata_plugins.MetadataSourcePlugin" as c_0142 <<reference>>
+c_0322 --|> external_0
+c_0325 --|> c_0324
+c_0326 --|> c_0324
+c_0327 --|> c_0142
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

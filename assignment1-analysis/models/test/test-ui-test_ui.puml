@@ -1,0 +1,46 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-ui-test_ui
+package "test.ui.test_ui" {
+  ' test.ui.test_ui.PrintTest at test/ui/test_ui.py:20
+  class "PrintTest" as c_1061
+  ' test.ui.test_ui.ShowModelChangesTest at test/ui/test_ui.py:32
+  class "ShowModelChangesTest" as c_1062
+  ' test.ui.test_ui.TestPluginTestCase at test/ui/test_ui.py:46
+  class "TestPluginTestCase" as c_1063
+  ' test.ui.test_ui.ConfigTest at test/ui/test_ui.py:54
+  class "ConfigTest" as c_1064
+  ' test.ui.test_ui.PluginTest at test/ui/test_ui.py:285
+  class "PluginTest" as c_1065
+  ' test.ui.test_ui.CommonOptionsParserCliTest at test/ui/test_ui.py:290
+  class "CommonOptionsParserCliTest" as c_1066
+  ' test.ui.test_ui.CommonOptionsParserTest at test/ui/test_ui.py:371
+  class "CommonOptionsParserTest" as c_1067
+  ' test.ui.test_ui.TestEncoding at test/ui/test_ui.py:464
+  class "TestEncoding" as c_1068
+}
+class "beets.test.helper.BeetsTestCase" as c_0161 <<reference>>
+class "beets.test.helper.IOMixin" as c_0158 <<reference>>
+class "beets.test.helper.PluginTestCase" as c_0165 <<reference>>
+class "unittest.TestCase" as external_3 <<external>>
+c_1061 --|> c_0158
+c_1061 --|> external_3
+c_1062 --|> c_0158
+c_1062 --|> c_0161
+c_1063 --|> c_0165
+c_1064 --|> c_0158
+c_1064 --|> c_1063
+c_1065 --|> c_1063
+c_1066 --|> c_0158
+c_1066 --|> c_0161
+c_1067 --|> external_3
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

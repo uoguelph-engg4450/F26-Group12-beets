@@ -1,0 +1,47 @@
+@startuml
+title Matching metadata to library items
+hide empty members
+left to right direction
+class "beets.util.AttrDict" as AttrDict <<reference>>
+package "beets.autotag" {
+  class Info
+  class AlbumInfo
+  class TrackInfo
+  class Source <<namedtuple>>
+  class Distance {
+    tracks : dict[TrackInfo, Distance]
+  }
+  class Match <<dataclass>>
+  class AlbumMatch <<dataclass>> {
+    mapping : dict[Item, TrackInfo]
+    extra_items : list[Item]
+    extra_tracks : list[TrackInfo]
+  }
+  class TrackMatch <<dataclass>>
+  class Proposal <<namedtuple>>
+  enum Recommendation
+}
+class "beets.library.models.Item" as Item <<reference>>
+Info --|> AttrDict
+AlbumInfo --|> Info
+TrackInfo --|> Info
+AlbumMatch --|> Match
+TrackMatch --|> Match
+AlbumInfo --> "0..*" TrackInfo : tracks
+Source --> "0..*" Item : items
+Match --> "1" Info : info
+Match --> "1" Distance : distance
+AlbumMatch --> "1" AlbumInfo : refined info
+AlbumMatch --> "0..*" Item : mapping keys / extra_items
+AlbumMatch --> "0..*" TrackInfo : mapping values / extra_tracks
+TrackMatch --> "1" Item : item
+TrackMatch --> "1" TrackInfo : refined info
+Proposal --> "0..*" Match : candidates (AlbumMatch or TrackMatch)
+Proposal --> "1" Recommendation : recommendation
+Distance --> "0..*" TrackInfo : tracks keys
+Distance --> "0..*" Distance : tracks values
+note bottom of AlbumMatch
+mapping pairs particular Item and TrackInfo objects.
+No lifecycle ownership is asserted by these references.
+end note
+@enduml

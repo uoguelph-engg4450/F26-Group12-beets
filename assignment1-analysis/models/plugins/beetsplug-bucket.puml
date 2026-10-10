@@ -1,0 +1,30 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-bucket
+package "beetsplug.bucket" {
+  ' beetsplug.bucket.YearSpan at beetsplug/bucket.py:19
+  class "YearSpan" as c_0348 <<schema>>
+  ' beetsplug.bucket.SpanFormat at beetsplug/bucket.py:24
+  class "SpanFormat" as c_0349 <<schema>>
+  ' beetsplug.bucket.BucketError at beetsplug/bucket.py:30
+  class "BucketError" as c_0350
+  ' beetsplug.bucket.BucketPlugin at beetsplug/bucket.py:189
+  class "BucketPlugin" as c_0351
+}
+class "Exception" as external_0 <<external>>
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "typing.TypedDict" as external_2 <<external>>
+c_0348 --|> external_2
+c_0349 --|> external_2
+c_0350 --|> external_0
+c_0351 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

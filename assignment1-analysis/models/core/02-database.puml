@@ -1,0 +1,63 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Database, transactions, results and model support
+package "beets.dbcore.db" {
+  ' beets.dbcore.db.DBAccessError at beets/dbcore/db.py:70
+  class "DBAccessError" as c_0011
+  ' beets.dbcore.db.DBCustomFunctionError at beets/dbcore/db.py:80
+  class "DBCustomFunctionError" as c_0012
+  ' beets.dbcore.db.NotFoundError at beets/dbcore/db.py:90
+  class "NotFoundError" as c_0013
+  ' beets.dbcore.db.FormattedMapping at beets/dbcore/db.py:94
+  class "FormattedMapping" as c_0014
+  ' beets.dbcore.db.LazyDict at beets/dbcore/db.py:168
+  class "LazyDict" as c_0015
+  ' beets.dbcore.db.Model at beets/dbcore/db.py:225
+  class "Model" as c_0016
+  ' beets.dbcore.db.Results at beets/dbcore/db.py:735
+  class "Results" as c_0017
+  ' beets.dbcore.db.Transaction at beets/dbcore/db.py:914
+  class "Transaction" as c_0018
+  ' beets.dbcore.db.Migration at beets/dbcore/db.py:1030
+  abstract class "Migration" as c_0019
+  ' beets.dbcore.db.TableInfo at beets/dbcore/db.py:1079
+  class "TableInfo" as c_0020 <<schema>>
+  ' beets.dbcore.db.Database at beets/dbcore/db.py:1084
+  class "Database" as c_0021
+  ' beets.dbcore.db.Index at beets/dbcore/db.py:1487
+  class "Index" as c_0022 <<namedtuple>>
+}
+class "Exception" as external_0 <<external>>
+class "LookupError" as external_1 <<external>>
+class "abc.ABC" as external_2 <<external>>
+class "collections.UserDict" as external_3 <<external>>
+class "collections.abc.Mapping" as external_4 <<external>>
+class "collections.abc.Sequence" as external_5 <<external>>
+class "typing.Generic" as external_6 <<external>>
+class "typing.NamedTuple" as external_7 <<external>>
+class "typing.TypedDict" as external_8 <<external>>
+c_0011 --|> external_0
+c_0012 --|> external_0
+c_0013 --|> external_1
+c_0014 --|> external_4
+' Parameterized source base: Mapping[str, str]
+c_0015 --|> external_3
+' Parameterized source base: UserDict[str, Any]
+c_0016 --|> external_2
+c_0016 --|> external_6
+' Parameterized source base: Generic[D]
+c_0017 --|> external_5
+' Parameterized source base: Sequence[AnyModel]
+c_0019 --|> external_2
+c_0020 --|> external_8
+c_0022 --|> external_7
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

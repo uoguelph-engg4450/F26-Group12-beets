@@ -1,0 +1,35 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Sorting strategies
+package "beets.dbcore.sort" {
+  ' beets.dbcore.sort.Sort at beets/dbcore/sort.py:15
+  class "Sort" as c_0050
+  ' beets.dbcore.sort.MultipleSort at beets/dbcore/sort.py:51
+  class "MultipleSort" as c_0051
+  ' beets.dbcore.sort.FieldSort at beets/dbcore/sort.py:119
+  class "FieldSort" as c_0052
+  ' beets.dbcore.sort.FixedFieldSort at beets/dbcore/sort.py:188
+  class "FixedFieldSort" as c_0053
+  ' beets.dbcore.sort.SlowFieldSort at beets/dbcore/sort.py:205
+  class "SlowFieldSort" as c_0054
+  ' beets.dbcore.sort.NullSort at beets/dbcore/sort.py:214
+  class "NullSort" as c_0055
+  ' beets.dbcore.sort.SmartArtistSort at beets/dbcore/sort.py:233
+  class "SmartArtistSort" as c_0056
+}
+c_0051 --|> c_0050
+c_0052 --|> c_0050
+c_0053 --|> c_0052
+c_0054 --|> c_0052
+c_0055 --|> c_0050
+c_0056 --|> c_0052
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

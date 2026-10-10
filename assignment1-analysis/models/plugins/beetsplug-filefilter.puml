@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-filefilter
+package "beetsplug.filefilter" {
+  ' beetsplug.filefilter.FileFilterPlugin at beetsplug/filefilter.py:17
+  class "FileFilterPlugin" as c_0407
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+c_0407 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

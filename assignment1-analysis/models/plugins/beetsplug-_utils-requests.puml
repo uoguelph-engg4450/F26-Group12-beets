@@ -1,0 +1,43 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-_utils-requests
+package "beetsplug._utils.requests" {
+  ' beetsplug._utils.requests.BeetsHTTPError at beetsplug/_utils/requests.py:21
+  class "BeetsHTTPError" as c_0290
+  ' beetsplug._utils.requests.HTTPNotFoundError at beetsplug/_utils/requests.py:31
+  class "HTTPNotFoundError" as c_0291
+  ' beetsplug._utils.requests.Closeable at beetsplug/_utils/requests.py:35
+  class "Closeable" as c_0292 <<protocol>>
+  ' beetsplug._utils.requests.SingletonMeta at beetsplug/_utils/requests.py:44
+  class "SingletonMeta" as c_0293
+  ' beetsplug._utils.requests.TimeoutAndRetrySession at beetsplug/_utils/requests.py:65
+  class "TimeoutAndRetrySession" as c_0294
+  ' beetsplug._utils.requests.RateLimitAdapter at beetsplug/_utils/requests.py:106
+  class "RateLimitAdapter" as c_0295
+  ' beetsplug._utils.requests.RequestHandler at beetsplug/_utils/requests.py:140
+  class "RequestHandler" as c_0296
+}
+class "requests.Session" as external_0 <<external>>
+class "requests.adapters.HTTPAdapter" as external_1 <<external>>
+class "requests.exceptions.HTTPError" as external_2 <<external>>
+class "type" as external_3 <<external>>
+class "typing.Generic" as external_4 <<external>>
+class "typing.Protocol" as external_5 <<external>>
+c_0290 --|> external_2
+c_0291 --|> c_0290
+c_0292 --|> external_5
+c_0293 --|> external_3
+c_0293 --|> external_4
+' Parameterized source base: Generic[C]
+c_0294 --|> external_0
+c_0295 --|> external_1
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

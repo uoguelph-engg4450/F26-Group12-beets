@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-tidal-api
+package "beetsplug.tidal.api" {
+  ' beetsplug.tidal.api.TidalAPI at beetsplug/tidal/api.py:41
+  class "TidalAPI" as c_0552
+}
+class "beetsplug._utils.requests.RequestHandler" as c_0296 <<reference>>
+c_0552 --|> c_0296
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

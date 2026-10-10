@@ -1,0 +1,89 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Field predicates, date values and parsing errors
+package "beets.dbcore.query" {
+  ' beets.dbcore.query.ParsingError at beets/dbcore/query.py:33
+  class "ParsingError" as c_0023
+  ' beets.dbcore.query.InvalidQueryError at beets/dbcore/query.py:39
+  class "InvalidQueryError" as c_0024
+  ' beets.dbcore.query.InvalidQueryArgumentValueError at beets/dbcore/query.py:54
+  class "InvalidQueryArgumentValueError" as c_0025
+  ' beets.dbcore.query.FieldQuery at beets/dbcore/query.py:120
+  class "FieldQuery" as c_0027
+  ' beets.dbcore.query.MatchQuery at beets/dbcore/query.py:178
+  class "MatchQuery" as c_0028
+  ' beets.dbcore.query.NoneQuery at beets/dbcore/query.py:191
+  class "NoneQuery" as c_0029
+  ' beets.dbcore.query.StringFieldQuery at beets/dbcore/query.py:207
+  class "StringFieldQuery" as c_0030
+  ' beets.dbcore.query.StringQuery at beets/dbcore/query.py:232
+  class "StringQuery" as c_0031
+  ' beets.dbcore.query.SubstringQuery at beets/dbcore/query.py:250
+  class "SubstringQuery" as c_0032
+  ' beets.dbcore.query.PathQuery at beets/dbcore/query.py:269
+  class "PathQuery" as c_0033
+  ' beets.dbcore.query.RegexpQuery at beets/dbcore/query.py:367
+  class "RegexpQuery" as c_0034
+  ' beets.dbcore.query.BooleanQuery at beets/dbcore/query.py:403
+  class "BooleanQuery" as c_0035
+  ' beets.dbcore.query.NumericQuery at beets/dbcore/query.py:419
+  class "NumericQuery" as c_0036
+  ' beets.dbcore.query.InQuery at beets/dbcore/query.py:492
+  class "InQuery" as c_0037
+  ' beets.dbcore.query.Period at beets/dbcore/query.py:681
+  class "Period" as c_0045
+  ' beets.dbcore.query.DateInterval at beets/dbcore/query.py:800
+  class "DateInterval" as c_0046
+  ' beets.dbcore.query.DateQuery at beets/dbcore/query.py:845
+  class "DateQuery" as c_0047
+  ' beets.dbcore.query.DurationQuery at beets/dbcore/query.py:892
+  class "DurationQuery" as c_0048
+  ' beets.dbcore.query.SingletonQuery at beets/dbcore/query.py:920
+  class "SingletonQuery" as c_0049
+}
+class "ValueError" as external_0 <<external>>
+class "beets.dbcore.query.Query" as c_0026 <<reference>>
+class "typing.Generic" as external_2 <<external>>
+c_0023 --|> external_0
+c_0024 --|> c_0023
+c_0025 --|> c_0023
+c_0027 --|> c_0026
+c_0027 --|> external_2
+' Parameterized source base: Generic[P]
+c_0028 --|> c_0027
+' Parameterized source base: FieldQuery[AnySQLiteType]
+c_0029 --|> c_0027
+' Parameterized source base: FieldQuery[None]
+c_0030 --|> c_0027
+' Parameterized source base: FieldQuery[P]
+c_0031 --|> c_0030
+' Parameterized source base: StringFieldQuery[str]
+c_0032 --|> c_0030
+' Parameterized source base: StringFieldQuery[str]
+c_0033 --|> c_0027
+' Parameterized source base: FieldQuery[bytes]
+c_0034 --|> c_0030
+' Parameterized source base: StringFieldQuery[Pattern[str]]
+c_0035 --|> c_0028
+' Parameterized source base: MatchQuery[int]
+c_0036 --|> c_0027
+' Parameterized source base: FieldQuery[str]
+c_0037 --|> external_2
+' Parameterized source base: Generic[AnySQLiteType]
+c_0037 --|> c_0027
+' Parameterized source base: FieldQuery[Sequence[AnySQLiteType]]
+c_0047 --|> c_0027
+' Parameterized source base: FieldQuery[str]
+c_0048 --|> c_0036
+c_0049 --|> c_0027
+' Parameterized source base: FieldQuery[str]
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

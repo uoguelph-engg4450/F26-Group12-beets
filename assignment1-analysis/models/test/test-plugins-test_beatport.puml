@@ -1,0 +1,23 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_beatport
+package "test.plugins.test_beatport" {
+  ' test.plugins.test_beatport.BeatportTest at test/plugins/test_beatport.py:11
+  class "BeatportTest" as c_0722
+  ' test.plugins.test_beatport.BeatportResponseEmptyTest at test/plugins/test_beatport.py:567
+  class "BeatportResponseEmptyTest" as c_0723
+}
+class "beets.test.helper.BeetsTestCase" as c_0161 <<reference>>
+class "unittest.TestCase" as external_1 <<external>>
+c_0722 --|> c_0161
+c_0723 --|> external_1
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_play
+package "test.plugins.test_play" {
+  ' test.plugins.test_play.PlayPluginMixin at test/plugins/test_play.py:23
+  class "PlayPluginMixin" as c_0851
+  ' test.plugins.test_play.PlayPluginTest at test/plugins/test_play.py:33
+  class "PlayPluginTest" as c_0852
+  ' test.plugins.test_play.PlayOnImportTest at test/plugins/test_play.py:183
+  class "PlayOnImportTest" as c_0853
+}
+class "beets.test.helper.AutotagImportTestCase" as c_0175 <<reference>>
+class "beets.test.helper.BeetsTestCase" as c_0161 <<reference>>
+class "beets.test.helper.CleanupModulesMixin" as c_0178 <<reference>>
+class "beets.test.helper.IOMixin" as c_0158 <<reference>>
+class "beets.test.helper.PluginMixin" as c_0164 <<reference>>
+class "beets.test.helper.TerminalImportMixin" as c_0172 <<reference>>
+c_0851 --|> c_0178
+c_0851 --|> c_0164
+c_0852 --|> c_0158
+c_0852 --|> c_0851
+c_0852 --|> c_0161
+c_0853 --|> c_0172
+c_0853 --|> c_0851
+c_0853 --|> c_0175
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

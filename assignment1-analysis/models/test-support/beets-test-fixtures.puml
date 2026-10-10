@@ -1,0 +1,27 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test-support / beets-test-fixtures
+package "beets.test.fixtures" {
+  ' beets.test.fixtures.SortFixture at beets/test/fixtures.py:16
+  class "SortFixture" as c_0153
+  ' beets.test.fixtures.ModelFixture1 at beets/test/fixtures.py:20
+  class "ModelFixture1" as c_0154
+  ' beets.test.fixtures.DummyIMBackend at beets/test/fixtures.py:44
+  class "DummyIMBackend" as c_0155
+}
+class "beets.dbcore.sort.FieldSort" as c_0052 <<reference>>
+class "beets.library.models.LibModel" as c_0132 <<reference>>
+class "beets.util.artresizer.IMBackend" as c_0210 <<reference>>
+c_0153 --|> c_0052
+c_0154 --|> c_0132
+c_0155 --|> c_0210
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_ipfs
+package "test.plugins.test_ipfs" {
+  ' test.plugins.test_ipfs.IPFSPluginTest at test/plugins/test_ipfs.py:12
+  class "IPFSPluginTest" as c_0799
+  ' test.plugins.test_ipfs.TestIPFSPlay at test/plugins/test_ipfs.py:80
+  class "TestIPFSPlay" as c_0800
+}
+class "beets.test.helper.PluginTestCase" as c_0165 <<reference>>
+class "beets.test.helper.PluginTestHelper" as c_0166 <<reference>>
+c_0799 --|> c_0165
+c_0800 --|> c_0166
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

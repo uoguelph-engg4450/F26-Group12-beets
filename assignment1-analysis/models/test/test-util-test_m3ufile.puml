@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-util-test_m3ufile
+package "test.util.test_m3ufile" {
+  ' test.util.test_m3ufile.TestM3UFile at test/util/test_m3ufile.py:14
+  class "TestM3UFile" as c_1090
+}
+class "beets.test.helper.PathsMixin" as c_0159 <<reference>>
+c_1090 --|> c_0159
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

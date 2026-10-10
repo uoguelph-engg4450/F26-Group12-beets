@@ -1,0 +1,79 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-tidal-api_types
+package "beetsplug.tidal.api_types" {
+  ' beetsplug.tidal.api_types.ResourceIdentifier at beetsplug/tidal/api_types.py:8
+  class "ResourceIdentifier" as c_0553 <<schema>>
+  ' beetsplug.tidal.api_types.RelationshipLinks at beetsplug/tidal/api_types.py:13
+  class "RelationshipLinks" as c_0554 <<schema>>
+  ' beetsplug.tidal.api_types.RelationshipData at beetsplug/tidal/api_types.py:18
+  class "RelationshipData" as c_0555 <<schema>>
+  ' beetsplug.tidal.api_types.SingleRelationshipData at beetsplug/tidal/api_types.py:23
+  class "SingleRelationshipData" as c_0556 <<schema>>
+  ' beetsplug.tidal.api_types.ExternalLink at beetsplug/tidal/api_types.py:28
+  class "ExternalLink" as c_0557 <<schema>>
+  ' beetsplug.tidal.api_types.Copyright at beetsplug/tidal/api_types.py:33
+  class "Copyright" as c_0558 <<schema>>
+  ' beetsplug.tidal.api_types.ArtistAttributes at beetsplug/tidal/api_types.py:37
+  class "ArtistAttributes" as c_0559 <<schema>>
+  ' beetsplug.tidal.api_types.MediaAttributes at beetsplug/tidal/api_types.py:45
+  class "MediaAttributes" as c_0560 <<schema>>
+  ' beetsplug.tidal.api_types.AlbumAttributes at beetsplug/tidal/api_types.py:70
+  class "AlbumAttributes" as c_0561 <<schema>>
+  ' beetsplug.tidal.api_types.TrackAttributes at beetsplug/tidal/api_types.py:90
+  class "TrackAttributes" as c_0562 <<schema>>
+  ' beetsplug.tidal.api_types.SearchAttributes at beetsplug/tidal/api_types.py:140
+  class "SearchAttributes" as c_0563 <<schema>>
+  ' beetsplug.tidal.api_types.TidalArtist at beetsplug/tidal/api_types.py:145
+  class "TidalArtist" as c_0564 <<schema>>
+  ' beetsplug.tidal.api_types.TidalAlbum at beetsplug/tidal/api_types.py:151
+  class "TidalAlbum" as c_0565 <<schema>>
+  ' beetsplug.tidal.api_types.TidalTrack at beetsplug/tidal/api_types.py:158
+  class "TidalTrack" as c_0566 <<schema>>
+  ' beetsplug.tidal.api_types.FileMeta at beetsplug/tidal/api_types.py:165
+  class "FileMeta" as c_0567 <<schema>>
+  ' beetsplug.tidal.api_types.ArtworkFile at beetsplug/tidal/api_types.py:170
+  class "ArtworkFile" as c_0568 <<schema>>
+  ' beetsplug.tidal.api_types.ArtworkAttributes at beetsplug/tidal/api_types.py:175
+  class "ArtworkAttributes" as c_0569 <<schema>>
+  ' beetsplug.tidal.api_types.TidalArtwork at beetsplug/tidal/api_types.py:181
+  class "TidalArtwork" as c_0570 <<schema>>
+  ' beetsplug.tidal.api_types.TidalSearch at beetsplug/tidal/api_types.py:187
+  class "TidalSearch" as c_0571 <<schema>>
+  ' beetsplug.tidal.api_types.Document at beetsplug/tidal/api_types.py:197
+  class "Document" as c_0572 <<schema>>
+}
+class "typing.Generic" as external_0 <<external>>
+class "typing.TypedDict" as external_1 <<external>>
+c_0553 --|> external_1
+c_0554 --|> external_1
+c_0555 --|> external_1
+c_0556 --|> external_1
+c_0557 --|> external_1
+c_0558 --|> external_1
+c_0559 --|> external_1
+c_0560 --|> external_1
+c_0561 --|> c_0560
+c_0562 --|> c_0560
+c_0563 --|> external_1
+c_0564 --|> external_1
+c_0565 --|> external_1
+c_0566 --|> external_1
+c_0567 --|> external_1
+c_0568 --|> external_1
+c_0569 --|> external_1
+c_0570 --|> external_1
+c_0571 --|> external_1
+c_0572 --|> external_1
+c_0572 --|> external_0
+' Parameterized source base: Generic[T]
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

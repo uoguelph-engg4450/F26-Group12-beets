@@ -1,0 +1,1974 @@
+﻿source,target,context,line
+beets,beets.util.deprecation,,8
+beets,beets.logging,if TYPE_CHECKING,11
+beets.__main__,beets.ui,,7
+beets.autotag,beets.util.deprecation,,9
+beets.autotag,beets.util.deprecation,,9
+beets.autotag,beets.autotag.distance,,11
+beets.autotag,beets.autotag.distance,,11
+beets.autotag,beets.autotag.distance,,11
+beets.autotag,beets.autotag.distance,,11
+beets.autotag,beets.autotag.hooks,,12
+beets.autotag,beets.autotag.hooks,,12
+beets.autotag,beets.autotag.hooks,,12
+beets.autotag,beets.autotag.hooks,,12
+beets.autotag,beets.autotag.match,,13
+beets.autotag,beets.autotag.match,,13
+beets.autotag,beets.autotag.match,,13
+beets.autotag,beets.autotag.match,,13
+beets.autotag,beets.autotag.match,,13
+beets.autotag,beets.autotag.match,,13
+beets.autotag,beets.autotag.match,,13
+beets.autotag,beets.autotag.match,,13
+beets.autotag,beets.autotag.source,,23
+beets.autotag.distance,beets,,11
+beets.autotag.distance,beets.metadata_plugins,,11
+beets.autotag.distance,beets.util,,12
+beets.autotag.distance,beets.util,,12
+beets.autotag.distance,beets.util.color,,13
+beets.autotag.distance,beets.library,if TYPE_CHECKING,18
+beets.autotag.distance,beets.util,if TYPE_CHECKING,19
+beets.autotag.distance,beets.util.color,if TYPE_CHECKING,20
+beets.autotag.distance,beets.autotag.hooks,if TYPE_CHECKING,22
+beets.autotag.distance,beets.autotag.hooks,if TYPE_CHECKING,22
+beets.autotag.hooks,beets,,9
+beets.autotag.hooks,beets.logging,,9
+beets.autotag.hooks,beets.util,,10
+beets.autotag.hooks,beets.util,,10
+beets.autotag.hooks,beets.util,,10
+beets.autotag.hooks,beets.util.deprecation,,11
+beets.autotag.hooks,beets.util.deprecation,,11
+beets.autotag.hooks,beets.util.deprecation,,11
+beets.autotag.match,beets,,15
+beets.autotag.match,beets.logging,,15
+beets.autotag.match,beets.metadata_plugins,,15
+beets.autotag.match,beets.plugins,,15
+beets.autotag.match,beets.autotag.distance,,17
+beets.autotag.match,beets.autotag.distance,,17
+beets.autotag.match,beets.autotag.distance,,17
+beets.autotag.match,beets.autotag,if TYPE_CHECKING,22
+beets.autotag.match,beets.library,if TYPE_CHECKING,23
+beets.autotag.match,beets.library,if TYPE_CHECKING,23
+beets.autotag.match,beets.autotag.distance,if TYPE_CHECKING,25
+beets.autotag.match,beets.autotag.hooks,if TYPE_CHECKING,26
+beets.autotag.match,beets.autotag.hooks,if TYPE_CHECKING,26
+beets.autotag.match,beets.autotag.hooks,if TYPE_CHECKING,26
+beets.autotag.source,beets.util,,5
+beets.autotag.source,beets.util,,5
+beets.autotag.source,beets.library,if TYPE_CHECKING,10
+beets.dbcore,beets.dbcore.db,,5
+beets.dbcore,beets.dbcore.db,,5
+beets.dbcore,beets.dbcore.db,,5
+beets.dbcore,beets.dbcore.db,,5
+beets.dbcore,beets.dbcore.query,,6
+beets.dbcore,beets.dbcore.query,,6
+beets.dbcore,beets.dbcore.query,,6
+beets.dbcore,beets.dbcore.query,,6
+beets.dbcore,beets.dbcore.query,,6
+beets.dbcore,beets.dbcore.query,,6
+beets.dbcore,beets.dbcore.queryparse,,14
+beets.dbcore,beets.dbcore.queryparse,,14
+beets.dbcore,beets.dbcore.queryparse,,14
+beets.dbcore,beets.dbcore.types,,19
+beets.dbcore.db,beets,,39
+beets.dbcore.db,beets.util.functemplate,,40
+beets.dbcore.db,beets.util,,42
+beets.dbcore.db,beets.dbcore.types,,43
+beets.dbcore.db,beets.dbcore.query,,44
+beets.dbcore.db,beets.dbcore.query,,44
+beets.dbcore.db,beets.dbcore.sort,,45
+beets.dbcore.db,beets.util.functemplate,if TYPE_CHECKING,58
+beets.dbcore.db,beets.util,if TYPE_CHECKING,60
+beets.dbcore.db,beets.dbcore.query,if TYPE_CHECKING,61
+beets.dbcore.db,beets.dbcore.query,if TYPE_CHECKING,61
+beets.dbcore.db,beets.dbcore.query,if TYPE_CHECKING,61
+beets.dbcore.db,beets.dbcore.sort,if TYPE_CHECKING,62
+beets.dbcore.db,beets.dbcore.sort,if TYPE_CHECKING,62
+beets.dbcore.pathutils,beets.context,,6
+beets.dbcore.pathutils,beets.util,,6
+beets.dbcore.pathutils,beets.util,,7
+beets.dbcore.query,beets.context,,16
+beets.dbcore.query,beets.util,,16
+beets.dbcore.query,beets.util.units,,17
+beets.dbcore.query,beets.dbcore.pathutils,,19
+beets.dbcore.query,beets.dbcore.db,if TYPE_CHECKING,24
+beets.dbcore.queryparse,beets.dbcore.query,,9
+beets.dbcore.queryparse,beets.dbcore.sort,,9
+beets.dbcore.queryparse,beets.library,if TYPE_CHECKING,14
+beets.dbcore.sort,beets.dbcore.db,if TYPE_CHECKING,12
+beets.dbcore.sort,beets.dbcore.db,if TYPE_CHECKING,12
+beets.dbcore.types,beets,,12
+beets.dbcore.types,beets.util,,13
+beets.dbcore.types,beets.util.units,,14
+beets.dbcore.types,beets.util.units,,14
+beets.dbcore.types,beets.dbcore.pathutils,,16
+beets.dbcore.types,beets.dbcore.query,,16
+beets.events,beets.autotag,if TYPE_CHECKING,10
+beets.events,beets.autotag,if TYPE_CHECKING,10
+beets.events,beets.autotag.match,if TYPE_CHECKING,11
+beets.events,beets.importer,if TYPE_CHECKING,12
+beets.events,beets.importer,if TYPE_CHECKING,12
+beets.events,beets.library,if TYPE_CHECKING,13
+beets.events,beets.library,if TYPE_CHECKING,13
+beets.events,beets.library,if TYPE_CHECKING,13
+beets.events,beets.library,if TYPE_CHECKING,13
+beets.importer,beets.importer.actions,,5
+beets.importer,beets.importer.actions,,5
+beets.importer,beets.importer.session,,6
+beets.importer,beets.importer.session,,6
+beets.importer,beets.importer.tasks,,7
+beets.importer,beets.importer.tasks,,7
+beets.importer,beets.importer.tasks,,7
+beets.importer,beets.importer.tasks,,7
+beets.importer.session,beets,,7
+beets.importer.session,beets.logging,,7
+beets.importer.session,beets.plugins,,7
+beets.importer.session,beets.util,,7
+beets.importer.session,beets.util,,8
+beets.importer.session,beets.util,,8
+beets.importer.session,beets.util.pipeline,,8
+beets.importer.session,beets.util,,8
+beets.importer.session,beets.importer.stages,,10
+beets.importer.session,beets.importer.actions,,11
+beets.importer.session,beets.importer.actions,,11
+beets.importer.session,beets.importer.state,,12
+beets.importer.session,beets.dbcore,if TYPE_CHECKING,19
+beets.importer.session,beets.library,if TYPE_CHECKING,19
+beets.importer.session,beets.autotag,if TYPE_CHECKING,20
+beets.importer.session,beets.autotag,if TYPE_CHECKING,20
+beets.importer.session,beets.library,if TYPE_CHECKING,21
+beets.importer.session,beets.util,if TYPE_CHECKING,22
+beets.importer.session,beets.importer.tasks,if TYPE_CHECKING,24
+beets.importer.session,beets.importer.tasks,if TYPE_CHECKING,24
+beets.importer.stages,beets,,9
+beets.importer.stages,beets.plugins,,9
+beets.importer.stages,beets.util,,10
+beets.importer.stages,beets.util,,10
+beets.importer.stages,beets.util.pipeline,,10
+beets.importer.stages,beets.importer.actions,,12
+beets.importer.stages,beets.importer.actions,,12
+beets.importer.stages,beets.importer.tasks,,13
+beets.importer.stages,beets.importer.tasks,,13
+beets.importer.stages,beets.importer.tasks,,13
+beets.importer.stages,beets.importer.tasks,,13
+beets.importer.stages,beets.importer.tasks,,13
+beets.importer.stages,beets.importer.tasks,,13
+beets.importer.stages,beets.library,if TYPE_CHECKING,25
+beets.importer.stages,beets.importer.session,if TYPE_CHECKING,27
+beets.importer.stages,beets.importer.tasks,if TYPE_CHECKING,28
+beets.importer.state,beets,,12
+beets.importer.state,beets.util,if TYPE_CHECKING,17
+beets.importer.tasks,beets,,17
+beets.importer.tasks,beets.library,,17
+beets.importer.tasks,beets.plugins,,17
+beets.importer.tasks,beets.util,,17
+beets.importer.tasks,beets.autotag,,18
+beets.importer.tasks,beets.autotag,,18
+beets.importer.tasks,beets.autotag,,18
+beets.importer.tasks,beets.autotag,,18
+beets.importer.tasks,beets.dbcore.query,,19
+beets.importer.tasks,beets.util.extension,,20
+beets.importer.tasks,beets.util.extension,,21
+beets.importer.tasks,beets.importer.actions,,23
+beets.importer.tasks,beets.importer.actions,,23
+beets.importer.tasks,beets.importer.state,,24
+beets.importer.tasks,beets.autotag,if TYPE_CHECKING,29
+beets.importer.tasks,beets.autotag,if TYPE_CHECKING,29
+beets.importer.tasks,beets.importer.session,if TYPE_CHECKING,31
+beets.library,beets.util.deprecation,,3
+beets.library,beets.library.exceptions,,5
+beets.library,beets.library.exceptions,,5
+beets.library,beets.library.exceptions,,5
+beets.library,beets.library.library,,6
+beets.library,beets.library.models,,7
+beets.library,beets.library.models,,7
+beets.library,beets.library.models,,7
+beets.library,beets.library.models,,7
+beets.library,beets.library.queries,,8
+beets.library,beets.library.queries,,8
+beets.library.exceptions,beets.util,,1
+beets.library.fields,beets.dbcore.types,,1
+beets.library.library,beets,,12
+beets.library.library,beets,,13
+beets.library.library,beets.context,,13
+beets.library.library,beets.dbcore,,13
+beets.library.library,beets.dbcore.query,,14
+beets.library.library,beets.dbcore.sort,,15
+beets.library.library,beets.exceptions,,16
+beets.library.library,beets.util,,17
+beets.library.library,beets.util.pathformats,,18
+beets.library.library,beets.library.migrations,,20
+beets.library.library,beets.library.models,,21
+beets.library.library,beets.library.models,,21
+beets.library.library,beets.library.queries,,22
+beets.library.library,beets.library.queries,,22
+beets.library.library,beets.dbcore.sort,if TYPE_CHECKING,27
+beets.library.library,beets.util,if TYPE_CHECKING,28
+beets.library.library,beets.util,if TYPE_CHECKING,28
+beets.library.library,beets.util.pathformats,if TYPE_CHECKING,29
+beets.library.library,beets.library.models,if TYPE_CHECKING,31
+beets.library.migrations,beets,,10
+beets.library.migrations,beets.ui,,11
+beets.library.migrations,beets.dbcore.db,,12
+beets.library.migrations,beets.dbcore.pathutils,,13
+beets.library.migrations,beets.dbcore.types,,14
+beets.library.migrations,beets.util,,15
+beets.library.migrations,beets.util,,15
+beets.library.migrations,beets.util.lyrics,,16
+beets.library.migrations,beets.util.lyrics,,16
+beets.library.migrations,beets.dbcore.db,if TYPE_CHECKING,19
+beets.library.migrations,beets.library,if TYPE_CHECKING,20
+beets.library.models,beets,,14
+beets.library.models,beets.dbcore,,15
+beets.library.models,beets.logging,,15
+beets.library.models,beets.plugins,,15
+beets.library.models,beets.util,,15
+beets.library.models,beets.dbcore.sort,,16
+beets.library.models,beets.dbcore.types,,16
+beets.library.models,beets.dbcore.db,,17
+beets.library.models,beets.dbcore.pathutils,,18
+beets.library.models,beets.util,,19
+beets.library.models,beets.util,,19
+beets.library.models,beets.util,,19
+beets.library.models,beets.util,,19
+beets.library.models,beets.util,,19
+beets.library.models,beets.util,,19
+beets.library.models,beets.util.deprecation,,27
+beets.library.models,beets.util.pathformats,,28
+beets.library.models,beets.library.exceptions,,30
+beets.library.models,beets.library.exceptions,,30
+beets.library.models,beets.library.exceptions,,30
+beets.library.models,beets.library.fields,,31
+beets.library.models,beets.library.queries,,32
+beets.library.models,beets.dbcore,if TYPE_CHECKING,37
+beets.library.models,beets.dbcore.types,if TYPE_CHECKING,37
+beets.library.models,beets.dbcore.query,if TYPE_CHECKING,38
+beets.library.models,beets.dbcore.query,if TYPE_CHECKING,38
+beets.library.models,beets.dbcore.sort,if TYPE_CHECKING,39
+beets.library.models,beets.util.functemplate,if TYPE_CHECKING,40
+beets.library.models,beets.util.pathformats,if TYPE_CHECKING,41
+beets.library.models,beets.library.library,if TYPE_CHECKING,43
+beets.library.queries,beets,,6
+beets.library.queries,beets.dbcore,,7
+beets.library.queries,beets.logging,,7
+beets.library.queries,beets.plugins,,7
+beets.library.queries,beets.dbcore.queryparse,if TYPE_CHECKING,12
+beets.library.queries,beets.library,if TYPE_CHECKING,13
+beets.logging,beets,,214
+beets.mediafile,beets.util.deprecation,,3
+beets.metadata_plugins,beets,,27
+beets.metadata_plugins,beets.logging,,27
+beets.metadata_plugins,beets.util,,28
+beets.metadata_plugins,beets.util.id_extractors,,29
+beets.metadata_plugins,beets.plugins,,31
+beets.metadata_plugins,beets.plugins,,31
+beets.metadata_plugins,beets.plugins,,31
+beets.metadata_plugins,beets.plugins,,31
+beets.metadata_plugins,beets.autotag,if TYPE_CHECKING,39
+beets.metadata_plugins,beets.autotag,if TYPE_CHECKING,39
+beets.metadata_plugins,beets.library.models,if TYPE_CHECKING,40
+beets.plugins,beets,,18
+beets.plugins,beets.logging,,19
+beets.plugins,beets.util,,20
+beets.plugins,beets.util.deprecation,,21
+beets.plugins,beets.util.deprecation,,21
+beets.plugins,beets.autotag,if TYPE_CHECKING,28
+beets.plugins,beets.autotag,if TYPE_CHECKING,28
+beets.plugins,beets.dbcore.db,if TYPE_CHECKING,29
+beets.plugins,beets.dbcore.types,if TYPE_CHECKING,30
+beets.plugins,beets.importer,if TYPE_CHECKING,31
+beets.plugins,beets.importer,if TYPE_CHECKING,31
+beets.plugins,beets.importer,if TYPE_CHECKING,31
+beets.plugins,beets.library,if TYPE_CHECKING,32
+beets.plugins,beets.library,if TYPE_CHECKING,32
+beets.plugins,beets.library,if TYPE_CHECKING,32
+beets.plugins,beets.ui,if TYPE_CHECKING,33
+beets.plugins,beets.util,if TYPE_CHECKING,34
+beets.plugins,beets.events,if TYPE_CHECKING,36
+beets.plugins,beets.metadata_plugins,,128
+beets.plugins,beets.library,,293
+beets.plugins,beets.util,,875
+beets.test._common,beets,,11
+beets.test._common,beets.library,,12
+beets.test._common,beets.importer,,15
+beets.test._common,beets.logging,,15
+beets.test._common,beets.ui.commands,,16
+beets.test._common,beets.util,,17
+beets.test._common,beets.dbcore,if TYPE_CHECKING,24
+beets.test._common,beets.library,if TYPE_CHECKING,25
+beets.test._common,beets.library,if TYPE_CHECKING,25
+beets.test.fixtures,beets.dbcore,,9
+beets.test.fixtures,beets.dbcore.sort,,9
+beets.test.fixtures,beets.dbcore.types,,9
+beets.test.fixtures,beets.dbcore.db,,10
+beets.test.fixtures,beets.library,,11
+beets.test.fixtures,beets.util,,12
+beets.test.fixtures,beets.util.artresizer,,13
+beets.test.helper,beets,,33
+beets.test.helper,beets.plugins,,34
+beets.test.helper,beets.importer,,35
+beets.test.helper,beets.util,,35
+beets.test.helper,beets.autotag,,36
+beets.test.helper,beets.autotag,,36
+beets.test.helper,beets.importer,,37
+beets.test.helper,beets.library,,38
+beets.test.helper,beets.library,,38
+beets.test.helper,beets.test._common,,39
+beets.test.helper,beets.ui.commands.import_.session,,40
+beets.test.helper,beets.util,,41
+beets.test.helper,beets.util,,41
+beets.test.helper,beets.util,,41
+beets.test.helper,beets.autotag,if TYPE_CHECKING,52
+beets.test.helper,beets.autotag,if TYPE_CHECKING,52
+beets.test.helper,beets.library,if TYPE_CHECKING,53
+beets.ui,beets,,21
+beets.ui,beets.library,,21
+beets.ui,beets.logging,,21
+beets.ui,beets.plugins,,21
+beets.ui,beets.util,,21
+beets.ui,beets.dbcore.db,,22
+beets.ui,beets.dbcore.query,,23
+beets.ui,beets.exceptions,,24
+beets.ui,beets.util,,25
+beets.ui,beets.util.color,,26
+beets.ui,beets.util.deprecation,,27
+beets.ui,beets.util.diff,,28
+beets.ui,beets.library,if TYPE_CHECKING,34
+beets.ui,beets.util.color,if TYPE_CHECKING,35
+beets.ui,beets.ui.commands,,826
+beets.ui,beets.ui.commands.config,if subargs and subargs[0] == 'config' and ('-e' in subargs or '--edit' in subargs),952
+beets.ui.commands,beets.util.deprecation,,9
+beets.ui.commands,beets.ui.commands.completion,,11
+beets.ui.commands,beets.ui.commands.config,,12
+beets.ui.commands,beets.ui.commands.fields,,13
+beets.ui.commands,beets.ui.commands.help,,14
+beets.ui.commands,beets.ui.commands.import_,,15
+beets.ui.commands,beets.ui.commands.list,,16
+beets.ui.commands,beets.ui.commands.modify,,17
+beets.ui.commands,beets.ui.commands.move,,18
+beets.ui.commands,beets.ui.commands.remove,,19
+beets.ui.commands,beets.ui.commands.stats,,20
+beets.ui.commands,beets.ui.commands.update,,21
+beets.ui.commands,beets.ui.commands.version,,22
+beets.ui.commands,beets.ui.commands.write,,23
+beets.ui.commands,beets.ui,if TYPE_CHECKING,26
+beets.ui.commands.completion,beets.library,,9
+beets.ui.commands.completion,beets.logging,,9
+beets.ui.commands.completion,beets.plugins,,9
+beets.ui.commands.completion,beets.ui,,9
+beets.ui.commands.completion,beets.util,,10
+beets.ui.commands.completion,beets.library,if TYPE_CHECKING,16
+beets.ui.commands.completion,beets.ui.commands,,26
+beets.ui.commands.config,beets,,8
+beets.ui.commands.config,beets.ui,,8
+beets.ui.commands.config,beets.exceptions,,9
+beets.ui.commands.config,beets.util,,10
+beets.ui.commands.config,beets.util,,10
+beets.ui.commands.config,beets.util,,10
+beets.ui.commands.config,beets.library,if TYPE_CHECKING,13
+beets.ui.commands.fields,beets.library,,8
+beets.ui.commands.fields,beets.ui,,8
+beets.ui.commands.fields,beets.library,if TYPE_CHECKING,15
+beets.ui.commands.help,beets.ui,,7
+beets.ui.commands.help,beets.exceptions,,8
+beets.ui.commands.help,beets.library,if TYPE_CHECKING,13
+beets.ui.commands.import_,beets,,8
+beets.ui.commands.import_,beets.logging,,8
+beets.ui.commands.import_,beets.plugins,,8
+beets.ui.commands.import_,beets.ui,,8
+beets.ui.commands.import_,beets.exceptions,,9
+beets.ui.commands.import_,beets.util,,10
+beets.ui.commands.import_,beets.util,,10
+beets.ui.commands.import_,beets.util,,10
+beets.ui.commands.import_,beets.ui.commands.import_.session,,12
+beets.ui.commands.import_,beets.library,if TYPE_CHECKING,18
+beets.ui.commands.import_,beets.ui,if TYPE_CHECKING,19
+beets.ui.commands.import_.display,beets,,9
+beets.ui.commands.import_.display,beets.ui,,9
+beets.ui.commands.import_.display,beets.autotag,,10
+beets.ui.commands.import_.display,beets.util,,11
+beets.ui.commands.import_.display,beets.util.color,,12
+beets.ui.commands.import_.display,beets.util.diff,,13
+beets.ui.commands.import_.display,beets.util.layout,,14
+beets.ui.commands.import_.display,beets.util.layout,,14
+beets.ui.commands.import_.display,beets.util.layout,,14
+beets.ui.commands.import_.display,beets.util.units,,15
+beets.ui.commands.import_.display,beets.autotag,if TYPE_CHECKING,20
+beets.ui.commands.import_.display,beets.autotag,if TYPE_CHECKING,20
+beets.ui.commands.import_.display,beets.autotag,if TYPE_CHECKING,20
+beets.ui.commands.import_.display,beets.autotag,if TYPE_CHECKING,20
+beets.ui.commands.import_.display,beets.library,if TYPE_CHECKING,21
+beets.ui.commands.import_.display,beets.util.color,if TYPE_CHECKING,22
+beets.ui.commands.import_.session,beets,,7
+beets.ui.commands.import_.session,beets.importer,,7
+beets.ui.commands.import_.session,beets.logging,,7
+beets.ui.commands.import_.session,beets.plugins,,7
+beets.ui.commands.import_.session,beets.ui,,7
+beets.ui.commands.import_.session,beets.autotag,,8
+beets.ui.commands.import_.session,beets.autotag,,8
+beets.ui.commands.import_.session,beets.autotag,,8
+beets.ui.commands.import_.session,beets.autotag,,8
+beets.ui.commands.import_.session,beets.autotag,,8
+beets.ui.commands.import_.session,beets.autotag,,8
+beets.ui.commands.import_.session,beets.importer,,16
+beets.ui.commands.import_.session,beets.importer,,16
+beets.ui.commands.import_.session,beets.library,,17
+beets.ui.commands.import_.session,beets.util,,18
+beets.ui.commands.import_.session,beets.util,,18
+beets.ui.commands.import_.session,beets.util.color,,19
+beets.ui.commands.import_.session,beets.util.units,,20
+beets.ui.commands.import_.session,beets.util.units,,20
+beets.ui.commands.import_.session,beets.ui.commands.import_.display,,22
+beets.ui.commands.import_.session,beets.ui.commands.import_.display,,22
+beets.ui.commands.import_.session,beets.autotag,if TYPE_CHECKING,27
+beets.ui.commands.import_.session,beets.importer,if TYPE_CHECKING,28
+beets.ui.commands.import_.session,beets.importer,if TYPE_CHECKING,28
+beets.ui.commands.import_.session,beets.library,if TYPE_CHECKING,29
+beets.ui.commands.import_.session,beets.library,if TYPE_CHECKING,29
+beets.ui.commands.import_.session,beets.util,if TYPE_CHECKING,30
+beets.ui.commands.list,beets.ui,,7
+beets.ui.commands.list,beets.exceptions,,8
+beets.ui.commands.list,beets.library,if TYPE_CHECKING,13
+beets.ui.commands.modify,beets.ui,,9
+beets.ui.commands.modify,beets.dbcore.types,,10
+beets.ui.commands.modify,beets.exceptions,,11
+beets.ui.commands.modify,beets.library,,12
+beets.ui.commands.modify,beets.library,,12
+beets.ui.commands.modify,beets.util.deprecation,,13
+beets.ui.commands.modify,beets.library,if TYPE_CHECKING,18
+beets.ui.commands.modify,beets.library,if TYPE_CHECKING,18
+beets.ui.commands.modify,beets.library,if TYPE_CHECKING,18
+beets.ui.commands.move,beets.logging,,8
+beets.ui.commands.move,beets.ui,,8
+beets.ui.commands.move,beets.exceptions,,9
+beets.ui.commands.move,beets.util,,10
+beets.ui.commands.move,beets.util,,10
+beets.ui.commands.move,beets.util,,10
+beets.ui.commands.move,beets.util,,10
+beets.ui.commands.move,beets.util.diff,,11
+beets.ui.commands.move,beets.library,if TYPE_CHECKING,16
+beets.ui.commands.move,beets.library,if TYPE_CHECKING,16
+beets.ui.commands.move,beets.library,if TYPE_CHECKING,16
+beets.ui.commands.move,beets.library,if TYPE_CHECKING,16
+beets.ui.commands.remove,beets.ui,,8
+beets.ui.commands.remove,beets.exceptions,,9
+beets.ui.commands.remove,beets.library,if TYPE_CHECKING,14
+beets.ui.commands.remove,beets.library,if TYPE_CHECKING,14
+beets.ui.commands.remove,beets.library,if TYPE_CHECKING,14
+beets.ui.commands.remove,beets.library,if TYPE_CHECKING,14
+beets.ui.commands.stats,beets.logging,,8
+beets.ui.commands.stats,beets.ui,,8
+beets.ui.commands.stats,beets.util,,9
+beets.ui.commands.stats,beets.util.units,,10
+beets.ui.commands.stats,beets.util.units,,10
+beets.ui.commands.stats,beets.library,if TYPE_CHECKING,15
+beets.ui.commands.update,beets.library,,8
+beets.ui.commands.update,beets.logging,,8
+beets.ui.commands.update,beets.ui,,8
+beets.ui.commands.update,beets.exceptions,,9
+beets.ui.commands.update,beets.util,,10
+beets.ui.commands.update,beets.util,,10
+beets.ui.commands.update,beets.util.color,,11
+beets.ui.commands.update,beets.library,if TYPE_CHECKING,16
+beets.ui.commands.update,beets.library,if TYPE_CHECKING,16
+beets.ui.commands.version,beets,,8
+beets.ui.commands.version,beets.plugins,,9
+beets.ui.commands.version,beets.ui,,9
+beets.ui.commands.version,beets.library,if TYPE_CHECKING,14
+beets.ui.commands.write,beets.library,,8
+beets.ui.commands.write,beets.logging,,8
+beets.ui.commands.write,beets.ui,,8
+beets.ui.commands.write,beets.exceptions,,9
+beets.ui.commands.write,beets.util,,10
+beets.ui.commands.write,beets.library,if TYPE_CHECKING,15
+beets.util,beets,,44
+beets.util,beets.util.hidden,,45
+beets.util,beets.importer,if TYPE_CHECKING,51
+beets.util,beets.importer,if TYPE_CHECKING,51
+beets.util,beets.importer,if TYPE_CHECKING,51
+beets.util,beets.library,if TYPE_CHECKING,52
+beets.util,beets,,935
+beets.util.artresizer,beets.logging,,19
+beets.util.artresizer,beets.util,,19
+beets.util.artresizer,beets.util,,20
+beets.util.artresizer,beets.util,,20
+beets.util.artresizer,beets.util,,20
+beets.util.artresizer,beets.util,,20
+beets.util.color,beets,,10
+beets.util.color,beets.util,if TYPE_CHECKING,13
+beets.util.deprecation,beets,,9
+beets.util.deprecation,beets.logging,,10
+beets.util.diff,beets.util.color,,6
+beets.util.diff,beets.dbcore.db,if TYPE_CHECKING,11
+beets.util.diff,beets.library,if TYPE_CHECKING,12
+beets.util.extension,beets,,13
+beets.util.extension,beets.util,,14
+beets.util.extension,beets.util,if TYPE_CHECKING,17
+beets.util.hidden,beets.util,if TYPE_CHECKING,13
+beets.util.id_extractors,beets.logging,,7
+beets.util.layout,beets,,5
+beets.util.layout,beets.util.color,,7
+beets.util.layout,beets.util.color,,7
+beets.util.layout,beets.util.color,,7
+beets.util.layout,beets.util.color,,7
+beets.util.layout,beets.util.color,,7
+beets.util.lyrics,beets.util,,10
+beets.util.lyrics,beets.library,if TYPE_CHECKING,13
+beets.util.m3u,beets.util,,8
+beets.util.m3u,beets.util,,8
+beets.util.m3u,beets.util,,8
+beets.util.m3u,beets.util,,8
+beets.util.m3u,beets.util,if TYPE_CHECKING,11
+beetsplug._utils,beetsplug._utils.art,,1
+beetsplug._utils,beetsplug._utils.vfs,,1
+beetsplug._utils.art,beets.util,,13
+beetsplug._utils.art,beets.util,,13
+beetsplug._utils.art,beets.util,,13
+beetsplug._utils.art,beets.util.artresizer,,14
+beetsplug._utils.art,beets.dbcore,if TYPE_CHECKING,19
+beetsplug._utils.art,beets.library,if TYPE_CHECKING,20
+beetsplug._utils.art,beets.library,if TYPE_CHECKING,20
+beetsplug._utils.art,beets.library,if TYPE_CHECKING,20
+beetsplug._utils.art,beets.logging,if TYPE_CHECKING,21
+beetsplug._utils.art,beets.util,if TYPE_CHECKING,22
+beetsplug._utils.musicbrainz,beets,,32
+beetsplug._utils.musicbrainz,beets.logging,,32
+beetsplug._utils.musicbrainz,beetsplug._utils.requests,,34
+beetsplug._utils.musicbrainz,beetsplug._utils.requests,,34
+beetsplug._utils.musicbrainz,beetsplug._utils.requests,,34
+beetsplug._utils.musicbrainz,beets.metadata_plugins,if TYPE_CHECKING,41
+beetsplug._utils.musicbrainz,beetsplug._typing,if TYPE_CHECKING,43
+beetsplug._utils.playcount,beets.dbcore,,7
+beetsplug._utils.playcount,beets.dbcore,,7
+beetsplug._utils.playcount,beets.dbcore,,7
+beetsplug._utils.playcount,beets.dbcore.query,,8
+beetsplug._utils.playcount,beets.dbcore.query,,8
+beetsplug._utils.playcount,beets.dbcore,if TYPE_CHECKING,13
+beetsplug._utils.playcount,beets.library,if TYPE_CHECKING,14
+beetsplug._utils.playcount,beets.library,if TYPE_CHECKING,14
+beetsplug._utils.playcount,beets.logging,if TYPE_CHECKING,15
+beetsplug._utils.requests,beets,,15
+beetsplug._utils.vfs,beets.util,,9
+beetsplug._utils.vfs,beets.library,if TYPE_CHECKING,14
+beetsplug.absubmit,beets.plugins,,16
+beetsplug.absubmit,beets.ui,,16
+beetsplug.absubmit,beets.util,,16
+beetsplug.absubmit,beets.exceptions,,17
+beetsplug.absubmit,beets.library,if TYPE_CHECKING,22
+beetsplug.absubmit,beets.library,if TYPE_CHECKING,22
+beetsplug.absubmit,beetsplug._typing,if TYPE_CHECKING,24
+beetsplug.acousticbrainz,beets.plugins,,10
+beetsplug.acousticbrainz,beets.ui,,10
+beetsplug.acousticbrainz,beets.dbcore.types,,11
+beetsplug.acousticbrainz,beets.exceptions,,12
+beetsplug.acousticbrainz,beets.importer,if TYPE_CHECKING,17
+beetsplug.acousticbrainz,beets.importer,if TYPE_CHECKING,17
+beetsplug.acousticbrainz,beets.library,if TYPE_CHECKING,18
+beetsplug.acousticbrainz,beets.library,if TYPE_CHECKING,18
+beetsplug.acousticbrainz,beetsplug._typing,if TYPE_CHECKING,20
+beetsplug.advancedrewrite,beets.dbcore,,12
+beetsplug.advancedrewrite,beets.dbcore,,12
+beetsplug.advancedrewrite,beets.dbcore.types,,13
+beetsplug.advancedrewrite,beets.library,,14
+beetsplug.advancedrewrite,beets.library,,14
+beetsplug.advancedrewrite,beets.plugins,,15
+beetsplug.advancedrewrite,beets.ui,,16
+beetsplug.advancedrewrite,beetsplug.rewrite,,18
+beetsplug.advancedrewrite,beets.library,if TYPE_CHECKING,23
+beetsplug.albumtypes,beets.plugins,,7
+beetsplug.albumtypes,beetsplug.musicbrainz,,9
+beetsplug.albumtypes,beets.library,if TYPE_CHECKING,12
+beetsplug.aura,beets,,21
+beetsplug.aura,beets.dbcore,,22
+beetsplug.aura,beets.dbcore,,22
+beetsplug.aura,beets.dbcore.sort,,23
+beetsplug.aura,beets.dbcore.sort,,23
+beetsplug.aura,beets.dbcore.sort,,23
+beetsplug.aura,beets.library,,24
+beetsplug.aura,beets.library,,24
+beetsplug.aura,beets.plugins,,25
+beetsplug.aura,beets.ui,,26
+beetsplug.aura,beets.ui,,26
+beetsplug.aura,beets.dbcore,if TYPE_CHECKING,33
+beetsplug.aura,beets.dbcore.sort,if TYPE_CHECKING,34
+beetsplug.aura,beets.library,if TYPE_CHECKING,35
+beetsplug.aura,beets.library,if TYPE_CHECKING,35
+beetsplug.aura,beetsplug._typing,if TYPE_CHECKING,37
+beetsplug.autobpm,beets.plugins,,10
+beetsplug.autobpm,beets.ui,,11
+beetsplug.autobpm,beets.ui,,11
+beetsplug.autobpm,beets.util.deprecation,,12
+beetsplug.autobpm,beets.importer,if TYPE_CHECKING,17
+beetsplug.autobpm,beets.library,if TYPE_CHECKING,18
+beetsplug.autobpm,beets.library,if TYPE_CHECKING,18
+beetsplug.badfiles,beets,,14
+beetsplug.badfiles,beets.importer,,14
+beetsplug.badfiles,beets.ui,,14
+beetsplug.badfiles,beets.plugins,,15
+beetsplug.badfiles,beets.ui,,16
+beetsplug.badfiles,beets.util,,17
+beetsplug.badfiles,beets.util,,17
+beetsplug.badfiles,beets.util.color,,18
+beetsplug.badfiles,beets.importer,if TYPE_CHECKING,23
+beetsplug.badfiles,beets.importer,if TYPE_CHECKING,23
+beetsplug.badfiles,beets.library,if TYPE_CHECKING,24
+beetsplug.badfiles,beets.library,if TYPE_CHECKING,24
+beetsplug.bareasc,beets.ui,,13
+beetsplug.bareasc,beets.dbcore.query,,14
+beetsplug.bareasc,beets.plugins,,15
+beetsplug.bareasc,beets.ui,,16
+beetsplug.bareasc,beets.dbcore.query,if TYPE_CHECKING,19
+beetsplug.bareasc,beets.library,if TYPE_CHECKING,20
+beetsplug.beatport,beets,,18
+beetsplug.beatport,beets.ui,,19
+beetsplug.beatport,beets,,20
+beetsplug.beatport,beets.autotag,,21
+beetsplug.beatport,beets.autotag,,21
+beetsplug.beatport,beets.exceptions,,22
+beetsplug.beatport,beets.metadata_plugins,,23
+beetsplug.beatport,beets.util,,24
+beetsplug.beatport,beets.util.deprecation,,25
+beetsplug.beatport,beets.library,if TYPE_CHECKING,30
+beetsplug.beatport,beetsplug._typing,if TYPE_CHECKING,32
+beetsplug.bench,beets.importer,,9
+beetsplug.bench,beets.plugins,,9
+beetsplug.bench,beets.ui,,9
+beetsplug.bench,beets.autotag,,10
+beetsplug.bench,beets.autotag,,10
+beetsplug.bench,beets.plugins,,11
+beetsplug.bench,beets.util.pathformats,,12
+beetsplug.bench,beetsplug._utils.vfs,,13
+beetsplug.bench,beets.library,if TYPE_CHECKING,18
+beetsplug.bench,beets.library,if TYPE_CHECKING,18
+beetsplug.bpd,beets,,20
+beetsplug.bpd,beets.ui,,21
+beetsplug.bpd,beets.dbcore,,22
+beetsplug.bpd,beets.exceptions,,23
+beetsplug.bpd,beets.library,,24
+beetsplug.bpd,beets.plugins,,25
+beetsplug.bpd,beets.util,,26
+beetsplug.bpd,beetsplug._utils.vfs,,27
+beetsplug.bpd,beets.dbcore.query,if TYPE_CHECKING,34
+beetsplug.bpd,beets.dbcore.query,if TYPE_CHECKING,34
+beetsplug.bpd,beets.library,if TYPE_CHECKING,35
+beetsplug.bpd,beets.logging,if TYPE_CHECKING,36
+beetsplug.bpd,beetsplug._utils.vfs,if TYPE_CHECKING,37
+beetsplug.bpd,beetsplug.bpd.gstplayer,,41
+beetsplug.bpd.gstplayer,beets.exceptions,,17
+beetsplug.bpm,beets.ui,,8
+beetsplug.bpm,beets.plugins,,9
+beetsplug.bpm,beets.library,if TYPE_CHECKING,15
+beetsplug.bpm,beets.library,if TYPE_CHECKING,15
+beetsplug.bpsync,beets.library,,7
+beetsplug.bpsync,beets.ui,,7
+beetsplug.bpsync,beets.util,,7
+beetsplug.bpsync,beets.autotag,,8
+beetsplug.bpsync,beets.autotag,,8
+beetsplug.bpsync,beets.autotag,,8
+beetsplug.bpsync,beets.plugins,,9
+beetsplug.bpsync,beets.plugins,,9
+beetsplug.bpsync,beets.util.deprecation,,10
+beetsplug.bpsync,beetsplug.beatport,,12
+beetsplug.bpsync,beets.library,if TYPE_CHECKING,17
+beetsplug.bpsync,beets.library,if TYPE_CHECKING,17
+beetsplug.bpsync,beets.library,if TYPE_CHECKING,17
+beetsplug.bucket,beets.plugins,,11
+beetsplug.bucket,beets.exceptions,,12
+beetsplug.chroma,beets,,16
+beetsplug.chroma,beets.ui,,16
+beetsplug.chroma,beets.util,,16
+beetsplug.chroma,beets.autotag,,17
+beetsplug.chroma,beets.exceptions,,18
+beetsplug.chroma,beets.metadata_plugins,,19
+beetsplug.chroma,beets.metadata_plugins,,19
+beetsplug.chroma,beets.util.color,,20
+beetsplug.chroma,beets.autotag,if TYPE_CHECKING,26
+beetsplug.chroma,beets.autotag,if TYPE_CHECKING,26
+beetsplug.chroma,beets.importer,if TYPE_CHECKING,27
+beetsplug.chroma,beets.importer,if TYPE_CHECKING,27
+beetsplug.chroma,beets.library,if TYPE_CHECKING,28
+beetsplug.chroma,beets.library,if TYPE_CHECKING,28
+beetsplug.chroma,beets.logging,if TYPE_CHECKING,29
+beetsplug.chroma,beetsplug.musicbrainz,if TYPE_CHECKING,30
+beetsplug.chroma,beetsplug._typing,if TYPE_CHECKING,32
+beetsplug.convert,beets.plugins,,18
+beetsplug.convert,beets.ui,,18
+beetsplug.convert,beets.util,,18
+beetsplug.convert,beets.exceptions,,19
+beetsplug.convert,beets.library,,20
+beetsplug.convert,beets.library,,20
+beetsplug.convert,beets.plugins,,21
+beetsplug.convert,beets.util.pipeline,,22
+beetsplug.convert,beets.util.artresizer,,23
+beetsplug.convert,beets.util.m3u,,24
+beetsplug.convert,beets.util.pathformats,,25
+beetsplug.convert,beetsplug._utils.art,,26
+beetsplug.convert,beets.importer,if TYPE_CHECKING,31
+beetsplug.convert,beets.importer,if TYPE_CHECKING,31
+beetsplug.convert,beets.library,if TYPE_CHECKING,32
+beetsplug.convert,beets.library,if TYPE_CHECKING,32
+beetsplug.convert,beets.util.pathformats,if TYPE_CHECKING,33
+beetsplug.deezer,beets,,11
+beetsplug.deezer,beets.ui,,11
+beetsplug.deezer,beets.autotag,,12
+beetsplug.deezer,beets.autotag,,12
+beetsplug.deezer,beets.dbcore.types,,13
+beetsplug.deezer,beets.exceptions,,14
+beetsplug.deezer,beets.importer.tasks,,15
+beetsplug.deezer,beets.metadata_plugins,,16
+beetsplug.deezer,beets.metadata_plugins,,16
+beetsplug.deezer,beets.library,if TYPE_CHECKING,24
+beetsplug.deezer,beets.library,if TYPE_CHECKING,24
+beetsplug.deezer,beets.metadata_plugins,if TYPE_CHECKING,25
+beetsplug.deezer,beets.metadata_plugins,if TYPE_CHECKING,25
+beetsplug.deezer,beetsplug._typing,if TYPE_CHECKING,27
+beetsplug.discogs,beets,,24
+beetsplug.discogs,beets.ui,,25
+beetsplug.discogs,beets,,26
+beetsplug.discogs,beets.util,,26
+beetsplug.discogs,beets.autotag,,27
+beetsplug.discogs,beets.autotag,,27
+beetsplug.discogs,beets.autotag,,27
+beetsplug.discogs,beets.exceptions,,28
+beetsplug.discogs,beets.metadata_plugins,,29
+beetsplug.discogs,beets.metadata_plugins,,29
+beetsplug.discogs,beetsplug.discogs.states,,31
+beetsplug.discogs,beetsplug.discogs.states,,31
+beetsplug.discogs,beetsplug.discogs.states,,31
+beetsplug.discogs,beets.importer,if TYPE_CHECKING,36
+beetsplug.discogs,beets.library,if TYPE_CHECKING,37
+beetsplug.discogs,beets.metadata_plugins,if TYPE_CHECKING,38
+beetsplug.discogs,beets.metadata_plugins,if TYPE_CHECKING,38
+beetsplug.discogs,beetsplug.discogs.types,if TYPE_CHECKING,40
+beetsplug.discogs,beetsplug.discogs.types,if TYPE_CHECKING,40
+beetsplug.discogs,beetsplug.discogs.types,if TYPE_CHECKING,40
+beetsplug.discogs,beetsplug.discogs.types,if TYPE_CHECKING,40
+beetsplug.discogs.states,beets,,10
+beetsplug.discogs.states,beets.util,,11
+beetsplug.discogs.states,beetsplug.discogs.types,,13
+beetsplug.discogs.states,beets.autotag,if TYPE_CHECKING,18
+beetsplug.discogs.states,beetsplug.discogs,if TYPE_CHECKING,20
+beetsplug.discogs.states,beetsplug.discogs.types,if TYPE_CHECKING,21
+beetsplug.discogs.states,beetsplug.discogs.types,if TYPE_CHECKING,21
+beetsplug.discogs.states,beetsplug.discogs.types,if TYPE_CHECKING,21
+beetsplug.discogs.types,beets.autotag,if TYPE_CHECKING,8
+beetsplug.duplicates,beets.library,,10
+beetsplug.duplicates,beets.library,,10
+beetsplug.duplicates,beets.plugins,,11
+beetsplug.duplicates,beets.ui,,12
+beetsplug.duplicates,beets.ui,,12
+beetsplug.duplicates,beets.ui,,12
+beetsplug.duplicates,beets.util,,13
+beetsplug.duplicates,beets.util,,13
+beetsplug.duplicates,beets.util,,13
+beetsplug.duplicates,beets.util,,13
+beetsplug.duplicates,beets.util,,13
+beetsplug.duplicates,beets.library,if TYPE_CHECKING,25
+beetsplug.duplicates,beets.library,if TYPE_CHECKING,25
+beetsplug.duplicates,beets.library,if TYPE_CHECKING,25
+beetsplug.edit,beets.plugins,,15
+beetsplug.edit,beets.ui,,15
+beetsplug.edit,beets.util,,15
+beetsplug.edit,beets.dbcore.types,,16
+beetsplug.edit,beets.exceptions,,17
+beetsplug.edit,beets.importer,,18
+beetsplug.edit,beets.library,,19
+beetsplug.edit,beets.library,,19
+beetsplug.edit,beets.util,,20
+beetsplug.edit,beets.importer,if TYPE_CHECKING,25
+beetsplug.edit,beets.importer,if TYPE_CHECKING,25
+beetsplug.edit,beets.library,if TYPE_CHECKING,26
+beetsplug.edit,beets.library,if TYPE_CHECKING,26
+beetsplug.edit,beets.logging,if TYPE_CHECKING,27
+beetsplug.edit,beetsplug._typing,if TYPE_CHECKING,29
+beetsplug.embedart,beets,,12
+beetsplug.embedart,beets.ui,,12
+beetsplug.embedart,beets.exceptions,,13
+beetsplug.embedart,beets.plugins,,14
+beetsplug.embedart,beets.ui,,15
+beetsplug.embedart,beets.util,,16
+beetsplug.embedart,beets.util,,16
+beetsplug.embedart,beets.util,,16
+beetsplug.embedart,beets.util,,16
+beetsplug.embedart,beets.util.artresizer,,17
+beetsplug.embedart,beetsplug._utils.art,,18
+beetsplug.embedart,beets.importer,if TYPE_CHECKING,23
+beetsplug.embedart,beets.importer,if TYPE_CHECKING,23
+beetsplug.embedart,beets.library,if TYPE_CHECKING,24
+beetsplug.embedart,beets.library,if TYPE_CHECKING,24
+beetsplug.embedart,beets.library,if TYPE_CHECKING,24
+beetsplug.embyupdate,beets.plugins,,19
+beetsplug.embyupdate,beets.library,if TYPE_CHECKING,22
+beetsplug.embyupdate,beets.library,if TYPE_CHECKING,22
+beetsplug.embyupdate,beetsplug._typing,if TYPE_CHECKING,24
+beetsplug.export,beets.ui,,16
+beetsplug.export,beets.dbcore.types,,17
+beetsplug.export,beets.library.fields,,18
+beetsplug.export,beets.plugins,,19
+beetsplug.export,beetsplug.info,,20
+beetsplug.export,beetsplug.info,,20
+beetsplug.export,beets.library,if TYPE_CHECKING,25
+beetsplug.export,beetsplug._typing,if TYPE_CHECKING,27
+beetsplug.fetchart,beets,,18
+beetsplug.fetchart,beets.importer,,18
+beetsplug.fetchart,beets.plugins,,18
+beetsplug.fetchart,beets.ui,,18
+beetsplug.fetchart,beets.util,,18
+beetsplug.fetchart,beets.exceptions,,19
+beetsplug.fetchart,beets.util,,20
+beetsplug.fetchart,beets.util,,20
+beetsplug.fetchart,beets.util,,20
+beetsplug.fetchart,beets.util,,20
+beetsplug.fetchart,beets.util.artresizer,,21
+beetsplug.fetchart,beets.util.color,,22
+beetsplug.fetchart,beets.util.config,,23
+beetsplug.fetchart,beets.util.config,,23
+beetsplug.fetchart,beets.importer,if TYPE_CHECKING,28
+beetsplug.fetchart,beets.importer,if TYPE_CHECKING,28
+beetsplug.fetchart,beets.library,if TYPE_CHECKING,29
+beetsplug.fetchart,beets.library,if TYPE_CHECKING,29
+beetsplug.fetchart,beets.logging,if TYPE_CHECKING,30
+beetsplug.filefilter,beets,,8
+beetsplug.filefilter,beets.importer,,9
+beetsplug.filefilter,beets.plugins,,10
+beetsplug.filefilter,beets.util,,11
+beetsplug.filefilter,beets.importer,if TYPE_CHECKING,14
+beetsplug.filefilter,beets.importer,if TYPE_CHECKING,14
+beetsplug.fish,beets.library,,16
+beetsplug.fish,beets.plugins,,16
+beetsplug.fish,beets.ui,,16
+beetsplug.fish,beets.plugins,,17
+beetsplug.fish,beets.ui.commands,,18
+beetsplug.fish,beets.library,if TYPE_CHECKING,23
+beetsplug.freedesktop,beets.ui,,7
+beetsplug.freedesktop,beets.plugins,,8
+beetsplug.freedesktop,beets.library,if TYPE_CHECKING,13
+beetsplug.fromfilename,beets.plugins,,11
+beetsplug.fromfilename,beets.util,,12
+beetsplug.fromfilename,beets.importer,if TYPE_CHECKING,17
+beetsplug.fromfilename,beets.importer,if TYPE_CHECKING,17
+beetsplug.fromfilename,beets.library,if TYPE_CHECKING,18
+beetsplug.fromfilename,beets.logging,if TYPE_CHECKING,19
+beetsplug.fromfilename,beetsplug._typing,if TYPE_CHECKING,21
+beetsplug.ftintitle,beets,,9
+beetsplug.ftintitle,beets.plugins,,9
+beetsplug.ftintitle,beets.ui,,9
+beetsplug.ftintitle,beets.autotag,if TYPE_CHECKING,14
+beetsplug.ftintitle,beets.autotag,if TYPE_CHECKING,14
+beetsplug.ftintitle,beets.autotag,if TYPE_CHECKING,14
+beetsplug.ftintitle,beets.importer,if TYPE_CHECKING,15
+beetsplug.ftintitle,beets.importer,if TYPE_CHECKING,15
+beetsplug.ftintitle,beets.library,if TYPE_CHECKING,16
+beetsplug.ftintitle,beets.library,if TYPE_CHECKING,16
+beetsplug.ftintitle,beets.library,if TYPE_CHECKING,16
+beetsplug.fuzzy,beets,,8
+beetsplug.fuzzy,beets.dbcore.query,,9
+beetsplug.fuzzy,beets.plugins,,10
+beetsplug.fuzzy,beetsplug._typing,if TYPE_CHECKING,13
+beetsplug.hook,beets.events,,11
+beetsplug.hook,beets.plugins,,12
+beetsplug.hook,beets.events,if TYPE_CHECKING,15
+beetsplug.ihate,beets.importer,,7
+beetsplug.ihate,beets.library,,8
+beetsplug.ihate,beets.library,,8
+beetsplug.ihate,beets.library,,8
+beetsplug.ihate,beets.plugins,,9
+beetsplug.ihate,beets.importer,if TYPE_CHECKING,14
+beetsplug.ihate,beets.importer,if TYPE_CHECKING,14
+beetsplug.importadded,beets.importer,,12
+beetsplug.importadded,beets.util,,12
+beetsplug.importadded,beets.plugins,,13
+beetsplug.importadded,beets.importer,if TYPE_CHECKING,16
+beetsplug.importadded,beets.importer,if TYPE_CHECKING,16
+beetsplug.importadded,beets.library,if TYPE_CHECKING,17
+beetsplug.importadded,beets.library,if TYPE_CHECKING,17
+beetsplug.importadded,beets.library,if TYPE_CHECKING,17
+beetsplug.importfeeds,beets,,13
+beetsplug.importfeeds,beets.plugins,,14
+beetsplug.importfeeds,beets.util,,15
+beetsplug.importfeeds,beets.util,,15
+beetsplug.importfeeds,beets.util,,15
+beetsplug.importfeeds,beets.util,,15
+beetsplug.importfeeds,beets.util,,15
+beetsplug.importfeeds,beets.util,,15
+beetsplug.importfeeds,beets.importer,if TYPE_CHECKING,27
+beetsplug.importfeeds,beets.library,if TYPE_CHECKING,28
+beetsplug.importfeeds,beets.library,if TYPE_CHECKING,28
+beetsplug.importfeeds,beets.library,if TYPE_CHECKING,28
+beetsplug.importsource,beets.dbcore.query,,14
+beetsplug.importsource,beets.plugins,,15
+beetsplug.importsource,beets.ui,,16
+beetsplug.importsource,beets.util.color,,17
+beetsplug.importsource,beets.importer,if TYPE_CHECKING,20
+beetsplug.importsource,beets.importer,if TYPE_CHECKING,20
+beetsplug.importsource,beets.library,if TYPE_CHECKING,21
+beetsplug.info,beets.ui,,10
+beetsplug.info,beets.library,,11
+beetsplug.info,beets.plugins,,12
+beetsplug.info,beets.util,,13
+beetsplug.info,beets.util,,13
+beetsplug.info,beets.util,,13
+beetsplug.info,beets.library,if TYPE_CHECKING,18
+beetsplug.info,beets.library,if TYPE_CHECKING,18
+beetsplug.info,beetsplug._typing,if TYPE_CHECKING,20
+beetsplug.inline,beets,,9
+beetsplug.inline,beets.plugins,,10
+beetsplug.inline,beets.library,if TYPE_CHECKING,15
+beetsplug.inline,beetsplug._typing,if TYPE_CHECKING,17
+beetsplug.ipfs,beets,,13
+beetsplug.ipfs,beets.library,,13
+beetsplug.ipfs,beets.ui,,13
+beetsplug.ipfs,beets.util,,13
+beetsplug.ipfs,beets.plugins,,14
+beetsplug.ipfs,beets.dbcore,if TYPE_CHECKING,19
+beetsplug.ipfs,beets.importer,if TYPE_CHECKING,20
+beetsplug.ipfs,beets.importer,if TYPE_CHECKING,20
+beetsplug.ipfs,beets.library,if TYPE_CHECKING,21
+beetsplug.ipfs,beets.library,if TYPE_CHECKING,21
+beetsplug.ipfs,beetsplug.play,,115
+beetsplug.keyfinder,beets.ui,,9
+beetsplug.keyfinder,beets.util,,9
+beetsplug.keyfinder,beets.plugins,,10
+beetsplug.keyfinder,beets.importer,if TYPE_CHECKING,16
+beetsplug.keyfinder,beets.importer,if TYPE_CHECKING,16
+beetsplug.keyfinder,beets.library,if TYPE_CHECKING,17
+beetsplug.keyfinder,beets.library,if TYPE_CHECKING,17
+beetsplug.kodiupdate,beets.plugins,,18
+beetsplug.kodiupdate,beets.library,if TYPE_CHECKING,21
+beetsplug.kodiupdate,beets.library,if TYPE_CHECKING,21
+beetsplug.lastgenre,beets,,22
+beetsplug.lastgenre,beets.library,,22
+beetsplug.lastgenre,beets.plugins,,22
+beetsplug.lastgenre,beets.ui,,22
+beetsplug.lastgenre,beets.library,,23
+beetsplug.lastgenre,beets.library,,23
+beetsplug.lastgenre,beets.util,,24
+beetsplug.lastgenre,beets.util,,24
+beetsplug.lastgenre,beetsplug.lastgenre.utils,,25
+beetsplug.lastgenre,beetsplug.lastgenre.utils,,25
+beetsplug.lastgenre,beetsplug.lastgenre.client,,27
+beetsplug.lastgenre,beets.importer,if TYPE_CHECKING,32
+beetsplug.lastgenre,beets.importer,if TYPE_CHECKING,32
+beetsplug.lastgenre,beets.library,if TYPE_CHECKING,33
+beetsplug.lastgenre,beetsplug.lastgenre.utils,if TYPE_CHECKING,35
+beetsplug.lastgenre,beetsplug.lastgenre.utils,if TYPE_CHECKING,35
+beetsplug.lastgenre.client,beets.plugins,,10
+beetsplug.lastgenre.client,beetsplug.lastgenre.utils,,12
+beetsplug.lastgenre.client,beetsplug.lastgenre.utils,,12
+beetsplug.lastgenre.client,beets.library,if TYPE_CHECKING,17
+beetsplug.lastgenre.client,beets.logging,if TYPE_CHECKING,18
+beetsplug.lastgenre.client,beetsplug.lastgenre.utils,if TYPE_CHECKING,20
+beetsplug.lastgenre.client,beetsplug.lastgenre.utils,if TYPE_CHECKING,20
+beetsplug.lastgenre.utils,beets.logging,if TYPE_CHECKING,9
+beetsplug.lastimport,beets,,8
+beetsplug.lastimport,beets.plugins,,8
+beetsplug.lastimport,beets.ui,,8
+beetsplug.lastimport,beets.dbcore.types,,9
+beetsplug.lastimport,beets.exceptions,,10
+beetsplug.lastimport,beetsplug._utils.playcount,,12
+beetsplug.lastimport,beets.library,if TYPE_CHECKING,17
+beetsplug.lastimport,beets.logging,if TYPE_CHECKING,18
+beetsplug.lastimport,beetsplug._utils.playcount,if TYPE_CHECKING,20
+beetsplug.limit,beets.dbcore,,16
+beetsplug.limit,beets.plugins,,17
+beetsplug.limit,beets.ui,,18
+beetsplug.limit,beets.ui,,18
+beetsplug.limit,beets.util.deprecation,,19
+beetsplug.limit,beets.library,if TYPE_CHECKING,24
+beetsplug.limit,beets.library,if TYPE_CHECKING,24
+beetsplug.limit,beetsplug._typing,if TYPE_CHECKING,26
+beetsplug.listenbrainz,beets,,14
+beetsplug.listenbrainz,beets.ui,,14
+beetsplug.listenbrainz,beets.dbcore.types,,15
+beetsplug.listenbrainz,beets.plugins,,16
+beetsplug.listenbrainz,beets.util,,17
+beetsplug.listenbrainz,beets.util,,17
+beetsplug.listenbrainz,beets.util,,17
+beetsplug.listenbrainz,beetsplug._utils.musicbrainz,,19
+beetsplug.listenbrainz,beetsplug._utils.playcount,,20
+beetsplug.listenbrainz,beetsplug._utils.requests,,21
+beetsplug.listenbrainz,beets.library,if TYPE_CHECKING,27
+beetsplug.listenbrainz,beetsplug._typing,if TYPE_CHECKING,29
+beetsplug.listenbrainz,beetsplug._utils.playcount,if TYPE_CHECKING,30
+beetsplug.loadext,beets.dbcore,,8
+beetsplug.loadext,beets.plugins,,9
+beetsplug.loadext,beets.library,if TYPE_CHECKING,12
+beetsplug.lyrics,beets.plugins,,23
+beetsplug.lyrics,beets.ui,,23
+beetsplug.lyrics,beets.autotag,,24
+beetsplug.lyrics,beets.dbcore.types,,25
+beetsplug.lyrics,beets.dbcore.query,,26
+beetsplug.lyrics,beets.library,,27
+beetsplug.lyrics,beets.library,,27
+beetsplug.lyrics,beets.util.config,,28
+beetsplug.lyrics,beets.util.lyrics,,29
+beetsplug.lyrics,beets.util.lyrics,,29
+beetsplug.lyrics,beetsplug._utils.requests,,31
+beetsplug.lyrics,beetsplug._utils.requests,,31
+beetsplug.lyrics,beetsplug._utils.requests,,31
+beetsplug.lyrics,beets.importer,if TYPE_CHECKING,42
+beetsplug.lyrics,beets.library,if TYPE_CHECKING,43
+beetsplug.lyrics,beets.logging,if TYPE_CHECKING,44
+beetsplug.lyrics,beetsplug._typing,if TYPE_CHECKING,46
+beetsplug.lyrics,beetsplug._typing,if TYPE_CHECKING,46
+beetsplug.lyrics,beetsplug._typing,if TYPE_CHECKING,46
+beetsplug.lyrics,beetsplug._typing,if TYPE_CHECKING,46
+beetsplug.lyrics,beetsplug._typing,if TYPE_CHECKING,46
+beetsplug.mbcollection,beets,,10
+beetsplug.mbcollection,beets,,10
+beetsplug.mbcollection,beets.exceptions,,11
+beetsplug.mbcollection,beets.plugins,,12
+beetsplug.mbcollection,beets.ui,,13
+beetsplug.mbcollection,beetsplug._utils.musicbrainz,,15
+beetsplug.mbcollection,beetsplug._utils.requests,,16
+beetsplug.mbcollection,beets.importer,if TYPE_CHECKING,24
+beetsplug.mbcollection,beets.importer,if TYPE_CHECKING,24
+beetsplug.mbcollection,beets.library,if TYPE_CHECKING,25
+beetsplug.mbcollection,beets.library,if TYPE_CHECKING,25
+beetsplug.mbcollection,beetsplug._typing,if TYPE_CHECKING,27
+beetsplug.mbpseudo,beets,,13
+beetsplug.mbpseudo,beets.autotag,,14
+beetsplug.mbpseudo,beets.autotag,,14
+beetsplug.mbpseudo,beets.autotag,,14
+beetsplug.mbpseudo,beets.autotag.distance,,14
+beetsplug.mbpseudo,beets.plugins,,15
+beetsplug.mbpseudo,beets.util.id_extractors,,16
+beetsplug.mbpseudo,beetsplug.musicbrainz,,17
+beetsplug.mbpseudo,beetsplug.musicbrainz,,17
+beetsplug.mbpseudo,beetsplug.musicbrainz,,17
+beetsplug.mbpseudo,beets.autotag,if TYPE_CHECKING,26
+beetsplug.mbpseudo,beets.autotag,if TYPE_CHECKING,26
+beetsplug.mbpseudo,beets.library,if TYPE_CHECKING,27
+beetsplug.mbpseudo,beetsplug._typing,if TYPE_CHECKING,29
+beetsplug.mbpseudo,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.mbpseudo,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.mbpseudo,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.mbsubmit,beets.ui,,16
+beetsplug.mbsubmit,beets.autotag,,17
+beetsplug.mbsubmit,beets.plugins,,18
+beetsplug.mbsubmit,beets.util,,19
+beetsplug.mbsubmit,beets.util,,19
+beetsplug.mbsubmit,beets.importer,if TYPE_CHECKING,25
+beetsplug.mbsubmit,beets.importer,if TYPE_CHECKING,25
+beetsplug.mbsubmit,beets.library,if TYPE_CHECKING,26
+beetsplug.mbsubmit,beets.library,if TYPE_CHECKING,26
+beetsplug.mbsync,beets.library,,8
+beetsplug.mbsync,beets.metadata_plugins,,8
+beetsplug.mbsync,beets.ui,,8
+beetsplug.mbsync,beets.util,,8
+beetsplug.mbsync,beets.autotag,,9
+beetsplug.mbsync,beets.autotag,,9
+beetsplug.mbsync,beets.autotag,,9
+beetsplug.mbsync,beets.plugins,,10
+beetsplug.mbsync,beets.plugins,,10
+beetsplug.mbsync,beets.library,if TYPE_CHECKING,15
+beetsplug.metasync,beets.ui,,11
+beetsplug.metasync,beets.plugins,,12
+beetsplug.metasync,beets.dbcore.types,if TYPE_CHECKING,17
+beetsplug.metasync,beets.library,if TYPE_CHECKING,18
+beetsplug.metasync,beets.library,if TYPE_CHECKING,18
+beetsplug.metasync,beets.logging,if TYPE_CHECKING,19
+beetsplug.metasync.amarok,beets.dbcore.types,,11
+beetsplug.metasync.amarok,beets.util,,12
+beetsplug.metasync.amarok,beetsplug.metasync,,13
+beetsplug.metasync.amarok,beets.library,if TYPE_CHECKING,20
+beetsplug.metasync.amarok,beets.logging,if TYPE_CHECKING,21
+beetsplug.metasync.itunes,beets.util,,16
+beetsplug.metasync.itunes,beets.dbcore.types,,17
+beetsplug.metasync.itunes,beets.util,,18
+beetsplug.metasync.itunes,beets.util,,18
+beetsplug.metasync.itunes,beetsplug.metasync,,19
+beetsplug.metasync.itunes,beets.library,if TYPE_CHECKING,26
+beetsplug.metasync.itunes,beets.logging,if TYPE_CHECKING,27
+beetsplug.missing,beets,,10
+beetsplug.missing,beets.metadata_plugins,,10
+beetsplug.missing,beets.dbcore.types,,11
+beetsplug.missing,beets.library,,12
+beetsplug.missing,beets.library,,12
+beetsplug.missing,beets.plugins,,13
+beetsplug.missing,beets.ui,,14
+beetsplug.missing,beets.ui,,14
+beetsplug.missing,beetsplug._utils.musicbrainz,,16
+beetsplug.missing,beets.autotag,if TYPE_CHECKING,22
+beetsplug.missing,beets.autotag,if TYPE_CHECKING,22
+beetsplug.missing,beets.library,if TYPE_CHECKING,23
+beetsplug.mpdstats,beets,,10
+beetsplug.mpdstats,beets.plugins,,10
+beetsplug.mpdstats,beets.ui,,10
+beetsplug.mpdstats,beets.dbcore.types,,11
+beetsplug.mpdstats,beets.dbcore.query,,12
+beetsplug.mpdstats,beets.exceptions,,13
+beetsplug.mpdstats,beets.util,,14
+beetsplug.mpdstats,beets.library,if TYPE_CHECKING,19
+beetsplug.mpdstats,beets.library,if TYPE_CHECKING,19
+beetsplug.mpdstats,beets.logging,if TYPE_CHECKING,20
+beetsplug.mpdstats,beetsplug._typing,if TYPE_CHECKING,22
+beetsplug.mpdupdate,beets,,16
+beetsplug.mpdupdate,beets.plugins,,17
+beetsplug.mpdupdate,beets.library,if TYPE_CHECKING,20
+beetsplug.mpdupdate,beets.library,if TYPE_CHECKING,20
+beetsplug.musicbrainz,beets,,15
+beetsplug.musicbrainz,beets.plugins,,15
+beetsplug.musicbrainz,beets.util,,15
+beetsplug.musicbrainz,beets.autotag,,16
+beetsplug.musicbrainz,beets.autotag,,16
+beetsplug.musicbrainz,beets.metadata_plugins,,17
+beetsplug.musicbrainz,beets.metadata_plugins,,17
+beetsplug.musicbrainz,beets.util.deprecation,,18
+beetsplug.musicbrainz,beets.util.id_extractors,,19
+beetsplug.musicbrainz,beetsplug._utils.musicbrainz,,21
+beetsplug.musicbrainz,beetsplug._utils.requests,,22
+beetsplug.musicbrainz,beets.library,if TYPE_CHECKING,27
+beetsplug.musicbrainz,beets.metadata_plugins,if TYPE_CHECKING,28
+beetsplug.musicbrainz,beets.metadata_plugins,if TYPE_CHECKING,28
+beetsplug.musicbrainz,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.musicbrainz,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.musicbrainz,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.musicbrainz,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.musicbrainz,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.musicbrainz,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.musicbrainz,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.musicbrainz,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.musicbrainz,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.musicbrainz,beetsplug._utils.musicbrainz,if TYPE_CHECKING,30
+beetsplug.parentwork,beets.ui,,11
+beetsplug.parentwork,beets.plugins,,12
+beetsplug.parentwork,beetsplug._utils.musicbrainz,,14
+beetsplug.parentwork,beets.importer,if TYPE_CHECKING,19
+beetsplug.parentwork,beets.importer,if TYPE_CHECKING,19
+beetsplug.parentwork,beets.library,if TYPE_CHECKING,20
+beetsplug.parentwork,beets.library,if TYPE_CHECKING,20
+beetsplug.parentwork,beetsplug._utils.musicbrainz,if TYPE_CHECKING,21
+beetsplug.parentwork,beetsplug._typing,if TYPE_CHECKING,23
+beetsplug.permissions,beets,,15
+beetsplug.permissions,beets.plugins,,16
+beetsplug.permissions,beets.util,,17
+beetsplug.permissions,beets.util,,17
+beetsplug.permissions,beets.util,,17
+beetsplug.permissions,beets.library,if TYPE_CHECKING,22
+beetsplug.permissions,beets.library,if TYPE_CHECKING,22
+beetsplug.permissions,beets.library,if TYPE_CHECKING,22
+beetsplug.permissions,beets.logging,if TYPE_CHECKING,23
+beetsplug.play,beets,,11
+beetsplug.play,beets.ui,,11
+beetsplug.play,beets.util,,11
+beetsplug.play,beets.exceptions,,12
+beetsplug.play,beets.plugins,,13
+beetsplug.play,beets.ui,,14
+beetsplug.play,beets.util,,15
+beetsplug.play,beets.util,,15
+beetsplug.play,beets.util.color,,16
+beetsplug.play,beets.importer,if TYPE_CHECKING,21
+beetsplug.play,beets.importer,if TYPE_CHECKING,21
+beetsplug.play,beets.library,if TYPE_CHECKING,22
+beetsplug.play,beets.library,if TYPE_CHECKING,22
+beetsplug.play,beets.logging,if TYPE_CHECKING,23
+beetsplug.playlist,beets,,10
+beetsplug.playlist,beets.dbcore.query,,11
+beetsplug.playlist,beets.util,,12
+beetsplug.playlist,beets.dbcore.query,if TYPE_CHECKING,17
+beetsplug.playlist,beets.library,if TYPE_CHECKING,18
+beetsplug.playlist,beets.library,if TYPE_CHECKING,18
+beetsplug.plexupdate,beets,,29
+beetsplug.plexupdate,beets.ui,,29
+beetsplug.plexupdate,beets.exceptions,,30
+beetsplug.plexupdate,beets.logging,,31
+beetsplug.plexupdate,beets.plugins,,32
+beetsplug.plexupdate,beetsplug._utils.requests,,33
+beetsplug.plexupdate,beetsplug._utils.requests,,33
+beetsplug.plexupdate,beetsplug._utils.requests,,33
+beetsplug.plexupdate,beets.library,if TYPE_CHECKING,42
+beetsplug.plexupdate,beets.library,if TYPE_CHECKING,42
+beetsplug.plexupdate,beetsplug._typing,if TYPE_CHECKING,43
+beetsplug.random,beets.plugins,,8
+beetsplug.random,beets.ui,,9
+beetsplug.random,beets.ui,,9
+beetsplug.random,beets.library,if TYPE_CHECKING,14
+beetsplug.random,beets.library,if TYPE_CHECKING,14
+beetsplug.replace,beets.ui,,9
+beetsplug.replace,beets.util,,9
+beetsplug.replace,beets.exceptions,,10
+beetsplug.replace,beets.plugins,,11
+beetsplug.replace,beets.library,if TYPE_CHECKING,17
+beetsplug.replace,beets.library,if TYPE_CHECKING,17
+beetsplug.replaygain,beets.ui,,21
+beetsplug.replaygain,beets.exceptions,,22
+beetsplug.replaygain,beets.plugins,,23
+beetsplug.replaygain,beets.util,,24
+beetsplug.replaygain,beets.util,,24
+beetsplug.replaygain,beets.importer,if TYPE_CHECKING,34
+beetsplug.replaygain,beets.importer,if TYPE_CHECKING,34
+beetsplug.replaygain,beets.library,if TYPE_CHECKING,35
+beetsplug.replaygain,beets.library,if TYPE_CHECKING,35
+beetsplug.replaygain,beets.library,if TYPE_CHECKING,35
+beetsplug.replaygain,beets.util,if TYPE_CHECKING,36
+beetsplug.replaygain,beetsplug._typing,if TYPE_CHECKING,38
+beetsplug.rewrite,beets.library,,12
+beetsplug.rewrite,beets.exceptions,,13
+beetsplug.rewrite,beets.plugins,,14
+beetsplug.rewrite,beets.library,if TYPE_CHECKING,19
+beetsplug.scrub,beets,,12
+beetsplug.scrub,beets.ui,,12
+beetsplug.scrub,beets.util,,12
+beetsplug.scrub,beets.plugins,,13
+beetsplug.scrub,beets.importer,if TYPE_CHECKING,16
+beetsplug.scrub,beets.importer,if TYPE_CHECKING,16
+beetsplug.scrub,beets.library,if TYPE_CHECKING,17
+beetsplug.scrub,beets.library,if TYPE_CHECKING,17
+beetsplug.smartplaylist,beets.plugins,,15
+beetsplug.smartplaylist,beets.ui,,15
+beetsplug.smartplaylist,beets.dbcore,,16
+beetsplug.smartplaylist,beets.dbcore.query,,17
+beetsplug.smartplaylist,beets.dbcore.sort,,18
+beetsplug.smartplaylist,beets.exceptions,,19
+beetsplug.smartplaylist,beets.library,,20
+beetsplug.smartplaylist,beets.library,,20
+beetsplug.smartplaylist,beets.library,,20
+beetsplug.smartplaylist,beets.util,,21
+beetsplug.smartplaylist,beets.util,,21
+beetsplug.smartplaylist,beets.util,,21
+beetsplug.smartplaylist,beets.util,,21
+beetsplug.smartplaylist,beets.util,,21
+beetsplug.smartplaylist,beets.util,,21
+beetsplug.smartplaylist,beets.library,if TYPE_CHECKING,33
+beetsplug.smartplaylist,beets.library,if TYPE_CHECKING,33
+beetsplug.smartplaylist,beetsplug._typing,if TYPE_CHECKING,35
+beetsplug.sonosupdate,beets.plugins,,11
+beetsplug.sonosupdate,beets.library,if TYPE_CHECKING,14
+beetsplug.sonosupdate,beets.library,if TYPE_CHECKING,14
+beetsplug.spotify,beets.ui,,21
+beetsplug.spotify,beets.autotag,,22
+beetsplug.spotify,beets.autotag,,22
+beetsplug.spotify,beets.dbcore.types,,23
+beetsplug.spotify,beets.exceptions,,24
+beetsplug.spotify,beets.library,,25
+beetsplug.spotify,beets.metadata_plugins,,26
+beetsplug.spotify,beets.metadata_plugins,,26
+beetsplug.spotify,beets.util,,27
+beetsplug.spotify,beets.library,if TYPE_CHECKING,32
+beetsplug.spotify,beets.library,if TYPE_CHECKING,32
+beetsplug.spotify,beets.metadata_plugins,if TYPE_CHECKING,33
+beetsplug.spotify,beets.metadata_plugins,if TYPE_CHECKING,33
+beetsplug.spotify,beetsplug._typing,if TYPE_CHECKING,34
+beetsplug.subsonicplaylist,beets.dbcore,,12
+beetsplug.subsonicplaylist,beets.dbcore.query,,13
+beetsplug.subsonicplaylist,beets.plugins,,14
+beetsplug.subsonicplaylist,beets.ui,,15
+beetsplug.subsonicplaylist,beets.library,if TYPE_CHECKING,21
+beetsplug.subsonicplaylist,beets.library,if TYPE_CHECKING,21
+beetsplug.subsonicplaylist,beetsplug._typing,if TYPE_CHECKING,23
+beetsplug.subsonicupdate,beets.plugins,,28
+beetsplug.subsonicupdate,beets.library,if TYPE_CHECKING,31
+beetsplug.subsonicupdate,beets.library,if TYPE_CHECKING,31
+beetsplug.substitute,beets.plugins,,8
+beetsplug.the,beets.plugins,,5
+beetsplug.thumbnails,beets.plugins,,19
+beetsplug.thumbnails,beets.ui,,20
+beetsplug.thumbnails,beets.util,,21
+beetsplug.thumbnails,beets.util,,21
+beetsplug.thumbnails,beets.util,,21
+beetsplug.thumbnails,beets.util.artresizer,,22
+beetsplug.thumbnails,beets.library,if TYPE_CHECKING,28
+beetsplug.thumbnails,beets.library,if TYPE_CHECKING,28
+beetsplug.tidal,beets.ui,,12
+beetsplug.tidal,beets.autotag,,13
+beetsplug.tidal,beets.autotag,,13
+beetsplug.tidal,beets.dbcore.types,,14
+beetsplug.tidal,beets.exceptions,,15
+beetsplug.tidal,beets.logging,,16
+beetsplug.tidal,beets.metadata_plugins,,17
+beetsplug.tidal,beetsplug.tidal.api,,19
+beetsplug.tidal,beets.autotag,if TYPE_CHECKING,24
+beetsplug.tidal,beets.importer,if TYPE_CHECKING,25
+beetsplug.tidal,beets.library,if TYPE_CHECKING,26
+beetsplug.tidal,beets.library,if TYPE_CHECKING,26
+beetsplug.tidal,beets.library,if TYPE_CHECKING,26
+beetsplug.tidal,beets.library,if TYPE_CHECKING,26
+beetsplug.tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,28
+beetsplug.tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,28
+beetsplug.tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,28
+beetsplug.tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,28
+beetsplug.tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,28
+beetsplug.tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,28
+beetsplug.tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,28
+beetsplug.tidal.api,beets.ui,,9
+beetsplug.tidal.api,beets.logging,,10
+beetsplug.tidal.api,beetsplug._utils.requests,,11
+beetsplug.tidal.api,beetsplug.tidal.session,,12
+beetsplug.tidal.api,beetsplug.tidal.api_types,if TYPE_CHECKING,17
+beetsplug.tidal.api,beetsplug.tidal.api_types,if TYPE_CHECKING,17
+beetsplug.tidal.api,beetsplug.tidal.api_types,if TYPE_CHECKING,17
+beetsplug.tidal.api,beetsplug.tidal.api_types,if TYPE_CHECKING,17
+beetsplug.tidal.session,beets.logging,,13
+beetsplug.tidal.session,beetsplug._utils.requests,,14
+beetsplug.tidal.session,beetsplug._utils.requests,,14
+beetsplug.tidal.session,beetsplug._typing,if TYPE_CHECKING,17
+beetsplug.titlecase,beets.ui,,13
+beetsplug.titlecase,beets.autotag,,14
+beetsplug.titlecase,beets.plugins,,15
+beetsplug.titlecase,beets.autotag,if TYPE_CHECKING,20
+beetsplug.titlecase,beets.importer,if TYPE_CHECKING,21
+beetsplug.titlecase,beets.importer,if TYPE_CHECKING,21
+beetsplug.titlecase,beets.library,if TYPE_CHECKING,22
+beetsplug.titlecase,beets.library,if TYPE_CHECKING,22
+beetsplug.types,beets.dbcore.types,,3
+beetsplug.types,beets.plugins,,4
+beetsplug.unimported,beets.util,,11
+beetsplug.unimported,beets.plugins,,12
+beetsplug.unimported,beets.ui,,13
+beetsplug.unimported,beets.ui,,13
+beetsplug.unimported,beets.library,if TYPE_CHECKING,18
+beetsplug.web,beets.library,,15
+beetsplug.web,beets.ui,,16
+beetsplug.web,beets.util,,16
+beetsplug.web,beets.dbcore.query,,17
+beetsplug.web,beets.plugins,,18
+beetsplug.web,beets.library,if TYPE_CHECKING,23
+beetsplug.web,beets.library,if TYPE_CHECKING,23
+beetsplug.web,beetsplug._typing,if TYPE_CHECKING,24
+beetsplug.zero,beets.importer,,11
+beetsplug.zero,beets.plugins,,12
+beetsplug.zero,beets.ui,,13
+beetsplug.zero,beets.ui,,13
+beetsplug.zero,beets.importer,if TYPE_CHECKING,19
+beetsplug.zero,beets.importer,if TYPE_CHECKING,19
+beetsplug.zero,beets.library,if TYPE_CHECKING,20
+beetsplug.zero,beets.library,if TYPE_CHECKING,20
+beetsplug.zero,beetsplug._typing,if TYPE_CHECKING,22
+extra.release,docs.conf,,22
+test.autotag.test_distance,beets.autotag,,5
+test.autotag.test_distance,beets.autotag,,5
+test.autotag.test_distance,beets.autotag,,5
+test.autotag.test_distance,beets.autotag,,5
+test.autotag.test_distance,beets.autotag.distance,,5
+test.autotag.test_distance,beets.autotag,,5
+test.autotag.test_distance,beets.autotag,,5
+test.autotag.test_distance,beets.library,,14
+test.autotag.test_distance,beets.metadata_plugins,,15
+test.autotag.test_distance,beets.metadata_plugins,,15
+test.autotag.test_distance,beets.plugins,,16
+test.autotag.test_hooks,beets.autotag,,9
+test.autotag.test_hooks,beets.autotag,,9
+test.autotag.test_hooks,beets.autotag,,9
+test.autotag.test_hooks,beets.autotag,,9
+test.autotag.test_hooks,beets.autotag,,9
+test.autotag.test_hooks,beets.autotag,,9
+test.autotag.test_hooks,beets.library,,17
+test.autotag.test_hooks,beets.test.helper,,18
+test.autotag.test_hooks,beets.util,,19
+test.autotag.test_match,beets.metadata_plugins,,5
+test.autotag.test_match,beets.autotag,,6
+test.autotag.test_match,beets.autotag,,6
+test.autotag.test_match,beets.autotag,,6
+test.autotag.test_match,beets.autotag,,6
+test.autotag.test_match,beets.autotag,,6
+test.autotag.test_match,beets.autotag,,6
+test.autotag.test_match,beets.library,,14
+test.conftest,beets.logging,,10
+test.conftest,beets.autotag,,11
+test.conftest,beets.dbcore.query,,12
+test.conftest,beets.test._common,,13
+test.conftest,beets.test.helper,,14
+test.conftest,beets.test.helper,,14
+test.conftest,beets.test.helper,,14
+test.conftest,beets.test.helper,,15
+test.conftest,beets.util,,16
+test.dbcore.test_datequery,beets.dbcore.query,,9
+test.dbcore.test_datequery,beets.dbcore.query,,9
+test.dbcore.test_datequery,beets.dbcore.query,,9
+test.dbcore.test_datequery,beets.dbcore.query,,9
+test.dbcore.test_datequery,beets.test.helper,,15
+test.dbcore.test_db,beets.dbcore,,12
+test.dbcore.test_db,beets.dbcore,,13
+test.dbcore.test_db,beets.dbcore.query,,13
+test.dbcore.test_db,beets.dbcore.sort,,13
+test.dbcore.test_db,beets.dbcore.types,,13
+test.dbcore.test_db,beets.dbcore.db,,14
+test.dbcore.test_db,beets.library,,15
+test.dbcore.test_db,beets.library,,15
+test.dbcore.test_db,beets.test.fixtures,,16
+test.dbcore.test_query,beets.util,,11
+test.dbcore.test_query,beets.dbcore,,12
+test.dbcore.test_query,beets.dbcore,,12
+test.dbcore.test_query,beets.dbcore,,12
+test.dbcore.test_query,beets.dbcore.types,,12
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.dbcore.query,,13
+test.dbcore.test_query,beets.library,,29
+test.dbcore.test_query,beets.test._common,,30
+test.dbcore.test_queryparse,beets.dbcore,,5
+test.dbcore.test_queryparse,beets.dbcore.query,,6
+test.dbcore.test_queryparse,beets.dbcore.sort,,6
+test.dbcore.test_queryparse,beets.test.fixtures,,7
+test.dbcore.test_queryparse,beets.test.fixtures,,7
+test.dbcore.test_sort,beets.library,,5
+test.dbcore.test_sort,beets.util,,6
+test.dbcore.test_sort,beets.dbcore.types,,7
+test.dbcore.test_sort,beets.dbcore.query,,8
+test.dbcore.test_sort,beets.dbcore.sort,,9
+test.dbcore.test_sort,beets.dbcore.sort,,9
+test.dbcore.test_sort,beets.library,,10
+test.dbcore.test_sort,beets.library,,10
+test.dbcore.test_sort,beets.test._common,,11
+test.dbcore.test_types,beets,,5
+test.dbcore.test_types,beets.dbcore.types,,6
+test.dbcore.test_types,beets.util,,7
+test.extra.test_release,beets.test.helper,,8
+test.library.test_migrations,beets.dbcore.types,,8
+test.library.test_migrations,beets.library,,9
+test.library.test_migrations,beets.library,,9
+test.library.test_migrations,beets.library.migrations,,9
+test.library.test_migrations,beets.test.helper,,10
+test.library.test_migrations,beets.util,,11
+test.library.test_migrations,beets.util,,11
+test.plugins.factories.musicbrainz,beetsplug._utils.musicbrainz,,4
+test.plugins.test_acousticbrainz,beets.test._common,,5
+test.plugins.test_acousticbrainz,beetsplug.acousticbrainz,,6
+test.plugins.test_acousticbrainz,beetsplug.acousticbrainz,,6
+test.plugins.test_advancedrewrite,beets.test.helper,,5
+test.plugins.test_advancedrewrite,beets.ui,,6
+test.plugins.test_albumtypes,beets.test.helper,,7
+test.plugins.test_albumtypes,beetsplug.albumtypes,,8
+test.plugins.test_albumtypes,beetsplug.musicbrainz,,9
+test.plugins.test_art,beets,,14
+test.plugins.test_art,beets.importer,,14
+test.plugins.test_art,beets.logging,,14
+test.plugins.test_art,beets.util,,14
+test.plugins.test_art,beets.autotag,,15
+test.plugins.test_art,beets.autotag,,15
+test.plugins.test_art,beets.autotag,,15
+test.plugins.test_art,beets.library,,16
+test.plugins.test_art,beets.test._common,,17
+test.plugins.test_art,beets.test.helper,,18
+test.plugins.test_art,beets.test.helper,,18
+test.plugins.test_art,beets.test.helper,,18
+test.plugins.test_art,beets.test.helper,,18
+test.plugins.test_art,beets.test.helper,,18
+test.plugins.test_art,beets.util,,25
+test.plugins.test_art,beets.util.artresizer,,26
+test.plugins.test_art,beetsplug.fetchart,,27
+test.plugins.test_aura,beets.dbcore.types,,8
+test.plugins.test_aura,beetsplug.aura,,28
+test.plugins.test_autobpm,beets.test.helper,,3
+test.plugins.test_autobpm,beets.test.helper,,3
+test.plugins.test_badfiles,beets.importer,,6
+test.plugins.test_badfiles,beets.test.helper,,7
+test.plugins.test_badfiles,beets.test.helper,,7
+test.plugins.test_badfiles,beets.test.helper,,7
+test.plugins.test_badfiles,beets.test.helper,,7
+test.plugins.test_badfiles,beetsplug.badfiles,,13
+test.plugins.test_beatport,beets.test._common,,6
+test.plugins.test_beatport,beets.test.helper,,7
+test.plugins.test_beatport,beetsplug.beatport,,8
+test.plugins.test_bpd,beets.test.helper,,19
+test.plugins.test_bpd,beets.ui,,305
+test.plugins.test_bucket,beets,,7
+test.plugins.test_bucket,beets.exceptions,,8
+test.plugins.test_bucket,beets.test.helper,,9
+test.plugins.test_bucket,beetsplug.bucket,,10
+test.plugins.test_chroma,beets.metadata_plugins,,5
+test.plugins.test_chroma,beets.autotag,,6
+test.plugins.test_chroma,beets.autotag,,6
+test.plugins.test_chroma,beets.library,,7
+test.plugins.test_chroma,beets.test.helper,,8
+test.plugins.test_chroma,beets.test.helper,,8
+test.plugins.test_chroma,beets.test.helper,,8
+test.plugins.test_convert,beets.util,,12
+test.plugins.test_convert,beets.library,,13
+test.plugins.test_convert,beets.test._common,,14
+test.plugins.test_convert,beets.test.helper,,15
+test.plugins.test_convert,beets.test.helper,,15
+test.plugins.test_convert,beets.test.helper,,15
+test.plugins.test_convert,beets.test.helper,,15
+test.plugins.test_convert,beetsplug.convert,,21
+test.plugins.test_deezer,beets.library,,5
+test.plugins.test_deezer,beetsplug.deezer,,6
+test.plugins.test_discogs,beets,,12
+test.plugins.test_discogs,beets.library,,13
+test.plugins.test_discogs,beets.metadata_plugins,,14
+test.plugins.test_discogs,beets.test.helper,,15
+test.plugins.test_discogs,beetsplug.discogs,,16
+test.plugins.test_discogs,beetsplug.discogs,,16
+test.plugins.test_discogs,test.plugins.factories.discogs,,18
+test.plugins.test_discogs,beetsplug.discogs.types,if TYPE_CHECKING,21
+test.plugins.test_duplicates,beets.test.helper,,3
+test.plugins.test_duplicates,beets.test.helper,,3
+test.plugins.test_duplicates,beets.test.helper,,3
+test.plugins.test_edit,beets.dbcore.query,,5
+test.plugins.test_edit,beets.importer,,6
+test.plugins.test_edit,beets.library,,7
+test.plugins.test_edit,beets.test.helper,,8
+test.plugins.test_edit,beets.test.helper,,8
+test.plugins.test_edit,beets.test.helper,,8
+test.plugins.test_edit,beets.test.helper,,8
+test.plugins.test_edit,beets.test.helper,,8
+test.plugins.test_edit,beets.test.helper,,8
+test.plugins.test_edit,beetsplug.edit,,16
+test.plugins.test_edit,beetsplug.edit,,16
+test.plugins.test_edit,beetsplug.edit,,16
+test.plugins.test_embedart,beets,,14
+test.plugins.test_embedart,beets.logging,,14
+test.plugins.test_embedart,beets.exceptions,,15
+test.plugins.test_embedart,beets.test._common,,16
+test.plugins.test_embedart,beets.test.fixtures,,17
+test.plugins.test_embedart,beets.test.helper,,18
+test.plugins.test_embedart,beets.test.helper,,18
+test.plugins.test_embedart,beets.test.helper,,18
+test.plugins.test_embedart,beets.test.helper,,18
+test.plugins.test_embedart,beets.test.helper,,18
+test.plugins.test_embedart,beets.util.artresizer,,25
+test.plugins.test_embedart,beetsplug._utils.art,,26
+test.plugins.test_embedart,beets.test.helper,if TYPE_CHECKING,29
+test.plugins.test_embyupdate,beets.test.helper,,3
+test.plugins.test_embyupdate,beetsplug.embyupdate,,4
+test.plugins.test_export,beets.test.helper,,8
+test.plugins.test_export,beets.test.helper,,8
+test.plugins.test_fetchart,beets.importer,,8
+test.plugins.test_fetchart,beets.test.helper,,9
+test.plugins.test_fetchart,beets.test.helper,,9
+test.plugins.test_fetchart,beets.test.helper,,9
+test.plugins.test_fetchart,beets.test.helper,,9
+test.plugins.test_fetchart,beetsplug.fetchart,,15
+test.plugins.test_fetchart,beetsplug.fetchart,,15
+test.plugins.test_fetchart,beetsplug.fetchart,,15
+test.plugins.test_filefilter,beets.test.helper,,3
+test.plugins.test_filefilter,beets.test.helper,,3
+test.plugins.test_fromfilename,beetsplug.fromfilename,,5
+test.plugins.test_ftintitle,beets.plugins,,9
+test.plugins.test_ftintitle,beets.autotag,,10
+test.plugins.test_ftintitle,beets.autotag,,10
+test.plugins.test_ftintitle,beets.importer,,11
+test.plugins.test_ftintitle,beets.importer,,11
+test.plugins.test_ftintitle,beets.library,,12
+test.plugins.test_ftintitle,beets.test.helper,,13
+test.plugins.test_ftintitle,beetsplug.ftintitle,,14
+test.plugins.test_fuzzy,beets.test.helper,,5
+test.plugins.test_hook,beets.plugins,,10
+test.plugins.test_hook,beets.events,,11
+test.plugins.test_hook,beets.test.helper,,12
+test.plugins.test_hook,beets.events,if TYPE_CHECKING,17
+test.plugins.test_ihate,beets.importer,,3
+test.plugins.test_ihate,beets.library,,4
+test.plugins.test_ihate,beetsplug.ihate,,5
+test.plugins.test_importadded,beets.importer,,11
+test.plugins.test_importadded,beets.test.helper,,12
+test.plugins.test_importadded,beets.test.helper,,12
+test.plugins.test_importfeeds,beets.library,,7
+test.plugins.test_importfeeds,beets.library,,7
+test.plugins.test_importfeeds,beets.test.helper,,8
+test.plugins.test_importfeeds,beets.util,,9
+test.plugins.test_importfeeds,beetsplug.importfeeds,,10
+test.plugins.test_importsource,beets.importer,,6
+test.plugins.test_importsource,beets.plugins,,6
+test.plugins.test_importsource,beets.test.helper,,7
+test.plugins.test_importsource,beets.test.helper,,7
+test.plugins.test_importsource,beets.test.helper,,7
+test.plugins.test_info,beets.test.helper,,5
+test.plugins.test_info,beets.test.helper,,5
+test.plugins.test_inline,beets,,3
+test.plugins.test_inline,beets.plugins,,3
+test.plugins.test_inline,beets.test.helper,,4
+test.plugins.test_inline,beetsplug.inline,,5
+test.plugins.test_ipfs,beets.library,,5
+test.plugins.test_ipfs,beets.util,,5
+test.plugins.test_ipfs,beets.test._common,,6
+test.plugins.test_ipfs,beets.test.helper,,7
+test.plugins.test_ipfs,beets.test.helper,,7
+test.plugins.test_ipfs,beetsplug.ipfs,,8
+test.plugins.test_keyfinder,beets.util,,3
+test.plugins.test_keyfinder,beets.library,,4
+test.plugins.test_keyfinder,beets.test.helper,,5
+test.plugins.test_keyfinder,beets.test.helper,,5
+test.plugins.test_keyfinder,beets.test.helper,,5
+test.plugins.test_lastgenre,beets.library,,10
+test.plugins.test_lastgenre,beets.test._common,,11
+test.plugins.test_lastgenre,beets.test.helper,,12
+test.plugins.test_lastgenre,beets.test.helper,,12
+test.plugins.test_lastgenre,beetsplug.lastgenre,,13
+test.plugins.test_lastgenre,beetsplug.lastgenre.utils,,14
+test.plugins.test_lastgenre,beetsplug.lastgenre.utils,,14
+test.plugins.test_limit,beets.test.helper,,3
+test.plugins.test_limit,beets.test.helper,,3
+test.plugins.test_listenbrainz,beets.ui,,8
+test.plugins.test_listenbrainz,beets.test.helper,,9
+test.plugins.test_listenbrainz,beetsplug.listenbrainz,,10
+test.plugins.test_lyrics,beets.library,,16
+test.plugins.test_lyrics,beets.test.helper,,17
+test.plugins.test_lyrics,beets.test.helper,,17
+test.plugins.test_lyrics,beets.util.lyrics,,18
+test.plugins.test_lyrics,beetsplug.lyrics,,19
+test.plugins.test_lyrics,test.plugins.lyrics_pages,,21
+test.plugins.test_lyrics,test.plugins.lyrics_pages,if TYPE_CHECKING,24
+test.plugins.test_mbcollection,beets.library,,8
+test.plugins.test_mbcollection,beets.test.helper,,9
+test.plugins.test_mbcollection,beets.test.helper,,9
+test.plugins.test_mbcollection,beets.ui,,10
+test.plugins.test_mbcollection,beetsplug.mbcollection,,11
+test.plugins.test_mbpseudo,beets.autotag,,9
+test.plugins.test_mbpseudo,beets.autotag,,9
+test.plugins.test_mbpseudo,beets.autotag,,9
+test.plugins.test_mbpseudo,beets.autotag,,9
+test.plugins.test_mbpseudo,beets.library,,10
+test.plugins.test_mbpseudo,beets.test.helper,,11
+test.plugins.test_mbpseudo,beetsplug.mbpseudo,,12
+test.plugins.test_mbpseudo,beetsplug.mbpseudo,,12
+test.plugins.test_mbpseudo,beetsplug.mbpseudo,,12
+test.plugins.test_mbpseudo,beetsplug._typing,if TYPE_CHECKING,21
+test.plugins.test_mbpseudo,beetsplug._utils.musicbrainz,if TYPE_CHECKING,22
+test.plugins.test_mbsubmit,beets.test.helper,,1
+test.plugins.test_mbsubmit,beets.test.helper,,1
+test.plugins.test_mbsubmit,beets.test.helper,,1
+test.plugins.test_mbsync,beets.autotag,,3
+test.plugins.test_mbsync,beets.autotag,,3
+test.plugins.test_mbsync,beets.library,,4
+test.plugins.test_mbsync,beets.test.helper,,5
+test.plugins.test_metasync,beets.library,,6
+test.plugins.test_metasync,beets.test._common,,7
+test.plugins.test_metasync,beets.test.helper,,8
+test.plugins.test_metasync,beets.test.helper,,8
+test.plugins.test_missing,beets.autotag,,9
+test.plugins.test_missing,beets.autotag,,9
+test.plugins.test_missing,beets.library,,10
+test.plugins.test_missing,beets.library,,10
+test.plugins.test_missing,beets.test.helper,,11
+test.plugins.test_missing,beets.test.helper,,11
+test.plugins.test_mpdstats,beets.util,,4
+test.plugins.test_mpdstats,beets.library,,5
+test.plugins.test_mpdstats,beets.test.helper,,6
+test.plugins.test_mpdstats,beetsplug.mpdstats,,7
+test.plugins.test_mpdstats,beetsplug.mpdstats,,7
+test.plugins.test_musicbrainz,beets.library,,11
+test.plugins.test_musicbrainz,beets.test.helper,,12
+test.plugins.test_musicbrainz,beetsplug.musicbrainz,,13
+test.plugins.test_musicbrainz,beetsplug.musicbrainz,,14
+test.plugins.test_musicbrainz,test.plugins.factories.musicbrainz,,16
+test.plugins.test_musicbrainz,beetsplug._utils.musicbrainz,if TYPE_CHECKING,19
+test.plugins.test_parentwork,beets.library,,5
+test.plugins.test_parentwork,beets.test.helper,,6
+test.plugins.test_permissions,beets.test.helper,,9
+test.plugins.test_permissions,beets.test.helper,,9
+test.plugins.test_permissions,beets.test.helper,,9
+test.plugins.test_permissions,beetsplug.permissions,,10
+test.plugins.test_permissions,beetsplug.permissions,,10
+test.plugins.test_permissions,beetsplug.permissions,,10
+test.plugins.test_play,beets.test.helper,,10
+test.plugins.test_play,beets.test.helper,,10
+test.plugins.test_play,beets.test.helper,,10
+test.plugins.test_play,beets.test.helper,,10
+test.plugins.test_play,beets.test.helper,,10
+test.plugins.test_play,beets.test.helper,,10
+test.plugins.test_play,beets.ui,,18
+test.plugins.test_play,beets.util,,19
+test.plugins.test_play,beetsplug.play,,20
+test.plugins.test_playlist,beets,,5
+test.plugins.test_playlist,beets.test.helper,,6
+test.plugins.test_plexupdate,beets.exceptions,,11
+test.plugins.test_plexupdate,beetsplug._utils.requests,,12
+test.plugins.test_plexupdate,beetsplug.plexupdate,,13
+test.plugins.test_plexupdate,beetsplug.plexupdate,,13
+test.plugins.test_plexupdate,beetsplug.plexupdate,,13
+test.plugins.test_plexupdate,beetsplug.plexupdate,,13
+test.plugins.test_plugin_mediafield,beets.library,,8
+test.plugins.test_plugin_mediafield,beets.plugins,,9
+test.plugins.test_plugin_mediafield,beets.test._common,,10
+test.plugins.test_plugin_mediafield,beets.test.helper,,11
+test.plugins.test_plugin_mediafield,beets.util,,12
+test.plugins.test_random,beetsplug.random,,8
+test.plugins.test_random,beetsplug.random,,8
+test.plugins.test_replace,beets.exceptions,,7
+test.plugins.test_replace,beets.test._common,,8
+test.plugins.test_replace,beets.test.helper,,9
+test.plugins.test_replace,beetsplug.replace,,10
+test.plugins.test_replaygain,beets.test.helper,,7
+test.plugins.test_replaygain,beets.test.helper,,7
+test.plugins.test_replaygain,beets.test.helper,,7
+test.plugins.test_replaygain,beets.test.helper,,7
+test.plugins.test_replaygain,beetsplug.replaygain,,13
+test.plugins.test_replaygain,beetsplug.replaygain,,13
+test.plugins.test_replaygain,beetsplug.replaygain,,13
+test.plugins.test_rewrite,beets.test.helper,,3
+test.plugins.test_rewrite,beets.ui,,4
+test.plugins.test_rewrite,beetsplug.rewrite,,5
+test.plugins.test_scrub,beets.test.helper,,3
+test.plugins.test_scrub,beets.test.helper,,3
+test.plugins.test_scrub,beets.test.helper,,3
+test.plugins.test_smartplaylist,beets,,10
+test.plugins.test_smartplaylist,beets.dbcore.sort,,11
+test.plugins.test_smartplaylist,beets.dbcore.sort,,11
+test.plugins.test_smartplaylist,beets.dbcore.sort,,11
+test.plugins.test_smartplaylist,beets.library,,12
+test.plugins.test_smartplaylist,beets.library,,12
+test.plugins.test_smartplaylist,beets.library,,12
+test.plugins.test_smartplaylist,beets.test._common,,13
+test.plugins.test_smartplaylist,beets.test.helper,,14
+test.plugins.test_smartplaylist,beets.test.helper,,14
+test.plugins.test_smartplaylist,beets.test.helper,,14
+test.plugins.test_smartplaylist,beets.test.helper,,14
+test.plugins.test_smartplaylist,beets.ui,,15
+test.plugins.test_smartplaylist,beets.util,,16
+test.plugins.test_smartplaylist,beetsplug.smartplaylist,,17
+test.plugins.test_spotify,beets.library,,8
+test.plugins.test_spotify,beets.test._common,,9
+test.plugins.test_spotify,beets.test.helper,,10
+test.plugins.test_spotify,beetsplug.spotify,,11
+test.plugins.test_subsonicupdate,beets,,5
+test.plugins.test_subsonicupdate,beets.test.helper,,6
+test.plugins.test_subsonicupdate,beetsplug.subsonicupdate,,7
+test.plugins.test_substitute,beets.test.helper,,3
+test.plugins.test_substitute,beetsplug.substitute,,4
+test.plugins.test_the,beets,,5
+test.plugins.test_the,beets.test.helper,,6
+test.plugins.test_the,beetsplug.the,,7
+test.plugins.test_the,beetsplug.the,,7
+test.plugins.test_the,beetsplug.the,,7
+test.plugins.test_the,beetsplug.the,,7
+test.plugins.test_thumbnails,beets.test.helper,,6
+test.plugins.test_thumbnails,beets.util,,7
+test.plugins.test_thumbnails,beetsplug.thumbnails,,8
+test.plugins.test_thumbnails,beetsplug.thumbnails,,8
+test.plugins.test_thumbnails,beetsplug.thumbnails,,8
+test.plugins.test_thumbnails,beetsplug.thumbnails,,8
+test.plugins.test_thumbnails,beetsplug.thumbnails,,8
+test.plugins.test_tidal,beets.library,,12
+test.plugins.test_tidal,beets.test.helper,,13
+test.plugins.test_tidal,beetsplug.tidal,,14
+test.plugins.test_tidal,beetsplug.tidal.api,,15
+test.plugins.test_tidal,beetsplug.tidal.api,,15
+test.plugins.test_tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,18
+test.plugins.test_tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,18
+test.plugins.test_tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,18
+test.plugins.test_tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,18
+test.plugins.test_tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,18
+test.plugins.test_tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,18
+test.plugins.test_tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,18
+test.plugins.test_tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,18
+test.plugins.test_tidal,beetsplug.tidal.api_types,if TYPE_CHECKING,18
+test.plugins.test_titlecase,beets.autotag,,5
+test.plugins.test_titlecase,beets.autotag,,5
+test.plugins.test_titlecase,beets.importer,,6
+test.plugins.test_titlecase,beets.importer,,6
+test.plugins.test_titlecase,beets.library,,7
+test.plugins.test_titlecase,beets.test.helper,,8
+test.plugins.test_titlecase,beetsplug.titlecase,,9
+test.plugins.test_types_plugin,beets.test.helper,,7
+test.plugins.test_types_plugin,beets.test.helper,,7
+test.plugins.test_web,beets.library,,11
+test.plugins.test_web,beets.library,,11
+test.plugins.test_web,beets.test._common,,12
+test.plugins.test_web,beets.test.helper,,13
+test.plugins.test_web,beets.test.helper,,13
+test.plugins.test_web,beetsplug.web,,14
+test.plugins.test_zero,beets.library,,5
+test.plugins.test_zero,beets.test.helper,,6
+test.plugins.test_zero,beets.test.helper,,6
+test.plugins.test_zero,beetsplug.zero,,7
+test.plugins.utils.test_musicbrainz,beetsplug._utils.musicbrainz,,3
+test.plugins.utils.test_playcount,beets.logging,,3
+test.plugins.utils.test_playcount,beets.library,,4
+test.plugins.utils.test_playcount,beets.test.helper,,5
+test.plugins.utils.test_playcount,beetsplug._utils.playcount,,6
+test.plugins.utils.test_playcount,beetsplug._utils.playcount,,6
+test.plugins.utils.test_playcount,beetsplug._utils.playcount,,6
+test.plugins.utils.test_requests,beetsplug._utils.requests,,6
+test.plugins.utils.test_vfs,beets.test._common,,3
+test.plugins.utils.test_vfs,beets.test.helper,,4
+test.plugins.utils.test_vfs,beetsplug._utils.vfs,,5
+test.rsrc.beetsplug.test,beets.ui,,1
+test.rsrc.beetsplug.test,beets.plugins,,2
+test.test_files,beets.library,,9
+test.test_files,beets.util,,10
+test.test_files,beets.test._common,,11
+test.test_files,beets.test._common,,12
+test.test_files,beets.test.helper,,13
+test.test_files,beets.test.helper,,13
+test.test_files,beets.util,,14
+test.test_files,beets.util,,14
+test.test_importer,beets,,25
+test.test_importer,beets.importer,,25
+test.test_importer,beets.logging,,25
+test.test_importer,beets.plugins,,25
+test.test_importer,beets.ui,,25
+test.test_importer,beets.util,,25
+test.test_importer,beets.autotag,,26
+test.test_importer,beets.autotag,,26
+test.test_importer,beets.autotag,,26
+test.test_importer,beets.autotag,,26
+test.test_importer,beets.importer.state,,27
+test.test_importer,beets.importer.tasks,,28
+test.test_importer,beets.importer.tasks,,28
+test.test_importer,beets.importer.tasks,,28
+test.test_importer,beets.importer.tasks,,28
+test.test_importer,beets.library,,34
+test.test_importer,beets.test._common,,35
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.test.helper,,36
+test.test_importer,beets.util,,52
+test.test_importer,beets.util,,52
+test.test_importer,beets.util.extension,,53
+test.test_library,beets.dbcore.query,,17
+test.test_library,beets.library,,18
+test.test_library,beets,,19
+test.test_library,beets.plugins,,19
+test.test_library,beets.util,,19
+test.test_library,beets.library,,20
+test.test_library,beets.test._common,,21
+test.test_library,beets.test._common,,22
+test.test_library,beets.test.helper,,23
+test.test_library,beets.util,,24
+test.test_library,beets.util,,24
+test.test_library,beets.util,,24
+test.test_logging,beets.logging,,10
+test.test_logging,beets.plugins,,11
+test.test_logging,beets.ui,,11
+test.test_logging,beets.test.helper,,12
+test.test_logging,beets.test.helper,,12
+test.test_logging,beets.test.helper,,12
+test.test_metadata_plugins,beets.metadata_plugins,,7
+test.test_metadata_plugins,beets.test.helper,,8
+test.test_plugins,beets,,12
+test.test_plugins,beets.plugins,,12
+test.test_plugins,beets.ui,,12
+test.test_plugins,beets.dbcore.types,,13
+test.test_plugins,beets.importer,,14
+test.test_plugins,beets.importer,,14
+test.test_plugins,beets.library,,15
+test.test_plugins,beets.test.helper,,16
+test.test_plugins,beets.test.helper,,16
+test.test_plugins,beets.test.helper,,16
+test.test_plugins,beets.test.helper,,16
+test.test_plugins,beets.test.helper,,16
+test.test_plugins,beets.test.helper,,16
+test.test_plugins,beets.test.helper,,16
+test.test_plugins,beets.util,,25
+test.test_plugins,beets.util,,25
+test.test_util,beets.util,,14
+test.test_util,beets.library,,15
+test.test_util,beets.test._common,,16
+test.test_util,beets.test.helper,,17
+test.test_util,beets.test.helper,,17
+test.test_util,beets,,500
+test.ui.commands.test_completion,beets.test._common,,8
+test.ui.commands.test_completion,beets.test.helper,,9
+test.ui.commands.test_completion,beets.test.helper,,9
+test.ui.commands.test_completion,beets.test.helper,,9
+test.ui.commands.test_completion,beets.ui.commands.completion,,10
+test.ui.commands.test_completion,test.ui.test_ui,,12
+test.ui.commands.test_config,beets,,8
+test.ui.commands.test_config,beets.exceptions,,9
+test.ui.commands.test_config,beets.test.helper,,10
+test.ui.commands.test_config,beets.test.helper,,10
+test.ui.commands.test_fields,beets.library,,1
+test.ui.commands.test_fields,beets.test.helper,,2
+test.ui.commands.test_fields,beets.test.helper,,2
+test.ui.commands.test_import,beets,,7
+test.ui.commands.test_import,beets.library,,7
+test.ui.commands.test_import,beets.autotag,,8
+test.ui.commands.test_import,beets.autotag,,8
+test.ui.commands.test_import,beets.autotag,,8
+test.ui.commands.test_import,beets.autotag,,8
+test.ui.commands.test_import,beets.autotag.distance,,8
+test.ui.commands.test_import,beets.exceptions,,9
+test.ui.commands.test_import,beets.test._common,,10
+test.ui.commands.test_import,beets.test.helper,,11
+test.ui.commands.test_import,beets.test.helper,,11
+test.ui.commands.test_import,beets.ui.commands.import_,,12
+test.ui.commands.test_import,beets.ui.commands.import_.display,,13
+test.ui.commands.test_import,beets.ui.commands.import_.session,,14
+test.ui.commands.test_list,beets.exceptions,,5
+test.ui.commands.test_list,beets.test._common,,6
+test.ui.commands.test_list,beets.test.helper,,7
+test.ui.commands.test_list,beets.test.helper,,7
+test.ui.commands.test_modify,beets.logging,,6
+test.ui.commands.test_modify,beets.exceptions,,7
+test.ui.commands.test_modify,beets.test.helper,,8
+test.ui.commands.test_modify,beets.test.helper,,8
+test.ui.commands.test_modify,beets.test.helper,,8
+test.ui.commands.test_modify,beets.ui.commands.modify,,9
+test.ui.commands.test_modify,beets.ui.commands.modify,,9
+test.ui.commands.test_move,beets.library,,3
+test.ui.commands.test_move,beets.test.helper,,4
+test.ui.commands.test_move,beets.test.helper,,4
+test.ui.commands.test_remove,beets.library,,1
+test.ui.commands.test_remove,beets.test.helper,,2
+test.ui.commands.test_remove,beets.test.helper,,2
+test.ui.commands.test_remove,beets.util,,3
+test.ui.commands.test_update,beets.library,,4
+test.ui.commands.test_update,beets.plugins,,5
+test.ui.commands.test_update,beets.test._common,,6
+test.ui.commands.test_update,beets.test.helper,,7
+test.ui.commands.test_update,beets.test.helper,,7
+test.ui.commands.test_update,beets.util,,8
+test.ui.commands.test_update,beets.util,,8
+test.ui.commands.test_write,beets.test.helper,,1
+test.ui.commands.test_write,beets.test.helper,,1
+test.ui.test_ui,beets,,13
+test.ui.test_ui,beets.plugins,,13
+test.ui.test_ui,beets.ui,,13
+test.ui.test_ui,beets.exceptions,,14
+test.ui.test_ui,beets.test._common,,15
+test.ui.test_ui,beets.test.helper,,16
+test.ui.test_ui,beets.test.helper,,16
+test.ui.test_ui,beets.test.helper,,16
+test.ui.test_ui,beets.ui,,17
+test.ui.test_ui,beets.ui.commands,,17
+test.ui.test_ui_importer,beets.importer,,9
+test.ui.test_ui_importer,beets.test.helper,,10
+test.ui.test_ui_importer,test.test_importer,,11
+test.ui.test_ui_init,beets,,10
+test.ui.test_ui_init,beets.ui,,10
+test.ui.test_ui_init,beets.exceptions,,11
+test.ui.test_ui_init,beets.test.helper,,12
+test.ui.test_ui_init,beets.test.helper,,12
+test.util.test_art_resize,beets.test._common,,8
+test.util.test_art_resize,beets.test.fixtures,,9
+test.util.test_art_resize,beets.test.helper,,10
+test.util.test_art_resize,beets.test.helper,,10
+test.util.test_art_resize,beets.util,,11
+test.util.test_art_resize,beets.util.artresizer,,12
+test.util.test_art_resize,beets.util.artresizer,,12
+test.util.test_color,beets.util.color,,3
+test.util.test_color,beets.util.color,,3
+test.util.test_config,beets.util.config,,3
+test.util.test_config,beets.util.config,,3
+test.util.test_config,beets.util.config,,3
+test.util.test_diff,beets.library,,5
+test.util.test_diff,beets.util.diff,,6
+test.util.test_functemplate,beets.util.functemplate,,5
+test.util.test_hidden,beets.util.hidden,,10
+test.util.test_id_extractors,beets.util.id_extractors,,5
+test.util.test_layout,beets.util.layout,,3
+test.util.test_lyrics,beets.library,,3
+test.util.test_lyrics,beets.util.lyrics,,4
+test.util.test_m3ufile,beets.test._common,,8
+test.util.test_m3ufile,beets.test.helper,,9
+test.util.test_m3ufile,beets.util,,10
+test.util.test_m3ufile,beets.util.m3u,,11
+test.util.test_m3ufile,beets.util.m3u,,11
+test.util.test_pathformats,beets.util.pathformats,,1
+test.util.test_pipeline,beets.util.pipeline,,7
+test.util.test_units,beets.util.units,,3
+test.util.test_units,beets.util.units,,3

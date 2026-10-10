@@ -1,0 +1,67 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-replaygain
+package "beetsplug.replaygain" {
+  ' beetsplug.replaygain.ReplayGainCLIOpts at beetsplug/replaygain.py:41
+  class "ReplayGainCLIOpts" as c_0509 <<protocol>>
+  ' beetsplug.replaygain.ReplayGainError at beetsplug/replaygain.py:51
+  class "ReplayGainError" as c_0510
+  ' beetsplug.replaygain.FatalReplayGainError at beetsplug/replaygain.py:57
+  class "FatalReplayGainError" as c_0511
+  ' beetsplug.replaygain.FatalGstreamerPluginReplayGainError at beetsplug/replaygain.py:61
+  class "FatalGstreamerPluginReplayGainError" as c_0512
+  ' beetsplug.replaygain.Gain at beetsplug/replaygain.py:99
+  class "Gain" as c_0513
+  ' beetsplug.replaygain.PeakMethod at beetsplug/replaygain.py:106
+  class "PeakMethod" as c_0514 <<enum>>
+  ' beetsplug.replaygain.RgTask at beetsplug/replaygain.py:111
+  class "RgTask" as c_0515
+  ' beetsplug.replaygain.R128Task at beetsplug/replaygain.py:210
+  class "R128Task" as c_0516
+  ' beetsplug.replaygain.Backend at beetsplug/replaygain.py:253
+  abstract class "Backend" as c_0517
+  ' beetsplug.replaygain.FfmpegBackend at beetsplug/replaygain.py:281
+  class "FfmpegBackend" as c_0518
+  ' beetsplug.replaygain.CommandBackend at beetsplug/replaygain.py:542
+  class "CommandBackend" as c_0519
+  ' beetsplug.replaygain.MetaflacBackend at beetsplug/replaygain.py:676
+  class "MetaflacBackend" as c_0520
+  ' beetsplug.replaygain.GStreamerBackend at beetsplug/replaygain.py:771
+  class "GStreamerBackend" as c_0521
+  ' beetsplug.replaygain.AudioToolsBackend at beetsplug/replaygain.py:1068
+  class "AudioToolsBackend" as c_0522
+  ' beetsplug.replaygain.ExceptionWatcher at beetsplug/replaygain.py:1234
+  class "ExceptionWatcher" as c_0523
+  ' beetsplug.replaygain.ReplayGainPlugin at beetsplug/replaygain.py:1275
+  class "ReplayGainPlugin" as c_0524
+}
+class "Exception" as external_0 <<external>>
+class "abc.ABC" as external_1 <<external>>
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "enum.Enum" as external_3 <<external>>
+class "threading.Thread" as external_4 <<external>>
+class "typing.Protocol" as external_5 <<external>>
+c_0509 --|> external_5
+c_0510 --|> external_0
+c_0511 --|> external_0
+c_0512 --|> c_0511
+c_0514 --|> external_3
+c_0516 --|> c_0515
+c_0517 --|> external_1
+c_0518 --|> c_0517
+c_0519 --|> c_0517
+c_0520 --|> c_0517
+c_0521 --|> c_0517
+c_0522 --|> c_0517
+c_0523 --|> external_4
+c_0524 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

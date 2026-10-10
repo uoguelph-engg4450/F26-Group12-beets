@@ -1,0 +1,79 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_art
+package "test.plugins.test_art" {
+  ' test.plugins.test_art.Settings at test/plugins/test_art.py:41
+  class "Settings" as c_0700
+  ' test.plugins.test_art.DummyRemoteArtSource at test/plugins/test_art.py:51
+  class "DummyRemoteArtSource" as c_0701
+  ' test.plugins.test_art.UseThePlugin at test/plugins/test_art.py:64
+  class "UseThePlugin" as c_0702
+  ' test.plugins.test_art.CAAData at test/plugins/test_art.py:98
+  class "CAAData" as c_0703
+  ' test.plugins.test_art.TestFetchImage at test/plugins/test_art.py:217
+  class "TestFetchImage" as c_0704
+  ' test.plugins.test_art.TestFSArt at test/plugins/test_art.py:267
+  class "TestFSArt" as c_0705
+  ' test.plugins.test_art.TestCombined at test/plugins/test_art.py:340
+  class "TestCombined" as c_0706
+  ' test.plugins.test_art.TestAAO at test/plugins/test_art.py:435
+  class "TestAAO" as c_0707
+  ' test.plugins.test_art.TestITunesStore at test/plugins/test_art.py:475
+  class "TestITunesStore" as c_0708
+  ' test.plugins.test_art.TestGoogleImage at test/plugins/test_art.py:619
+  class "TestGoogleImage" as c_0709
+  ' test.plugins.test_art.TestCoverArtArchive at test/plugins/test_art.py:666
+  class "TestCoverArtArchive" as c_0710
+  ' test.plugins.test_art.TestFanartTV at test/plugins/test_art.py:731
+  class "TestFanartTV" as c_0711
+  ' test.plugins.test_art.TestArtImporter at test/plugins/test_art.py:845
+  class "TestArtImporter" as c_0712
+  ' test.plugins.test_art.AlbumArtOperationMixin at test/plugins/test_art.py:954
+  class "AlbumArtOperationMixin" as c_0713
+  ' test.plugins.test_art.TestAlbumArtOperationConfiguration at test/plugins/test_art.py:983
+  class "TestAlbumArtOperationConfiguration" as c_0714
+  ' test.plugins.test_art.TestAlbumArtPerformOperation at test/plugins/test_art.py:1025
+  class "TestAlbumArtPerformOperation" as c_0715
+  ' test.plugins.test_art.TestDeprecatedConfig at test/plugins/test_art.py:1087
+  class "TestDeprecatedConfig" as c_0716
+  ' test.plugins.test_art.TestEnforceRatioConfig at test/plugins/test_art.py:1105
+  class "TestEnforceRatioConfig" as c_0717
+}
+class "beets.test.helper.FetchImageHelper" as c_0177 <<reference>>
+class "beets.test.helper.TestHelper" as c_0160 <<reference>>
+class "beetsplug.fetchart.FetchArtPlugin" as c_0406 <<reference>>
+class "beetsplug.fetchart.RemoteArtSource" as c_0394 <<reference>>
+c_0700 --|> c_0406
+c_0701 --|> c_0394
+c_0702 --|> c_0160
+c_0704 --|> c_0702
+c_0704 --|> c_0177
+c_0705 --|> c_0702
+c_0706 --|> c_0702
+c_0706 --|> c_0177
+c_0706 --|> c_0703
+c_0707 --|> c_0702
+c_0707 --|> c_0177
+c_0708 --|> c_0702
+c_0708 --|> c_0177
+c_0709 --|> c_0702
+c_0709 --|> c_0177
+c_0710 --|> c_0702
+c_0710 --|> c_0177
+c_0710 --|> c_0703
+c_0711 --|> c_0702
+c_0711 --|> c_0177
+c_0712 --|> c_0702
+c_0713 --|> c_0702
+c_0714 --|> c_0713
+c_0715 --|> c_0713
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

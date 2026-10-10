@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-metasync-amarok
+package "beetsplug.metasync.amarok" {
+  ' beetsplug.metasync.amarok.Amarok at beetsplug/metasync/amarok.py:34
+  class "Amarok" as c_0477
+}
+class "beetsplug.metasync.MetaSource" as c_0475 <<reference>>
+c_0477 --|> c_0475
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

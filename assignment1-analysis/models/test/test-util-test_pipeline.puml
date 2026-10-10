@@ -1,0 +1,44 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-util-test_pipeline
+package "test.util.test_pipeline" {
+  ' test.util.test_pipeline.PipelineError at test/util/test_pipeline.py:29
+  class "PipelineError" as c_1091
+  ' test.util.test_pipeline.SimplePipelineTest at test/util/test_pipeline.py:74
+  class "SimplePipelineTest" as c_1092
+  ' test.util.test_pipeline.ParallelStageTest at test/util/test_pipeline.py:99
+  class "ParallelStageTest" as c_1093
+  ' test.util.test_pipeline.ExceptionTest at test/util/test_pipeline.py:120
+  class "ExceptionTest" as c_1094
+  ' test.util.test_pipeline.ParallelExceptionTest at test/util/test_pipeline.py:159
+  class "ParallelExceptionTest" as c_1095
+  ' test.util.test_pipeline.ConstrainedThreadedPipelineTest at test/util/test_pipeline.py:171
+  class "ConstrainedThreadedPipelineTest" as c_1096
+  ' test.util.test_pipeline.BubbleTest at test/util/test_pipeline.py:200
+  class "BubbleTest" as c_1097
+  ' test.util.test_pipeline.MultiMessageTest at test/util/test_pipeline.py:220
+  class "MultiMessageTest" as c_1098
+  ' test.util.test_pipeline.StageDecoratorTest at test/util/test_pipeline.py:240
+  class "StageDecoratorTest" as c_1099
+}
+class "Exception" as external_0 <<external>>
+class "unittest.TestCase" as external_1 <<external>>
+c_1091 --|> external_0
+c_1092 --|> external_1
+c_1093 --|> external_1
+c_1094 --|> external_1
+c_1095 --|> external_1
+c_1096 --|> external_1
+c_1097 --|> external_1
+c_1098 --|> external_1
+c_1099 --|> external_1
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,33 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_smartplaylist
+package "test.plugins.test_smartplaylist" {
+  ' test.plugins.test_smartplaylist.PlaylistDirMixin at test/plugins/test_smartplaylist.py:25
+  class "PlaylistDirMixin" as c_0893
+  ' test.plugins.test_smartplaylist.SmartPlaylistTest at test/plugins/test_smartplaylist.py:31
+  class "SmartPlaylistTest" as c_0894
+  ' test.plugins.test_smartplaylist.TestGetItemURI at test/plugins/test_smartplaylist.py:300
+  class "TestGetItemURI" as c_0895
+  ' test.plugins.test_smartplaylist.SmartPlaylistCLITest at test/plugins/test_smartplaylist.py:349
+  class "SmartPlaylistCLITest" as c_0896
+}
+class "beets.test.helper.BeetsTestCase" as c_0161 <<reference>>
+class "beets.test.helper.IOMixin" as c_0158 <<reference>>
+class "beets.test.helper.PathsMixin" as c_0159 <<reference>>
+class "beets.test.helper.PluginTestCase" as c_0165 <<reference>>
+c_0893 --|> c_0159
+c_0894 --|> c_0893
+c_0894 --|> c_0161
+c_0896 --|> c_0893
+c_0896 --|> c_0158
+c_0896 --|> c_0165
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

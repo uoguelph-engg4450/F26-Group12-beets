@@ -1,0 +1,37 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-test_metadata_plugins
+package "test.test_metadata_plugins" {
+  ' test.test_metadata_plugins.ErrorMetadataMockPlugin at test/test_metadata_plugins.py:11
+  class "ErrorMetadataMockPlugin" as c_1006
+  ' test.test_metadata_plugins.TestMetadataPluginsException at test/test_metadata_plugins.py:29
+  class "TestMetadataPluginsException" as c_1007
+  ' test.test_metadata_plugins.TestSearchApiMetadataSourcePlugin at test/test_metadata_plugins.py:89
+  class "TestSearchApiMetadataSourcePlugin" as c_1008
+  ' test.test_metadata_plugins.TestSearchApiMetadataSourcePlugin.RaisingSearchApiMetadataMockPlugin at test/test_metadata_plugins.py:93
+  class "RaisingSearchApiMetadataMockPlugin" as c_1009 <<nested>>
+  ' test.test_metadata_plugins.test_albums_for_ids_calls_each_plugin_once.Plugin at test/test_metadata_plugins.py:142
+  class "Plugin" as c_1010 <<nested>>
+  ' test.test_metadata_plugins.test_albums_for_ids_calls_each_plugin_once.PluginSequence at test/test_metadata_plugins.py:153
+  class "PluginSequence" as c_1011 <<nested>>
+  ' test.test_metadata_plugins.test_albums_for_ids_calls_each_plugin_once.DelayedStartExecutor at test/test_metadata_plugins.py:158
+  class "DelayedStartExecutor" as c_1012 <<nested>>
+}
+class "beets.metadata_plugins.MetadataSourcePlugin" as c_0142 <<reference>>
+class "beets.metadata_plugins.SearchApiMetadataSourcePlugin" as c_0145 <<reference>>
+class "beets.test.helper.PluginMixin" as c_0164 <<reference>>
+c_1006 --|> c_0142
+c_1007 --|> c_0164
+c_1008 --|> c_0164
+c_1009 --|> c_0145
+' Parameterized source base: metadata_plugins.SearchApiMetadataSourcePlugin[metadata_plugins.IDResponse]
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

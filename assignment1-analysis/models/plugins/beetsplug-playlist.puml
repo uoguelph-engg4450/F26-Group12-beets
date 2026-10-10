@@ -1,0 +1,24 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-playlist
+package "beetsplug.playlist" {
+  ' beetsplug.playlist.PlaylistQuery at beetsplug/playlist.py:25
+  class "PlaylistQuery" as c_0499
+  ' beetsplug.playlist.PlaylistPlugin at beetsplug/playlist.py:75
+  class "PlaylistPlugin" as c_0500
+}
+class "beets.dbcore.query.InQuery" as c_0037 <<reference>>
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+c_0499 --|> c_0037
+' Parameterized source base: InQuery[bytes]
+c_0500 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

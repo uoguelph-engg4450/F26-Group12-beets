@@ -1,0 +1,30 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title support / documentation-and-release
+package "docs.extensions.conf" {
+  ' docs.extensions.conf.Conf at docs/extensions/conf.py:27
+  class "Conf" as c_0586
+  ' docs.extensions.conf.ConfDomain at docs/extensions/conf.py:70
+  class "ConfDomain" as c_0587
+}
+package "extra.release" {
+  ' extra.release.Ref at extra/release.py:37
+  class "Ref" as c_0588 <<namedtuple>>
+}
+class "sphinx.directives.ObjectDescription" as external_0 <<external>>
+class "sphinx.domains.Domain" as external_1 <<external>>
+class "typing.NamedTuple" as external_2 <<external>>
+c_0586 --|> external_0
+' Parameterized source base: ObjectDescription[str]
+c_0587 --|> external_1
+c_0588 --|> external_2
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

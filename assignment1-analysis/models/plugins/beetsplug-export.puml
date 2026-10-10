@@ -1,0 +1,38 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-export
+package "beetsplug.export" {
+  ' beetsplug.export.ExportCLIOpts at beetsplug/export.py:33
+  class "ExportCLIOpts" as c_0380 <<protocol>>
+  ' beetsplug.export.ExportEncoder at beetsplug/export.py:42
+  class "ExportEncoder" as c_0381
+  ' beetsplug.export.ExportPlugin at beetsplug/export.py:51
+  class "ExportPlugin" as c_0382
+  ' beetsplug.export.ExportFormat at beetsplug/export.py:191
+  class "ExportFormat" as c_0383
+  ' beetsplug.export.JsonFormat at beetsplug/export.py:216
+  class "JsonFormat" as c_0384
+  ' beetsplug.export.CSVFormat at beetsplug/export.py:231
+  class "CSVFormat" as c_0385
+  ' beetsplug.export.XMLFormat at beetsplug/export.py:242
+  class "XMLFormat" as c_0386
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "json.JSONEncoder" as external_1 <<external>>
+class "typing.Protocol" as external_2 <<external>>
+c_0380 --|> external_2
+c_0381 --|> external_1
+c_0382 --|> c_0149
+c_0384 --|> c_0383
+c_0385 --|> c_0383
+c_0386 --|> c_0383
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

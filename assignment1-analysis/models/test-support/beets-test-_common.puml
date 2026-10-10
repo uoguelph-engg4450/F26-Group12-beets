@@ -1,0 +1,23 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test-support / beets-test-_common
+package "beets.test._common" {
+  ' beets.test._common.InputError at beets/test/_common.py:102
+  class "InputError" as c_0150
+  ' beets.test._common.DummyIn at beets/test/_common.py:107
+  class "DummyIn" as c_0151
+  ' beets.test._common.DummyIO at beets/test/_common.py:126
+  class "DummyIO" as c_0152
+}
+class "IOError" as external_0 <<external>>
+c_0150 --|> external_0
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

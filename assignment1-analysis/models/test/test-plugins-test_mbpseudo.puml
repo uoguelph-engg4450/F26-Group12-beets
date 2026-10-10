@@ -1,0 +1,27 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_mbpseudo
+package "test.plugins.test_mbpseudo" {
+  ' test.plugins.test_mbpseudo.TestPseudoAlbumInfo at test/plugins/test_mbpseudo.py:61
+  class "TestPseudoAlbumInfo" as c_0829
+  ' test.plugins.test_mbpseudo.TestMBPseudoMixin at test/plugins/test_mbpseudo.py:106
+  class "TestMBPseudoMixin" as c_0830
+  ' test.plugins.test_mbpseudo.TestMBPseudoPlugin at test/plugins/test_mbpseudo.py:128
+  class "TestMBPseudoPlugin" as c_0831
+  ' test.plugins.test_mbpseudo.TestMBPseudoPluginCustomTagsOnly at test/plugins/test_mbpseudo.py:272
+  class "TestMBPseudoPluginCustomTagsOnly" as c_0832
+}
+class "beets.test.helper.PluginMixin" as c_0164 <<reference>>
+c_0830 --|> c_0164
+c_0831 --|> c_0830
+c_0832 --|> c_0830
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

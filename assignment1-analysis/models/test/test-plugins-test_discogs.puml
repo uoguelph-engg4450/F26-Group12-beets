@@ -1,0 +1,36 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_discogs
+package "test.plugins.test_discogs" {
+  ' test.plugins.test_discogs.DiscogsTestMixin at test/plugins/test_discogs.py:70
+  class "DiscogsTestMixin" as c_0756
+  ' test.plugins.test_discogs.TestDGAlbumInfo at test/plugins/test_discogs.py:118
+  class "TestDGAlbumInfo" as c_0757
+  ' test.plugins.test_discogs.TestStripDisambiguation at test/plugins/test_discogs.py:300
+  class "TestStripDisambiguation" as c_0758
+  ' test.plugins.test_discogs.TestTracklist at test/plugins/test_discogs.py:346
+  class "TestTracklist" as c_0759
+  ' test.plugins.test_discogs.TestDGSearchQuery at test/plugins/test_discogs.py:523
+  class "TestDGSearchQuery" as c_0760
+  ' test.plugins.test_discogs.TestDGSearchResponse at test/plugins/test_discogs.py:558
+  class "TestDGSearchResponse" as c_0761
+  ' test.plugins.test_discogs.TestAnv at test/plugins/test_discogs.py:593
+  class "TestAnv" as c_0762
+}
+class "beets.test.helper.TestHelper" as c_0160 <<reference>>
+c_0757 --|> c_0756
+c_0757 --|> c_0160
+c_0758 --|> c_0756
+c_0759 --|> c_0756
+c_0760 --|> c_0160
+c_0761 --|> c_0756
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

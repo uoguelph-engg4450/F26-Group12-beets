@@ -1,0 +1,1709 @@
+@startuml classes_Beets
+set namespaceSeparator none
+class "Action" as beets.importer.actions.Action {
+  name
+}
+class "AfterConvertEventArgs" as beets.events.AfterConvertEventArgs {
+  dest : bytes
+  item
+  keepnew : bool
+}
+class "AfterWriteEventArgs" as beets.events.AfterWriteEventArgs {
+  item
+  path : bytes
+}
+class "Album" as beets.library.models.Album {
+  art_filepath : Path | None
+  artpath : bytes | None
+  item_keys : ClassVar[set[str]]
+  length : float
+  art_destination(image: bytes, item_dir: bytes | None) -> bytes
+  item_dir() -> bytes
+  items() -> Results[Item]
+  move(operation: MoveOperation, basedir: bytes | None, store: bool) -> None
+  move_art(operation: MoveOperation, item_dir: bytes | None) -> None
+  relation_join() -> str
+  remove(delete: bool, with_items: bool) -> None
+  set_art(path: bytes, copy: bool) -> None
+  store(fields: Iterable[str] | None, inherit: bool) -> None
+  try_sync(write: bool, move: bool, inherit: bool) -> None
+}
+class "AlbumChange" as beets.ui.commands.import_.display.AlbumChange {
+  match
+  show_match_tracks() -> None
+}
+class "AlbumEventArgs" as beets.events.AlbumEventArgs {
+  album
+}
+class "AlbumImportedEventArgs" as beets.events.AlbumImportedEventArgs {
+  album
+  lib
+}
+class "AlbumInfo" as beets.autotag.hooks.AlbumInfo {
+  IGNORED_FIELDS : ClassVar[set[str]]
+  LEGACY_TO_LIST_FIELD : ClassVar[dict[str, str]]
+  MEDIA_FIELD_MAP : ClassVar[dict[str, str]]
+  album_id : NoneType
+  albumdisambig : NoneType
+  albumstatus : NoneType
+  albumtype : NoneType
+  albumtypes : NoneType
+  asin : NoneType
+  barcode : NoneType
+  catalognum : NoneType
+  country : NoneType
+  day : NoneType
+  discogs_albumid : NoneType
+  discogs_artistid : NoneType
+  discogs_labelid : NoneType
+  id : str | None
+  item_data : JSONDict
+  label : NoneType
+  language : NoneType
+  mediums : NoneType
+  month : NoneType
+  name : str
+  original_day : NoneType
+  original_month : NoneType
+  original_year : NoneType
+  raw_data : JSONDict
+  release_group_title : NoneType
+  releasegroup_id : NoneType
+  releasegroupdisambig : NoneType
+  script : NoneType
+  style : NoneType
+  tracks : list[TrackInfo]
+  type : str
+  va : bool
+  year : NoneType
+}
+class "AlbumInfoReceivedEventArgs" as beets.events.AlbumInfoReceivedEventArgs {
+  info
+}
+class "AlbumMatch" as beets.autotag.match.AlbumMatch {
+  base_disambig_data : JSONDict
+  disambig_fields_key : str
+  extra_items : list[Item]
+  extra_tracks : list[TrackInfo]
+  info
+  item_info_pairs : list[tuple[Item, TrackInfo]]
+  items : list[Item]
+  mapping : dict[Item, TrackInfo]
+  merged_pairs : list[tuple[Item, JSONDict]]
+  apply_album_metadata(album: Album) -> None
+  apply_metadata(from_scratch: bool | None) -> None
+}
+class "AlbumMatchedEventArgs" as beets.events.AlbumMatchedEventArgs {
+  match
+}
+class "AlternativesItemUpdatedEventArgs" as beets.events.AlternativesItemUpdatedEventArgs {
+  action : str
+  collection : str
+  item
+  path : Path
+}
+class "AndQuery" as beets.dbcore.query.AndQuery {
+  clause() -> tuple[str | None, Sequence[SQLiteType]]
+  match(obj: Model) -> bool
+}
+class "Archive" as beets.importer.tasks.Archive {
+  close() -> None
+  extractall(path: util.StrPath) -> None
+  infolist() -> Sequence[ArchiveMember]
+}
+class "ArchiveImportTask" as beets.importer.tasks.ArchiveImportTask {
+  archive_path : bytes
+  extracted : bool
+  toppath : bytes
+  cleanup(copy: bool, delete: bool, move: bool) -> None
+  extract() -> None
+  handlers() -> list[ArchiveHandler]
+  is_archive(path: str) -> bool
+}
+class "ArchiveMember" as beets.importer.tasks.ArchiveMember {
+  date_time : tuple[int, ...]
+  filename : str
+}
+class "ArtResizer" as beets.util.artresizer.ArtResizer {
+  can_compare : bool
+  can_write_metadata : bool
+  local : bool
+  local_method : LocalBackend | None
+  method : str
+  shared : LazySharedInstance[ArtResizer]
+  compare(im1: bytes, im2: bytes, compare_threshold: float) -> bool | None
+  deinterlace(path_in: bytes, path_out: bytes | None) -> bytes
+  get_format(path_in: bytes) -> str | None
+  get_size(path_in: bytes) -> tuple[int, int] | None
+  proxy_url(maxwidth: int, url: str, quality: int) -> str
+  reformat(path_in: bytes, new_format: str, deinterlaced: bool) -> bytes
+  resize(maxwidth: int, path_in: bytes, path_out: bytes | None, quality: int, max_filesize: int) -> bytes
+  write_metadata(file: bytes, metadata: Mapping[str, str]) -> None
+}
+class "AsIsImporterMixin" as beets.test.helper.AsIsImporterMixin {
+  run_asis_importer() -> ImportSession
+  setup_beets() -> None
+}
+class "AttrDict" as beets.util.AttrDict {
+  copy() -> Self
+}
+class "AutotagImportHelper" as beets.test.helper.AutotagImportHelper {
+  matcher
+  matching : str
+  setup_beets() -> None
+  teardown_beets() -> None
+}
+class "AutotagImportTestCase" as beets.test.helper.AutotagImportTestCase {
+}
+class "AutotagStub" as beets.test.helper.AutotagStub {
+  BAD : str
+  GOOD : str
+  IDENT : str
+  MISSING : str
+  NONE : str
+  length : int
+  matching : str
+  patchers : list[_patch[Any]]
+  candidates(items: Sequence[Item], artist: str, album: str, _: bool) -> Iterable[AlbumInfo]
+  install() -> Self
+  item_candidates(item: Item, artist: str, title: str) -> Iterable[TrackInfo]
+  restore() -> None
+}
+class "BaseFloat" as beets.dbcore.types.BaseFloat {
+  digits : int
+  model_type : float
+  query : type
+  sql : str
+  format(value: float | N) -> str
+}
+class "BaseImportTask" as beets.importer.tasks.BaseImportTask {
+  items : list[library.Item]
+  paths : list[util.PathBytes]
+  toppath : util.PathBytes | None
+}
+class "BaseInteger" as beets.dbcore.types.BaseInteger {
+  model_type : int
+  query
+  sql : str
+  normalize(value: Any) -> int | N
+}
+class "BasePaddedInt" as beets.dbcore.types.BasePaddedInt {
+  digits : int
+  format(value: int | N) -> str
+}
+class "BasePathType" as beets.dbcore.types.BasePathType {
+  model_type : bytes
+  query
+  sql : str
+  from_sql(sql_value: SQLiteType) -> bytes | N
+  normalize(value: Any) -> bytes | N
+  parse(string: str) -> bytes
+  to_sql(value: pathutils.MaybeBytes) -> bytes | None
+}
+class "BaseString" as beets.dbcore.types.BaseString {
+  query
+  sql : str
+  normalize(value: Any) -> T | N
+}
+class "BeetsLogger" as beets.logging.BeetsLogger {
+  extra_debug(msg: str) -> None
+}
+class "BeetsPlugin" as beets.plugins.BeetsPlugin {
+  album_template_fields : TFuncMap[Album]
+  config
+  early_import_stages : list[ImportStageFunc]
+  import_stages : list[ImportStageFunc]
+  listeners : ClassVar[dict[events.EventType, list[Listener]]]
+  name : str
+  template_fields : TFuncMap[Item]
+  template_funcs : TFuncMap[str]
+  add_media_field(name: str, descriptor: mediafile.MediaField) -> None
+  commands() -> Sequence[Subcommand]
+  get_early_import_stages() -> list[ImportStageFunc]
+  get_import_stages() -> list[ImportStageFunc]
+  queries() -> dict[str, FieldQueryType]
+  register_listener(event: events.AfterWriteEventType, func: Callable[[Unpack[events.AfterWriteEventArgs]], None]) -> None
+  template_field(name: str) -> Callable[[TFunc[Item]], TFunc[Item]]
+  template_func(name: str) -> Callable[[TFunc[str]], TFunc[str]]
+}
+class "BeetsPluginMeta" as beets.plugins.BeetsPluginMeta {
+  album_template_fields : ClassVar[TFuncMap[Album]]
+  template_fields : ClassVar[TFuncMap[Item]]
+  template_funcs : ClassVar[TFuncMap[str]]
+}
+class "BeetsTestCase" as beets.test.helper.BeetsTestCase {
+}
+class "Boolean" as beets.dbcore.types.Boolean {
+  model_type : bool
+  query
+  sql : str
+  format(value: bool) -> str
+  parse(string: str) -> bool
+}
+class "BooleanQuery" as beets.dbcore.query.BooleanQuery {
+}
+class "Call" as beets.util.functemplate.Call {
+  args : list[Expression]
+  ident : str
+  original : str
+  evaluate(env: Environment) -> str
+  translate() -> tuple[list[ast.expr], set[str], set[str]]
+}
+class "ChangeRepresentation" as beets.ui.commands.import_.display.ChangeRepresentation {
+  changed_prefix : str
+  indent : int
+  indent_detail : str
+  indent_header : str
+  indent_tracklist : str
+  match
+  original_artist : str
+  original_name : str
+  format_index(track_info: TrackInfo | Item) -> str
+  make_line(item: Item, track_info: TrackInfo) -> tuple[Side, Side]
+  make_medium_info_line(track_info: TrackInfo) -> str
+  make_track_lengths(item: Item, track_info: TrackInfo) -> tuple[str, str, bool]
+  make_track_numbers(item: Item, track_info: TrackInfo) -> tuple[str, str, bool]
+  make_track_titles(item: Item, track_info: TrackInfo) -> tuple[str, str, bool]
+  print_layout(indent: str, left: Side, right: Side) -> None
+  print_tracklist(lines: list[tuple[Side, Side]]) -> None
+  show_match_details() -> None
+  show_match_header() -> None
+}
+class "CleanupModulesMixin" as beets.test.helper.CleanupModulesMixin {
+  modules : ClassVar[tuple[str, ...]]
+  tearDownClass() -> None
+}
+class "CollectionQuery" as beets.dbcore.query.CollectionQuery {
+  field_names : set[str]
+  subqueries : Sequence[Query]
+  clause_with_joiner(joiner: str) -> tuple[str | None, Sequence[SQLiteType]]
+}
+class "CommandOutput" as beets.util.CommandOutput {
+  stderr : bytes
+  stdout : bytes
+}
+class "CommonOptionsParser" as beets.ui.CommonOptionsParser {
+  prog : str
+  add_album_option(flags: Sequence[str]) -> None
+  add_all_common_options() -> None
+  add_format_option(flags: Sequence[str], target: type[LibModel] | Literal['item', 'album'] | None) -> None
+  add_path_option(flags: Sequence[str]) -> None
+}
+class "ConfigCLIOpts" as beets.ui.commands.config.ConfigCLIOpts {
+  config : str | None
+  defaults : bool
+  edit : bool | None
+  paths : bool | None
+  redact : bool
+}
+class "ConfigMixin" as beets.test.helper.ConfigMixin {
+  config : beets.IncludeLazyConfig
+  default_config_sources() -> list[ConfigSource]
+}
+class "CountedQueue" as beets.util.pipeline.CountedQueue {
+  nthreads : int
+  poisoned : bool
+  acquire() -> None
+  release() -> None
+}
+class "<color:red>DBAccessError</color>" as beets.dbcore.db.DBAccessError {
+}
+class "<color:red>DBCustomFunctionError</color>" as beets.dbcore.db.DBCustomFunctionError {
+}
+class "Database" as beets.dbcore.db.Database {
+  db_tables : dict[str, TableInfo]
+  path : Path
+  revision : int
+  supports_extensions
+  timeout : float
+  add_functions(conn: sqlite3.Connection) -> None
+  create_backup(dest: str) -> None
+  load_extension(path: str) -> None
+  migration_exists(name: str, table: str) -> bool
+  record_migration(name: str, table: str) -> None
+  transaction() -> Transaction
+}
+class "DatabaseChangeEventArgs" as beets.events.DatabaseChangeEventArgs {
+  lib
+  model
+}
+class "DateInterval" as beets.dbcore.query.DateInterval {
+  end : datetime | None
+  start : datetime | None
+  contains(date: datetime) -> bool
+  from_periods(start: Period | None, end: Period | None) -> DateInterval
+}
+class "DateQuery" as beets.dbcore.query.DateQuery {
+  interval
+  col_clause() -> tuple[str, Sequence[SQLiteType]]
+  match(obj: Model) -> bool
+}
+class "DateType" as beets.dbcore.types.DateType {
+  query
+  format(value: float) -> str
+  parse(string: str) -> float | N
+}
+class "Default" as beets.dbcore.types.Default {
+  model_type : str
+  null : None
+}
+class "DefaultTemplateFunctions" as beets.library.models.DefaultTemplateFunctions {
+  item
+  lib : Library | None
+  functions() -> dict[str, Callable[..., object]]
+  tmpl_asciify(s: str) -> str
+  tmpl_aunique(keys: str | None, disam: str | None, bracket: str | None) -> str
+  tmpl_capitalize(s: str) -> str
+  tmpl_first(s: str, count: int, skip: int, sep: str, join_str: str) -> str
+  tmpl_if(condition: str, trueval: str, falseval: str) -> str
+  tmpl_ifdef(field: str, trueval: str, falseval: str) -> str
+  tmpl_left(s: str, chars: str) -> str
+  tmpl_lower(s: str) -> str
+  tmpl_right(s: str, chars: str) -> str
+  tmpl_sunique(keys: str | None, disam: str | None, bracket: str | None) -> str
+  tmpl_time(s: str, fmt: str) -> str
+  tmpl_title(s: str) -> str
+  tmpl_upper(s: str) -> str
+}
+class "DelimitedString" as beets.dbcore.types.DelimitedString {
+  db_delimiter : str
+  fmt_delimiter : str
+  model_type : list
+  format(value: list[str]) -> str
+  normalize(value: Any) -> list[str]
+  parse(string: str) -> list[str]
+  to_sql(model_value: list[str]) -> str
+}
+class "Distance" as beets.autotag.distance.Distance {
+  color : ColorName
+  distance : float
+  generic_penalty_keys : list[str]
+  max_distance : float
+  raw_distance : float
+  string : str
+  tracks : dict[TrackInfo, Distance]
+  add(key: str, dist: float) -> None
+  add_data_source(before: str | None, after: str | None) -> None
+  add_equality(key: str, value: Any, options: list[Any] | tuple[Any, ...] | Any) -> None
+  add_expr(key: str, expr: bool) -> None
+  add_number(key: str, number1: int, number2: int) -> None
+  add_priority(key: str, value: Any, options: list[Any] | tuple[Any, ...] | Any) -> None
+  add_ratio(key: str, number1: int | float, number2: int | float) -> None
+  add_string(key: str, str1: str | None, str2: str | None) -> None
+  items() -> list[tuple[str, float]]
+  keys() -> KeysView[str]
+  update(dist: Distance) -> None
+}
+class "DummyIMBackend" as beets.test.fixtures.DummyIMBackend {
+  compare_cmd : list
+  convert_cmd : list
+  identify_cmd : list
+  legacy : bool
+}
+class "DummyIO" as beets.test._common.DummyIO {
+  stdin
+  addinput(text: str) -> None
+  getoutput() -> str
+}
+class "DummyIn" as beets.test._common.DummyIn {
+  buf : list[str]
+  encoding : str
+  add(s: str) -> None
+  {abstract}close() -> None
+  readline() -> str
+}
+class "DuplicateAction" as beets.importer.actions.DuplicateAction {
+  name
+  text : str
+  choices() -> dict[str, str]
+  options() -> list[str]
+  strict_options() -> list[str]
+}
+class "DurationQuery" as beets.dbcore.query.DurationQuery {
+}
+class "DurationType" as beets.dbcore.types.DurationType {
+  query
+  format(value: float) -> str
+  parse(string: str) -> float | N
+}
+class "<color:red>EmptyPlaylistError</color>" as beets.util.m3u.EmptyPlaylistError {
+}
+class "Environment" as beets.util.functemplate.Environment {
+  functions : Mapping
+  values : Mapping[str, str]
+}
+class "Expression" as beets.util.functemplate.Expression {
+  parts : list[Part]
+  evaluate(env: Environment) -> str
+  translate() -> tuple[list[ast.expr], set[str], set[str]]
+}
+class "FalseQuery" as beets.dbcore.query.FalseQuery {
+  clause() -> tuple[str, Sequence[SQLiteType]]
+  match(obj: Model) -> bool
+}
+class "FetchImageHelper" as beets.test.helper.FetchImageHelper {
+  image_request_mock(requests_mock: Mocker) -> ImageRequestMocker
+}
+class "FieldQuery" as beets.dbcore.query.FieldQuery {
+  fast : bool
+  field : str
+  field_name
+  field_names : set[str]
+  pattern : P
+  table
+  clause() -> tuple[str | None, Sequence[SQLiteType]]
+  {abstract}col_clause() -> tuple[str, Sequence[SQLiteType]]
+  match(obj: Model) -> bool
+  {abstract}value_match(pattern: P, value: Any) -> bool
+}
+class "FieldSort" as beets.dbcore.sort.FieldSort {
+  ascending : bool
+  case_insensitive : bool
+  field : str
+  field_name
+  field_names : set[str]
+  table
+  sort(objs: Sequence[AnyModel]) -> Sequence[AnyModel]
+}
+class "<color:red>FileOperationError</color>" as beets.library.exceptions.FileOperationError {
+  path : bytes
+  reason : Exception
+}
+class "<color:red>FilesystemError</color>" as beets.util.FilesystemError {
+  paths : Sequence[PathLike]
+  get_message() -> str
+}
+class "FirstPipelineThread" as beets.util.pipeline.FirstPipelineThread {
+  coro : Iterator[Any]
+  out_queue : CountedQueue[Any]
+  run() -> None
+}
+class "FixedFieldSort" as beets.dbcore.sort.FixedFieldSort {
+  order_clause() -> str
+}
+class "Float" as beets.dbcore.types.Float {
+  null : float
+}
+class "FormattedItemMapping" as beets.library.models.FormattedItemMapping {
+  ALL_KEYS : str
+  album : Album | None
+  album_keys : list[str]
+  all_keys : set[str]
+  included_keys : str | list[str]
+  item
+  model_keys : set
+}
+class "FormattedMapping" as beets.dbcore.db.FormattedMapping {
+  ALL_KEYS : str
+  for_path : bool
+  model
+  model_keys : set[str]
+  get(key: str, default: str | None) -> str
+}
+class "HelpCommand" as beets.ui.commands.help.HelpCommand {
+  func(lib: Library, opts: optparse.Values, args: list[str]) -> None
+}
+class "<color:red>HumanReadableError</color>" as beets.util.HumanReadableError {
+  error_kind : str
+  reason : str | Exception
+  tb : str | None
+  verb : str
+  {abstract}get_message() -> str
+  log(logger: Logger) -> None
+}
+class "IDResponse" as beets.metadata_plugins.IDResponse {
+  id : str
+}
+class "IMBackend" as beets.util.artresizer.IMBackend {
+  NAME : str
+  can_compare : bool
+  can_write_metadata : bool
+  compare_cmd : list[str]
+  convert_cmd : list[str]
+  identify_cmd : list[str]
+  compare(im1: bytes, im2: bytes, compare_threshold: float) -> bool | None
+  convert_format(source: bytes, target: bytes, deinterlaced: bool) -> bytes
+  deinterlace(path_in: bytes, path_out: bytes | None) -> bytes
+  get_format(path_in: bytes) -> str | None
+  get_size(path_in: bytes) -> tuple[int, int] | None
+  resize(maxwidth: int, path_in: bytes, path_out: bytes | None, quality: int, max_filesize: int) -> bytes
+  version() -> tuple[int, int, int]
+  write_metadata(file: bytes, metadata: Mapping[str, str]) -> None
+}
+class "IOMixin" as beets.test.helper.IOMixin {
+  io
+  run_with_output() -> str
+}
+class "Id" as beets.dbcore.types.Id {
+  null : None
+  sql : str
+}
+class "ImageRequestMocker" as beets.test.helper.ImageRequestMocker {
+  IMAGE_HEADERS : ClassVar[dict[str, bytes]]
+  mocker
+  get(url: str) -> None
+}
+class "<color:red>ImportAbortError</color>" as beets.importer.session.ImportAbortError {
+}
+class "<color:red>ImportAbortError</color>" as beets.importer.tasks.ImportAbortError {
+}
+class "ImportBeginEventArgs" as beets.events.ImportBeginEventArgs {
+  session
+}
+class "ImportCLIOpts" as beets.ui.commands.import_.ImportCLIOpts {
+  copy : bool | None
+  from_logfiles : list[str] | None
+  library : bool | None
+}
+class "ImportEventArgs" as beets.events.ImportEventArgs {
+  lib
+  paths : list[bytes]
+}
+class "ImportHelper" as beets.test.helper.ImportHelper {
+  import_media : list
+  setup_beets() -> None
+}
+class "ImportSession" as beets.importer.session.ImportSession {
+  config
+  history_dirs : set[tuple[PathBytes, ...]]
+  lib
+  logger : Logger
+  paths : list[PathBytes]
+  query : str | Sequence[str] | dbcore.Query | None
+  want_resume
+  already_imported(toppath: PathBytes, paths: Sequence[PathBytes]) -> bool
+  already_merged(paths: Sequence[PathBytes]) -> bool
+  ask_resume(toppath: PathBytes) -> None
+  {abstract}choose_item(task: SingletonImportTask) -> TrackMatch | Action
+  {abstract}choose_match(task: ImportTask) -> AlbumMatch | Action
+  get_duplicate_action(task: ImportTask, found_duplicates: list[AlbumOrItem]) -> DuplicateAction
+  is_resuming(toppath: PathBytes) -> bool
+  log_choice(task: ImportTask, duplicate: bool) -> None
+  mark_merged(paths: Sequence[PathBytes]) -> None
+  run() -> None
+  set_config(config: confuse.ConfigView) -> None
+  {abstract}should_resume(path: PathBytes) -> bool
+  tag_log(status: str, paths: Sequence[PathBytes]) -> None
+}
+class "ImportSessionFixture" as beets.test.helper.ImportSessionFixture {
+  choose_item
+  default_choice : APPLY
+  add_choice(choice: importer.Action | int) -> None
+  choose_match(task: importer.ImportTask) -> AlbumMatch | importer.Action
+  clear_choices() -> None
+}
+class "ImportState" as beets.importer.state.ImportState {
+  path : bytes
+  taghistory : set[tuple[PathBytes, ...]]
+  tagprogress : dict[PathBytes, list[PathBytes]]
+  history_add(paths: list[PathBytes]) -> None
+  progress_add(toppath: PathBytes) -> None
+  progress_has(toppath: PathBytes) -> bool
+  progress_has_element(toppath: PathBytes, path: PathBytes) -> bool
+  progress_reset(toppath: PathBytes | None) -> None
+}
+class "ImportTask" as beets.importer.tasks.ImportTask {
+  album
+  apply : bool
+  candidates : Sequence[AlbumMatch | TrackMatch] | None
+  choice_flag : Action | None
+  duplicate_action : DuplicateAction | None
+  is_album : bool
+  is_grouped : bool
+  items
+  match : AlbumMatch | TrackMatch | None
+  old_paths : list[util.PathBytes]
+  rec : Recommendation | None
+  replaced_albums : dict[util.PathBytes, library.Album]
+  replaced_items : defaultdict
+  skip : bool
+  source : Source
+  add(lib: library.Library) -> None
+  align_album_level_fields() -> None
+  apply_metadata() -> None
+  apply_upgrade(kept: list[library.Item], superseded: list[library.Item], old_album_ids: list[int]) -> None
+  choose_match(session: ImportSession) -> None
+  chosen_info() -> dict[str, Any]
+  cleanup(copy: bool, delete: bool, move: bool) -> None
+  duplicate_items(lib: library.Library) -> list[library.Item]
+  finalize(session: ImportSession) -> None
+  find_duplicates(lib: library.Library) -> list[library.Album]
+  handle_created(session: ImportSession) -> list[ImportTask]
+  imported_items() -> list[library.Item]
+  lookup_candidates(search_ids: list[str]) -> None
+  manipulate_files(session: ImportSession, operation: util.MoveOperation | None, write: bool) -> None
+  prune(filename: util.PathBytes) -> None
+  record_replaced(lib: library.Library) -> None
+  reimport_metadata(lib: library.Library) -> None
+  reload() -> None
+  remove_duplicates(lib: library.Library) -> None
+  remove_replaced(lib: library.Library) -> None
+  save_history() -> None
+  save_progress() -> None
+  set_choice(choice: Action | AlbumMatch | TrackMatch) -> None
+  set_fields(lib: library.Library) -> None
+}
+class "ImportTaskEventArgs" as beets.events.ImportTaskEventArgs {
+  session
+  task
+}
+class "ImportTaskFactory" as beets.importer.tasks.ImportTaskFactory {
+  imported : int
+  is_archive : bool
+  session
+  skipped : int
+  toppath : bytes
+  album(paths: Iterable[util.PathBytes], dirs: list[util.PathBytes]) -> ImportTask | None
+  paths() -> Iterable[tuple[list[util.PathBytes], list[util.PathBytes]]]
+  read_item(path: util.PathBytes) -> library.Item | None
+  sentinel(paths: Iterable[util.PathBytes] | None) -> SentinelImportTask
+  singleton(path: util.PathBytes) -> SingletonImportTask | None
+  tasks() -> Iterable[ImportTask]
+  unarchive() -> ArchiveImportTask | None
+}
+class "ImporterMixin" as beets.test.helper.ImporterMixin {
+  default_import_config : ClassVar[dict[str, Any]]
+  import_media : list[MediaFile]
+  import_path : Path
+  importer
+  lib
+  prepare_album_for_import(item_count: int, album_id: int | None, album_path: Path | None) -> list[Path]
+  prepare_albums_for_import(count: int) -> None
+  prepare_track_for_import(track_id: int, album_path: Path, album_id: int | None) -> Path
+  setup_importer(import_dir: Path | None) -> ImportSession
+  setup_singleton_importer() -> ImportSession
+}
+class "InQuery" as beets.dbcore.query.InQuery {
+  fast : bool
+  field_name : str
+  pattern : Sequence[AnySQLiteType]
+  subvals : Sequence[SQLiteType]
+  col_clause() -> tuple[str, Sequence[SQLiteType]]
+  value_match(pattern: Sequence[AnySQLiteType], value: AnySQLiteType) -> bool
+}
+class "IncludeLazyConfig" as beets.IncludeLazyConfig {
+  log_sources(log: Logger) -> None
+  read(user: bool, defaults: bool) -> None
+}
+class "Index" as beets.dbcore.db.Index {
+  columns : tuple[str, ...]
+  name : str
+}
+class "Info" as beets.autotag.hooks.Info {
+  IGNORED_FIELDS : ClassVar[set[str]]
+  Identifier : tuple
+  LEGACY_TO_LIST_FIELD : ClassVar[dict[str, str]]
+  MEDIA_FIELD_MAP : ClassVar[dict[str, str]]
+  album : str | None
+  artist : str | None
+  artist_credit : str | None
+  artist_id : str | None
+  artist_sort : str | None
+  artists : list[str] | None
+  artists_credit : list[str] | None
+  artists_ids : list[str] | None
+  artists_sort : list[str] | None
+  data_source : str | None
+  data_url : str | None
+  genres : list[str] | None
+  id : str | None
+  identifier : Identifier
+  item_data : JSONDict
+  media : str | None
+  name : str
+  raw_data : JSONDict
+  type : ClassVar[str]
+  nullable_fields() -> set[str]
+}
+class "<color:red>InputError</color>" as beets.test._common.InputError {
+}
+class "InstrumentalLyricsInFlexFieldMigration" as beets.library.migrations.InstrumentalLyricsInFlexFieldMigration {
+}
+class "Integer" as beets.dbcore.types.Integer {
+  null : int
+}
+class "<color:red>InvalidQueryArgumentValueError</color>" as beets.dbcore.query.InvalidQueryArgumentValueError {
+}
+class "<color:red>InvalidQueryError</color>" as beets.dbcore.query.InvalidQueryError {
+}
+class "Item" as beets.library.models.Item {
+  album : str
+  album_id : int | None
+  disc
+  mtime : int
+  path : bytes, util.PathLike | None
+  title
+  clear() -> None
+  current_mtime() -> int
+  destination(relative_to_libdir: bool, basedir: bytes | None, path_formats: list[PathFormat] | None, extension: str | None) -> bytes
+  duplicates_query(fields: list[str]) -> dbcore.AndQuery
+  from_path(path: util.PathLike) -> Self
+  get(key: str, default: Any, with_album: bool) -> Any
+  get_album() -> Album | None
+  has_cover_art() -> bool
+  keys(computed: bool, with_album: bool) -> KeysView[str]
+  move(operation: MoveOperation, basedir: bytes | None, with_album: bool, store: bool) -> None
+  move_file(dest: bytes, operation: MoveOperation) -> None
+  read(read_path: util.PathLike | None) -> None
+  relation_join() -> str
+  remove(delete: bool, with_album: bool) -> None
+  try_filesize() -> int
+  try_sync(write: bool, move: bool, with_album: bool) -> None
+  try_write(path: bytes | None, tags: Mapping[str, Any] | None, id3v23: bool | None) -> bool
+  update(values: Mapping[str, Any]) -> None
+  write(path: bytes | None, tags: Mapping[str, Any] | None, id3v23: bool | None) -> None
+}
+class "ItemEventArgs" as beets.events.ItemEventArgs {
+  item
+}
+class "ItemImportedEventArgs" as beets.events.ItemImportedEventArgs {
+  item
+  lib
+}
+class "ItemInDBTestCase" as beets.test.helper.ItemInDBTestCase {
+  i
+  setUp() -> None
+}
+class "ItemPathEventArgs" as beets.events.ItemPathEventArgs {
+  destination : bytes
+  item
+  source : bytes
+}
+class "LastPipelineThread" as beets.util.pipeline.LastPipelineThread {
+  coro : Generator[Any, Any, Any]
+  in_queue : CountedQueue[Any]
+  run() -> None
+}
+class "LazyDict" as beets.dbcore.db.LazyDict {
+  data
+  copy() -> Self
+  get(key: str, default: Any | None) -> Any
+  keys() -> KeysView[str]
+}
+class "LazySharedInstance" as beets.util.LazySharedInstance {
+}
+class "LegacyFormatter" as beets.logging.LegacyFormatter {
+  format(record: LogRecord) -> str
+}
+class "LibModel" as beets.library.models.LibModel {
+  filepath : Path
+  length : float
+  path : bytes
+  add(lib: Library | None) -> None
+  any_field_query(pattern: str, query_cls: FieldQueryType) -> dbcore.OrQuery
+  any_writable_media_field_query(pattern: str, query_cls: FieldQueryType) -> dbcore.OrQuery
+  duplicates_query(fields: list[str]) -> dbcore.AndQuery
+  field_query(field: str, pattern: str, query_cls: FieldQueryType) -> FieldQuery
+  field_sort(field: str, is_ascending: bool, case_insensitive: bool) -> FieldSort
+  {abstract}remove(delete: bool) -> None
+  store(fields: Iterable[str] | None) -> None
+  writable_media_fields() -> set[str]
+}
+class "Library" as beets.library.library.Library {
+  directory
+  path_formats : list[PathFormat]
+  replacements : Sequence
+  add(obj: LibModel) -> int | None
+  add_album(items: Sequence[Item]) -> Album
+  albums(query: str | Sequence[str] | Query | None, sort: Sort | None, limit: int | None) -> dbcore.Results[Album]
+  get_album(item_or_id: Item | int) -> Album | None
+  get_default_album_sort() -> Sort
+  get_default_item_sort() -> Sort
+  get_item(id_: int) -> Item | None
+  get_replacements() -> Replacements
+  items(query: str | Sequence[str] | Query | None, sort: Sort | None, limit: int | None) -> dbcore.Results[Item]
+  music_dir_context() -> Iterator[Library]
+}
+class "LibraryEventArgs" as beets.events.LibraryEventArgs {
+  lib
+}
+class "Likelies" as beets.util.Likelies {
+  album : str
+  albumartist : str
+  albumdisambig : str
+  artist : str
+  barcode : str
+  catalognum : str
+  country : str
+  data_source : str
+  disctotal : int
+  label : str
+  mb_albumid : str
+  media : str
+  year : int
+}
+class "ListCLIOpts" as beets.ui.commands.list.ListCLIOpts {
+  album : bool
+  limit : int | None
+}
+class "LocalBackend" as beets.util.artresizer.LocalBackend {
+  NAME : ClassVar[str]
+  can_compare : bool
+  can_write_metadata : bool
+  available() -> bool
+  {abstract}compare(im1: bytes, im2: bytes, compare_threshold: float) -> bool | None
+  {abstract}convert_format(source: bytes, target: bytes, deinterlaced: bool) -> bytes
+  {abstract}deinterlace(path_in: bytes, path_out: bytes | None) -> bytes
+  {abstract}get_format(path_in: bytes) -> str | None
+  {abstract}get_size(path_in: bytes) -> tuple[int, int] | None
+  {abstract}resize(maxwidth: int, path_in: bytes, path_out: bytes | None, quality: int, max_filesize: int) -> bytes
+  {abstract}version() -> Any
+  {abstract}write_metadata(file: bytes, metadata: Mapping[str, str]) -> None
+}
+class "<color:red>LocalBackendNotAvailableError</color>" as beets.util.artresizer.LocalBackendNotAvailableError {
+}
+class "Lyrics" as beets.util.lyrics.Lyrics {
+  LINE_PARTS_PAT
+  LRC_TIMESTAMP_PAT
+  ORIGINAL_PAT
+  TRANSLATION_PAT
+  backend : str | None
+  full_text : str
+  instrumental : bool
+  language : str | None
+  original_text : str
+  sylt : list[tuple[str, int]]
+  synced : bool
+  text : str
+  text_lines : list[str]
+  timestamps : list[str]
+  translated : bool
+  translation_language : str | None
+  translations : list[str]
+  url : str | None
+  from_item(item: Item) -> Lyrics
+  from_legacy_text(text: str) -> Lyrics
+  handle_instrumental() -> None
+}
+class "LyricsMetadataInFlexFieldsMigration" as beets.library.migrations.LyricsMetadataInFlexFieldsMigration {
+  CHUNK_SIZE : int
+}
+class "LyricsRow" as beets.library.migrations.LyricsRow {
+  id : int
+  lyrics : str
+}
+class "M3UFile" as beets.util.m3u.M3UFile {
+  extm3u : bool
+  media_list : list[bytes]
+  path
+  load() -> None
+  set_contents(media_list: list[bytes], extm3u: bool) -> None
+  write() -> None
+}
+class "Match" as beets.autotag.match.Match {
+  base_disambig_data : JSONDict
+  config_from_scratch : bool
+  disambig_fields : Sequence[str]
+  disambig_fields_key : ClassVar[str]
+  disambig_string : str
+  distance
+  info
+  type : str
+  {abstract}apply_metadata() -> None
+  from_scratch(override: bool | None) -> bool
+}
+class "MatchQuery" as beets.dbcore.query.MatchQuery {
+  col_clause() -> tuple[str, Sequence[SQLiteType]]
+  value_match(pattern: AnySQLiteType, value: Any) -> bool
+}
+class "MetadataSourcePlugin" as beets.metadata_plugins.MetadataSourcePlugin {
+  DEFAULT_DATA_SOURCE_MISMATCH_PENALTY : float
+  data_source_mismatch_penalty : float
+  {abstract}album_for_id(album_id: str) -> AlbumInfo | None
+  albums_for_ids(ids: Iterable[str]) -> Iterable[AlbumInfo | None]
+  {abstract}candidates(items: Sequence[Item], artist: str, album: str, va_likely: bool) -> Iterable[AlbumInfo]
+  data_source() -> str
+  get_artist(artists: Iterable[dict[str | int, str]], id_key: str | int, name_key: str | int, join_key: str | int | None) -> tuple[str, str | None]
+  {abstract}item_candidates(item: Item, artist: str, title: str) -> Iterable[TrackInfo]
+  {abstract}track_for_id(track_id: str) -> TrackInfo | None
+  tracks_for_ids(ids: Iterable[str]) -> Iterable[TrackInfo | None]
+}
+class "MiddlePipelineThread" as beets.util.pipeline.MiddlePipelineThread {
+  coro : Generator[Any, Any, Any]
+  in_queue : CountedQueue[Any]
+  out_queue : CountedQueue[Any]
+  run() -> None
+}
+class "Migration" as beets.dbcore.db.Migration {
+  CHUNK_SIZE : ClassVar[int]
+  db
+  migrate_model(model_cls: type[Model], current_fields: set[str]) -> None
+  name() -> str
+  with_row_factory(factory: type[NamedTuple]) -> Iterator[None]
+}
+class "Model" as beets.dbcore.db.Model {
+  added
+  db : D
+  get
+  id : int | None
+  add(db: D | None) -> None
+  all_db_fields() -> set[str]
+  all_keys() -> KeysView[str]
+  clear_dirty() -> None
+  copy() -> Self
+  evaluate_template(fmt: str, for_path: bool) -> str
+  formatted(included_keys: str | list[str], for_path: bool) -> FormattedMapping
+  get_fresh_from_db() -> Self
+  items() -> Iterator[tuple[str, Any]]
+  keys(computed: bool) -> KeysView[str]
+  load() -> None
+  other_db_fields() -> set[str]
+  relation_join() -> str
+  remove() -> None
+  set_parse(key: str, string: str) -> None
+  shared_db_fields() -> set[str]
+  store(fields: Iterable[str] | None) -> None
+  update(values: Mapping[str, Any]) -> None
+}
+class "ModelFixture1" as beets.test.fixtures.ModelFixture1 {
+}
+class "ModelType" as beets.dbcore.types.ModelType {
+}
+class "ModifyCLIOpts" as beets.ui.commands.modify.ModifyCLIOpts {
+  album : bool
+  inherit : bool
+  move : bool | None
+  write : bool | None
+  yes : bool | None
+}
+class "ModifyOperation" as beets.ui.commands.modify.ModifyOperation {
+  operator : str | None
+  value : str
+  apply(obj: LibModel, field: str, new_values: list[str]) -> list[str]
+}
+class "ModifyParams" as beets.ui.commands.modify.ModifyParams {
+  confirm : bool
+  dels : Sequence[str]
+  inherit : bool
+  mods : dict[str, ModifyOperation]
+  move : bool
+  write : bool
+}
+class "MoveCLIOpts" as beets.ui.commands.move.MoveCLIOpts {
+  album : bool
+  copy : bool
+  dest : str | None
+  export : bool
+  pretend : bool
+  timid : bool
+}
+class "MoveOperation" as beets.util.MoveOperation {
+  name
+}
+class "MultiArrangerFieldMigration" as beets.library.migrations.MultiArrangerFieldMigration {
+  list_field : str
+  str_field : str
+}
+class "MultiComposerFieldMigration" as beets.library.migrations.MultiComposerFieldMigration {
+  list_field : str
+  str_field : str
+}
+class "MultiGenreFieldMigration" as beets.library.migrations.MultiGenreFieldMigration {
+  list_field : str
+  separators : list[str]
+  str_field : str
+}
+class "MultiLyricistFieldMigration" as beets.library.migrations.MultiLyricistFieldMigration {
+  list_field : str
+  str_field : str
+}
+class "MultiMessage" as beets.util.pipeline.MultiMessage {
+  messages : Iterable[Any]
+}
+class "MultiRemixerFieldMigration" as beets.library.migrations.MultiRemixerFieldMigration {
+  list_field : str
+  str_field : str
+}
+class "MultiValueFieldMigration" as beets.library.migrations.MultiValueFieldMigration {
+  list_field : ClassVar[str]
+  separators : list[str]
+  str_field : ClassVar[str]
+  convert_to_list_value(str_value: str) -> str
+}
+class "MultipleSort" as beets.dbcore.sort.MultipleSort {
+  field_names : set[str]
+  sorts : list
+  add_sort(sort: Sort) -> None
+  is_slow() -> bool
+  order_clause() -> str
+  sort(items: Sequence[AnyModel]) -> Sequence[AnyModel]
+}
+class "MusicBrainzExtractEventArgs" as beets.events.MusicBrainzExtractEventArgs {
+  data : Mapping[str, Any]
+}
+class "MusicalKey" as beets.dbcore.types.MusicalKey {
+  ENHARMONIC : ClassVar[dict[str, str]]
+  null : NoneType
+  normalize(key: Any) -> str | None
+  parse(key: str) -> str | None
+}
+class "MutableCollectionQuery" as beets.dbcore.query.MutableCollectionQuery {
+  subqueries : MutableSequence[Query]
+}
+class "NoneQuery" as beets.dbcore.query.NoneQuery {
+  col_clause() -> tuple[str, Sequence[SQLiteType]]
+  match(obj: Model) -> bool
+}
+class "NotAvailable" as beets.util.artresizer.NotAvailable {
+  name
+}
+class "<color:red>NotFoundError</color>" as beets.dbcore.db.NotFoundError {
+}
+class "NotQuery" as beets.dbcore.query.NotQuery {
+  field_names : set[str]
+  subquery
+  clause() -> tuple[str | None, Sequence[SQLiteType]]
+  match(obj: Model) -> bool
+}
+class "NullFloat" as beets.dbcore.types.NullFloat {
+  null : None
+}
+class "NullInteger" as beets.dbcore.types.NullInteger {
+  null : None
+}
+class "NullPathType" as beets.dbcore.types.NullPathType {
+  null : None
+  format(value: bytes | None) -> str
+}
+class "NullSort" as beets.dbcore.sort.NullSort {
+  sort(items: Sequence[AnyModel]) -> Sequence[AnyModel]
+}
+class "NumericQuery" as beets.dbcore.query.NumericQuery {
+  point : NoneType, float, int
+  rangemax : NoneType, float, int
+  rangemin : NoneType, float, int
+  col_clause() -> tuple[str, Sequence[SQLiteType]]
+  match(obj: Model) -> bool
+}
+class "OrQuery" as beets.dbcore.query.OrQuery {
+  clause() -> tuple[str | None, Sequence[SQLiteType]]
+  match(obj: Model) -> bool
+}
+class "PILBackend" as beets.util.artresizer.PILBackend {
+  NAME : str
+  can_compare : bool
+  can_write_metadata : bool
+  {abstract}compare(im1: bytes, im2: bytes, compare_threshold: float) -> bool | None
+  convert_format(source: bytes, target: bytes, deinterlaced: bool) -> bytes
+  deinterlace(path_in: bytes, path_out: bytes | None) -> bytes
+  get_format(path_in: bytes) -> str | None
+  get_size(path_in: bytes) -> tuple[int, int] | None
+  resize(maxwidth: int, path_in: bytes, path_out: bytes | None, quality: int, max_filesize: int) -> bytes
+  version() -> None
+  write_metadata(file: bytes, metadata: Mapping[str, str]) -> None
+}
+class "PaddedInt" as beets.dbcore.types.PaddedInt {
+}
+class "<color:red>ParseError</color>" as beets.util.functemplate.ParseError {
+}
+class "Parser" as beets.util.functemplate.Parser {
+  escapable_chars : tuple
+  extra_special_chars : tuple[str, ...]
+  in_argument : bool
+  parts : list[Part]
+  pos : int
+  special_char_re : re.Pattern[str]
+  special_chars : tuple[str, ...]
+  string : str
+  terminator_chars : tuple
+  parse_argument_list() -> list[Expression]
+  parse_call() -> None
+  parse_expression() -> None
+  parse_symbol() -> None
+}
+class "<color:red>ParsingError</color>" as beets.dbcore.query.ParsingError {
+}
+class "PathQuery" as beets.dbcore.query.PathQuery {
+  case_sensitive : bool
+  dir_path : bytes
+  col_clause() -> tuple[str, Sequence[SQLiteType]]
+  is_path_query(query_part: str) -> bool
+  match(obj: Model) -> bool
+}
+class "PathType" as beets.dbcore.types.PathType {
+  null : bytes
+  format(value: bytes) -> str
+}
+class "PathsMixin" as beets.test.helper.PathsMixin {
+  resource_path
+  temp_path : Path
+  create_temp_dir() -> str
+  remove_temp_dir() -> None
+}
+class "Period" as beets.dbcore.query.Period {
+  date : datetime
+  date_formats : tuple
+  precision : str
+  precisions : tuple
+  relative_re : str
+  relative_units : ClassVar[dict[str, int]]
+  open_right_endpoint() -> datetime
+  parse(string: str) -> Period | None
+}
+class "Pipeline" as beets.util.pipeline.Pipeline {
+  first_stage : Sequence[Any], tuple
+  stages : list[Sequence[Tstage]]
+  pull() -> Iterator[Tpull]
+  run_parallel(queue_size: int) -> None
+  run_sequential() -> None
+}
+class "PipelineThread" as beets.util.pipeline.PipelineThread {
+  abort_flag : bool
+  abort_lock : lock
+  all_threads : Sequence[PipelineThread]
+  ctx : contextvars.Context | None
+  exc_info : ExcInfo | None, tuple
+  abort() -> None
+  abort_all(exc_info: ExcInfo) -> None
+}
+class "<color:red>PluginConflictError</color>" as beets.plugins.PluginConflictError {
+}
+class "<color:red>PluginImportError</color>" as beets.plugins.PluginImportError {
+}
+class "PluginMixin" as beets.test.helper.PluginMixin {
+  plugin : ClassVar[str]
+  preload_plugin : ClassVar[bool]
+  configure_plugin(config: Any) -> Iterator[None]
+  load_plugins() -> None
+  register_plugin(plugin_class: type[beets.plugins.BeetsPlugin]) -> None
+  setup_beets() -> None
+  teardown_beets() -> None
+  unload_plugins() -> None
+}
+class "PluginTestCase" as beets.test.helper.PluginTestCase {
+}
+class "PluginTestHelper" as beets.test.helper.PluginTestHelper {
+}
+class "PromptChoice" as beets.util.PromptChoice {
+  callback : Callable[[ImportSession, ImportTask], Action | None] | None
+  long : str
+  short : str
+}
+class "Proposal" as beets.autotag.match.Proposal {
+  candidates : Sequence[AlbumMatch | TrackMatch]
+  recommendation
+}
+class "PytestTestHelper" as beets.test.helper.PytestTestHelper {
+  setup() -> Iterator[None]
+}
+class "Query" as beets.dbcore.query.Query {
+  field_names : set[str]
+  {abstract}clause() -> tuple[str | None, Sequence[Any]]
+  {abstract}match(obj: Model) -> bool
+}
+class "<color:red>ReadError</color>" as beets.library.exceptions.ReadError {
+}
+class "Recommendation" as beets.autotag.match.Recommendation {
+  name
+}
+class "RegexpQuery" as beets.dbcore.query.RegexpQuery {
+  col_clause() -> tuple[str, Sequence[SQLiteType]]
+  string_match(pattern: Pattern[str], value: str) -> bool
+}
+class "RelativePathMigration" as beets.library.migrations.RelativePathMigration {
+  db
+}
+class "RemoveCLIOpts" as beets.ui.commands.remove.RemoveCLIOpts {
+  album : bool
+  delete : bool
+  force : bool
+}
+class "RemoveInheritedArtpathMigration" as beets.library.migrations.RemoveInheritedArtpathMigration {
+}
+class "Results" as beets.dbcore.db.Results {
+  db : D
+  flex_rows : list[sqlite3.Row]
+  limit : int | None
+  model_class : type[AnyModel]
+  query : Query | None
+  rows : list[sqlite3.Row]
+  sort : Sort | None
+  get() -> AnyModel | None
+}
+class "RunMixin" as beets.test.helper.RunMixin {
+  lib
+  run_command() -> None
+}
+class "ScaledInt" as beets.dbcore.types.ScaledInt {
+  suffix : str
+  unit : int
+  format(value: int) -> str
+}
+class "SearchApiMetadataSourcePlugin" as beets.metadata_plugins.SearchApiMetadataSourcePlugin {
+  candidates(items: Sequence[Item], artist: str, album: str, va_likely: bool) -> Iterable[AlbumInfo]
+  {abstract}get_search_query_with_filters(query_type: QueryType, items: Sequence[Item], artist: str, name: str, va_likely: bool) -> tuple[str, dict[str, str]]
+  {abstract}get_search_response(params: SearchParams) -> Sequence[R]
+  item_candidates(item: Item, artist: str, title: str) -> Iterable[TrackInfo]
+}
+class "SearchParams" as beets.metadata_plugins.SearchParams {
+  filters : dict[str, str]
+  limit : int
+  query : str
+  query_type : Literal
+}
+class "SentinelImportTask" as beets.importer.tasks.SentinelImportTask {
+  choice_flag : NoneType
+  is_album : bool
+  skip : bool
+  {abstract}cleanup(copy: bool, delete: bool, move: bool) -> None
+  {abstract}save_history() -> None
+  save_progress() -> None
+  {abstract}set_choice(choice: Action | AlbumMatch | TrackMatch) -> None
+}
+class "SevenZipArchive" as beets.importer.tasks.SevenZipArchive {
+  close() -> None
+  extractall(path: util.StrPath) -> None
+  infolist() -> list[_SevenZipMemberInfo]
+}
+class "Side" as beets.util.layout.Side {
+  contents : str
+  prefix : str
+  prefix_width : int
+  rendered : str
+  rendered_width : int
+  suffix : str
+  suffix_width : int
+  width : int
+}
+class "SingletonImportTask" as beets.importer.tasks.SingletonImportTask {
+  candidates
+  duplicate_items
+  is_album : bool
+  item
+  paths : list
+  rec
+  source : Source
+  add(lib: library.Library) -> None
+  apply_upgrade(kept: list[library.Item], superseded: list[library.Item], old_album_ids: list[int]) -> None
+  choose_match(session: ImportSession) -> None
+  find_duplicates(lib: library.Library) -> list[library.Item]
+  imported_items() -> list[library.Item]
+  {abstract}infer_album_fields() -> None
+  lookup_candidates(search_ids: list[str]) -> None
+  reload() -> None
+  remove_duplicates(lib: library.Library) -> None
+  set_fields(lib: library.Library) -> None
+}
+class "SingletonQuery" as beets.dbcore.query.SingletonQuery {
+}
+class "SlowFieldSort" as beets.dbcore.sort.SlowFieldSort {
+  is_slow() -> bool
+}
+class "SmartArtistSort" as beets.dbcore.sort.SmartArtistSort {
+  order_clause() -> str
+  sort(objs: Sequence[AnyModel]) -> Sequence[AnyModel]
+}
+class "Sort" as beets.dbcore.sort.Sort {
+  field_names : set[str]
+  is_slow() -> bool
+  order_clause() -> str | None
+  sort(items: Sequence[AnyModel]) -> Sequence[AnyModel]
+}
+class "SortFixture" as beets.test.fixtures.SortFixture {
+}
+class "Source" as beets.autotag.source.Source {
+  artist : str
+  data : Likelies
+  desc : str
+  id : str
+  id_consensus : bool
+  items : Sequence[Item]
+  name : str
+  type : Literal['album', 'track']
+  va_likely : bool
+  from_item(item: Item) -> Source
+  from_items(items: Sequence[Item]) -> Source
+}
+class "StatsCLIOpts" as beets.ui.commands.stats.StatsCLIOpts {
+  exact : bool
+}
+class "StrFormatLogger" as beets.logging.StrFormatLogger {
+}
+class "String" as beets.dbcore.types.String {
+  model_type : str
+}
+class "StringFieldQuery" as beets.dbcore.query.StringFieldQuery {
+  {abstract}string_match(pattern: P, value: str) -> bool
+  value_match(pattern: P, value: Any) -> bool
+}
+class "StringQuery" as beets.dbcore.query.StringQuery {
+  col_clause() -> tuple[str, Sequence[SQLiteType]]
+  string_match(pattern: str, value: str) -> bool
+}
+class "Subcommand" as beets.ui.Subcommand {
+  aliases : Sequence[str]
+  func : Callable[[library.Library, Any, list[str]], Any]
+  help : str
+  hide : bool
+  name : str
+  parser
+  root_parser : optparse.OptionParser | None
+  parse_args(args: list[str]) -> tuple[optparse.Values, list[str]]
+  print_help() -> None
+}
+class "SubcommandsOptionParser" as beets.ui.SubcommandsOptionParser {
+  subcommands : list[Subcommand]
+  add_subcommand() -> None
+  format_help(formatter: optparse.HelpFormatter | None) -> str
+  parse_global_options(args: list[str] | None) -> tuple[optparse.Values, list[str]]
+  parse_subcommand(args: list[str]) -> tuple[Subcommand, optparse.Values, list[str]]
+}
+class "SubstringQuery" as beets.dbcore.query.SubstringQuery {
+  col_clause() -> tuple[str, Sequence[SQLiteType]]
+  string_match(pattern: str, value: str) -> bool
+}
+class "Symbol" as beets.util.functemplate.Symbol {
+  ident : str
+  original : str
+  evaluate(env: Environment) -> str
+  translate() -> tuple[list[ast.expr], set[str], set[str]]
+}
+class "TableInfo" as beets.dbcore.db.TableInfo {
+  columns : set[str]
+  migrations : set[str]
+}
+class "TarArchive" as beets.importer.tasks.TarArchive {
+  infolist() -> list[_TarMemberInfo]
+  open() -> TarArchive
+}
+class "Template" as beets.util.functemplate.Template {
+  compiled
+  expr
+  original : str
+  interpret(values: Mapping[str, str], functions: FieldTFuncs) -> str
+  substitute(values: Mapping[str, str], functions: FieldTFuncs) -> str
+  translate() -> Callable[..., str]
+}
+class "TerminalImportMixin" as beets.test.helper.TerminalImportMixin {
+}
+class "TerminalImportSession" as beets.ui.commands.import_.session.TerminalImportSession {
+  choose_item(task: SingletonImportTask) -> TrackMatch | importer.Action
+  choose_match(task: ImportTask) -> AlbumMatch | importer.Action
+  get_duplicate_action(task: importer.ImportTask, found_duplicates: list[AlbumOrItem]) -> DuplicateAction
+  should_resume(path: PathBytes) -> bool
+}
+class "TerminalImportSessionFixture" as beets.test.helper.TerminalImportSessionFixture {
+  default_choice : APPLY
+  io
+  add_choice(choice: importer.Action | int) -> None
+  add_duplicate_action(action: importer.DuplicateAction) -> None
+  choose_item(task: importer.SingletonImportTask) -> TrackMatch | importer.Action
+  choose_match(task: importer.ImportTask) -> AlbumMatch | importer.Action
+  clear_choices() -> None
+}
+class "TestHelper" as beets.test.helper.TestHelper {
+  db_on_disk : ClassVar[bool]
+  env_patcher : _patch_dict
+  lib
+  lib_path : Path
+  request
+  add_album() -> Album
+  add_album_fixture(track_count: int, fname: str, ext: str, disc_count: int) -> Album
+  add_item() -> Item
+  add_item_fixture() -> Item
+  add_item_fixtures(ext: str, count: int) -> list[Item]
+  create_item() -> Item
+  create_mediafile_fixture(ext: str, images: list[str] | None, target_dir: util.PathLike | None) -> Path
+  setup(request: pytest.FixtureRequest) -> Iterator[None]
+  setup_beets() -> None
+  teardown_beets() -> None
+}
+class "ThreadLocalLevelLogger" as beets.logging.ThreadLocalLevelLogger {
+  default_level : int
+  level : int
+  set_global_level(level: int) -> None
+}
+class "TrackChange" as beets.ui.commands.import_.display.TrackChange {
+  match
+}
+class "TrackInfo" as beets.autotag.hooks.TrackInfo {
+  IGNORED_FIELDS : ClassVar[set[str]]
+  LEGACY_TO_LIST_FIELD : ClassVar[dict[str, str]]
+  MEDIA_FIELD_MAP : ClassVar[dict[str, str]]
+  arrangers : NoneType
+  arrangers_ids : list
+  bpm : NoneType
+  composer_sort : NoneType
+  composers : NoneType
+  composers_ids : list
+  disctitle : NoneType
+  id : str | None
+  index : NoneType
+  initial_key : NoneType
+  length : NoneType
+  lyricists : NoneType
+  lyricists_ids : list
+  mb_workid : NoneType
+  medium : NoneType
+  medium_index : NoneType
+  medium_total : NoneType
+  name : str
+  raw_data : JSONDict
+  release_track_id : NoneType
+  remixers : NoneType
+  remixers_ids : list
+  title : NoneType
+  track_alt : NoneType
+  track_id : NoneType
+  type : str
+  work : NoneType
+  work_disambig : NoneType
+  merge_with_album(album_info: AlbumInfo) -> JSONDict
+}
+class "TrackInfoReceivedEventArgs" as beets.events.TrackInfoReceivedEventArgs {
+  info
+}
+class "TrackMatch" as beets.autotag.match.TrackMatch {
+  base_disambig_data : JSONDict
+  disambig_fields_key : str
+  info
+  item
+  apply_metadata(from_scratch: bool | None) -> None
+}
+class "Transaction" as beets.dbcore.db.Transaction {
+  db
+  mutate(statement: str, subvals: Sequence[SQLiteType]) -> int | None
+  mutate_many(statement: str, subvals: Sequence[tuple[SQLiteType, ...]]) -> int | None
+  query(statement: str, subvals: Sequence[SQLiteType]) -> list[sqlite3.Row]
+  script(statements: str) -> None
+}
+class "TrueQuery" as beets.dbcore.query.TrueQuery {
+  clause() -> tuple[str, Sequence[SQLiteType]]
+  match(obj: Model) -> bool
+}
+class "Type" as beets.dbcore.types.Type {
+  model_type : type[T]
+  null : N
+  query : type
+  sql : str
+  format(value: N | T) -> str
+  from_sql(sql_value: SQLiteType) -> T | N
+  normalize(value: Any) -> T | N
+  parse(string: str) -> T | N
+  to_sql(model_value: Any) -> SQLiteType
+}
+class "<color:red>UnknownPairError</color>" as beets.util.config.UnknownPairError {
+}
+class "UpdateCLIOpts" as beets.ui.commands.update.UpdateCLIOpts {
+  album : bool
+  exclude_fields : list[str] | None
+  fields : list[str] | None
+  move : bool | None
+  pretend : bool
+}
+class "<color:red>UserError</color>" as beets.exceptions.UserError {
+}
+class "WriteCLIOpts" as beets.ui.commands.write.WriteCLIOpts {
+  force : bool
+  pretend : bool
+}
+class "<color:red>WriteError</color>" as beets.library.exceptions.WriteError {
+}
+class "WriteEventArgs" as beets.events.WriteEventArgs {
+  item
+  path : bytes
+  tags : dict[str, Any]
+}
+class "_LogMessage" as beets.logging.StrFormatLogger._LogMessage {
+  args
+  kwargs : dict[str, Any]
+  msg : str
+}
+class "_SevenZipMemberInfo" as beets.importer.tasks._SevenZipMemberInfo {
+  date_time
+  filename
+}
+class "_TarMemberInfo" as beets.importer.tasks._TarMemberInfo {
+  date_time
+  filename
+}
+class "cached_classproperty" as beets.util.cached_classproperty {
+  cache : ClassVar[dict[tuple[type[object], str], object]]
+  getter : Callable[..., T]
+  name : str
+}
+beets.autotag.hooks.AlbumInfo --|> beets.autotag.hooks.Info
+beets.autotag.hooks.TrackInfo --|> beets.autotag.hooks.Info
+beets.autotag.match.AlbumMatch --|> beets.autotag.match.Match
+beets.autotag.match.TrackMatch --|> beets.autotag.match.Match
+beets.dbcore.query.AndQuery --|> beets.dbcore.query.MutableCollectionQuery
+beets.dbcore.query.BooleanQuery --|> beets.dbcore.query.MatchQuery
+beets.dbcore.query.CollectionQuery --|> beets.dbcore.query.Query
+beets.dbcore.query.DateQuery --|> beets.dbcore.query.FieldQuery
+beets.dbcore.query.DurationQuery --|> beets.dbcore.query.NumericQuery
+beets.dbcore.query.FalseQuery --|> beets.dbcore.query.Query
+beets.dbcore.query.FieldQuery --|> beets.dbcore.query.Query
+beets.dbcore.query.InQuery --|> beets.dbcore.query.FieldQuery
+beets.dbcore.query.InvalidQueryArgumentValueError --|> beets.dbcore.query.ParsingError
+beets.dbcore.query.InvalidQueryError --|> beets.dbcore.query.ParsingError
+beets.dbcore.query.MatchQuery --|> beets.dbcore.query.FieldQuery
+beets.dbcore.query.MutableCollectionQuery --|> beets.dbcore.query.CollectionQuery
+beets.dbcore.query.NoneQuery --|> beets.dbcore.query.FieldQuery
+beets.dbcore.query.NotQuery --|> beets.dbcore.query.Query
+beets.dbcore.query.NumericQuery --|> beets.dbcore.query.FieldQuery
+beets.dbcore.query.OrQuery --|> beets.dbcore.query.MutableCollectionQuery
+beets.dbcore.query.PathQuery --|> beets.dbcore.query.FieldQuery
+beets.dbcore.query.RegexpQuery --|> beets.dbcore.query.StringFieldQuery
+beets.dbcore.query.SingletonQuery --|> beets.dbcore.query.FieldQuery
+beets.dbcore.query.StringFieldQuery --|> beets.dbcore.query.FieldQuery
+beets.dbcore.query.StringQuery --|> beets.dbcore.query.StringFieldQuery
+beets.dbcore.query.SubstringQuery --|> beets.dbcore.query.StringFieldQuery
+beets.dbcore.query.TrueQuery --|> beets.dbcore.query.Query
+beets.dbcore.sort.FieldSort --|> beets.dbcore.sort.Sort
+beets.dbcore.sort.FixedFieldSort --|> beets.dbcore.sort.FieldSort
+beets.dbcore.sort.MultipleSort --|> beets.dbcore.sort.Sort
+beets.dbcore.sort.NullSort --|> beets.dbcore.sort.Sort
+beets.dbcore.sort.SlowFieldSort --|> beets.dbcore.sort.FieldSort
+beets.dbcore.sort.SmartArtistSort --|> beets.dbcore.sort.FieldSort
+beets.dbcore.types.BaseFloat --|> beets.dbcore.types.Type
+beets.dbcore.types.BaseInteger --|> beets.dbcore.types.Type
+beets.dbcore.types.BasePaddedInt --|> beets.dbcore.types.BaseInteger
+beets.dbcore.types.BasePathType --|> beets.dbcore.types.Type
+beets.dbcore.types.BaseString --|> beets.dbcore.types.Type
+beets.dbcore.types.Boolean --|> beets.dbcore.types.Type
+beets.dbcore.types.DateType --|> beets.dbcore.types.Float
+beets.dbcore.types.Default --|> beets.dbcore.types.Type
+beets.dbcore.types.DelimitedString --|> beets.dbcore.types.BaseString
+beets.dbcore.types.DurationType --|> beets.dbcore.types.Float
+beets.dbcore.types.Float --|> beets.dbcore.types.BaseFloat
+beets.dbcore.types.Id --|> beets.dbcore.types.NullInteger
+beets.dbcore.types.Integer --|> beets.dbcore.types.BaseInteger
+beets.dbcore.types.MusicalKey --|> beets.dbcore.types.String
+beets.dbcore.types.NullFloat --|> beets.dbcore.types.BaseFloat
+beets.dbcore.types.NullInteger --|> beets.dbcore.types.BaseInteger
+beets.dbcore.types.NullPathType --|> beets.dbcore.types.BasePathType
+beets.dbcore.types.PaddedInt --|> beets.dbcore.types.BasePaddedInt
+beets.dbcore.types.PathType --|> beets.dbcore.types.BasePathType
+beets.dbcore.types.ScaledInt --|> beets.dbcore.types.Integer
+beets.dbcore.types.String --|> beets.dbcore.types.BaseString
+beets.importer.tasks.ArchiveImportTask --|> beets.importer.tasks.SentinelImportTask
+beets.importer.tasks.ImportTask --|> beets.importer.tasks.BaseImportTask
+beets.importer.tasks.SentinelImportTask --|> beets.importer.tasks.ImportTask
+beets.importer.tasks.SingletonImportTask --|> beets.importer.tasks.ImportTask
+beets.library.exceptions.ReadError --|> beets.library.exceptions.FileOperationError
+beets.library.exceptions.WriteError --|> beets.library.exceptions.FileOperationError
+beets.library.library.Library --|> beets.dbcore.db.Database
+beets.library.migrations.InstrumentalLyricsInFlexFieldMigration --|> beets.dbcore.db.Migration
+beets.library.migrations.LyricsMetadataInFlexFieldsMigration --|> beets.dbcore.db.Migration
+beets.library.migrations.MultiArrangerFieldMigration --|> beets.library.migrations.MultiValueFieldMigration
+beets.library.migrations.MultiComposerFieldMigration --|> beets.library.migrations.MultiValueFieldMigration
+beets.library.migrations.MultiGenreFieldMigration --|> beets.library.migrations.MultiValueFieldMigration
+beets.library.migrations.MultiLyricistFieldMigration --|> beets.library.migrations.MultiValueFieldMigration
+beets.library.migrations.MultiRemixerFieldMigration --|> beets.library.migrations.MultiValueFieldMigration
+beets.library.migrations.MultiValueFieldMigration --|> beets.dbcore.db.Migration
+beets.library.migrations.RelativePathMigration --|> beets.dbcore.db.Migration
+beets.library.migrations.RemoveInheritedArtpathMigration --|> beets.dbcore.db.Migration
+beets.library.models.Album --|> beets.library.models.LibModel
+beets.library.models.FormattedItemMapping --|> beets.dbcore.db.FormattedMapping
+beets.library.models.Item --|> beets.library.models.LibModel
+beets.library.models.LibModel --|> beets.dbcore.db.Model
+beets.logging.BeetsLogger --|> beets.logging.StrFormatLogger
+beets.logging.BeetsLogger --|> beets.logging.ThreadLocalLevelLogger
+beets.metadata_plugins.MetadataSourcePlugin --|> beets.plugins.BeetsPlugin
+beets.metadata_plugins.SearchApiMetadataSourcePlugin --|> beets.metadata_plugins.MetadataSourcePlugin
+beets.test.fixtures.DummyIMBackend --|> beets.util.artresizer.IMBackend
+beets.test.fixtures.ModelFixture1 --|> beets.library.models.LibModel
+beets.test.fixtures.SortFixture --|> beets.dbcore.sort.FieldSort
+beets.test.helper.AsIsImporterMixin --|> beets.test.helper.ImporterMixin
+beets.test.helper.AutotagImportHelper --|> beets.test.helper.ImportHelper
+beets.test.helper.AutotagImportTestCase --|> beets.test.helper.AutotagImportHelper
+beets.test.helper.AutotagImportTestCase --|> beets.test.helper.BeetsTestCase
+beets.test.helper.BeetsTestCase --|> beets.test.helper.TestHelper
+beets.test.helper.IOMixin --|> beets.test.helper.RunMixin
+beets.test.helper.ImportHelper --|> beets.test.helper.ImporterMixin
+beets.test.helper.ImportHelper --|> beets.test.helper.TestHelper
+beets.test.helper.ImportSessionFixture --|> beets.importer.session.ImportSession
+beets.test.helper.ImporterMixin --|> beets.test.helper.ConfigMixin
+beets.test.helper.ImporterMixin --|> beets.test.helper.PathsMixin
+beets.test.helper.ItemInDBTestCase --|> beets.test.helper.BeetsTestCase
+beets.test.helper.PluginMixin --|> beets.test.helper.ConfigMixin
+beets.test.helper.PluginTestCase --|> beets.test.helper.BeetsTestCase
+beets.test.helper.PluginTestCase --|> beets.test.helper.PluginMixin
+beets.test.helper.PluginTestHelper --|> beets.test.helper.PluginMixin
+beets.test.helper.PluginTestHelper --|> beets.test.helper.TestHelper
+beets.test.helper.PytestTestHelper --|> beets.test.helper.TestHelper
+beets.test.helper.TerminalImportMixin --|> beets.test.helper.IOMixin
+beets.test.helper.TerminalImportMixin --|> beets.test.helper.ImportHelper
+beets.test.helper.TerminalImportSessionFixture --|> beets.ui.commands.import_.session.TerminalImportSession
+beets.test.helper.TestHelper --|> beets.test.helper.ConfigMixin
+beets.test.helper.TestHelper --|> beets.test.helper.PathsMixin
+beets.test.helper.TestHelper --|> beets.test.helper.RunMixin
+beets.ui.SubcommandsOptionParser --|> beets.ui.CommonOptionsParser
+beets.ui.commands.help.HelpCommand --|> beets.ui.Subcommand
+beets.ui.commands.import_.display.AlbumChange --|> beets.ui.commands.import_.display.ChangeRepresentation
+beets.ui.commands.import_.display.TrackChange --|> beets.ui.commands.import_.display.ChangeRepresentation
+beets.ui.commands.import_.session.TerminalImportSession --|> beets.importer.session.ImportSession
+beets.util.FilesystemError --|> beets.util.HumanReadableError
+beets.util.Likelies --|> beets.util.AttrDict
+beets.util.artresizer.IMBackend --|> beets.util.artresizer.LocalBackend
+beets.util.artresizer.PILBackend --|> beets.util.artresizer.LocalBackend
+beets.util.pipeline.FirstPipelineThread --|> beets.util.pipeline.PipelineThread
+beets.util.pipeline.LastPipelineThread --|> beets.util.pipeline.PipelineThread
+beets.util.pipeline.MiddlePipelineThread --|> beets.util.pipeline.PipelineThread
+beets.autotag.distance.Distance --> beets.autotag.distance.Distance : tracks
+beets.autotag.match.Match --> beets.autotag.distance.Distance : distance
+beets.autotag.match.AlbumMatch --> beets.autotag.hooks.AlbumInfo : info
+beets.events.AlbumInfoReceivedEventArgs --> beets.autotag.hooks.AlbumInfo : info
+beets.autotag.match.Match --> beets.autotag.hooks.Info : info
+beets.autotag.distance.Distance --> beets.autotag.hooks.TrackInfo : tracks
+beets.autotag.match.TrackMatch --> beets.autotag.hooks.TrackInfo : info
+beets.events.TrackInfoReceivedEventArgs --> beets.autotag.hooks.TrackInfo : info
+beets.events.AlbumMatchedEventArgs --> beets.autotag.match.AlbumMatch : match
+beets.ui.commands.import_.display.AlbumChange --> beets.autotag.match.AlbumMatch : match
+beets.ui.commands.import_.display.ChangeRepresentation --> beets.autotag.match.Match : match
+beets.autotag.match.Proposal --> beets.autotag.match.Recommendation : recommendation
+beets.ui.commands.import_.display.TrackChange --> beets.autotag.match.TrackMatch : match
+beets.dbcore.db.Migration --> beets.dbcore.db.Database : db
+beets.dbcore.types.Boolean --> beets.dbcore.query.BooleanQuery : query
+beets.dbcore.types.DateType --> beets.dbcore.query.DateQuery : query
+beets.dbcore.types.DurationType --> beets.dbcore.query.DurationQuery : query
+beets.dbcore.types.BaseInteger --> beets.dbcore.query.NumericQuery : query
+beets.dbcore.types.BasePathType --> beets.dbcore.query.PathQuery : query
+beets.dbcore.types.BaseString --> beets.dbcore.query.SubstringQuery : query
+beets.events.ImportBeginEventArgs --> beets.importer.session.ImportSession : session
+beets.events.ImportTaskEventArgs --> beets.importer.session.ImportSession : session
+beets.events.ImportTaskEventArgs --> beets.importer.tasks.ImportTask : task
+beets.events.AlbumImportedEventArgs --> beets.library.library.Library : lib
+beets.events.DatabaseChangeEventArgs --> beets.library.library.Library : lib
+beets.events.ImportEventArgs --> beets.library.library.Library : lib
+beets.events.ItemImportedEventArgs --> beets.library.library.Library : lib
+beets.events.LibraryEventArgs --> beets.library.library.Library : lib
+beets.library.migrations.RelativePathMigration --> beets.library.library.Library : db
+beets.test.helper.ImporterMixin --> beets.library.library.Library : lib
+beets.test.helper.RunMixin --> beets.library.library.Library : lib
+beets.events.AlbumEventArgs --> beets.library.models.Album : album
+beets.events.AlbumImportedEventArgs --> beets.library.models.Album : album
+beets.importer.tasks.ImportTask --> beets.library.models.Album : album
+beets.autotag.match.TrackMatch --> beets.library.models.Item : item
+beets.events.AfterConvertEventArgs --> beets.library.models.Item : item
+beets.events.AfterWriteEventArgs --> beets.library.models.Item : item
+beets.events.AlternativesItemUpdatedEventArgs --> beets.library.models.Item : item
+beets.events.ItemEventArgs --> beets.library.models.Item : item
+beets.events.ItemImportedEventArgs --> beets.library.models.Item : item
+beets.events.ItemPathEventArgs --> beets.library.models.Item : item
+beets.events.WriteEventArgs --> beets.library.models.Item : item
+beets.events.DatabaseChangeEventArgs --> beets.library.models.LibModel : model
+beets.test.helper.IOMixin --> beets.test._common.DummyIO : io
+beets.ui.Subcommand --> beets.ui.CommonOptionsParser : parser
+beets.dbcore.query.DateInterval --* beets.dbcore.query.DateQuery : interval
+beets.library.library.Library --* beets.test.helper.TestHelper : lib
+beets.library.models.Item --* beets.test.helper.ItemInDBTestCase : i
+beets.test._common.DummyIn --* beets.test._common.DummyIO : stdin
+beets.test.helper.AutotagStub --* beets.test.helper.AutotagImportHelper : matcher
+beets.test.helper.ImportSessionFixture --* beets.test.helper.ImporterMixin : importer
+beets.util.artresizer.IMBackend --* beets.util.artresizer.ArtResizer : local_method
+beets.util.artresizer.PILBackend --* beets.util.artresizer.ArtResizer : local_method
+beets.util.functemplate.Expression --* beets.util.functemplate.Template : expr
+beets.autotag.hooks.TrackInfo --o beets.autotag.hooks.AlbumInfo : tracks
+beets.dbcore.db.Database --o beets.dbcore.db.Transaction : db
+beets.dbcore.db.Model --o beets.dbcore.db.FormattedMapping : model
+beets.dbcore.query.Query --o beets.dbcore.query.CollectionQuery : subqueries
+beets.dbcore.query.Query --o beets.dbcore.query.NotQuery : subquery
+beets.importer.session.ImportSession --o beets.importer.tasks.ImportTaskFactory : session
+beets.library.library.Library --o beets.importer.session.ImportSession : lib
+beets.library.models.Item --o beets.importer.tasks.SingletonImportTask : item
+beets.library.models.Item --o beets.library.models.FormattedItemMapping : item
+beets.library.models.LibModel --o beets.library.models.DefaultTemplateFunctions : item
+beets.util.functemplate.Expression --o beets.util.functemplate.Call : args
+beets.util.pipeline.PipelineThread --o beets.util.pipeline.PipelineThread : all_threads
+@enduml

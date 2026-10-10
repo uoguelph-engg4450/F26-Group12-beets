@@ -1,0 +1,75 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-factories-musicbrainz-01
+package "test.plugins.factories.musicbrainz" {
+  ' test.plugins.factories.musicbrainz._SortNameFactory at test/plugins/factories/musicbrainz.py:7
+  class "_SortNameFactory" as c_0667
+  ' test.plugins.factories.musicbrainz._PeriodFactory at test/plugins/factories/musicbrainz.py:12
+  class "_PeriodFactory" as c_0668
+  ' test.plugins.factories.musicbrainz._IdFactory at test/plugins/factories/musicbrainz.py:18
+  class "_IdFactory" as c_0669
+  ' test.plugins.factories.musicbrainz._IdFactory.Params at test/plugins/factories/musicbrainz.py:19
+  class "Params" as c_0670 <<nested>>
+  ' test.plugins.factories.musicbrainz.AliasFactory at test/plugins/factories/musicbrainz.py:28
+  class "AliasFactory" as c_0671
+  ' test.plugins.factories.musicbrainz.AliasFactory.Params at test/plugins/factories/musicbrainz.py:29
+  class "Params" as c_0672 <<nested>>
+  ' test.plugins.factories.musicbrainz.ArtistFactory at test/plugins/factories/musicbrainz.py:54
+  class "ArtistFactory" as c_0673
+  ' test.plugins.factories.musicbrainz.ArtistFactory.Params at test/plugins/factories/musicbrainz.py:55
+  class "Params" as c_0674 <<nested>>
+  ' test.plugins.factories.musicbrainz.ArtistCreditFactory at test/plugins/factories/musicbrainz.py:74
+  class "ArtistCreditFactory" as c_0675
+  ' test.plugins.factories.musicbrainz.ArtistRelationFactory at test/plugins/factories/musicbrainz.py:80
+  class "ArtistRelationFactory" as c_0676
+  ' test.plugins.factories.musicbrainz.AreaFactory at test/plugins/factories/musicbrainz.py:97
+  class "AreaFactory" as c_0677
+  ' test.plugins.factories.musicbrainz.ReleaseEventFactory at test/plugins/factories/musicbrainz.py:108
+  class "ReleaseEventFactory" as c_0678
+  ' test.plugins.factories.musicbrainz.ReleaseGroupFactory at test/plugins/factories/musicbrainz.py:113
+  class "ReleaseGroupFactory" as c_0679
+  ' test.plugins.factories.musicbrainz.ReleaseGroupFactory.Params at test/plugins/factories/musicbrainz.py:114
+  class "Params" as c_0680 <<nested>>
+  ' test.plugins.factories.musicbrainz.GenreFactory at test/plugins/factories/musicbrainz.py:140
+  class "GenreFactory" as c_0681
+  ' test.plugins.factories.musicbrainz.TagFactory at test/plugins/factories/musicbrainz.py:147
+  class "TagFactory" as c_0682
+  ' test.plugins.factories.musicbrainz.LabelFactory at test/plugins/factories/musicbrainz.py:151
+  class "LabelFactory" as c_0683
+  ' test.plugins.factories.musicbrainz.LabelInfoFactory at test/plugins/factories/musicbrainz.py:162
+  class "LabelInfoFactory" as c_0684
+  ' test.plugins.factories.musicbrainz.TextRepresentationFactory at test/plugins/factories/musicbrainz.py:167
+  class "TextRepresentationFactory" as c_0685
+  ' test.plugins.factories.musicbrainz.RecordingFactory at test/plugins/factories/musicbrainz.py:172
+  class "RecordingFactory" as c_0686
+}
+class "factory.DictFactory" as external_0 <<external>>
+c_0667 --|> external_0
+c_0668 --|> external_0
+c_0669 --|> external_0
+c_0671 --|> c_0667
+c_0671 --|> c_0668
+c_0673 --|> c_0667
+c_0673 --|> c_0669
+c_0675 --|> external_0
+c_0676 --|> c_0668
+c_0677 --|> external_0
+c_0678 --|> external_0
+c_0679 --|> c_0669
+c_0681 --|> external_0
+c_0682 --|> c_0681
+c_0683 --|> c_0667
+c_0683 --|> c_0669
+c_0684 --|> external_0
+c_0685 --|> external_0
+c_0686 --|> c_0669
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

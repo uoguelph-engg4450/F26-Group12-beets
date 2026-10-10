@@ -1,0 +1,40 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-factories-musicbrainz-02
+package "test.plugins.factories.musicbrainz" {
+  ' test.plugins.factories.musicbrainz.RecordingFactory.Params at test/plugins/factories/musicbrainz.py:173
+  class "Params" as c_0687 <<nested>>
+  ' test.plugins.factories.musicbrainz.TrackFactory at test/plugins/factories/musicbrainz.py:201
+  class "TrackFactory" as c_0688
+  ' test.plugins.factories.musicbrainz.TrackFactory.Params at test/plugins/factories/musicbrainz.py:202
+  class "Params" as c_0689 <<nested>>
+  ' test.plugins.factories.musicbrainz.MediumFactory at test/plugins/factories/musicbrainz.py:217
+  class "MediumFactory" as c_0690
+  ' test.plugins.factories.musicbrainz.MediumFactory.Params at test/plugins/factories/musicbrainz.py:218
+  class "Params" as c_0691 <<nested>>
+  ' test.plugins.factories.musicbrainz.UrlFactory at test/plugins/factories/musicbrainz.py:231
+  class "UrlFactory" as c_0692
+  ' test.plugins.factories.musicbrainz.UrlRelationFactory at test/plugins/factories/musicbrainz.py:236
+  class "UrlRelationFactory" as c_0693
+  ' test.plugins.factories.musicbrainz.ReleaseFactory at test/plugins/factories/musicbrainz.py:241
+  class "ReleaseFactory" as c_0694
+  ' test.plugins.factories.musicbrainz.ReleaseFactory.Params at test/plugins/factories/musicbrainz.py:242
+  class "Params" as c_0695 <<nested>>
+}
+class "factory.DictFactory" as external_0 <<external>>
+class "test.plugins.factories.musicbrainz._IdFactory" as c_0669 <<reference>>
+c_0688 --|> c_0669
+c_0690 --|> c_0669
+c_0692 --|> external_0
+c_0693 --|> external_0
+c_0694 --|> c_0669
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

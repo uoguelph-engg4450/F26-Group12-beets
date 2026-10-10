@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-metasync-itunes
+package "beetsplug.metasync.itunes" {
+  ' beetsplug.metasync.itunes.Itunes at beetsplug/metasync/itunes.py:57
+  class "Itunes" as c_0478
+}
+class "beetsplug.metasync.MetaSource" as c_0475 <<reference>>
+c_0478 --|> c_0475
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-autotag-test_distance
+package "test.autotag.test_distance" {
+  ' test.autotag.test_distance.TestDistance at test/autotag/test_distance.py:21
+  class "TestDistance" as c_0589
+  ' test.autotag.test_distance.TestTrackDistance at test/autotag/test_distance.py:153
+  class "TestTrackDistance" as c_0590
+  ' test.autotag.test_distance.TestAlbumDistance at test/autotag/test_distance.py:174
+  class "TestAlbumDistance" as c_0591
+  ' test.autotag.test_distance.TestStringDistance at test/autotag/test_distance.py:268
+  class "TestStringDistance" as c_0592
+  ' test.autotag.test_distance.TestDataSourceDistance at test/autotag/test_distance.py:327
+  class "TestDataSourceDistance" as c_0593
+  ' test.autotag.test_distance.TestDataSourceDistance.setup.TestMetadataSourcePlugin at test/autotag/test_distance.py:336
+  class "TestMetadataSourcePlugin" as c_0594 <<nested>>
+  ' test.autotag.test_distance.TestDataSourceDistance.setup.OriginalPlugin at test/autotag/test_distance.py:347
+  class "OriginalPlugin" as c_0595 <<nested>>
+  ' test.autotag.test_distance.TestDataSourceDistance.setup.OtherPlugin at test/autotag/test_distance.py:350
+  class "OtherPlugin" as c_0596 <<nested>>
+}
+class "beets.metadata_plugins.MetadataSourcePlugin" as c_0142 <<reference>>
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+c_0594 --|> c_0142
+c_0595 --|> c_0149
+c_0596 --|> c_0594
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

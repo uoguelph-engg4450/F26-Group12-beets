@@ -1,0 +1,31 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Template parsing and evaluation
+package "beets.util.functemplate" {
+  ' beets.util.functemplate.Environment at beets/util/functemplate.py:42
+  class "Environment" as c_0214
+  ' beets.util.functemplate.Symbol at beets/util/functemplate.py:127
+  class "Symbol" as c_0215
+  ' beets.util.functemplate.Call at beets/util/functemplate.py:154
+  class "Call" as c_0216
+  ' beets.util.functemplate.Expression at beets/util/functemplate.py:214
+  class "Expression" as c_0217
+  ' beets.util.functemplate.ParseError at beets/util/functemplate.py:260
+  class "ParseError" as c_0218
+  ' beets.util.functemplate.Parser at beets/util/functemplate.py:264
+  class "Parser" as c_0219
+  ' beets.util.functemplate.Template at beets/util/functemplate.py:532
+  class "Template" as c_0220
+}
+class "Exception" as external_0 <<external>>
+c_0218 --|> external_0
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

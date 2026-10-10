@@ -1,0 +1,48 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Plugin and metadata source contracts
+package "beets.metadata_plugins" {
+  ' beets.metadata_plugins.MetadataSourcePlugin at beets/metadata_plugins.py:174
+  abstract class "MetadataSourcePlugin" as c_0142
+  ' beets.metadata_plugins.IDResponse at beets/metadata_plugins.py:331
+  class "IDResponse" as c_0143 <<schema>>
+  ' beets.metadata_plugins.SearchParams at beets/metadata_plugins.py:337
+  class "SearchParams" as c_0144 <<namedtuple>>
+  ' beets.metadata_plugins.SearchApiMetadataSourcePlugin at beets/metadata_plugins.py:353
+  abstract class "SearchApiMetadataSourcePlugin" as c_0145
+}
+package "beets.plugins" {
+  ' beets.plugins.PluginConflictError at beets/plugins.py:61
+  class "PluginConflictError" as c_0146
+  ' beets.plugins.PluginImportError at beets/plugins.py:69
+  class "PluginImportError" as c_0147
+  ' beets.plugins.BeetsPluginMeta at beets/plugins.py:83
+  class "BeetsPluginMeta" as c_0148
+  ' beets.plugins.BeetsPlugin at beets/plugins.py:89
+  class "BeetsPlugin" as c_0149
+}
+class "Exception" as external_0 <<external>>
+class "ImportError" as external_1 <<external>>
+class "abc.ABCMeta" as external_2 <<external>>
+class "typing.Generic" as external_3 <<external>>
+class "typing.NamedTuple" as external_4 <<external>>
+class "typing.TypedDict" as external_5 <<external>>
+c_0142 --|> c_0149
+c_0143 --|> external_5
+c_0144 --|> external_4
+c_0145 --|> external_3
+' Parameterized source base: Generic[R]
+c_0145 --|> c_0142
+c_0146 --|> external_0
+c_0147 --|> external_1
+c_0148 --|> external_2
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

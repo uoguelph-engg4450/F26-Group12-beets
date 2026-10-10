@@ -1,0 +1,82 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-test_plugins
+package "test.test_plugins" {
+  ' test.test_plugins.TestPluginRegistration at test/test_plugins.py:28
+  class "TestPluginRegistration" as c_1013
+  ' test.test_plugins.TestPluginRegistration.RatingPlugin at test/test_plugins.py:29
+  class "RatingPlugin" as c_1014 <<nested>>
+  ' test.test_plugins.TestPluginRegistration.test_duplicate_type.DuplicateTypePlugin at test/test_plugins.py:52
+  class "DuplicateTypePlugin" as c_1015 <<nested>>
+  ' test.test_plugins.PluginImportHelper at test/test_plugins.py:80
+  class "PluginImportHelper" as c_1016
+  ' test.test_plugins.TestEvents at test/test_plugins.py:86
+  class "TestEvents" as c_1017
+  ' test.test_plugins.TestEvents.test_import_task_created_with_plugin.ToSingletonPlugin at test/test_plugins.py:109
+  class "ToSingletonPlugin" as c_1018 <<nested>>
+  ' test.test_plugins.TestListeners at test/test_plugins.py:145
+  class "TestListeners" as c_1019
+  ' test.test_plugins.TestListeners.test_register.DummyPlugin at test/test_plugins.py:147
+  class "DummyPlugin" as c_1020 <<nested>>
+  ' test.test_plugins.TestListeners.test_events_called.DummyPlugin at test/test_plugins.py:166
+  class "DummyPlugin" as c_1021 <<nested>>
+  ' test.test_plugins.TestListeners.test_listener_params.DummyPlugin at test/test_plugins.py:185
+  class "DummyPlugin" as c_1022 <<nested>>
+  ' test.test_plugins.TestPromptChoices at test/test_plugins.py:247
+  class "TestPromptChoices" as c_1023
+  ' test.test_plugins.TestPromptChoices.test_plugin_choices_in_ui_input_options_album.DummyPlugin at test/test_plugins.py:264
+  class "DummyPlugin" as c_1024 <<nested>>
+  ' test.test_plugins.TestPromptChoices.test_plugin_choices_in_ui_input_options_singleton.DummyPlugin at test/test_plugins.py:303
+  class "DummyPlugin" as c_1025 <<nested>>
+  ' test.test_plugins.TestPromptChoices.test_choices_conflicts.DummyPlugin at test/test_plugins.py:340
+  class "DummyPlugin" as c_1026 <<nested>>
+  ' test.test_plugins.TestPromptChoices.test_plugin_callback.DummyPlugin at test/test_plugins.py:379
+  class "DummyPlugin" as c_1027 <<nested>>
+  ' test.test_plugins.TestPromptChoices.test_plugin_callback_return.DummyPlugin at test/test_plugins.py:424
+  class "DummyPlugin" as c_1028 <<nested>>
+  ' test.test_plugins.TestImportPlugin at test/test_plugins.py:474
+  class "TestImportPlugin" as c_1029
+  ' test.test_plugins.TestDeprecationCopy at test/test_plugins.py:518
+  class "TestDeprecationCopy" as c_1030
+  ' test.test_plugins.TestDeprecationCopy.test_legacy_metadata_plugin_deprecation.LegacyMetadataPlugin at test/test_plugins.py:527
+  class "LegacyMetadataPlugin" as c_1031 <<nested>>
+  ' test.test_plugins.TestMusicBrainzPluginLoading at test/test_plugins.py:538
+  class "TestMusicBrainzPluginLoading" as c_1032
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "beets.test.helper.IOMixin" as c_0158 <<reference>>
+class "beets.test.helper.ImportHelper" as c_0168 <<reference>>
+class "beets.test.helper.PluginMixin" as c_0164 <<reference>>
+class "beets.test.helper.PluginTestHelper" as c_0166 <<reference>>
+class "beets.test.helper.TerminalImportMixin" as c_0172 <<reference>>
+c_1013 --|> c_0158
+c_1013 --|> c_0166
+c_1014 --|> c_0149
+c_1015 --|> c_0149
+c_1016 --|> c_0164
+c_1016 --|> c_0168
+c_1017 --|> c_1016
+c_1018 --|> c_0149
+c_1019 --|> c_0166
+c_1020 --|> c_0149
+c_1021 --|> c_0149
+c_1022 --|> c_0149
+c_1023 --|> c_0172
+c_1023 --|> c_1016
+c_1024 --|> c_0149
+c_1025 --|> c_0149
+c_1026 --|> c_0149
+c_1027 --|> c_0149
+c_1028 --|> c_0149
+c_1029 --|> c_0164
+c_1031 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,77 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-test_library-01
+package "test.test_library" {
+  ' test.test_library.PytestItemHelper at test/test_library.py:30
+  class "PytestItemHelper" as c_0971
+  ' test.test_library.TestBlobTypeCompatibility at test/test_library.py:44
+  class "TestBlobTypeCompatibility" as c_0972
+  ' test.test_library.TestLoad at test/test_library.py:57
+  class "TestLoad" as c_0973
+  ' test.test_library.TestStore at test/test_library.py:71
+  class "TestStore" as c_0974
+  ' test.test_library.TestAdd at test/test_library.py:114
+  class "TestAdd" as c_0975
+  ' test.test_library.TestRemove at test/test_library.py:155
+  class "TestRemove" as c_0976
+  ' test.test_library.TestGetSet at test/test_library.py:162
+  class "TestGetSet" as c_0977
+  ' test.test_library.TestDestination at test/test_library.py:200
+  class "TestDestination" as c_0978
+  ' test.test_library.TestItemFormattedMapping at test/test_library.py:537
+  class "TestItemFormattedMapping" as c_0979
+  ' test.test_library.PathFormattingMixin at test/test_library.py:596
+  class "PathFormattingMixin" as c_0980
+  ' test.test_library.TestDestinationFunction at test/test_library.py:617
+  class "TestDestinationFunction" as c_0981
+  ' test.test_library.TestDisambiguation at test/test_library.py:725
+  class "TestDisambiguation" as c_0982
+  ' test.test_library.TestSingletonDisambiguation at test/test_library.py:820
+  class "TestSingletonDisambiguation" as c_0983
+  ' test.test_library.TestPluginDestination at test/test_library.py:912
+  class "TestPluginDestination" as c_0984
+  ' test.test_library.TestAlbumInfo at test/test_library.py:955
+  class "TestAlbumInfo" as c_0985
+  ' test.test_library.TestArtDestination at test/test_library.py:1052
+  class "TestArtDestination" as c_0986
+  ' test.test_library.TestPathString at test/test_library.py:1083
+  class "TestPathString" as c_0987
+  ' test.test_library.TestMtime at test/test_library.py:1182
+  class "TestMtime" as c_0988
+  ' test.test_library.TestImportTime at test/test_library.py:1214
+  class "TestImportTime" as c_0989
+  ' test.test_library.TestTemplate at test/test_library.py:1226
+  class "TestTemplate" as c_0990
+}
+class "beets.test.helper.TestHelper" as c_0160 <<reference>>
+c_0971 --|> c_0160
+c_0973 --|> c_0971
+c_0974 --|> c_0971
+c_0975 --|> c_0971
+c_0976 --|> c_0971
+c_0977 --|> c_0971
+c_0978 --|> c_0971
+c_0979 --|> c_0971
+c_0981 --|> c_0160
+c_0981 --|> c_0980
+c_0982 --|> c_0160
+c_0982 --|> c_0980
+c_0983 --|> c_0160
+c_0983 --|> c_0980
+c_0984 --|> c_0160
+c_0985 --|> c_0971
+c_0986 --|> c_0160
+c_0987 --|> c_0971
+c_0988 --|> c_0160
+c_0989 --|> c_0160
+c_0990 --|> c_0971
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

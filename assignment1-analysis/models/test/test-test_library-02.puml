@@ -1,0 +1,37 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-test_library-02
+package "test.test_library" {
+  ' test.test_library.TestUnicodePath at test/test_library.py:1256
+  class "TestUnicodePath" as c_0991
+  ' test.test_library.TestWrite at test/test_library.py:1265
+  class "TestWrite" as c_0992
+  ' test.test_library.TestItemRead at test/test_library.py:1330
+  class "TestItemRead" as c_0993
+  ' test.test_library.TestItemReadGenre at test/test_library.py:1350
+  class "TestItemReadGenre" as c_0994
+  ' test.test_library.TestFilesize at test/test_library.py:1361
+  class "TestFilesize" as c_0995
+  ' test.test_library.TestItemPruneDirsClutter at test/test_library.py:1371
+  class "TestItemPruneDirsClutter" as c_0996
+  ' test.test_library.TestParseQuery at test/test_library.py:1406
+  class "TestParseQuery" as c_0997
+}
+class "beets.test.helper.TestHelper" as c_0160 <<reference>>
+class "test.test_library.PytestItemHelper" as c_0971 <<reference>>
+c_0991 --|> c_0971
+c_0992 --|> c_0160
+c_0993 --|> c_0971
+c_0994 --|> c_0160
+c_0995 --|> c_0160
+c_0996 --|> c_0160
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

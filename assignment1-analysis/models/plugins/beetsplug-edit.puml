@@ -1,0 +1,27 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-edit
+package "beetsplug.edit" {
+  ' beetsplug.edit.EditCLIOpts at beetsplug/edit.py:47
+  class "EditCLIOpts" as c_0372 <<protocol>>
+  ' beetsplug.edit.ParseError at beetsplug/edit.py:53
+  class "ParseError" as c_0373
+  ' beetsplug.edit.EditPlugin at beetsplug/edit.py:154
+  class "EditPlugin" as c_0374
+}
+class "Exception" as external_0 <<external>>
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "typing.Protocol" as external_2 <<external>>
+c_0372 --|> external_2
+c_0373 --|> external_0
+c_0374 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

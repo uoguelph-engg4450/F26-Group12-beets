@@ -1,0 +1,37 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-discogs-types
+package "beetsplug.discogs.types" {
+  ' beetsplug.discogs.types.ReleaseFormat at beetsplug/discogs/types.py:11
+  class "ReleaseFormat" as c_0364 <<schema>>
+  ' beetsplug.discogs.types.Artist at beetsplug/discogs/types.py:17
+  class "Artist" as c_0365 <<schema>>
+  ' beetsplug.discogs.types.AudioTrack at beetsplug/discogs/types.py:27
+  class "AudioTrack" as c_0366 <<schema>>
+  ' beetsplug.discogs.types.IndexTrack at beetsplug/discogs/types.py:43
+  class "IndexTrack" as c_0367 <<schema>>
+  ' beetsplug.discogs.types.HeadingTrack at beetsplug/discogs/types.py:60
+  class "HeadingTrack" as c_0368 <<schema>>
+  ' beetsplug.discogs.types.ArtistInfo at beetsplug/discogs/types.py:76
+  class "ArtistInfo" as c_0369 <<schema>>
+  ' beetsplug.discogs.types.TracklistInfo at beetsplug/discogs/types.py:89
+  class "TracklistInfo" as c_0370 <<schema>>
+}
+class "typing_extensions.TypedDict" as external_0 <<external>>
+c_0364 --|> external_0
+c_0365 --|> external_0
+c_0366 --|> external_0
+c_0367 --|> external_0
+c_0368 --|> external_0
+c_0369 --|> external_0
+c_0370 --|> external_0
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

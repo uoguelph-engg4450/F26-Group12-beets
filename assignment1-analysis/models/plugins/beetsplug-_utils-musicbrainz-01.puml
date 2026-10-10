@@ -1,0 +1,80 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-_utils-musicbrainz-01
+package "beetsplug._utils.musicbrainz" {
+  ' beetsplug._utils.musicbrainz.LimiterTimeoutSession at beetsplug/_utils/musicbrainz.py:78
+  class "LimiterTimeoutSession" as c_0252
+  ' beetsplug._utils.musicbrainz.LookupKwargs at beetsplug/_utils/musicbrainz.py:100
+  class "LookupKwargs" as c_0253 <<schema>>
+  ' beetsplug._utils.musicbrainz.PagingKwargs at beetsplug/_utils/musicbrainz.py:104
+  class "PagingKwargs" as c_0254 <<schema>>
+  ' beetsplug._utils.musicbrainz.SearchKwargs at beetsplug/_utils/musicbrainz.py:109
+  class "SearchKwargs" as c_0255 <<schema>>
+  ' beetsplug._utils.musicbrainz.BrowseKwargs at beetsplug/_utils/musicbrainz.py:113
+  class "BrowseKwargs" as c_0256 <<schema>>
+  ' beetsplug._utils.musicbrainz.BrowseReleaseGroupsKwargs at beetsplug/_utils/musicbrainz.py:117
+  class "BrowseReleaseGroupsKwargs" as c_0257 <<schema>>
+  ' beetsplug._utils.musicbrainz.BrowseRecordingsKwargs at beetsplug/_utils/musicbrainz.py:124
+  class "BrowseRecordingsKwargs" as c_0258 <<schema>>
+  ' beetsplug._utils.musicbrainz._Period at beetsplug/_utils/musicbrainz.py:132
+  class "_Period" as c_0259 <<schema>>
+  ' beetsplug._utils.musicbrainz.Alias at beetsplug/_utils/musicbrainz.py:138
+  class "Alias" as c_0260 <<schema>>
+  ' beetsplug._utils.musicbrainz.Artist at beetsplug/_utils/musicbrainz.py:158
+  class "Artist" as c_0261 <<schema>>
+  ' beetsplug._utils.musicbrainz.ArtistCredit at beetsplug/_utils/musicbrainz.py:174
+  class "ArtistCredit" as c_0262 <<schema>>
+  ' beetsplug._utils.musicbrainz.Genre at beetsplug/_utils/musicbrainz.py:180
+  class "Genre" as c_0263 <<schema>>
+  ' beetsplug._utils.musicbrainz.Tag at beetsplug/_utils/musicbrainz.py:187
+  class "Tag" as c_0264 <<schema>>
+  ' beetsplug._utils.musicbrainz.ReleaseGroup at beetsplug/_utils/musicbrainz.py:233
+  class "ReleaseGroup" as c_0265 <<schema>>
+  ' beetsplug._utils.musicbrainz.CoverArtArchive at beetsplug/_utils/musicbrainz.py:263
+  class "CoverArtArchive" as c_0266 <<schema>>
+  ' beetsplug._utils.musicbrainz.TextRepresentation at beetsplug/_utils/musicbrainz.py:271
+  class "TextRepresentation" as c_0267 <<schema>>
+  ' beetsplug._utils.musicbrainz.Area at beetsplug/_utils/musicbrainz.py:276
+  class "Area" as c_0268 <<schema>>
+  ' beetsplug._utils.musicbrainz.ReleaseEvent at beetsplug/_utils/musicbrainz.py:287
+  class "ReleaseEvent" as c_0269 <<schema>>
+  ' beetsplug._utils.musicbrainz.Label at beetsplug/_utils/musicbrainz.py:292
+  class "Label" as c_0270 <<schema>>
+  ' beetsplug._utils.musicbrainz.LabelInfo at beetsplug/_utils/musicbrainz.py:319
+  class "LabelInfo" as c_0271 <<schema>>
+}
+class "beetsplug._utils.requests.TimeoutAndRetrySession" as c_0294 <<reference>>
+class "requests_ratelimiter.LimiterMixin" as external_1 <<external>>
+class "typing.TypedDict" as external_2 <<external>>
+c_0252 --|> external_1
+c_0252 --|> c_0294
+c_0253 --|> external_2
+c_0254 --|> external_2
+c_0255 --|> c_0254
+c_0256 --|> c_0253
+c_0256 --|> c_0254
+c_0257 --|> c_0256
+c_0258 --|> c_0257
+c_0259 --|> external_2
+c_0260 --|> c_0259
+c_0261 --|> external_2
+c_0262 --|> external_2
+c_0263 --|> external_2
+c_0264 --|> external_2
+c_0265 --|> external_2
+c_0266 --|> external_2
+c_0267 --|> external_2
+c_0268 --|> external_2
+c_0269 --|> external_2
+c_0270 --|> external_2
+c_0271 --|> external_2
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

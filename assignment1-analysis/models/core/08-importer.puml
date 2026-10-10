@@ -1,0 +1,74 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Import sessions, tasks, archives, actions and state
+package "beets.importer.actions" {
+  ' beets.importer.actions.Action at beets/importer/actions.py:8
+  class "Action" as c_0099 <<enum>>
+  ' beets.importer.actions.DuplicateAction at beets/importer/actions.py:25
+  class "DuplicateAction" as c_0100 <<enum>>
+}
+package "beets.importer.session" {
+  ' beets.importer.session.ImportAbortError at beets/importer/session.py:33
+  class "ImportAbortError" as c_0101
+  ' beets.importer.session.ImportSession at beets/importer/session.py:37
+  class "ImportSession" as c_0102
+}
+package "beets.importer.state" {
+  ' beets.importer.state.ImportState at beets/importer/state.py:25
+  class "ImportState" as c_0103
+}
+package "beets.importer.tasks" {
+  ' beets.importer.tasks.ImportAbortError at beets/importer/tasks.py:68
+  class "ImportAbortError" as c_0104
+  ' beets.importer.tasks.BaseImportTask at beets/importer/tasks.py:168
+  class "BaseImportTask" as c_0105
+  ' beets.importer.tasks.ImportTask at beets/importer/tasks.py:205
+  class "ImportTask" as c_0106
+  ' beets.importer.tasks.SingletonImportTask at beets/importer/tasks.py:862
+  class "SingletonImportTask" as c_0107
+  ' beets.importer.tasks.SentinelImportTask at beets/importer/tasks.py:1004
+  class "SentinelImportTask" as c_0108
+  ' beets.importer.tasks.ArchiveMember at beets/importer/tasks.py:1050
+  class "ArchiveMember" as c_0109 <<protocol>>
+  ' beets.importer.tasks.Archive at beets/importer/tasks.py:1066
+  class "Archive" as c_0110 <<protocol>>
+  ' beets.importer.tasks._TarMemberInfo at beets/importer/tasks.py:1085
+  class "_TarMemberInfo" as c_0111
+  ' beets.importer.tasks.TarArchive at beets/importer/tasks.py:1096
+  class "TarArchive" as c_0112
+  ' beets.importer.tasks._SevenZipMemberInfo at beets/importer/tasks.py:1114
+  class "_SevenZipMemberInfo" as c_0113
+  ' beets.importer.tasks.SevenZipArchive at beets/importer/tasks.py:1123
+  class "SevenZipArchive" as c_0114
+  ' beets.importer.tasks.ArchiveImportTask at beets/importer/tasks.py:1151
+  class "ArchiveImportTask" as c_0115
+  ' beets.importer.tasks.ImportTaskFactory at beets/importer/tasks.py:1296
+  class "ImportTaskFactory" as c_0116
+}
+class "Exception" as external_0 <<external>>
+class "enum.Enum" as external_1 <<external>>
+class "str" as external_2 <<external>>
+class "tarfile.TarFile" as external_3 <<external>>
+class "typing.Protocol" as external_4 <<external>>
+c_0099 --|> external_1
+c_0100 --|> external_2
+c_0100 --|> external_1
+c_0101 --|> external_0
+c_0104 --|> external_0
+c_0106 --|> c_0105
+c_0107 --|> c_0106
+c_0108 --|> c_0106
+c_0109 --|> external_4
+c_0110 --|> external_4
+c_0112 --|> external_3
+c_0115 --|> c_0108
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-discogs-states
+package "beetsplug.discogs.states" {
+  ' beetsplug.discogs.states.ArtistState at beetsplug/discogs/states.py:27
+  class "ArtistState" as c_0361
+  ' beetsplug.discogs.states.ArtistState.ValidArtist at beetsplug/discogs/states.py:37
+  class "ValidArtist" as c_0362 <<namedtuple>>
+  ' beetsplug.discogs.states.TracklistState at beetsplug/discogs/states.py:217
+  class "TracklistState" as c_0363
+}
+class "typing.NamedTuple" as external_0 <<external>>
+c_0362 --|> external_0
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

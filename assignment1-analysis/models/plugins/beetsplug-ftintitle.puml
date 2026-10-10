@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-ftintitle
+package "beetsplug.ftintitle" {
+  ' beetsplug.ftintitle.FtInTitlePlugin at beetsplug/ftintitle.py:160
+  class "FtInTitlePlugin" as c_0412
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+c_0412 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

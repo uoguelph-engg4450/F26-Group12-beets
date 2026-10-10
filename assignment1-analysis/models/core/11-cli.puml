@@ -1,0 +1,99 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title CLI commands, parsers and import presentation
+package "beets.ui" {
+  ' beets.ui.CommonOptionsParser at beets/ui/__init__.py:479
+  class "CommonOptionsParser" as c_0179
+  ' beets.ui.Subcommand at beets/ui/__init__.py:631
+  class "Subcommand" as c_0180
+  ' beets.ui.SubcommandsOptionParser at beets/ui/__init__.py:678
+  class "SubcommandsOptionParser" as c_0181
+}
+package "beets.ui.commands.config" {
+  ' beets.ui.commands.config.ConfigCLIOpts at beets/ui/commands/config.py:16
+  class "ConfigCLIOpts" as c_0182 <<protocol>>
+}
+package "beets.ui.commands.help" {
+  ' beets.ui.commands.help.HelpCommand at beets/ui/commands/help.py:16
+  class "HelpCommand" as c_0183
+}
+package "beets.ui.commands.import_" {
+  ' beets.ui.commands.import_.ImportCLIOpts at beets/ui/commands/import_/__init__.py:25
+  class "ImportCLIOpts" as c_0184 <<protocol>>
+}
+package "beets.ui.commands.import_.display" {
+  ' beets.ui.commands.import_.display.ChangeRepresentation at beets/ui/commands/import_/display.py:28
+  class "ChangeRepresentation" as c_0185
+  ' beets.ui.commands.import_.display.AlbumChange at beets/ui/commands/import_/display.py:303
+  class "AlbumChange" as c_0186
+  ' beets.ui.commands.import_.display.TrackChange at beets/ui/commands/import_/display.py:361
+  class "TrackChange" as c_0187
+}
+package "beets.ui.commands.import_.session" {
+  ' beets.ui.commands.import_.session.TerminalImportSession at beets/ui/commands/import_/session.py:36
+  class "TerminalImportSession" as c_0188
+}
+package "beets.ui.commands.list" {
+  ' beets.ui.commands.list.ListCLIOpts at beets/ui/commands/list.py:16
+  class "ListCLIOpts" as c_0189 <<protocol>>
+}
+package "beets.ui.commands.modify" {
+  ' beets.ui.commands.modify.ModifyCLIOpts at beets/ui/commands/modify.py:21
+  class "ModifyCLIOpts" as c_0190 <<protocol>>
+  ' beets.ui.commands.modify.ModifyOperation at beets/ui/commands/modify.py:29
+  class "ModifyOperation" as c_0191 <<namedtuple>>
+  ' beets.ui.commands.modify.ModifyParams at beets/ui/commands/modify.py:49
+  class "ModifyParams" as c_0192 <<schema>>
+}
+package "beets.ui.commands.move" {
+  ' beets.ui.commands.move.MoveCLIOpts at beets/ui/commands/move.py:22
+  class "MoveCLIOpts" as c_0193 <<protocol>>
+}
+package "beets.ui.commands.remove" {
+  ' beets.ui.commands.remove.RemoveCLIOpts at beets/ui/commands/remove.py:17
+  class "RemoveCLIOpts" as c_0194 <<protocol>>
+}
+package "beets.ui.commands.stats" {
+  ' beets.ui.commands.stats.StatsCLIOpts at beets/ui/commands/stats.py:22
+  class "StatsCLIOpts" as c_0195 <<protocol>>
+}
+package "beets.ui.commands.update" {
+  ' beets.ui.commands.update.UpdateCLIOpts at beets/ui/commands/update.py:23
+  class "UpdateCLIOpts" as c_0196 <<protocol>>
+}
+package "beets.ui.commands.write" {
+  ' beets.ui.commands.write.WriteCLIOpts at beets/ui/commands/write.py:22
+  class "WriteCLIOpts" as c_0197 <<protocol>>
+}
+class "beets.importer.session.ImportSession" as c_0102 <<reference>>
+class "optparse.OptionParser" as external_1 <<external>>
+class "typing.NamedTuple" as external_2 <<external>>
+class "typing.Protocol" as external_3 <<external>>
+class "typing.TypedDict" as external_4 <<external>>
+c_0179 --|> external_1
+c_0181 --|> c_0179
+c_0182 --|> external_3
+c_0183 --|> c_0180
+c_0184 --|> external_3
+c_0186 --|> c_0185
+c_0187 --|> c_0185
+c_0188 --|> c_0102
+c_0189 --|> external_3
+c_0190 --|> external_3
+c_0191 --|> external_2
+c_0192 --|> external_4
+c_0193 --|> external_3
+c_0194 --|> external_3
+c_0195 --|> external_3
+c_0196 --|> external_3
+c_0197 --|> external_3
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

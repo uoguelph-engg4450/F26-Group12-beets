@@ -1,0 +1,48 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-spotify
+package "beetsplug.spotify" {
+  ' beetsplug.spotify.SpotifyCLIOpts at beetsplug/spotify.py:39
+  class "SpotifyCLIOpts" as c_0532 <<protocol>>
+  ' beetsplug.spotify.SpotifySyncCLIOpts at beetsplug/spotify.py:44
+  class "SpotifySyncCLIOpts" as c_0533 <<protocol>>
+  ' beetsplug.spotify.TrackDetails at beetsplug/spotify.py:48
+  class "TrackDetails" as c_0534 <<schema>>
+  ' beetsplug.spotify.AudioFeatures at beetsplug/spotify.py:57
+  class "AudioFeatures" as c_0535 <<schema>>
+  ' beetsplug.spotify.SearchResponseAlbums at beetsplug/spotify.py:75
+  class "SearchResponseAlbums" as c_0536 <<schema>>
+  ' beetsplug.spotify.SearchResponseTracks at beetsplug/spotify.py:93
+  class "SearchResponseTracks" as c_0537 <<schema>>
+  ' beetsplug.spotify.APIError at beetsplug/spotify.py:102
+  class "APIError" as c_0538
+  ' beetsplug.spotify.AudioFeaturesUnavailableError at beetsplug/spotify.py:106
+  class "AudioFeaturesUnavailableError" as c_0539
+  ' beetsplug.spotify.SpotifyPlugin at beetsplug/spotify.py:110
+  class "SpotifyPlugin" as c_0540
+}
+class "Exception" as external_0 <<external>>
+class "beets.metadata_plugins.IDResponse" as c_0143 <<reference>>
+class "beets.metadata_plugins.SearchApiMetadataSourcePlugin" as c_0145 <<reference>>
+class "typing.Protocol" as external_3 <<external>>
+class "typing.TypedDict" as external_4 <<external>>
+c_0532 --|> external_3
+c_0533 --|> external_3
+c_0534 --|> external_4
+c_0535 --|> external_4
+c_0536 --|> c_0143
+c_0537 --|> c_0143
+c_0538 --|> external_0
+c_0539 --|> external_0
+c_0540 --|> c_0145
+' Parameterized source base: SearchApiMetadataSourcePlugin[SearchResponseAlbums | SearchResponseTracks]
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

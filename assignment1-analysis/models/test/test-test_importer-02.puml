@@ -1,0 +1,88 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-test_importer-02
+package "test.test_importer" {
+  ' test.test_importer.GlobalGroupAlbumsImportTest at test/test_importer.py:1241
+  class "GlobalGroupAlbumsImportTest" as c_0951
+  ' test.test_importer.ChooseCandidateTest at test/test_importer.py:1249
+  class "ChooseCandidateTest" as c_0952
+  ' test.test_importer.InferAlbumDataTest at test/test_importer.py:1268
+  class "InferAlbumDataTest" as c_0953
+  ' test.test_importer.TestImportDuplicateAlbum at test/test_importer.py:1378
+  class "TestImportDuplicateAlbum" as c_0954
+  ' test.test_importer.TestImportDuplicateAlbumThreaded at test/test_importer.py:1508
+  class "TestImportDuplicateAlbumThreaded" as c_0955
+  ' test.test_importer.TestImportDuplicateSingleton at test/test_importer.py:1557
+  class "TestImportDuplicateSingleton" as c_0956
+  ' test.test_importer.ResolveUpgradeTest at test/test_importer.py:1685
+  class "ResolveUpgradeTest" as c_0957
+  ' test.test_importer.ResolveUpgradeTargetTest at test/test_importer.py:1753
+  class "ResolveUpgradeTargetTest" as c_0958
+  ' test.test_importer.TestImportDuplicateAlbumUpgrade at test/test_importer.py:1825
+  class "TestImportDuplicateAlbumUpgrade" as c_0959
+  ' test.test_importer.TestImportDuplicateAlbumUpgradeMixed at test/test_importer.py:1875
+  class "TestImportDuplicateAlbumUpgradeMixed" as c_0960
+  ' test.test_importer.TestImportDuplicateSingletonUpgrade at test/test_importer.py:1943
+  class "TestImportDuplicateSingletonUpgrade" as c_0961
+  ' test.test_importer.TagLogTest at test/test_importer.py:1978
+  class "TagLogTest" as c_0962
+  ' test.test_importer.TestResumeImport at test/test_importer.py:1994
+  class "TestResumeImport" as c_0963
+  ' test.test_importer.TestIncrementalImport at test/test_importer.py:2040
+  class "TestIncrementalImport" as c_0964
+  ' test.test_importer.AlbumsInDirTest at test/test_importer.py:2075
+  class "AlbumsInDirTest" as c_0965
+  ' test.test_importer.MultiDiscAlbumsInDirTest at test/test_importer.py:2121
+  class "MultiDiscAlbumsInDirTest" as c_0966
+  ' test.test_importer.ReimportTest at test/test_importer.py:2280
+  class "ReimportTest" as c_0967
+  ' test.test_importer.TestImportPretend at test/test_importer.py:2385
+  class "TestImportPretend" as c_0968
+  ' test.test_importer.TestImportId at test/test_importer.py:2499
+  class "TestImportId" as c_0969
+  ' test.test_importer.TestMpeglayerWavImport at test/test_importer.py:2568
+  class "TestMpeglayerWavImport" as c_0970
+}
+class "beets.test.helper.AsIsImporterMixin" as c_0169 <<reference>>
+class "beets.test.helper.AutotagImportTestCase" as c_0175 <<reference>>
+class "beets.test.helper.BeetsTestCase" as c_0161 <<reference>>
+class "beets.test.helper.ImportHelper" as c_0168 <<reference>>
+class "beets.test.helper.PluginMixin" as c_0164 <<reference>>
+class "beets.test.helper.TestHelper" as c_0160 <<reference>>
+class "test.test_importer.GroupAlbumsImportTest" as c_0950 <<reference>>
+class "unittest.TestCase" as external_7 <<external>>
+c_0951 --|> c_0950
+c_0952 --|> c_0175
+c_0953 --|> external_7
+c_0954 --|> c_0164
+c_0954 --|> c_0168
+c_0955 --|> c_0164
+c_0955 --|> c_0168
+c_0956 --|> c_0168
+c_0957 --|> external_7
+c_0958 --|> c_0160
+c_0959 --|> c_0164
+c_0959 --|> c_0168
+c_0960 --|> c_0168
+c_0961 --|> c_0168
+c_0962 --|> c_0160
+c_0963 --|> c_0168
+c_0964 --|> c_0169
+c_0964 --|> c_0168
+c_0965 --|> c_0161
+c_0966 --|> c_0161
+c_0967 --|> c_0175
+c_0968 --|> c_0168
+c_0969 --|> c_0168
+c_0970 --|> c_0169
+c_0970 --|> c_0168
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

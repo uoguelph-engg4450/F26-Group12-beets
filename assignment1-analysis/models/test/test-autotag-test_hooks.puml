@@ -1,0 +1,44 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-autotag-test_hooks
+package "test.autotag.test_hooks" {
+  ' test.autotag.test_hooks.TestLegacyStringField at test/autotag/test_hooks.py:62
+  class "TestLegacyStringField" as c_0597
+  ' test.autotag.test_hooks.ApplyTest at test/autotag/test_hooks.py:83
+  class "ApplyTest" as c_0598
+  ' test.autotag.test_hooks.TestFromScratch at test/autotag/test_hooks.py:302
+  class "TestFromScratch" as c_0599
+  ' test.autotag.test_hooks.TestOverwriteNull at test/autotag/test_hooks.py:341
+  class "TestOverwriteNull" as c_0600
+  ' test.autotag.test_hooks.TestAttrDictCachedPropertyMasking at test/autotag/test_hooks.py:421
+  class "TestAttrDictCachedPropertyMasking" as c_0601
+  ' test.autotag.test_hooks.TestAttrDictCachedPropertyMasking.test_inner_error_surfaces_with_original_message.Sample at test/autotag/test_hooks.py:438
+  class "Sample" as c_0602 <<nested>>
+  ' test.autotag.test_hooks.TestAttrDictCachedPropertyMasking.test_cause_chain_is_suppressed.Sample at test/autotag/test_hooks.py:448
+  class "Sample" as c_0603 <<nested>>
+  ' test.autotag.test_hooks.TestAttrDictCachedPropertyMasking.test_traceback_points_at_property_body.Sample at test/autotag/test_hooks.py:461
+  class "Sample" as c_0604 <<nested>>
+  ' test.autotag.test_hooks.TestAttrDictCachedPropertyMasking.test_cached_property_success_returns_value.Sample at test/autotag/test_hooks.py:479
+  class "Sample" as c_0605 <<nested>>
+}
+class "beets.test.helper.BeetsTestCase" as c_0161 <<reference>>
+class "beets.util.AttrDict" as c_0205 <<reference>>
+c_0598 --|> c_0161
+c_0602 --|> c_0205
+' Parameterized source base: AttrDict[object]
+c_0603 --|> c_0205
+' Parameterized source base: AttrDict[object]
+c_0604 --|> c_0205
+' Parameterized source base: AttrDict[object]
+c_0605 --|> c_0205
+' Parameterized source base: AttrDict[object]
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

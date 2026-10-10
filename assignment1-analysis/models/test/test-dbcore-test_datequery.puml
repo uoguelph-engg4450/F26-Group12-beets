@@ -1,0 +1,31 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-dbcore-test_datequery
+package "test.dbcore.test_datequery" {
+  ' test.dbcore.test_datequery.TestDateInterval at test/dbcore/test_datequery.py:18
+  class "TestDateInterval" as c_0612
+  ' test.dbcore.test_datequery.DateQueryTest at test/dbcore/test_datequery.py:105
+  class "DateQueryTest" as c_0613
+  ' test.dbcore.test_datequery.DateQueryTestRelative at test/dbcore/test_datequery.py:154
+  class "DateQueryTestRelative" as c_0614
+  ' test.dbcore.test_datequery.DateQueryTestRelativeMore at test/dbcore/test_datequery.py:200
+  class "DateQueryTestRelativeMore" as c_0615
+  ' test.dbcore.test_datequery.DateQueryConstructTest at test/dbcore/test_datequery.py:250
+  class "DateQueryConstructTest" as c_0616
+}
+class "beets.test.helper.ItemInDBTestCase" as c_0162 <<reference>>
+class "unittest.TestCase" as external_1 <<external>>
+c_0613 --|> c_0162
+c_0614 --|> c_0162
+c_0615 --|> c_0162
+c_0616 --|> external_1
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

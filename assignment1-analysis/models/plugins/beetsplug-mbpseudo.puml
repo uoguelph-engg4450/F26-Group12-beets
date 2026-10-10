@@ -1,0 +1,23 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-mbpseudo
+package "beetsplug.mbpseudo" {
+  ' beetsplug.mbpseudo.MusicBrainzPseudoReleasePlugin at beetsplug/mbpseudo.py:39
+  class "MusicBrainzPseudoReleasePlugin" as c_0469
+  ' beetsplug.mbpseudo.PseudoAlbumInfo at beetsplug/mbpseudo.py:257
+  class "PseudoAlbumInfo" as c_0470
+}
+class "beets.autotag.hooks.AlbumInfo" as c_0003 <<reference>>
+class "beetsplug.musicbrainz.MusicBrainzPlugin" as c_0494 <<reference>>
+c_0469 --|> c_0494
+c_0470 --|> c_0003
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

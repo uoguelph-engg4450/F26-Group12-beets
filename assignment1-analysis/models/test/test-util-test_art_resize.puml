@@ -1,0 +1,21 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-util-test_art_resize
+package "test.util.test_art_resize" {
+  ' test.util.test_art_resize.ArtResizerFileSizeTest at test/util/test_art_resize.py:15
+  class "ArtResizerFileSizeTest" as c_1081
+}
+class "beets.test.helper.BeetsTestCase" as c_0161 <<reference>>
+class "beets.test.helper.CleanupModulesMixin" as c_0178 <<reference>>
+c_1081 --|> c_0178
+c_1081 --|> c_0161
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

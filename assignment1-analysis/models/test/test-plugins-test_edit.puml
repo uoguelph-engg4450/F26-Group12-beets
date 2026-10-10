@@ -1,0 +1,51 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_edit
+package "test.plugins.test_edit" {
+  ' test.plugins.test_edit.ModifyFileMocker at test/plugins/test_edit.py:19
+  class "ModifyFileMocker" as c_0764
+  ' test.plugins.test_edit.EditMixin at test/plugins/test_edit.py:63
+  class "EditMixin" as c_0765
+  ' test.plugins.test_edit.EditCommandTest at test/plugins/test_edit.py:108
+  class "EditCommandTest" as c_0766
+  ' test.plugins.test_edit.ApplyDataMatchingTest at test/plugins/test_edit.py:315
+  class "ApplyDataMatchingTest" as c_0767
+  ' test.plugins.test_edit.AlbumHeaderFieldsTest at test/plugins/test_edit.py:400
+  class "AlbumHeaderFieldsTest" as c_0768
+  ' test.plugins.test_edit.AlbumHeaderFieldsTest._StubTask at test/plugins/test_edit.py:410
+  class "_StubTask" as c_0769 <<nested>>
+  ' test.plugins.test_edit.EditDuringImporterTestCase at test/plugins/test_edit.py:427
+  class "EditDuringImporterTestCase" as c_0770
+  ' test.plugins.test_edit.EditDuringImporterNonSingletonTest at test/plugins/test_edit.py:443
+  class "EditDuringImporterNonSingletonTest" as c_0771
+  ' test.plugins.test_edit.EditDuringImporterSingletonTest at test/plugins/test_edit.py:719
+  class "EditDuringImporterSingletonTest" as c_0772
+}
+class "beets.test.helper.AutotagImportTestCase" as c_0175 <<reference>>
+class "beets.test.helper.BeetsTestCase" as c_0161 <<reference>>
+class "beets.test.helper.IOMixin" as c_0158 <<reference>>
+class "beets.test.helper.PluginMixin" as c_0164 <<reference>>
+class "beets.test.helper.TerminalImportMixin" as c_0172 <<reference>>
+c_0765 --|> c_0164
+c_0766 --|> c_0158
+c_0766 --|> c_0765
+c_0766 --|> c_0161
+c_0767 --|> c_0164
+c_0767 --|> c_0161
+c_0768 --|> c_0164
+c_0768 --|> c_0161
+c_0770 --|> c_0765
+c_0770 --|> c_0172
+c_0770 --|> c_0175
+c_0771 --|> c_0770
+c_0772 --|> c_0770
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

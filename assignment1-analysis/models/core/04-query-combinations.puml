@@ -1,0 +1,40 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Query combinations
+package "beets.dbcore.query" {
+  ' beets.dbcore.query.Query at beets/dbcore/query.py:70
+  abstract class "Query" as c_0026
+  ' beets.dbcore.query.CollectionQuery at beets/dbcore/query.py:519
+  class "CollectionQuery" as c_0038
+  ' beets.dbcore.query.MutableCollectionQuery at beets/dbcore/query.py:577
+  class "MutableCollectionQuery" as c_0039
+  ' beets.dbcore.query.AndQuery at beets/dbcore/query.py:591
+  class "AndQuery" as c_0040
+  ' beets.dbcore.query.OrQuery at beets/dbcore/query.py:601
+  class "OrQuery" as c_0041
+  ' beets.dbcore.query.NotQuery at beets/dbcore/query.py:611
+  class "NotQuery" as c_0042
+  ' beets.dbcore.query.TrueQuery at beets/dbcore/query.py:645
+  class "TrueQuery" as c_0043
+  ' beets.dbcore.query.FalseQuery at beets/dbcore/query.py:655
+  class "FalseQuery" as c_0044
+}
+class "abc.ABC" as external_0 <<external>>
+c_0026 --|> external_0
+c_0038 --|> c_0026
+c_0039 --|> c_0038
+c_0040 --|> c_0039
+c_0041 --|> c_0039
+c_0042 --|> c_0026
+c_0043 --|> c_0026
+c_0044 --|> c_0026
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

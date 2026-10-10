@@ -1,0 +1,33 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_embedart
+package "test.plugins.test_embedart" {
+  ' test.plugins.test_embedart.TestEmbedartCli at test/plugins/test_embedart.py:66
+  class "TestEmbedartCli" as c_0773
+  ' test.plugins.test_embedart.DummyArtResizer at test/plugins/test_embedart.py:312
+  class "DummyArtResizer" as c_0774
+  ' test.plugins.test_embedart.ArtSimilarityTest at test/plugins/test_embedart.py:323
+  class "ArtSimilarityTest" as c_0775
+}
+class "beets.test.helper.FetchImageHelper" as c_0177 <<reference>>
+class "beets.test.helper.IOMixin" as c_0158 <<reference>>
+class "beets.test.helper.ImportHelper" as c_0168 <<reference>>
+class "beets.test.helper.PluginMixin" as c_0164 <<reference>>
+class "beets.util.artresizer.ArtResizer" as c_0212 <<reference>>
+class "unittest.TestCase" as external_5 <<external>>
+c_0773 --|> c_0164
+c_0773 --|> c_0158
+c_0773 --|> c_0168
+c_0773 --|> c_0177
+c_0774 --|> c_0212
+c_0775 --|> external_5
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

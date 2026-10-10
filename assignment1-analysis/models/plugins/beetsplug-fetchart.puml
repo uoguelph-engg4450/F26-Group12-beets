@@ -1,0 +1,79 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-fetchart
+package "beetsplug.fetchart" {
+  ' beetsplug.fetchart.FetchArtCLIOpts at beetsplug/fetchart.py:33
+  class "FetchArtCLIOpts" as c_0387 <<protocol>>
+  ' beetsplug.fetchart.ImageAction at beetsplug/fetchart.py:54
+  class "ImageAction" as c_0388 <<enum>>
+  ' beetsplug.fetchart.MetadataMatch at beetsplug/fetchart.py:65
+  class "MetadataMatch" as c_0389 <<enum>>
+  ' beetsplug.fetchart.Candidate at beetsplug/fetchart.py:75
+  class "Candidate" as c_0390
+  ' beetsplug.fetchart.RequestMixin at beetsplug/fetchart.py:335
+  class "RequestMixin" as c_0391
+  ' beetsplug.fetchart.ArtSource at beetsplug/fetchart.py:353
+  abstract class "ArtSource" as c_0392
+  ' beetsplug.fetchart.LocalArtSource at beetsplug/fetchart.py:414
+  class "LocalArtSource" as c_0393
+  ' beetsplug.fetchart.RemoteArtSource at beetsplug/fetchart.py:421
+  class "RemoteArtSource" as c_0394
+  ' beetsplug.fetchart.CoverArtArchive at beetsplug/fetchart.py:516
+  class "CoverArtArchive" as c_0395
+  ' beetsplug.fetchart.Amazon at beetsplug/fetchart.py:600
+  class "Amazon" as c_0396
+  ' beetsplug.fetchart.AlbumArtOrg at beetsplug/fetchart.py:621
+  class "AlbumArtOrg" as c_0397
+  ' beetsplug.fetchart.GoogleImages at beetsplug/fetchart.py:653
+  class "GoogleImages" as c_0398
+  ' beetsplug.fetchart.FanartTV at beetsplug/fetchart.py:727
+  class "FanartTV" as c_0399
+  ' beetsplug.fetchart.ITunesStore at beetsplug/fetchart.py:810
+  class "ITunesStore" as c_0400
+  ' beetsplug.fetchart.Wikipedia at beetsplug/fetchart.py:894
+  class "Wikipedia" as c_0401
+  ' beetsplug.fetchart.FileSystem at beetsplug/fetchart.py:1042
+  class "FileSystem" as c_0402
+  ' beetsplug.fetchart.LastFM at beetsplug/fetchart.py:1129
+  class "LastFM" as c_0403
+  ' beetsplug.fetchart.Spotify at beetsplug/fetchart.py:1216
+  class "Spotify" as c_0404
+  ' beetsplug.fetchart.CoverArtUrl at beetsplug/fetchart.py:1271
+  class "CoverArtUrl" as c_0405
+  ' beetsplug.fetchart.FetchArtPlugin at beetsplug/fetchart.py:1323
+  class "FetchArtPlugin" as c_0406
+}
+class "abc.ABC" as external_0 <<external>>
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "enum.Enum" as external_2 <<external>>
+class "typing.Protocol" as external_3 <<external>>
+c_0387 --|> external_3
+c_0388 --|> external_2
+c_0389 --|> external_2
+c_0392 --|> c_0391
+c_0392 --|> external_0
+c_0393 --|> c_0392
+c_0394 --|> c_0392
+c_0395 --|> c_0394
+c_0396 --|> c_0394
+c_0397 --|> c_0394
+c_0398 --|> c_0394
+c_0399 --|> c_0394
+c_0400 --|> c_0394
+c_0401 --|> c_0394
+c_0402 --|> c_0393
+c_0403 --|> c_0394
+c_0404 --|> c_0394
+c_0405 --|> c_0394
+c_0406 --|> c_0149
+c_0406 --|> c_0391
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

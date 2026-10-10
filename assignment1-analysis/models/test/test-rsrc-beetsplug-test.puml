@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-rsrc-beetsplug-test
+package "test.rsrc.beetsplug.test" {
+  ' test.rsrc.beetsplug.test.TestPlugin at test/rsrc/beetsplug/test.py:5
+  class "TestPlugin" as c_0926
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+c_0926 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

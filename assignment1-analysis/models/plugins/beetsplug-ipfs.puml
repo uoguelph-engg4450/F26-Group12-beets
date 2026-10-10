@@ -1,0 +1,23 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-ipfs
+package "beetsplug.ipfs" {
+  ' beetsplug.ipfs.IPFSCLIOpts at beetsplug/ipfs.py:24
+  class "IPFSCLIOpts" as c_0425 <<protocol>>
+  ' beetsplug.ipfs.IPFSPlugin at beetsplug/ipfs.py:33
+  class "IPFSPlugin" as c_0426
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "typing.Protocol" as external_1 <<external>>
+c_0425 --|> external_1
+c_0426 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

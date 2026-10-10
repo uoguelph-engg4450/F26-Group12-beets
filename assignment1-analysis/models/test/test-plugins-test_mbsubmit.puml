@@ -1,0 +1,23 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_mbsubmit
+package "test.plugins.test_mbsubmit" {
+  ' test.plugins.test_mbsubmit.MBSubmitPluginTest at test/plugins/test_mbsubmit.py:8
+  class "MBSubmitPluginTest" as c_0833
+}
+class "beets.test.helper.AutotagImportTestCase" as c_0175 <<reference>>
+class "beets.test.helper.PluginMixin" as c_0164 <<reference>>
+class "beets.test.helper.TerminalImportMixin" as c_0172 <<reference>>
+c_0833 --|> c_0164
+c_0833 --|> c_0172
+c_0833 --|> c_0175
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

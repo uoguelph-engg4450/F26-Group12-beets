@@ -1,0 +1,43 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_playlist
+package "test.plugins.test_playlist" {
+  ' test.plugins.test_playlist.PlaylistTestCase at test/plugins/test_playlist.py:9
+  class "PlaylistTestCase" as c_0854
+  ' test.plugins.test_playlist.PlaylistQueryTest at test/plugins/test_playlist.py:63
+  class "PlaylistQueryTest" as c_0855
+  ' test.plugins.test_playlist.PlaylistTestRelativeToLib at test/plugins/test_playlist.py:95
+  class "PlaylistTestRelativeToLib" as c_0856
+  ' test.plugins.test_playlist.PlaylistTestRelativeToDir at test/plugins/test_playlist.py:100
+  class "PlaylistTestRelativeToDir" as c_0857
+  ' test.plugins.test_playlist.PlaylistTestRelativeToPls at test/plugins/test_playlist.py:105
+  class "PlaylistTestRelativeToPls" as c_0858
+  ' test.plugins.test_playlist.PlaylistUpdateTest at test/plugins/test_playlist.py:125
+  class "PlaylistUpdateTest" as c_0859
+  ' test.plugins.test_playlist.PlaylistTestItemMoved at test/plugins/test_playlist.py:131
+  class "PlaylistTestItemMoved" as c_0860
+  ' test.plugins.test_playlist.PlaylistTestItemRemoved at test/plugins/test_playlist.py:177
+  class "PlaylistTestItemRemoved" as c_0861
+}
+class "beets.test.helper.PluginTestCase" as c_0165 <<reference>>
+c_0854 --|> c_0165
+c_0856 --|> c_0855
+c_0856 --|> c_0854
+c_0857 --|> c_0855
+c_0857 --|> c_0854
+c_0858 --|> c_0855
+c_0858 --|> c_0854
+c_0860 --|> c_0859
+c_0860 --|> c_0854
+c_0861 --|> c_0859
+c_0861 --|> c_0854
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

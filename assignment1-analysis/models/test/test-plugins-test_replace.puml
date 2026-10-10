@@ -1,0 +1,27 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-plugins-test_replace
+package "test.plugins.test_replace" {
+  ' test.plugins.test_replace.TestReplaceCommand at test/plugins/test_replace.py:15
+  class "TestReplaceCommand" as c_0868
+  ' test.plugins.test_replace.TestReplace at test/plugins/test_replace.py:23
+  class "TestReplace" as c_0869
+  ' test.plugins.test_replace.TestReplace.test_confirm_replacement_file_not_exist.Song at test/plugins/test_replace.py:96
+  class "Song" as c_0870 <<nested>>
+  ' test.plugins.test_replace.TestReplace.test_confirm_replacement_yes.Song at test/plugins/test_replace.py:108
+  class "Song" as c_0871 <<nested>>
+  ' test.plugins.test_replace.TestReplace.test_confirm_replacement_no.Song at test/plugins/test_replace.py:119
+  class "Song" as c_0872 <<nested>>
+}
+class "beets.test.helper.PluginTestHelper" as c_0166 <<reference>>
+c_0868 --|> c_0166
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

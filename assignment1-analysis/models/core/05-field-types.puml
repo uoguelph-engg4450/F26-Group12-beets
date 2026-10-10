@@ -1,0 +1,104 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title Database field types
+package "beets.dbcore.types" {
+  ' beets.dbcore.types.ModelType at beets/dbcore/types.py:22
+  class "ModelType" as c_0057 <<protocol>>
+  ' beets.dbcore.types.Type at beets/dbcore/types.py:42
+  class "Type" as c_0058
+  ' beets.dbcore.types.Default at beets/dbcore/types.py:138
+  class "Default" as c_0059
+  ' beets.dbcore.types.BaseInteger at beets/dbcore/types.py:146
+  class "BaseInteger" as c_0060
+  ' beets.dbcore.types.Integer at beets/dbcore/types.py:162
+  class "Integer" as c_0061
+  ' beets.dbcore.types.NullInteger at beets/dbcore/types.py:168
+  class "NullInteger" as c_0062
+  ' beets.dbcore.types.BasePaddedInt at beets/dbcore/types.py:174
+  class "BasePaddedInt" as c_0063
+  ' beets.dbcore.types.PaddedInt at beets/dbcore/types.py:186
+  class "PaddedInt" as c_0064
+  ' beets.dbcore.types.ScaledInt at beets/dbcore/types.py:190
+  class "ScaledInt" as c_0065
+  ' beets.dbcore.types.Id at beets/dbcore/types.py:203
+  class "Id" as c_0066
+  ' beets.dbcore.types.BaseFloat at beets/dbcore/types.py:217
+  class "BaseFloat" as c_0067
+  ' beets.dbcore.types.Float at beets/dbcore/types.py:233
+  class "Float" as c_0068
+  ' beets.dbcore.types.NullFloat at beets/dbcore/types.py:241
+  class "NullFloat" as c_0069
+  ' beets.dbcore.types.BaseString at beets/dbcore/types.py:249
+  class "BaseString" as c_0070
+  ' beets.dbcore.types.String at beets/dbcore/types.py:261
+  class "String" as c_0071
+  ' beets.dbcore.types.DelimitedString at beets/dbcore/types.py:267
+  class "DelimitedString" as c_0072
+  ' beets.dbcore.types.Boolean at beets/dbcore/types.py:324
+  class "Boolean" as c_0073
+  ' beets.dbcore.types.DateType at beets/dbcore/types.py:338
+  class "DateType" as c_0074
+  ' beets.dbcore.types.BasePathType at beets/dbcore/types.py:362
+  class "BasePathType" as c_0075
+  ' beets.dbcore.types.NullPathType at beets/dbcore/types.py:399
+  class "NullPathType" as c_0076
+  ' beets.dbcore.types.PathType at beets/dbcore/types.py:408
+  class "PathType" as c_0077
+  ' beets.dbcore.types.MusicalKey at beets/dbcore/types.py:417
+  class "MusicalKey" as c_0078
+  ' beets.dbcore.types.DurationType at beets/dbcore/types.py:447
+  class "DurationType" as c_0079
+}
+class "abc.ABC" as external_0 <<external>>
+class "typing.Generic" as external_1 <<external>>
+class "typing.Protocol" as external_2 <<external>>
+c_0057 --|> external_2
+c_0058 --|> external_0
+c_0058 --|> external_1
+' Parameterized source base: Generic[T, N]
+c_0059 --|> c_0058
+' Parameterized source base: Type[str, None]
+c_0060 --|> c_0058
+' Parameterized source base: Type[int, N]
+c_0061 --|> c_0060
+' Parameterized source base: BaseInteger[int]
+c_0062 --|> c_0060
+' Parameterized source base: BaseInteger[None]
+c_0063 --|> c_0060
+' Parameterized source base: BaseInteger[N]
+c_0064 --|> c_0063
+' Parameterized source base: BasePaddedInt[int]
+c_0065 --|> c_0061
+c_0066 --|> c_0062
+c_0067 --|> c_0058
+' Parameterized source base: Type[float, N]
+c_0068 --|> c_0067
+' Parameterized source base: BaseFloat[float]
+c_0069 --|> c_0067
+' Parameterized source base: BaseFloat[None]
+c_0070 --|> c_0058
+' Parameterized source base: Type[T, N]
+c_0071 --|> c_0070
+' Parameterized source base: BaseString[str, Any]
+c_0072 --|> c_0070
+' Parameterized source base: BaseString[list, list]
+c_0073 --|> c_0058
+c_0074 --|> c_0068
+c_0075 --|> c_0058
+' Parameterized source base: Type[bytes, N]
+c_0076 --|> c_0075
+' Parameterized source base: BasePathType[None]
+c_0077 --|> c_0075
+' Parameterized source base: BasePathType[bytes]
+c_0078 --|> c_0071
+c_0079 --|> c_0068
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

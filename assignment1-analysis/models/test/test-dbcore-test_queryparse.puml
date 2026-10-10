@@ -1,0 +1,28 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title test / test-dbcore-test_queryparse
+package "test.dbcore.test_queryparse" {
+  ' test.dbcore.test_queryparse.QueryParseTest at test/dbcore/test_queryparse.py:10
+  class "QueryParseTest" as c_0645
+  ' test.dbcore.test_queryparse.QueryFromStringsTest at test/dbcore/test_queryparse.py:67
+  class "QueryFromStringsTest" as c_0646
+  ' test.dbcore.test_queryparse.SortFromStringsTest at test/dbcore/test_queryparse.py:99
+  class "SortFromStringsTest" as c_0647
+  ' test.dbcore.test_queryparse.ParseSortedQueryTest at test/dbcore/test_queryparse.py:132
+  class "ParseSortedQueryTest" as c_0648
+}
+class "unittest.TestCase" as external_0 <<external>>
+c_0645 --|> external_0
+c_0646 --|> external_0
+c_0647 --|> external_0
+c_0648 --|> external_0
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

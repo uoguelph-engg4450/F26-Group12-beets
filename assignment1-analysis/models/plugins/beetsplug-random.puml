@@ -1,0 +1,23 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-random
+package "beetsplug.random" {
+  ' beetsplug.random.RandomCLIOpts at beetsplug/random.py:19
+  class "RandomCLIOpts" as c_0506 <<protocol>>
+  ' beetsplug.random.Random at beetsplug/random.py:77
+  class "Random" as c_0507
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "typing.Protocol" as external_1 <<external>>
+c_0506 --|> external_1
+c_0507 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml

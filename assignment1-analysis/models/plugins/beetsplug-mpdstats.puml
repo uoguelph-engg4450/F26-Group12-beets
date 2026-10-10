@@ -1,0 +1,33 @@
+@startuml
+set namespaceSeparator none
+hide empty members
+skinparam classAttributeIconSize 0
+left to right direction
+title plugins / beetsplug-mpdstats
+package "beetsplug.mpdstats" {
+  ' beetsplug.mpdstats.MPDCurrentSong at beetsplug/mpdstats.py:26
+  class "MPDCurrentSong" as c_0480 <<schema>>
+  ' beetsplug.mpdstats.MPDStatus at beetsplug/mpdstats.py:44
+  class "MPDStatus" as c_0481 <<schema>>
+  ' beetsplug.mpdstats.NowPlaying at beetsplug/mpdstats.py:68
+  class "NowPlaying" as c_0482 <<schema>>
+  ' beetsplug.mpdstats.MPDClientWrapper at beetsplug/mpdstats.py:94
+  class "MPDClientWrapper" as c_0483
+  ' beetsplug.mpdstats.MPDStats at beetsplug/mpdstats.py:201
+  class "MPDStats" as c_0484
+  ' beetsplug.mpdstats.MPDStatsPlugin at beetsplug/mpdstats.py:383
+  class "MPDStatsPlugin" as c_0485
+}
+class "beets.plugins.BeetsPlugin" as c_0149 <<reference>>
+class "typing.TypedDict" as external_1 <<external>>
+c_0480 --|> external_1
+c_0481 --|> external_1
+c_0482 --|> external_1
+c_0485 --|> c_0149
+legend bottom
+Owned classes are inside module packages.
+reference = declared in another home view; external = external or unresolved base.
+schema/protocol/namedtuple describe Python typing constructs.
+This view shows declarations and direct bases; consult the curated models for associations.
+endlegend
+@enduml
