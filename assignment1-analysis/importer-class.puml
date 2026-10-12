@@ -1,0 +1,85 @@
+@startuml importer-class
+' Simplified UML class diagram of the Beets import subsystem (version 2.14.1).
+' Notation follows Lecture 4 (class diagrams) and Lecture 8 (packages).
+skinparam style strictuml
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam defaultFontSize 13
+set separator none
+hide empty members
+title Beets import subsystem
+
+package "beets.ui" {
+  class TerminalImportSession {
+    + choose_match()
+  }
+}
+
+package "beets.util.pipeline" {
+  class Pipeline {
+    + run_parallel()
+  }
+}
+
+package "beets.importer" {
+  abstract class ImportSession {
+    + run()
+    + {abstract} choose_match()
+  }
+  class ImportTaskFactory {
+    + tasks()
+  }
+  class ImportTask {
+    choice_flag : Action
+    --
+    + lookup_candidates()
+    + apply_metadata()
+    + add()
+    + manipulate_files()
+  }
+  class SingletonImportTask
+  class SentinelImportTask
+}
+
+package "beets.autotag" {
+  class Proposal
+  class AlbumMatch {
+    + apply_metadata()
+  }
+  class AlbumInfo
+  class TrackInfo
+}
+
+package "beets.plugins" {
+  class BeetsPlugin
+  abstract class MetadataSourcePlugin {
+    + {abstract} candidates()
+  }
+}
+
+package "beets.library" {
+  class Library {
+    + add_album()
+  }
+  class Album
+  class Item
+}
+
+TerminalImportSession -right-|> ImportSession
+SingletonImportTask -up-|> ImportTask
+SentinelImportTask -up-|> ImportTask
+MetadataSourcePlugin -up-|> BeetsPlugin
+
+ImportSession --> "1" Library : lib
+Pipeline <.. ImportSession : <<create>>
+ImportTaskFactory ..> ImportTask : <<create>>
+ImportTask --> "*" Item : items
+ImportTask --> "0..*" AlbumMatch : candidates
+ImportTask --> "0..1" Album : album
+Proposal --> "*" AlbumMatch
+AlbumMatch --> "1" AlbumInfo
+AlbumInfo *-- "1..*" TrackInfo
+MetadataSourcePlugin ..> AlbumInfo : <<create>>
+Album "0..1" -- "*" Item
+@enduml
