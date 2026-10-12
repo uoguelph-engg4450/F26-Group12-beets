@@ -1,0 +1,63 @@
+@startuml beets-plugin-core-interaction
+allowmixing
+title How beets plugins interact with the core application (simplified)
+left to right direction
+skinparam componentStyle rectangle
+hide empty members
+
+package "Core application (beets)" {
+  component "CLI\nbeets.ui" as ui
+  component "Importer + pipeline\nbeets.importer" as importer
+  component "Autotag + provider search\nbeets.autotag /\nbeets.metadata_plugins" as autotag
+  component "Library + dbcore\nbeets.library / dbcore" as library
+  component "Plugin registry + event bus\nbeets.plugins / beets.events\n(load_plugins, find_plugins, send)" as registry <<module>>
+}
+
+package "Plugin API (contracts)" {
+  class BeetsPlugin {
+    commands()
+    register_listener(event, func)
+    import_stages / early_import_stages
+    template_funcs / template_fields
+    item_types / album_types / queries
+    track_distance / album_distance
+  }
+  abstract class MetadataSourcePlugin {
+    album_for_id(id)
+    track_for_id(id)
+  }
+  abstract class SearchApiMetadataSourcePlugin
+}
+
+package "beetsplug.* (extensions)" {
+  component "Metadata providers\n(musicbrainz, discogs, spotify ...)" as providers
+  component "Feature plugins\n(fetchart, lyrics, convert, web ...)" as features
+}
+
+cloud "External services / libs\n(HTTP APIs, mediafile, ffmpeg ...)" as external
+
+MetadataSourcePlugin --|> BeetsPlugin
+SearchApiMetadataSourcePlugin --|> MetadataSourcePlugin
+providers ..|> MetadataSourcePlugin : specialize
+features ..|> BeetsPlugin : subclass
+
+registry ..> BeetsPlugin : dynamic import (beetsplug.<name>)\ninstantiate once
+
+ui ..> registry : load plugins; collect commands()
+importer ..> registry : plugin stages; send(events)
+library ..> registry : send(model/file events);\ntemplate funcs, field types
+autotag ..> registry : find metadata providers
+autotag ..> MetadataSourcePlugin : search / lookup by id
+
+BeetsPlugin ..> registry : register listeners
+features ..> library : query / modify Item, Album
+providers ..> external : HTTP APIs
+features ..> external
+
+note bottom of registry
+Core never imports a concrete plugin.
+It talks only to the registry and the abstract plugin contracts.
+Plugins reach core through public modules (library, ui, util).
+Selected view; not every hook is shown.
+end note
+@enduml
