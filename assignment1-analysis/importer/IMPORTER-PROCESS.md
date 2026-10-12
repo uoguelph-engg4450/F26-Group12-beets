@@ -6,6 +6,6 @@ We corrected these relationships by reading the source. Our first hand-made diag
 
 - The class diagram keeps the 16 classes needed to explain an import, with two to four key operations each and no parameter lists. Classes such as `ImportState`, `Distance` and the archive tasks are mentioned only in the text.
 - The activity diagram shows the pipeline at the level of stages, in four swimlanes. Rarer branches (rescan, merge, upgrade and resume) are described in prose.
-- The sequence diagram zooms in on a single interaction, metadata lookup and choice, so that it does not repeat the activity diagram.
+- The sequence diagram zooms in on a single interaction, metadata lookup and choice, so that it does not repeat the activity diagram. It is placed in the appendix to keep the subsystem section within two pages.
 
 Two choices of notation needed care. Module functions such as `tag_album` were shown as a participant labelled "(module)" rather than as an invented class. Events were drawn as ordinary actions and synchronous messages rather than UML signals, because Beets delivers them synchronously and uses their return values.
