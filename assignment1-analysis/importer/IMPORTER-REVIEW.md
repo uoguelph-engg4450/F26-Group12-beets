@@ -10,7 +10,7 @@ Importing is Beets' central use case: it identifies each album in a folder of mu
 
 The model has three kinds of relationship:
 
-- **Inheritance.** The class has two hierarchies. `TerminalImportSession` specializes `ImportSession` to make decisions through user prompts. `SingletonImportTask` (one track) and `SentinelImportTask` (an end-of-folder marker that carries no music) specialize `ImportTask`.
+- **Inheritance.** The importer has two hierarchies. `TerminalImportSession` specializes `ImportSession` to make decisions through user prompts. `SingletonImportTask` (one track) and `SentinelImportTask` (an end-of-folder marker that carries no music) specialize `ImportTask`.
 - **Associations.** The session refers to exactly one `Library`. Each task holds many `Item`s, zero or more candidate `AlbumMatch`es and at most one stored `Album`. The only composition is `AlbumInfo` and its `TrackInfo`s, which exist only as part of it.
 - **Dependencies.** «create» dependencies show that the session builds the pipeline, the factory builds the tasks, and provider plugins build the `AlbumInfo` objects.
 
