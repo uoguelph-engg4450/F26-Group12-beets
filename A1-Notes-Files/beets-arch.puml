@@ -1,0 +1,53 @@
+@startuml
+title Beats — Overall System Architecture
+left to right direction
+
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam nodesep 120
+skinparam ranksep 160
+skinparam ArrowFontSize 12
+
+package "Beets" {
+    component "Command-Line Interface" as CLI
+    component "Plugin Framework\nand Plugins" as Plugins
+
+    package "Music Import and Identification" {
+        component "Import Pipeline" as Importer
+        component "Metadata Matching\nand Autotagging" as Autotagger
+    }
+    package "Core Library and Database" {
+        component "Music Library" as Library
+        component "Database Layer" as DB
+    }
+}
+package "External Dependencies" {
+    component "SQLite" as SQLite <<database engine>>
+    component "MediaFile" as MediaFile <<Python library>>
+    cloud "MusicBrainz" as MusicBrainz <<metadata service>>
+}
+
+CLI ..> Plugins : discovers commands
+CLI ..> Importer : starts imports
+CLI ..> Library : searches and\nmanages music
+
+Importer ..> Autotagger : requests matches
+Importer ..> Library : adds tracks\nand albums
+Library ..> DB : stores and\nretrieves records
+
+Plugins ..> Importer : adds processing stages
+Plugins ..> Autotagger : supplies metadata\ncandidates
+Plugins ..> Library : accesses and\nmodifies music data
+
+DB ..> SQLite : uses Pythons sqlite3
+Library ..> MediaFile : reads and\nwrites file tags
+Plugins ..> MusicBrainz : MusicBrainz plugin\nqueries service
+
+legend bottom
+  Dashed arrow: source depends on target.
+  Inner packages are conceptual groupings.
+  Plugin component includes the framework and individual plugins.
+  External dependencies shown are selected, not exhaustive.
+endlegend
+
+@enduml
