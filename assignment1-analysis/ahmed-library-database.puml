@@ -2,7 +2,7 @@
 !theme plain
 allowmixing
 title Beets music library and database (Ahmed — Member 2)
-left to right direction
+top to bottom direction
 skinparam packageStyle rectangle
 hide empty members
 
@@ -66,12 +66,5 @@ Model "0..*" --> "0..1" Database : optional _db reference
 Library ..> Results : items() / albums() return
 Results "0..*" --> "1" Database : query results from
 
-note bottom of Item
-  album_id can be None: a track may be a singleton.
-end note
-
-note bottom of Album
-  with_items=False preserves tracks when an album is removed.
-  The current code leaves their album_id unchanged; see report.
-end note
 @enduml
+
