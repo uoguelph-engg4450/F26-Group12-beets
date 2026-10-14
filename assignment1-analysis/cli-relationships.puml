@@ -10,33 +10,43 @@ skinparam shadowing false
 skinparam defaultFontSize 12
 
 package "CLI: beets.ui" {
-  component "beets.ui\nmain() / _raw_main()\n_setup()" as CLI <<module>>
+  component "beets.ui\nmain() / _raw_main()\n_setup() / _open_library()" as CLI <<module>>
+  component "beets.ui helpers\nprint_() / input_options()\ninput_yn() / show_model_changes()" as Helpers <<module>>
+  class CommonOptionsParser {
+    add_album_option()
+    add_path_option()
+    add_format_option()
+  }
   class SubcommandsOptionParser {
+    subcommands : list
+    add_subcommand()
     parse_global_options()
     parse_subcommand()
   }
-  class CommonOptionsParser
   class Subcommand {
     name : str
+    parser
     func : Callable
     parse_args()
   }
 }
 
 package "Built-in commands" {
-  component "beets.ui.commands\ndefault_commands\nimport / list / modify / config" as Commands <<module>>
+  component "beets.ui.commands\ndefault_commands (13 Subcommands)\nimport / list / modify / config ..." as Commands <<module>>
+  class HelpCommand
   component "import_files()" as ImportFiles <<function>>
   class "TerminalImportSession" as TerminalSession
 }
 
 package "Shared support" {
-  ' beets/__init__.py: IncludeLazyConfig and the global config instance.
   class "beets.IncludeLazyConfig" as Config {
     read()
     log_sources()
   }
   component "beets.util\nnormpath() / syspath()\ndisplayable_path()" as Util <<module>>
   component "beets.logging\ngetLogger()" as Logging <<module>>
+  class "UserError\nbeets.exceptions" as UserError <<exception>>
+  class "HumanReadableError\nbeets.util" as HumanReadableError <<exception>>
 }
 
 class "Library\nbeets.library" as Library <<reference>>
@@ -45,48 +55,54 @@ class "ImportSession\nbeets.importer" as ImportSession <<reference>> {
 }
 component "beets.plugins\nload_plugins()\ncommands() / send()" as Plugins <<module>>
 
-' beets/ui/__init__.py: parser inheritance and stored command/parser references.
+' beets/ui/__init__.py: parser inheritance and stored references.
 SubcommandsOptionParser --|> CommonOptionsParser
 SubcommandsOptionParser --> "0..*" Subcommand : subcommands
 Subcommand --> "1" CommonOptionsParser : parser
+' beets/ui/commands/help.py: HelpCommand(ui.Subcommand).
+HelpCommand --|> Subcommand
+
+' beets/ui/__init__.py: _raw_main, _setup, _open_library, main.
 CLI ..> SubcommandsOptionParser : construct / parse
 CLI ..> Subcommand : call func(lib, opts, args)
+CLI ..> Commands : register default_commands
+CLI ..> Plugins : load_plugins / plugins.commands()\nsend CLI events
+CLI ..> Config : _bootstrap_config
+CLI ..> Library : _setup() calls _open_library()
+CLI ..> Logging : _bootstrap_logging
+CLI ..> Util : displayable_path
+CLI ..> UserError : catch in main()
+CLI ..> HumanReadableError : catch in main()
 
-' beets/ui/__init__.py: _setup() combines default_commands and plugins.commands().
-' beets/ui/commands/__init__.py: default_commands contains Subcommand instances.
-CLI ..> Commands : register commands
-CLI ..> Plugins : load / collect commands\nsend CLI events
-
-' beets/ui/commands/{list,modify,config}.py: representative handler responsibilities.
+' beets/ui/commands: default_commands, command modules.
+Commands ..> HelpCommand : includes
 Commands ..> Library : query / modify
-
-' beets/ui/commands/import_/__init__.py: import_cmd.func = import_func;
-' import_func calls import_files, which constructs TerminalImportSession and runs it.
+Commands ..> Helpers : print_ / prompts
+Commands ..> UserError : raise
 Commands ..> ImportFiles : import_func() calls
-ImportFiles ..> TerminalSession : create / run
-' beets/ui/commands/import_/session.py: actual ImportSession subclass.
-TerminalSession --|> ImportSession
-' beets/importer/session.py: __init__ stores the supplied Library as self.lib.
-ImportSession --> "1" Library : lib
 
-' beets/ui/__init__.py: _bootstrap_config calls read/set_file/set_args on beets.config.
-' _open_library creates Library using the configured database and music directory.
-CLI ..> Config : bootstrap configuration
-CLI ..> Library : _open_library()
-' beets/ui/__init__.py: _bootstrap_logging configures the logger; path display uses util.
-CLI ..> Logging : configure / report errors
-' beets/ui/commands/import_/__init__.py: normalize paths and convert to OS paths.
+' beets/ui/commands/import_/__init__.py and session.py.
+ImportFiles ..> TerminalSession : create / run
+ImportFiles ..> Plugins : send("import")
 ImportFiles ..> Util : path helpers
+TerminalSession --|> ImportSession
+ImportSession --> "1" Library : lib
 
 note bottom of Config
   Shared instance: beets.config
   Base class: confuse.LazyConfig
 end note
 
+note bottom of Commands
+  Each command module defines a typing.Protocol
+  for its parsed options (9 *CLIOpts classes),
+  a <name>_func(lib, opts, args), and a Subcommand.
+end note
+
 legend bottom
   Plain boxes: classes; <<reference>>: classes detailed elsewhere.
   <<module>>: module with selected names; <<function>>: function.
   Hollow triangles: inheritance; solid arrows: stored references.
-  Dashed arrows: calls or uses; command handlers live in submodules.
+  Dashed arrows: calls or uses.
 endlegend
 @enduml
