@@ -18,6 +18,8 @@ Bug fixes
 
 - Add ``alternatives.item_updated`` to the typed event list so
   :doc:`plugins/hook` can listen to it. :bug:`7036`
+- :doc:`plugins/lyrics`: Accept synced LRCLIB lyrics ending with trailing blank
+  lines instead of falling back to plain lyrics. :bug:`7070`
 
 ..
     For plugin developers
