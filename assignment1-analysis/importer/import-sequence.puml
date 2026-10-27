@@ -1,0 +1,33 @@
+@startuml import-sequence
+' Simplified UML sequence diagram: metadata lookup and match choice (version 2.14.1).
+' Notation follows Lecture 7: participants (name : Class), activation, alt frame.
+skinparam style strictuml
+skinparam shadowing false
+skinparam defaultFontSize 13
+title Matching an album: lookup and choice
+
+actor User
+participant "session :\nTerminalImportSession" as S
+participant "task :\nImportTask" as T
+participant "autotag.match\n(module)" as M
+participant "provider :\nMetadataSourcePlugin" as P
+
+T -> M : tag_album(source)
+activate M
+M -> P : candidates(items, artist, album)
+P --> M : AlbumInfo [*]
+M -> M : score and rank
+M --> T : Proposal
+deactivate M
+
+T -> S : choose_match(task)
+activate S
+alt strong recommendation
+  S --> T : best AlbumMatch
+else otherwise
+  S -> User : show candidates
+  User --> S : choice
+  S --> T : AlbumMatch or Action
+end
+deactivate S
+@enduml

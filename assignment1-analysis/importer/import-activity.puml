@@ -1,0 +1,44 @@
+@startuml import-activity
+' Simplified UML activity diagram of `beet import` (version 2.14.1).
+' Notation follows Lecture 6: actions, swimlanes, decision/merge, fork/join.
+skinparam style strictuml
+skinparam shadowing false
+skinparam defaultFontSize 13
+title Import pipeline for one album
+
+|Importer|
+start
+:Read files into Items
+and create an ImportTask;
+if () then ([autotag off])
+  :Import as-is;
+else ([autotag on])
+  |Autotag + providers|
+  fork
+    :Query MusicBrainz;
+  fork again
+    :Query other providers;
+  end fork
+  :Rank candidates
+  into a Proposal;
+  |Importer|
+  :User chooses a match;
+endif
+if () then ([skip])
+else ([apply or as-is])
+  :Apply chosen metadata
+  (none for as-is);
+  |Library|
+  :Add Album and Items
+  to the database;
+  |Plugins|
+  :Run plugin
+  import stages;
+  |Importer|
+  :Move or copy files
+  and write tags;
+endif
+:Finalize: save progress,
+notify plugins;
+stop
+@enduml

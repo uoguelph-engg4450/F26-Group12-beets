@@ -1,0 +1,70 @@
+@startuml metadata_matching_simplified
+title Beets Metadata Matching / Autotagging Subsystem
+hide empty members
+left to right direction
+skinparam classAttributeIconSize 0
+
+package "beets.autotag.hooks" {
+  class Info
+  class AlbumInfo
+  class TrackInfo
+}
+
+package "beets.autotag.distance" {
+  class Distance {
+    tracks : dict[TrackInfo, Distance]
+  }
+}
+
+package "beets.autotag.match" {
+  abstract class Match {
+    info
+    distance
+  }
+
+  class AlbumMatch {
+    mapping : dict[Item, TrackInfo]
+    extra_items : list[Item]
+    extra_tracks : list[TrackInfo]
+  }
+
+  class TrackMatch {
+    item : Item
+  }
+
+  class Proposal
+  enum Recommendation
+}
+
+package "beets.autotag.source" {
+  class Source
+}
+
+class "beets.library.models.Item" as Item <<reference>>
+class "beets.util.AttrDict" as AttrDict <<reference>>
+
+Info --|> AttrDict
+AlbumInfo --|> Info
+TrackInfo --|> Info
+
+AlbumMatch --|> Match
+TrackMatch --|> Match
+
+AlbumInfo --> "0..*" TrackInfo : tracks
+Match --> "1" Info : matched info
+Match --> "1" Distance : similarity
+AlbumMatch --> "0..*" Item : matched items
+AlbumMatch --> "0..*" TrackInfo : matched tracks
+TrackMatch --> "1" Item : local item
+TrackMatch --> "1" TrackInfo : matched track
+Proposal --> "0..*" Match : candidates
+Proposal --> "1" Recommendation : recommendation
+Source --> "0..*" Item : source items
+
+note bottom of Match
+Match is the common abstraction for candidate matches.
+AlbumMatch handles album-level matching.
+TrackMatch handles single-track matching.
+end note
+
+@enduml

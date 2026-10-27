@@ -1,0 +1,70 @@
+@startuml
+!theme plain
+allowmixing
+title Beets music library and database (Ahmed — Member 2)
+top to bottom direction
+skinparam packageStyle rectangle
+hide empty members
+
+package "beets.library" {
+  class Library {
+    +add(obj)
+    +add_album(items)
+    +items(query)
+    +albums(query)
+    +get_item(id)
+    +get_album(item_or_id)
+  }
+
+  abstract class LibModel
+
+  class Album {
+    +items() : Results[Item]
+    +remove(delete, with_items)
+  }
+
+  class Item {
+    album_id : int | None
+    +get_album() : Album | None
+    +read()
+    +write()
+    +store()
+  }
+}
+
+package "beets.dbcore" {
+  abstract class "Model<D>" as Model {
+    id : int | None
+    _db : D | None
+    fixed / flexible / computed fields
+    +add(db)
+    +store(fields)
+    +remove()
+  }
+
+  class Database {
+    _models
+    +transaction()
+    +_get_results(...) : Results
+  }
+
+  class "Results<Model>" as Results {
+    lazy row-to-model iteration
+    cached materialized objects
+  }
+}
+
+Library --|> Database
+LibModel --|> Model : D = Library
+Item --|> LibModel
+Album --|> LibModel
+
+Library ..> Item : registers / fetches
+Library ..> Album : registers / fetches
+Album "0..1" -- "0..*" Item : album_id / items()
+Model "0..*" --> "0..1" Database : optional _db reference
+Library ..> Results : items() / albums() return
+Results "0..*" --> "1" Database : query results from
+
+@enduml
+

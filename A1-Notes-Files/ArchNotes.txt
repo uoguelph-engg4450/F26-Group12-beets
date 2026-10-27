@@ -1,0 +1,193 @@
+Rhys Grover 1346822
+Personal Notes: I dont worry about spelling in this... so good luck
+
+
+POT10:
+1 - Command Line Interface (CLI)
+    recives IO from user; such as beet import and beet list
+    Interpert the command options and arguments
+    Directs the operations for subsytems to execute
+    Displays the results, errors and options; Handles terminal IO
+    Discovers extra commands avabile VIA plugins 
+Ovr: 
+    The CLI handles the terminal interaction, makes calls to subsystems
+directing them on their "task". The reasoning for the seperation is to
+allow the other interfaces to re-use systems if needed.
+
+2 - Importer (workflow organzier)
+    Finds the music files and groups them into albums and their respective groups
+    cordinates the metadata maches
+    Arranges for a match to be selected or retain existing information
+    Applies the chosen metadata; adding to music library
+    supports extra processing from plugins during imports.
+    cordinates moving or copying files as requested.
+Ovr:
+    Importing is divided into stages, each with a specific responsibility. 
+A stage may use other subsystems, such as the autotagger or library. 
+The importer coordinates the overall import workflow.
+
+3 - Autotagger (Metadata and identification)
+    Uses information already available from tracks and albums 
+    obtains potential metadata through supported external sources
+    compares the candidates with currenlty exisiting info and evaluates their simularity
+    matches the tracks to their candidates
+    provides this informaiton to the importer
+Ovr: 
+    The autotagger uses metadata sources to recive candidate. Using this information
+to determine their alikeness.
+
+4 - Music Library 
+    repersents tracks as items (ojects)
+    repersents a collection of tracks as albums (objects)
+    provided the operations for adding, retreving, and modifying records.
+    Manages the metadata and file locations
+    uses database for storage.
+    uses Mediafile for R/W metadata and tags
+Ovr:
+    The library allows the porgram to "understand" music. A album, track, artist or
+a files metadata has "meaning" here. 
+
+5 - Database (querying and persistance)
+    Provides the structure for storing and retreving data
+    Handles queries and transactions 
+    Supports mapping to pythons objects
+    uses SQlite
+    Provides the storage foundation uses by library.
+
+6 - Plugin System (extensions)
+    Provides a framework to load extensions
+    lets plugins define extra commands
+    allows plugins to respond to events
+    supports extra import processing steps
+    lets plugins work with the library
+    Allows users to add extra capabilites without modifying the core structure for every new feature.
+Ovr:
+    The plugin system provides extension framework to 3rd parties.
+allowing developers to add features and capabilites to beets to customize 
+it to their liking. 
+
+
+In all:
+CLI - handles interaction
+Importer - coordinates importing
+Autotagger - finds matches
+Library - manages music records
+Database - saves them
+Plugins - extend functionality
+
+-------------------------------------------------------
+POT13:
+
+    The outer Beets box contains the application's own components
+    CLI, importer, autotagger, music library, database layer, plugin system.
+
+    Outside this boundary (External):
+    - SQLite: database engine accessed through Python's sqlite3 module.
+    - MediaFile: external library for reading and writing music-file tags.
+    - MusicBrainz: external metadata service accessed through its plugin.
+
+    External does not necessarily mean online.
+    SQLite and MediaFile operate locally; MusicBrainz is a remote service.
+
+
+-------------------------------------------------------
+POT14:
+
+Architectural Style
+    Beets is a modular application with plugin support
+    The core system is divided into components which all have distinct jobs
+    Although these components collaborate as one single application; not sererate programs. 
+    Plugins provide the user with support to extend the core through a API platform.
+    The CLI is the portion that the user can interact with, while other components perform other jobs
+    The importer uses it own pipeline internally, more info from importer section one member completes it :)
+
+
+Coupling
+    The importer depends on the autotagger to obtain matches
+    The library depends on the database for storage 
+    Pugins depend on the extension apis(plugin system) provided by beets
+    Changes to shared APIs or data formats may require changes in other components.
+
+
+Cohesion
+    Autotagger: identifying music and evaluating metadata matches.
+    Database layer: storage, queries, and transactions.
+    CLI: command handling and terminal interaction.
+    Importer: coordinating the steps needed to import music.
+    -Their responsibilities support a common purpose or joib within each component
+
+Modularity
+    Seperates the CLI, importing, matching, library magament, stoage, plugin mechanisms/API
+    This Modularity helps seperate probelms, but does not stop bugs from being a multi-system issue.
+    -This is good because clear boundaries in functionality allow for easy development; if somthing
+    goes wrong it is easy to see which system was modfied allowing for easy(er) de-bugging.
+
+Extensibility
+    Plugins have the ability to add commands, metadata sources, event handlers and import processing tasks.
+    The core has API hooks making it easy(er) to develop features for the program without modifying the core.
+    -The idea of this is great but... extensions are constrained by the available hooks.
+    Features beyond those extension points may require core changes.
+
+-------------------------------------------------------
+POT15:
+
+POT-15 — Architectural Strengths, Trade-offs, and Improvements
+
+!!!STRENGTHS!!!
+
+1 - Seperation of responsibilities
+
+    Beets divides its core functionality into sperate components.
+    The segmentation helps developers understand where a responsibility lies. For ex: changing how
+    each candidate match is calcuated will happen within the autotagger, knowing if issues with the
+    meta data matching is occuring it is extremly likely to be within the autotagger.
+
+Benfit: 
+    The benefit of this mainly comes with maitenece and debugging. However issues with seperation
+    can still arise when working with several components or changes to shared interfaces. 
+EV:
+    The importer documentation explicitly separates the import workflow from
+    metadata matching and command-line interaction.
+https://docs.beets.io/en/latest/dev/importer.html ????
+
+2 - Plugin System
+
+    Beets provided extension points and hooks for external programs to use
+    to add behaviour to beets. These plugins can add extra processing stages to the import function,
+    or add extra customizable commands. Adding these does not require modifying the core components.
+
+Benifit:
+    Not having to modify the main core components allows the core functionality to concise.
+    Not having to contain each feature that everyoen could want within the core allows easier maitenece.
+    Users who want to add features can use the plugin hooks/API to incorporate their features. This is only limited by the 
+    hooks that are in there (More about later).
+EV:
+    ImportSession.run() includes registered plugin stages when constructing
+    the pipeline.
+https://github.com/beetbox/beets/blob/master/beets/importer/session.py ????
+
+
+!!!TRADE-OFFS AND POSSIBLE IMPROVEMENTS!!!
+
+1 - Plugins are dependent on core interface objects
+
+Trade off:
+    Becuase of the way the plugins interact with the objects of the program 
+    they may rely on methods or behaviour of these objects. if these objects 
+    change a plugin may need upgrading even though it hasnt changed anythign.
+    
+    The plugin system has what hooks and platform are there, if the plugin developer
+    wants to do somthing that is not avabile within those hooks he will have to modify
+    the core themself.
+
+Possible Improvements:
+    cant exactly think of anything for the plugin system not having proper hooks, if ONE dev
+    wants to expand past the hooks they can do it, if MULTIPLE this feature that they are adding should be made.
+
+    For the migration, any changes to the plugin system api's, objects, methods, architecture should be published
+    alongside extensive migration documentation allowing for easy chages within the program.
+
+Evidence:
+The plugin-stage documentation specifies the core objects passed to stages.
+https://docs.beets.io/en/latest/dev/plugins/other/import.html ????
+
