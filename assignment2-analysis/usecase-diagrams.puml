@@ -1,0 +1,40 @@
+@startuml UMLDiagram
+left to right direction
+skinparam shadowing false
+skinparam defaultFontSize 12
+title Beets: Use Cases for Shortlisted Issues
+
+actor "Beets User" as User
+actor "LRCLIB\n(lyrics service)" as LRCLIB
+actor "Tidal API" as Tidal
+' add actors for other shortlisted issues here
+
+rectangle "Beets" {
+  usecase "Fetch lyrics for tracks" as UC1
+  usecase "Request synchronized lyrics" as UC2
+  usecase "Validate synchronized lyrics" as UC3
+  usecase "Store lyrics with track" as UC4
+
+  usecase "Configure Tidal search settings" as UC5
+  usecase "Match album metadata using Tidal" as UC6a
+  usecase "Match track metadata using Tidal" as UC6b
+  usecase "Apply configured result limit" as UC8
+
+  ' add use cases for other shortlisted issues here
+}
+
+User -- UC1
+User -- UC2
+User -- UC5
+User -- UC6a
+User -- UC6b
+UC2 -- LRCLIB
+UC6a -- Tidal
+UC6b -- Tidal
+
+UC2 .> UC1 : <<extend>>
+UC2 ..> UC3 : <<include>>
+UC1 ..> UC4 : <<include>>
+UC6a ..> UC8 : <<include>>
+UC6b ..> UC8 : <<include>>
+@enduml
