@@ -586,6 +586,39 @@ def lyrics_match(**overrides):
     }
 
 
+class TestLRCLyrics:
+    @pytest.mark.parametrize("line_ending", ["\n", "\r\n"])
+    @pytest.mark.parametrize(
+        "trailing_whitespace", ["", "\n", "\n\n", "\n \t\n", " \t"]
+    )
+    @pytest.mark.parametrize(
+        "final_text", ["Feel it every time you are around", ""]
+    )
+    def test_verify_synced_lyrics(
+        self, line_ending, trailing_whitespace, final_text
+    ):
+        lrc = line_ending.join(
+            ['[00:17.23]I said "I love you" first', f"[02:23.59]{final_text}"]
+        ) + trailing_whitespace.replace("\n", line_ending)
+
+        assert lyrics.LRCLyrics.verify_synced_lyrics(149.0, lrc) == lrc
+
+    @pytest.mark.parametrize(
+        "lrc",
+        [
+            None,
+            "",
+            " \t\r\n\r\n",
+            "plain lyrics",
+            "[02:23]invalid timestamp",
+            "[02:29.01]timestamp exceeds duration",
+            "[00:17.23]valid line\nfinal line without a timestamp\n\n",
+        ],
+    )
+    def test_verify_synced_lyrics_invalid(self, lrc):
+        assert lyrics.LRCLyrics.verify_synced_lyrics(149.0, lrc) is None
+
+
 class TestLRCLibLyrics(LyricsBackendTest):
     ITEM_DURATION = 999
     SYNCED = "[00:00.00] synced"
