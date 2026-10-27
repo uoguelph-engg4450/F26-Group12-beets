@@ -709,6 +709,45 @@ class TestCandidates(TidalPluginTest):
         assert len(candidates) == 1
         assert candidates[0].album == "Query Album"
 
+    def test_candidates_respects_search_limit(self):
+        """Album query search returns at most ``search_limit`` candidates."""
+        self.tidal.config["search_limit"] = 3
+        items = [Item(title="My Song", artist="My Artist", album="My Album")]
+
+        album_ids = [str(i) for i in range(1, 11)]
+        self.tidal.api.search_results = Mock(
+            return_value=_make_search_doc("albums", album_ids)
+        )
+
+        def get_albums(ids, **kwargs):
+            data, included = [], []
+            for id_ in ids:
+                track = _make_track(f"1{id_}", "Track", artist_ids=["1001"])
+                album, track_lookup, artist_lookup = _make_album(
+                    id_, f"Album {id_}", [track], ["1001"]
+                )
+                data.append(album)
+                included += [*artist_lookup.values(), *track_lookup.values()]
+            return {"data": data, "included": included}
+
+        self.tidal.api.get_albums = Mock(side_effect=get_albums)
+
+        candidates = list(
+            self.tidal.candidates(items, "My Artist", "My Album", False)
+        )
+
+        assert [c.album for c in candidates] == [
+            "Album 1",
+            "Album 2",
+            "Album 3",
+        ]
+        self.tidal.api.get_albums.assert_called_once()
+        assert self.tidal.api.get_albums.call_args.kwargs["ids"] == [
+            "1",
+            "2",
+            "3",
+        ]
+
     def test_album_search_handles_empty_response(self):
         self.tidal.api.search_results = Mock(return_value={"data": []})
         self.tidal.api.get_albums = Mock()
@@ -763,6 +802,60 @@ class TestItemCandidates(TidalPluginTest):
 
         assert self.tidal.api.search_results.called
         assert results[0].title == "Query Track"
+
+    @staticmethod
+    def _track_search_doc(prefix: str, count: int) -> SearchDocument:
+        track_ids = [f"{prefix}{i}" for i in range(count)]
+        return {
+            **_make_search_doc("tracks", track_ids),
+            "included": [
+                *(
+                    _make_track(id_, f"Track {id_}", artist_ids=["1001"])
+                    for id_ in track_ids
+                ),
+                _make_artist("1001", "Query Artist"),
+            ],
+        }
+
+    def test_item_candidates_respects_search_limit(self):
+        """Track query search returns at most ``search_limit`` candidates."""
+        self.tidal.config["search_limit"] = 3
+        item = Item(title="Query Song", artist="Query Artist")
+
+        self.tidal.api.search_results = Mock(
+            side_effect=[
+                self._track_search_doc("a", 2),
+                self._track_search_doc("b", 10),
+            ]
+        )
+
+        results = list(
+            self.tidal.item_candidates(item, "Query Artist", "Query Song")
+        )
+
+        # The second query only contributes the remaining slot.
+        assert [r.title for r in results] == [
+            "Track a0",
+            "Track a1",
+            "Track b0",
+        ]
+        assert self.tidal.api.search_results.call_count == 2
+
+    def test_item_candidates_stops_querying_at_search_limit(self):
+        """No further queries are made once ``search_limit`` is reached."""
+        self.tidal.config["search_limit"] = 3
+        item = Item(title="Query Song", artist="Query Artist")
+
+        self.tidal.api.search_results = Mock(
+            return_value=self._track_search_doc("a", 10)
+        )
+
+        results = list(
+            self.tidal.item_candidates(item, "Query Artist", "Query Song")
+        )
+
+        assert len(results) == 3
+        self.tidal.api.search_results.assert_called_once()
 
     def test_track_search_handles_empty_response(self):
         self.tidal.api.search_results = Mock(return_value={"data": []})
