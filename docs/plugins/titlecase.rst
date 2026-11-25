@@ -213,3 +213,17 @@ From the command line, type:
 
 Configuration is drawn from the config file. Without a query the operation will
 be applied to the entire collection.
+
+To preview changes without saving library metadata or writing file tags, use
+``-p`` (or ``--preview``) after the subcommand:
+
+::
+
+    $ beet titlecase -p [QUERY]
+
+Preview mode uses the same configured fields and capitalization rules as a
+normal run. Each matching track is identified by artist, title, and library ID,
+followed by the original and proposed values for each changed field. Tracks
+that need no changes display ``No changes.``; queries without matches display
+``No matching tracks.``. After reviewing the preview, run the same command
+without ``-p`` to apply the changes.

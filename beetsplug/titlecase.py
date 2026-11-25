@@ -74,6 +74,13 @@ class TitlecasePlugin(BeetsPlugin):
             "titlecase",
             help="Apply titlecasing to metadata specified in config.",
         )
+        self._command.parser.add_option(
+            "-p",
+            "--preview",
+            action="store_true",
+            default=False,
+            help="show proposed changes without saving metadata or writing tags",
+        )
 
         if self.config["auto"].get(bool):
             if self.config["after_choice"].get(bool):
@@ -158,16 +165,38 @@ class TitlecasePlugin(BeetsPlugin):
 
     def commands(self) -> list[ui.Subcommand]:
         def func(lib: Library, opts: optparse.Values, args: list[str]) -> None:
-            write = ui.should_write()
+            write = not opts.preview and ui.should_write()
+            matched = False
             for item in lib.items(args):
+                matched = True
+                if opts.preview:
+                    self._preview_item(item)
+                    continue
                 self._log.info(f"titlecasing {item.title}:")
                 self.titlecase_fields(item)
                 item.store()
                 if write:
                     item.try_write()
+            if opts.preview and not matched:
+                ui.print_("No matching tracks.")
 
         self._command.func = func
         return [self._command]
+
+    def _preview_item(self, item: Item) -> None:
+        """Display titlecase changes using a copy without storing or writing."""
+        proposed = item.copy()
+        self.titlecase_fields(proposed)
+        ui.print_(f"Preview: {item.artist} - {item.title} (id: {item.id})")
+        changed = False
+        for field in sorted(self.fields_to_process):
+            original = getattr(item, field, "")
+            cased = getattr(proposed, field, "")
+            if original != cased:
+                ui.print_(f"  {field}: {original!r} -> {cased!r}")
+                changed = True
+        if not changed:
+            ui.print_("  No changes.")
 
     def titlecase_fields(self, item: Item | Info) -> None:
         """Applies titlecase to fields, except

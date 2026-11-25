@@ -19,10 +19,13 @@ class TestTitlecasePreview(PluginTestHelper):
     plugin = "titlecase"
     preload_plugin = False
 
-    def test_preview_executes_and_shows_original_and_proposed(self, capsys):
+    @pytest.mark.parametrize("flag", ["-p", "--preview"])
+    def test_preview_executes_and_shows_original_and_proposed(
+        self, capsys, flag
+    ):
         self.add_item(title="in a silent way")
         with self.configure_plugin({"fields": ["title"]}):
-            self.run_command("titlecase", "-p")
+            self.run_command("titlecase", flag)
         output = capsys.readouterr().out
         assert "Preview:" in output
         assert "title: 'in a silent way' -> 'In a Silent Way'" in output
